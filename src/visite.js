@@ -1,5 +1,5 @@
 (function(){
-  // Maison interactive : la visite se lance au clic (bouton, points dorés ou repères), jamais au défilement.
+  // Maison interactive (section produits de l'accueil) : la visite se lance au clic sur un repère ou une étiquette.
   const S = [
     { r:[880,640,1520,700], hero:1 },
     { el:"fen", p:[375,465], r:[375,465,480,330], titre:"Fenêtres", url:"/fenetres/",
@@ -46,24 +46,24 @@
     if (!k) return;
     const g = document.createElementNS(NS, "g");
     g.setAttribute("class", "v-point");
-    g.innerHTML = `<title>${s.titre}</title><circle class="v-halo" cx="${s.p[0]}" cy="${s.p[1]}" r="14" fill="#c9a14a"/><circle cx="${s.p[0]}" cy="${s.p[1]}" r="9" fill="#c9a14a" stroke="#fff" stroke-width="3"/>`;
+    g.innerHTML = `<title>${s.titre}</title><circle cx="${s.p[0]}" cy="${s.p[1]}" r="22" fill="transparent"/><circle class="v-pt" cx="${s.p[0]}" cy="${s.p[1]}" r="8" stroke="#fff" stroke-width="3"/>`;
     g.addEventListener("click", () => aller(k, true));
     points.appendChild(g);
     const li = document.createElement("li");
-    li.innerHTML = `<button type="button"><span>${s.titre}</span><i></i></button>`;
+    li.innerHTML = `<button type="button" aria-pressed="false">${s.titre}</button>`;
     li.firstChild.addEventListener("click", () => aller(k, true));
     rail.appendChild(li);
   });
   const boutons = Array.from(rail.querySelectorAll("button"));
 
   function cadre(k){
-    const s = S[k], aspect = svg.clientWidth / svg.clientHeight, mobile = innerWidth <= 820;
+    const s = S[k], aspect = svg.clientWidth / svg.clientHeight, mobile = svg.clientWidth <= 700;
     let [cx, cy, rw, rh] = s.r;
-    if (mobile && s.hero) { rw = 1150; rh = 420; }
+    if (mobile && s.hero) { rw = 1250; rh = 560; }
     const w = Math.max(rw, rh * aspect);
     let ox, oy;
-    if (mobile) { ox = 0; oy = s.hero ? -0.31 : 0.2; }
-    else { ox = s.hero ? -0.17 : -0.19; oy = 0.02; }
+    if (mobile) { ox = 0; oy = s.hero ? 0 : 0.2; }
+    else { ox = s.hero ? 0 : -0.19; oy = s.hero ? 0.03 : 0.02; }
     return { cx, cy, w, ox, oy, aspect };
   }
   function poser(c){
@@ -125,7 +125,7 @@
     etape = k;
     depart = cam; arrivee = cadre(k); t0 = performance.now();
     section.classList.toggle("en-visite", k > 0);
-    boutons.forEach((b, j) => b.classList.toggle("on", j + 1 === k));
+    boutons.forEach((b, j) => b.setAttribute("aria-pressed", String(j + 1 === k)));
     if (k > 0) {
       if (avant > 0 && carte.classList.contains("on")) {
         carte.classList.remove("on");
@@ -134,14 +134,13 @@
       if (focus) setTimeout(() => $("cTitre").focus({ preventScroll: true }), 50);
     } else {
       carte.classList.remove("on");
-      if (focus) $("vLancer").focus({ preventScroll: true });
+      if (focus && avant) boutons[avant - 1].focus({ preventScroll: true });
     }
     relancer();
   }
 
-  $("vLancer").addEventListener("click", () => aller(1, true));
   $("vPrec").addEventListener("click", () => etape > 1 && aller(etape - 1));
-  $("vSuiv").addEventListener("click", () => aller(etape < NB ? etape + 1 : 0, etape === NB));
+  $("vSuiv").addEventListener("click", () => (etape < NB ? aller(etape + 1) : aller(0, true)));
   $("vFermer").addEventListener("click", () => aller(0, true));
   document.addEventListener("keydown", (e) => {
     if (!etape) return;

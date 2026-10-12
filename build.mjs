@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-// Animation d'accueil : maison dessinée visitée au défilement (src/visite.svg + src/visite.js)
+// Maison dessinée interactive de la page d'accueil (section produits) (src/visite.svg + src/visite.js)
 const VISITE_SVG = fs.readFileSync("src/visite.svg", "utf8").trim();
 const VISITE_JS = fs.readFileSync("src/visite.js", "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("//")).join("\n");
 const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
@@ -269,8 +269,6 @@ const parcours = `<ol class="parcours">
 
 // ===== Accueil =====
 {
-  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
-  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}">${photo(p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
     ["Qui pose les menuiseries ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis et sa propre facture. Vous restez libre de faire poser par l'artisan de votre choix."],
@@ -280,22 +278,25 @@ const parcours = `<ol class="parcours">
   ];
   const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}</span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
-<section class="visite" id="visite" aria-label="Visite d'une maison, menuiserie par menuiserie"><div class="v-scene">
-${VISITE_SVG}<div class="v-voile" id="voile"></div>
-<div class="v-intro" id="vintro"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
+<section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1676.avif 1676w" sizes="100vw"><img class="h-img" src="/assets/img/hero-maison-1280.webp" srcset="/assets/img/hero-maison-640.webp 640w, /assets/img/hero-maison-960.webp 960w, /assets/img/hero-maison-1280.webp 1280w, /assets/img/hero-maison-1676.webp 1676w" sizes="100vw" width="1676" height="938" alt="Maison contemporaine aux grandes baies vitrées équipées de brise-soleil orientables, terrasse et piscine" fetchpriority="high" decoding="async"></picture>
+<div class="wrap h-txt"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
 <h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
-<p class="chapo">Fenêtres, volets, portes, portails, moustiquaires : on relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte de votre ouverture, et notre installateur partenaire s'occupe de la pose.</p>
+<p class="chapo">Fenêtres, baies vitrées, volets, BSO, portes, portails et moustiquaires. On relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte, et notre installateur partenaire s'occupe de la pose.</p>
 <div class="actions"><a class="btn btn-p" href="/contact/">Demander une visite gratuite</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
-<button class="v-lancer" id="vLancer" type="button"><span class="v-play" aria-hidden="true"></span><span>Visiter la maison<small>8 menuiseries à découvrir</small></span></button></div>
-<article class="v-carte" id="carte" aria-live="polite"><button class="v-fermer" id="vFermer" type="button" aria-label="Fermer la visite">×</button><p class="v-num" id="cNum"></p><h2 id="cTitre" tabindex="-1"></h2><p class="v-txt" id="cTexte"></p><div class="v-var" id="cVar" role="group" aria-label="Type de volet" hidden><button type="button" data-v="roulant" aria-pressed="true">Volet roulant</button><button type="button" data-v="battant" aria-pressed="false">Volet battant</button></div><ul class="v-tags" id="cTags"></ul><a class="v-lien" id="cLien" href="/fenetres/">Voir la gamme →</a><div class="v-nav"><button type="button" id="vPrec">← Précédent</button><button type="button" id="vSuiv" class="suiv">Suivant →</button></div></article>
-<ol class="v-rail" id="rail" aria-label="Étapes de la visite"></ol>
-</div></section><script>${VISITE_JS}</script>
+<ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose par installateur partenaire</li></ul></div>
+</section>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>Horizon Fenêtre vous conseille, mesure et fournit. La pose est réalisée par notre installateur partenaire, avec qui on organise la livraison.</p></div>
 ${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
-<div class="bento">${bento}</div></div></section>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Une maison, toutes nos menuiseries</h2><p>Choisissez une menuiserie pour la voir de près : ce qu'elle apporte, les options, et sa page détaillée.</p></div>
+<div class="visite" id="visite"><div class="v-scene">
+${VISITE_SVG}
+<article class="v-carte" id="carte" aria-live="polite"><button class="v-fermer" id="vFermer" type="button" aria-label="Fermer la visite">×</button><p class="v-num" id="cNum"></p><h2 id="cTitre" tabindex="-1"></h2><p class="v-txt" id="cTexte"></p><div class="v-var" id="cVar" role="group" aria-label="Type de volet" hidden><button type="button" data-v="roulant" aria-pressed="true">Volet roulant</button><button type="button" data-v="battant" aria-pressed="false">Volet battant</button></div><ul class="v-tags" id="cTags"></ul><a class="v-lien" id="cLien" href="/fenetres/">Voir la gamme →</a><div class="v-nav"><button type="button" id="vPrec">← Précédent</button><button type="button" id="vSuiv" class="suiv">Suivant →</button></div></article>
+</div></div>
+<ul class="v-rail" id="rail" aria-label="Nos menuiseries"></ul>
+<p class="v-plus">Aussi dans la gamme : <a href="/portes-interieures/">portes intérieures sur mesure</a>.</p>
+</div></section><script>${VISITE_JS}</script>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
 <div class="carte" style="padding:0"><div class="tab-scroll"><table class="mat"><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">PVC</th><th scope="col">Aluminium</th><th scope="col">Bois</th></tr></thead><tbody>
@@ -325,7 +326,7 @@ ${parcours}</div></section>
 <section class="sec ciel"><div class="wrap"><div class="tete"><h2>Questions fréquentes</h2></div>${faqHtml(faq)}</div></section>
 
 <section class="sec" id="devis"><div class="wrap"><div class="devis"><div><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes.</p><p>Vous préférez téléphoner ?<br><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a></p></div>${formulaire("accueil")}</div></div></section>`;
-  ecrire("/", page({ url: "/", title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes, portails sur mesure. Visite et prise de cotes gratuites à Lyon, pose par installateur partenaire.", body,
+  ecrire("/", page({ url: "/", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1676.avif 1676w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes, portails sur mesure. Visite et prise de cotes gratuites à Lyon, pose par installateur partenaire.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
   plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });
 }
