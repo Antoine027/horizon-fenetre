@@ -32,6 +32,12 @@ export const PHOTOS = {
   bsoMaison:   ["photo-1759587083707-f634a7f782ec", 1940, 2832, "Brise-soleil orientables baissés sur une maison, jardin fleuri au premier plan", "Nina Schwöbel"],
   porteBlanche:["photo-1765766599489-fd53df7f8724", 3840, 5760, "Porte intérieure blanche au bout d'un couloir aux murs gris", "Marina Nazina"],
   portailCoulissant:["photo-1788009145769-e278b44782ee", 6240, 4160, "Portails aluminium sombres à lames entre deux maisons blanches", "Timur Seyfelmlyukov"],
+  vFenetre:    ["photo-1720643436959-7749378beda0", 3802, 5069, "Fenêtre blanche oscillo-battante ouverte sur la verdure", "Antoine Gravier"],
+  vBaie:       ["photo-1525570665650-76bb26af503d", 5472, 3648, "Baie coulissante à profils noirs dans un intérieur clair", "Alex Perz"],
+  vPorte:      ["photo-1617307074423-6344f18d357f", 4000, 6000, "Porte d'entrée vitrée encadrée de bois sur bardage noir", "Will Palmer"],
+  vGarage:     ["photo-1696992812596-3c0d4d2d1299", 4912, 3264, "Porte de garage sectionnelle grise à panneaux lisses", "Simeon Galabov"],
+  vCloture:    ["photo-1711165727641-e66ddea755b0", 8095, 5399, "Clôture aluminium à lames verticales sur ciel bleu", "DL314 Lin"],
+  vMoustiq:    ["photo-1758998243249-4cc82f0df9e8", 3552, 4736, "Fenêtre à cadre noir équipée d'une moustiquaire", "MBOR MC"],
 };
 
 // Génère une balise <img> responsive. Les images sont recadrées chez Unsplash puis servies

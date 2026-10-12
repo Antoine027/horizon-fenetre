@@ -7,10 +7,10 @@ galerie: [["fenBlanche","Fenêtre PVC blanche deux vantaux : le grand classique 
 nav: "Fenêtres",
 court: "PVC, aluminium ou bois, du châssis fixe à la baie coulissante.",
 title: "Fenêtres PVC, alu, bois sur mesure à Lyon | Horizon Fenêtre",
-description: "Fenêtres sur mesure en PVC, aluminium ou bois, fabriquées à vos cotes. Visite, prise de cotes et devis gratuits à Lyon et alentours, pose par installateur partenaire.",
+description: "Fenêtres sur mesure en PVC, aluminium ou bois, fabriquées à vos cotes. Visite, prise de cotes et devis gratuits à Lyon et alentours, pose sur demande.",
 h1: "Fenêtres sur mesure en PVC, aluminium et bois à Lyon",
 motcle: "fenêtre sur mesure Lyon",
-chapo: "On mesure chaque ouverture chez vous, on commande la fenêtre au millimètre, et notre installateur partenaire la pose en rénovation comme en dépose totale.",
+chapo: "On mesure chaque ouverture chez vous, on commande la fenêtre au millimètre, et on organise la pose, en rénovation comme en dépose totale.",
 contenu: `
 <p class="lead">Une fenêtre bien choisie, c'est une pièce plus calme, moins de courants d'air et un chauffage qui travaille moins. Mal mesurée ou mal posée, la meilleure fenêtre du marché perd une bonne partie de ses qualités. Chez Horizon Fenêtre, on vous conseille, on relève les cotes et on fournit la menuiserie ; la pose est confiée à notre installateur partenaire.</p>
 
@@ -73,7 +73,7 @@ galerie: [["voletRoulant","Volet roulant à lames : protection solaire, intimit�
 nav: "Volets",
 court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
 title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
-description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Prise de cotes à domicile à Lyon et Rillieux-la-Pape, pose par installateur partenaire.",
+description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Prise de cotes à domicile à Lyon et Rillieux-la-Pape, pose sur demande.",
 h1: "Volets roulants et volets battants sur mesure",
 chapo: "Motoriser des volets existants, ajouter un volet roulant sans toucher à la façade ou remplacer des battants fatigués : on vous conseille ce qui tient dans le temps.",
 contenu: `
@@ -116,7 +116,7 @@ galerie: [["garageNoir","Panneaux lisses et teinte sombre : la porte prolonge la
 nav: "Portes de garage",
 court: "Sectionnelles plafond et latérales, motorisées ou manuelles.",
 title: "Porte de garage sectionnelle et latérale sur mesure | Lyon",
-description: "Portes de garage sectionnelles plafond et sectionnelles latérales sur mesure, isolées et motorisées. Visite et devis gratuits à Lyon et dans l'Ain, pose par installateur partenaire.",
+description: "Portes de garage sectionnelles plafond et sectionnelles latérales sur mesure, isolées et motorisées. Visite et devis gratuits à Lyon et dans l'Ain, pose sur demande.",
 h1: "Portes de garage sectionnelles et latérales sur mesure",
 chapo: "Une porte de garage qu'on ouvre tous les jours doit être silencieuse, isolée et adaptée à votre garage, pas l'inverse. On vient mesurer avant de proposer un modèle.",
 contenu: `
@@ -382,7 +382,7 @@ faq: [
 export const pros = {
 slug: "professionnels",
 title: "Menuiserie pour pros : syndics, bailleurs, architectes, Lyon",
-description: "Fourniture de menuiseries sur mesure pour artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces à Lyon. Pose possible par installateur partenaire.",
+description: "Fourniture de menuiseries sur mesure pour artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces à Lyon. Pose possible sur demande.",
 h1: "Menuiseries pour les professionnels",
 chapo: "Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces : des menuiseries sur mesure chiffrées vite, livrées dans les temps, avec la pose en option.",
 };

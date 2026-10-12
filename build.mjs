@@ -177,7 +177,7 @@ ${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/",
 }
 const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <div><a class="marque" href="/"><img src="/assets/img/icon-light-46.webp" srcset="/assets/img/icon-light-46.webp 1x, /assets/img/icon-light-92.webp 2x" width="46" height="35" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
-<p>Menuiseries sur mesure : conseil, prise de cotes et fourniture. Pose par installateur partenaire.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
+<p>Menuiseries sur mesure : conseil, prise de cotes et fourniture. Pose sur demande.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
 <div><h2>Nos produits</h2><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
 <div><h2>Horizon Fenêtre</h2><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/partenaires/">Partenaires</a></li><li><a href="/plan-du-site/">Plan du site</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></div>
@@ -254,16 +254,17 @@ fs.cpSync("public", OUT, { recursive: true });
 const articles = lireArticles();
 const plan = [];
 const parcours = `<ol class="parcours">
-<li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Devis de fourniture</h3><p>Chaque menuiserie détaillée ligne par ligne : cotes, matériau, vitrage, performances. TVA à 20 %.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Pose</h3><p>Notre installateur partenaire pose, sur son propre devis. Vous pouvez aussi choisir votre artisan.</p><span class="qui partenaire">Installateur partenaire</span></li>
+<li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p></li>
+<li><h3>Devis de fourniture</h3><p>Chaque menuiserie détaillée ligne par ligne : cotes, matériau, vitrage, performances. TVA à 20 %.</p></li>
+<li><h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p></li>
+<li><h3>Pose</h3><p>On organise la pose avec notre poseur partenaire, à partir de nos cotes. Vous pouvez aussi choisir votre artisan.</p></li>
 </ol>`;
 
 // ===== Accueil =====
 {
   const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
-  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}">${photo(p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
+  const VIGNETTES = { fenetres: "vFenetre", "baies-vitrees": "vBaie", volets: "voletRoulant", "brise-soleil-orientables": "bso", "portes-d-entree": "vPorte", "portes-de-garage": "vGarage", "portes-interieures": "portePlace", "portails-clotures": "vCloture", moustiquaires: "vMoustiq" };
+  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}">${photo(VIGNETTES[p.slug] || p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
     ["Qui pose les menuiseries ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis et sa propre facture. Vous restez libre de faire poser par l'artisan de votre choix."],
@@ -276,12 +277,12 @@ const parcours = `<ol class="parcours">
 <section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1920.avif 1920w, /assets/img/hero-maison-2560.avif 2560w, /assets/img/hero-maison-3840.avif 3840w" sizes="100vw"><img class="h-img" src="/assets/img/hero-maison-1920.webp" srcset="/assets/img/hero-maison-640.webp 640w, /assets/img/hero-maison-960.webp 960w, /assets/img/hero-maison-1280.webp 1280w, /assets/img/hero-maison-1920.webp 1920w, /assets/img/hero-maison-2560.webp 2560w, /assets/img/hero-maison-3840.webp 3840w" sizes="100vw" width="3840" height="2149" alt="Maison contemporaine aux grandes baies vitrées équipées de brise-soleil orientables, terrasse et piscine" fetchpriority="high" decoding="async"></picture>
 <div class="wrap h-txt"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
 <h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
-<p class="chapo">Fenêtres, baies vitrées, volets, BSO, portes, portails et moustiquaires. On relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte, et notre installateur partenaire s'occupe de la pose.</p>
+<p class="chapo">Fenêtres, baies vitrées, volets, BSO, portes, portails et moustiquaires. On relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte, et on organise la pose.</p>
 <div class="actions"><a class="btn btn-p" href="/contact/">Demander une visite gratuite</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
-<ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose par installateur partenaire</li></ul></div>
+<ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div>
 </section>
 
-<section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>Horizon Fenêtre vous conseille, mesure et fournit. La pose est réalisée par notre installateur partenaire, avec qui on organise la livraison.</p></div>
+<section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p></div>
 ${parcours}</div></section>
 
 <section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
@@ -300,10 +301,10 @@ ${parcours}</div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap duo">
 <div><span class="vignette">${photo("salon", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Particuliers</h2><p>Maison ou appartement, une seule fenêtre ou toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
-<ul><li>Visite et prise de cotes gratuites</li><li>Devis de fourniture détaillé, performances à l'appui</li><li>Pose par notre installateur partenaire, sur devis séparé</li><li>Aide pour la déclaration préalable en mairie</li></ul>
+<ul><li>Visite et prise de cotes gratuites</li><li>Devis de fourniture détaillé, performances à l'appui</li><li>Pose organisée par nos soins</li><li>Aide pour la déclaration préalable en mairie</li></ul>
 <a class="btn btn-p" href="/contact/">Demander une visite</a></div>
 <div><span class="vignette">${photo("immeuble", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Professionnels</h2><p>Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces.</p>
-<ul><li>Chiffrage rapide sur plans ou après visite</li><li>Fourniture sur mesure livrée sur chantier</li><li>Pose possible par notre installateur partenaire</li><li>Un interlocuteur unique pour la fourniture</li></ul>
+<ul><li>Chiffrage rapide sur plans ou après visite</li><li>Fourniture sur mesure livrée sur chantier</li><li>Pose possible sur demande</li><li>Un interlocuteur unique pour la fourniture</li></ul>
 <a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div>
 </div></section>
 
@@ -330,7 +331,7 @@ for (const p of produits) {
   const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [400, 640, 900], sizes: "(max-width: 760px) 100vw, 360px" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
   const contenu = mailler(p.contenu, url, 6).replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${galerie}`);
   const body = `${bandeauPhoto(items, p.h1, p.chapo, p.photo)}
-<div class="wrap corps"><article class="prose">${contenu}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. La pose est réalisée par notre installateur partenaire, sur son propre devis, à partir de nos cotes. Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
+<div class="wrap corps"><article class="prose">${contenu}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Visite et devis gratuits</h2><p>On vient prendre les cotes chez vous et on vous remet un devis de fourniture détaillé.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div>
 ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
 <section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/">${dessins[v.slug]}${v.nav}</a>`).join("")}</div></div></section>${appel()}`;
@@ -437,7 +438,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <p>Instant Terrasse et Horizon Fenêtre sont deux marques de la même société, ESCOM HABITAT. Concrètement, si vous changez une baie vitrée et refaites la terrasse au même moment, les cotes du seuil et de la terrasse sont pensées ensemble, avec un seul interlocuteur.</p>
 <p><a href="https://www.instantterrasse.com/" class="ext" target="_blank" rel="noopener">Découvrir Instant Terrasse</a></p>
 <h2>Notre installateur partenaire</h2>
-<p>Horizon Fenêtre vend la fourniture et réalise la prise de cotes. La pose est confiée à un installateur partenaire indépendant, avec qui nous travaillons régulièrement. Il établit son propre devis et sa propre facture, intervient sur la base de nos cotes, et nous calons ensemble la livraison et la date de pose.</p>
+<p>Horizon Fenêtre vend la fourniture et réalise la prise de cotes. La pose est confiée à un installateur partenaire avec qui nous travaillons régulièrement. Il établit son propre devis et sa propre facture, intervient sur la base de nos cotes, et nous calons ensemble la livraison et la date de pose.</p>
 <p>Vos coordonnées ne lui sont transmises que si vous l'acceptez, en cochant la case prévue dans notre <a href="/contact/">formulaire de contact</a>.</p>
 <h2>Devenir partenaire</h2>
 <p>Vous êtes poseur, artisan du bâtiment, architecte ou apporteur d'affaires dans la région lyonnaise et vous cherchez un fournisseur de menuiseries sur mesure ? Écrivez-nous à <a href="mailto:${MAIL}">${MAIL}</a> ou consultez notre <a href="/professionnels/">offre pour les professionnels</a>.</p>

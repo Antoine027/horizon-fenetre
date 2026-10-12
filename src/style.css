@@ -73,14 +73,14 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .hero-photo{position:relative;margin-top:-80px;min-height:min(100svh,920px);display:flex;align-items:center;background:var(--ciel);overflow:hidden}
 .hero-photo picture{position:absolute;inset:0}
 .hero-photo .h-img{width:100%;height:100%;object-fit:cover;object-position:62% 55%}
-.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(233,246,251,.97) 0%,rgba(233,246,251,.9) 30%,rgba(233,246,251,.35) 52%,rgba(233,246,251,0) 66%)}
+.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(233,246,251,.97) 0%,rgba(233,246,251,.94) 36%,rgba(233,246,251,.8) 48%,rgba(233,246,251,0) 68%)}
 .h-txt{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:4rem}
 .h-txt>*{max-width:36rem}
 .hero-photo h1{font-size:clamp(2.5rem,1.2rem + 4.2vw,4.8rem);letter-spacing:-.045em;line-height:.98;margin-bottom:1.4rem}
 .hero-photo h1 span{display:block}
 .hero-photo h1 .fin{font-weight:300}
 .hero-photo h1 .fort{font-weight:750;color:var(--ardoise)}
-.hero-photo .chapo{font-size:1.1rem;color:var(--texte-2);margin-bottom:1.8rem}
+.hero-photo .chapo{font-size:1.1rem;color:var(--encre);font-weight:500;margin-bottom:1.8rem;max-width:32rem;text-shadow:0 0 18px rgba(233,246,251,.9)}
 .trio{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
 .trio li{background:rgba(255,255,255,.82);border-radius:var(--r);padding:.8rem .9rem;font-size:.86rem;font-weight:560;color:var(--ardoise-f);line-height:1.35;display:flex;gap:.55rem;align-items:flex-start}
 .trio svg{width:20px;height:20px;flex:none;color:var(--ardoise)}
