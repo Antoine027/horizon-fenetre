@@ -40,16 +40,16 @@ export const PHOTOS = {
   vMoustiq:    ["photo-1758998243249-4cc82f0df9e8", 3552, 4736, "Fenêtre à cadre noir équipée d'une moustiquaire", "MBOR MC"],
   // Illustrations propres à Horizon Fenêtre, servies depuis le site (public/assets/img/produits/).
   pFenetre:    ["local:fenetre-anthracite", 1672, 941, "Fenêtre aluminium anthracite deux vantaux dans une façade enduite claire", null],
-  pBaie:       ["local:baie-coulissante", 1122, 1402, "Baie vitrée coulissante à profils anthracite ouvrant sur une terrasse", null],
+  pBaie:       ["local:baie-coulissante-v2", 1672, 941, "Baie vitrée coulissante aluminium anthracite ouvrant sur une terrasse en pierre claire", null],
   pVolet:      ["local:volet-roulant-baie", 1672, 941, "Volet roulant anthracite à moitié baissé devant une baie vitrée", null],
   pBattants:   ["local:volets-battants-facade", 1536, 1024, "Façade classique équipée de volets battants à persiennes gris anthracite", null],
-  pBso:        ["local:bso-baie", 1122, 1402, "Brise-soleil orientable à lames aluminium devant une baie vitrée", null],
+  pBso:        ["local:bso-baie-v2", 1672, 941, "Brise-soleil orientable à lames aluminium anthracite devant une baie vitrée", null],
   pPorte:      ["local:porte-entree-alu", 1672, 831, "Porte d'entrée aluminium anthracite avec vitrage vertical et barre de tirage", null],
   pPaliere:    ["local:porte-paliere", 1536, 1024, "Porte palière d'appartement en bois foncé à huisserie noire", null],
   pGarage:     ["local:garage-sectionnelle", 1672, 831, "Porte de garage sectionnelle anthracite à panneaux lisses", null],
   pInterieure: ["local:porte-interieure-noire", 1672, 941, "Porte intérieure noire à rainures horizontales dans une entrée lumineuse", null],
   pPortail:    ["local:portail-battant", 1672, 941, "Portail battant aluminium anthracite entre deux piliers enduits", null],
-  pMoustiq:    ["local:moustiquaire-enroulable", 1122, 1402, "Moustiquaire enroulable intégrée à une fenêtre anthracite ouverte sur le jardin", null],
+  pMoustiq:    ["local:moustiquaire-enroulable-v2", 1672, 941, "Moustiquaire enroulable intégrée à une fenêtre anthracite ouverte sur le jardin", null],
 };
 
 // Génère une balise <img> responsive. Les images sont recadrées chez Unsplash puis servies
