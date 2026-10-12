@@ -92,5 +92,47 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/nos-menuiseries/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/quisommesnous/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/portes-dentree/",
+      "destination": "/portes-d-entree/",
+      "permanent": true
+    },
+    {
+      "source": "/porte-de-garage/",
+      "destination": "/portes-de-garage/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "https://www.instantterrasse.com/",
+      "permanent": true
+    },
+    {
+      "source": "/comment-choisir-sa-terrasse/",
+      "destination": "https://www.instantterrasse.com/",
+      "permanent": true
+    },
+    {
+      "source": "/comment-nettoyer-une-terrasse-en-bois/",
+      "destination": "https://www.instantterrasse.com/",
+      "permanent": true
+    },
+    {
+      "source": "/la-terrasse-aluminium/",
+      "destination": "https://www.instantterrasse.com/",
+      "permanent": true
+    }
   ]
 }
