@@ -29,7 +29,7 @@
   ];
   const NB = S.length - 1;
   const $ = (id) => document.getElementById(id);
-  const section = $("visite"), svg = $("maison"), carte = $("carte"), points = $("points"), rail = $("rail");
+  const section = $("visite"), svg = $("maison"), carte = $("carte"), points = $("points");
   const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const lames = Array.from(document.querySelectorAll(".lame"));
   const NS = "http://www.w3.org/2000/svg";
@@ -49,12 +49,15 @@
     g.innerHTML = `<title>${s.titre}</title><circle cx="${s.p[0]}" cy="${s.p[1]}" r="22" fill="transparent"/><circle class="v-pt" cx="${s.p[0]}" cy="${s.p[1]}" r="8" stroke="#fff" stroke-width="3"/>`;
     g.addEventListener("click", () => aller(k, true));
     points.appendChild(g);
-    const li = document.createElement("li");
-    li.innerHTML = `<button type="button" aria-pressed="false">${s.titre}</button>`;
-    li.firstChild.addEventListener("click", () => aller(k, true));
-    rail.appendChild(li);
+    g.setAttribute("tabindex", "0"); g.setAttribute("role", "button"); g.setAttribute("aria-label", s.titre);
+    g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); aller(k, true); } });
   });
-  const boutons = Array.from(rail.querySelectorAll("button"));
+  const marques = Array.from(points.children);
+  document.querySelectorAll(".bento [data-etape]").forEach((a) => {
+    const m = marques[a.dataset.etape - 1];
+    a.addEventListener("mouseenter", () => m && m.classList.add("allume"));
+    a.addEventListener("mouseleave", () => m && m.classList.remove("allume"));
+  });
 
   function cadre(k){
     const s = S[k], aspect = svg.clientWidth / svg.clientHeight, mobile = svg.clientWidth <= 700;
@@ -125,8 +128,7 @@
     etape = k;
     depart = cam; arrivee = cadre(k); t0 = performance.now();
     section.classList.toggle("en-visite", k > 0);
-    boutons.forEach((b, j) => b.setAttribute("aria-pressed", String(j + 1 === k)));
-    if (k > 0) {
+        if (k > 0) {
       if (avant > 0 && carte.classList.contains("on")) {
         carte.classList.remove("on");
         setTimeout(() => { if (etape === k) { remplir(k); carte.classList.add("on"); } }, 220);
@@ -134,7 +136,7 @@
       if (focus) setTimeout(() => $("cTitre").focus({ preventScroll: true }), 50);
     } else {
       carte.classList.remove("on");
-      if (focus && avant) boutons[avant - 1].focus({ preventScroll: true });
+      if (focus && avant) marques[avant - 1].focus({ preventScroll: true });
     }
     relancer();
   }

@@ -114,7 +114,11 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 #fenD,#vbD{transform-origin:right center}
 .v-point{cursor:pointer}
 .v-pt{fill:var(--ardoise);transition:fill .2s}
-.v-point:hover .v-pt{fill:#c9a14a}
+.v-point:hover .v-pt,.v-point.allume .v-pt,.v-point:focus-visible .v-pt{fill:#c9a14a}
+.v-point.allume .v-pt{r:12}
+.v-point:focus{outline:none}
+.v-pt{transition:fill .2s,r .2s}
+.v-aide{margin:1rem 0 1.6rem;color:var(--texte-2);font-size:.95rem}
 #points{transition:opacity .4s}
 .en-visite #points{opacity:0;pointer-events:none}
 .v-carte{box-sizing:border-box;position:absolute;left:clamp(16px,3vw,32px);top:50%;width:min(24rem,calc(100% - 32px));background:#fff;border-radius:22px;padding:1.5rem 1.6rem 1.2rem;box-shadow:0 24px 60px -24px rgba(51,69,77,.45);opacity:0;transform:translateY(-44%);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}

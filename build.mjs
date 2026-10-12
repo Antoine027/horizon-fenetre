@@ -223,13 +223,10 @@ function formulaire(source) {
 <div><label for="${id("nom")}">Nom et prénom</label><input id="${id("nom")}" name="nom" autocomplete="name" required maxlength="120"></div>
 <div><label for="${id("tel")}">Téléphone</label><input id="${id("tel")}" name="telephone" type="tel" autocomplete="tel" required maxlength="30"></div>
 <div><label for="${id("mail")}">E-mail</label><input id="${id("mail")}" name="email" type="email" autocomplete="email" required maxlength="160"></div>
-<div><label for="${id("cp")}">Commune du chantier</label><input id="${id("cp")}" name="commune" autocomplete="address-level2" required maxlength="120"></div>
-<fieldset class="plein"><legend>Vous êtes</legend><div class="choix"><label><input type="radio" name="profil" value="Particulier" checked> Particulier</label><label><input type="radio" name="profil" value="Professionnel"> Professionnel</label></div></fieldset>
-<div class="plein"><label for="${id("prod")}">Votre projet concerne</label><select id="${id("prod")}" name="produit">${options.map((o) => `<option>${o}</option>`).join("")}</select></div>
-<fieldset class="plein"><legend>Pour la pose</legend><div class="choix"><label><input type="radio" name="pose" value="Pose par l'installateur partenaire" checked> Je souhaite un devis de pose</label><label><input type="radio" name="pose" value="Fourniture seule"> Fourniture seule</label></div></fieldset>
-<div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Nombre de menuiseries, dimensions approximatives, matériau souhaité, délai…"></textarea></div>
+<div><label for="${id("prod")}">Votre projet concerne</label><select id="${id("prod")}" name="produit">${options.map((o) => `<option>${o}</option>`).join("")}</select></div>
+<div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
-<p class="note">Vos données servent uniquement à répondre à votre demande et à établir un devis. Si vous demandez un devis de pose, elles sont aussi transmises à notre installateur partenaire pour qu'il l'établisse. Elles sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer à tout moment : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
+<p class="note">Vos données servent uniquement à répondre à votre demande et à établir un devis. Si vous souhaitez la pose, elles sont transmises à notre installateur partenaire pour qu'il établisse son devis. Elles sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer à tout moment : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
 </form>`;
 }
 
@@ -268,6 +265,9 @@ const parcours = `<ol class="parcours">
 
 // ===== Accueil =====
 {
+  const ETAPES = { fenetres: 1, moustiquaires: 2, volets: 3, "baies-vitrees": 4, "brise-soleil-orientables": 5, "portes-d-entree": 6, "portes-de-garage": 7, "portails-clotures": 8 };
+  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
+  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}"${ETAPES[p.slug] ? ` data-etape="${ETAPES[p.slug]}"` : ""}>${photo(p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
     ["Qui pose les menuiseries ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis et sa propre facture. Vous restez libre de faire poser par l'artisan de votre choix."],
@@ -288,13 +288,13 @@ const parcours = `<ol class="parcours">
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>Horizon Fenêtre vous conseille, mesure et fournit. La pose est réalisée par notre installateur partenaire, avec qui on organise la livraison.</p></div>
 ${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Une maison, toutes nos menuiseries</h2><p>Choisissez une menuiserie pour la voir de près : ce qu'elle apporte, les options, et sa page détaillée.</p></div>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Une maison, toutes nos menuiseries</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure. Explorez la maison ou parcourez la gamme.</p></div>
 <div class="visite" id="visite"><div class="v-scene">
 ${VISITE_SVG}
 <article class="v-carte" id="carte" aria-live="polite"><button class="v-fermer" id="vFermer" type="button" aria-label="Fermer la visite">×</button><p class="v-num" id="cNum"></p><h2 id="cTitre" tabindex="-1"></h2><p class="v-txt" id="cTexte"></p><div class="v-var" id="cVar" role="group" aria-label="Type de volet" hidden><button type="button" data-v="roulant" aria-pressed="true">Volet roulant</button><button type="button" data-v="battant" aria-pressed="false">Volet battant</button></div><ul class="v-tags" id="cTags"></ul><a class="v-lien" id="cLien" href="/fenetres/">Voir la gamme →</a><div class="v-nav"><button type="button" id="vPrec">← Précédent</button><button type="button" id="vSuiv" class="suiv">Suivant →</button></div></article>
 </div></div>
-<ul class="v-rail" id="rail" aria-label="Nos menuiseries"></ul>
-<p class="v-plus">Aussi dans la gamme : <a href="/portes-interieures/">portes intérieures sur mesure</a>.</p>
+<p class="v-aide">Cliquez sur un repère de la façade pour voir la menuiserie de près, ou ouvrez directement sa fiche ci-dessous.</p>
+<div class="bento">${bento}</div>
 </div></section><script>${VISITE_JS}</script>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
@@ -473,18 +473,18 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
   const curl = "/confidentialite/"; const citems = [{ url: "/", t: "Accueil" }, { url: curl, t: "Politique de confidentialité" }];
   const cbody = `${bandeauSimple(citems, "Politique de confidentialité", "Comment Horizon Fenêtre traite vos données personnelles, conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.")}<div class="wrap corps"><article class="prose">
 <h2>Responsable du traitement</h2><p>ESCOM HABITAT, SARL, nom commercial Horizon Fenêtre, ${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}. SIRET 106 406 465 00018. Contact pour toute question sur vos données : <a href="mailto:${MAIL}">${MAIL}</a>.</p>
-<h2>Données collectées</h2><p>Uniquement celles que vous saisissez dans le formulaire de contact : nom et prénom, téléphone, e-mail, commune du chantier, profil (particulier ou professionnel), produit concerné, souhait de pose et description du projet. Nous ne collectons aucune donnée sensible et vous demandons de ne pas en indiquer dans le message.</p>
+<h2>Données collectées</h2><p>Uniquement celles que vous saisissez dans le formulaire de contact : nom et prénom, téléphone, e-mail, produit concerné et description du projet. Nous ne collectons aucune donnée sensible et vous demandons de ne pas en indiquer dans le message.</p>
 <h2>Finalités et bases légales</h2>
 <ul>
 <li><strong>Répondre à votre demande, organiser la visite et établir un devis de fourniture</strong> : mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
-<li><strong>Transmettre votre demande à notre installateur partenaire</strong> pour qu'il établisse un devis de pose : uniquement si vous demandez un devis de pose dans le formulaire, au titre des mesures précontractuelles prises à votre demande (article 6.1.b). Si vous choisissez « Fourniture seule », rien ne lui est transmis.</li>
+<li><strong>Transmettre votre demande à notre installateur partenaire</strong> pour qu'il établisse un devis de pose : uniquement si vous souhaitez la pose, au titre des mesures précontractuelles prises à votre demande (article 6.1.b). Si vous achetez la fourniture seule, rien ne lui est transmis.</li>
 <li><strong>Gérer la relation commerciale</strong> si vous devenez client (exécution du contrat, obligations comptables et fiscales).</li>
 </ul>
 <p>Vos données ne sont jamais vendues, louées ni utilisées à des fins de prospection par des tiers. Nous ne faisons aucun profilage ni décision automatisée.</p>
 <h2>Destinataires</h2>
 <ul>
 <li>ESCOM HABITAT (Horizon Fenêtre), seul destinataire de votre demande.</li>
-<li>Notre installateur partenaire, uniquement si vous demandez un devis de pose.</li>
+<li>Notre installateur partenaire, uniquement si vous souhaitez la pose.</li>
 <li>Nos sous-traitants techniques, tenus par contrat à la confidentialité : l'hébergeur du site et fournisseur des statistiques de visite, Vercel Inc. (États-Unis), et notre prestataire d'envoi d'e-mails, Brevo (Sendinblue SAS, France, données hébergées dans l'Union européenne).</li>
 </ul>
 <h2>Transferts hors de l'Union européenne</h2><p>L'hébergeur Vercel Inc. est établi aux États-Unis. Il adhère au Data Privacy Framework UE–États-Unis et propose des clauses contractuelles types de la Commission européenne. Les fonctions du site qui reçoivent le formulaire sont exécutées dans la région de Paris. Le site ne charge aucune ressource depuis un autre domaine : les polices et les images sont servies par le site lui-même.</p>
