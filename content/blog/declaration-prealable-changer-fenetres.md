@@ -2,6 +2,7 @@
 title: Changer ses fenêtres : faut-il une déclaration préalable ?
 h1: Changer ses fenêtres ou sa porte : faut-il une déclaration préalable ?
 description: Remplacement à l'identique, changement de couleur ou de matériau, secteur protégé, copropriété : quand déposer une déclaration préalable pour vos menuiseries.
+photo: facadeVolets
 rubrique: Aides et réglementation
 date: 2026-10-12
 motcle: déclaration préalable fenêtre

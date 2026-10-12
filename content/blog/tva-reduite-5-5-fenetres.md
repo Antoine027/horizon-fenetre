@@ -2,6 +2,7 @@
 title: TVA 5,5 % fenêtres : conditions et seuils à connaître
 h1: TVA à 5,5 % sur les fenêtres : les conditions, sans jargon
 description: Logement de plus de 2 ans, Uw, Sw, fourniture et pose par une entreprise : les conditions pour payer vos fenêtres, volets et porte d'entrée avec 5,5 % de TVA.
+photo: salon
 rubrique: Aides et réglementation
 date: 2026-10-12
 motcle: TVA 5,5 fenêtres
@@ -50,7 +51,7 @@ Dans un logement de plus de deux ans, des travaux d'amélioration qui ne remplis
 
 ## Les aides en plus de la TVA
 
-La TVA réduite se cumule avec d'autres dispositifs quand ils sont ouverts aux menuiseries, mais leurs règles changent régulièrement. Avant de signer, le plus sûr est de vérifier votre situation sur le site officiel [France Rénov'](https://france-renov.gouv.fr/) ou auprès d'un conseiller de l'Espace Conseil France Rénov' de la Métropole de Lyon.
+La TVA réduite se cumule avec d'autres dispositifs, mais leurs règles ont beaucoup changé en 2026 : depuis le 1er septembre, les fenêtres seules ne sont plus aidées par MaPrimeRénov' « par geste » dans la plupart des logements. Nous faisons le point complet dans notre article [aides pour changer ses fenêtres en 2026](/blog/aides-changement-fenetres-2026/). Avant de signer, vérifiez votre situation sur le site officiel [France Rénov'](https://france-renov.gouv.fr/).
 
 ## En résumé
 

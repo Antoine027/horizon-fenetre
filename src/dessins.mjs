@@ -30,6 +30,18 @@ export const dessins = {
      <path d="M29 30h62M29 45h62M29 60h62M29 75h62M29 90h62M44 15v90M60 15v90M76 15v90" stroke-width="1"/>
      <path d="M29 15h62v10H29z" fill="currentColor" fill-opacity=".15"/>`,
     "Dessin d'une moustiquaire en cadre"),
+  "baies-vitrees": s(
+    `<rect x="6" y="18" width="108" height="86"/><rect x="12" y="24" width="50" height="74"/><rect x="58" y="24" width="50" height="74"/>
+     <path d="M17 30 30 43M17 38 24 45M63 30 76 43M63 38 70 45"/><path d="M54 56v12M66 56v12" stroke-width="3.4"/><path d="M2 104h116"/>`,
+    "Dessin d'une baie vitrée coulissante deux vantaux"),
+  "brise-soleil-orientables": s(
+    `<rect x="14" y="8" width="92" height="12" rx="2"/><path d="M20 20v92M100 20v92"/>
+     <path d="M22 28l76 6M22 38l76 6M22 48l76 6M22 58l76 6M22 68l76 6M22 78l76 6M22 88l76 6"/><path d="M8 112h104"/>`,
+    "Dessin d'un brise-soleil orientable à lames inclinées"),
+  "portes-interieures": s(
+    `<path d="M30 112V8h60v104"/><rect x="36" y="14" width="48" height="98"/>
+     <rect x="44" y="24" width="32" height="34"/><rect x="44" y="66" width="32" height="36"/><circle cx="76" cy="62" r="2.5" fill="currentColor"/><path d="M14 112h92"/>`,
+    "Dessin d'une porte intérieure à panneaux"),
   professionnels: s(
     `<rect x="18" y="10" width="84" height="102"/><path d="M18 30h84M18 52h84M18 74h84"/>
      <path d="M28 16h14v8H28zM53 16h14v8H53zM78 16h14v8H78zM28 38h14v8H28zM53 38h14v8H53zM78 38h14v8H78zM28 60h14v8H28zM53 60h14v8H53zM78 60h14v8H78z"/>

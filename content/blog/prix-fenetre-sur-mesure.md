@@ -2,6 +2,7 @@
 title: Prix d'une fenêtre sur mesure : ce qui fait varier le devis
 h1: Combien coûte une fenêtre sur mesure posée ? Ce qui fait varier le prix
 description: Matériau, dimensions, vitrage, type de pose, accès : les 8 facteurs qui font varier le prix d'une fenêtre sur mesure posée, et comment comparer deux devis.
+photo: mesureBaie
 rubrique: Fenêtres
 date: 2026-10-12
 motcle: prix fenêtre sur mesure

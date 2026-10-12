@@ -1,7 +1,8 @@
 ---
-title: Buée sur les fenêtres : intérieur, extérieur, entre les vitres
+title: Buée sur les fenêtres : intérieur, extérieur ou entre vitres
 h1: Buée et condensation sur les fenêtres : ce qu'elle révèle
 description: Condensation à l'intérieur, à l'extérieur ou entre les deux vitres d'un double vitrage : causes, gravité et solutions, expliquées par un menuisier.
+photo: fenNoire
 rubrique: Fenêtres
 date: 2026-10-12
 motcle: condensation fenêtre double vitrage

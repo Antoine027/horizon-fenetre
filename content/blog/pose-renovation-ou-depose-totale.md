@@ -1,7 +1,8 @@
 ---
-title: Pose en rénovation ou dépose totale : quelle pose de fenêtre ?
+title: Pose en rénovation ou dépose totale : laquelle choisir ?
 h1: Changer ses fenêtres : pose en rénovation ou dépose totale ?
 description: Garder l'ancien dormant ou tout retirer ? Avantages, limites et coût des deux méthodes de pose de fenêtre, expliqués par un poseur de la région lyonnaise.
+photo: pose
 rubrique: Fenêtres
 date: 2026-10-12
 motcle: pose en rénovation ou dépose totale

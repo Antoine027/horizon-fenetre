@@ -4,6 +4,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins, ville } from "./src/dessins.mjs";
+import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
+const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
+const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
 const SITE = "https://horizonfenetre.com";
 const OUT = "dist";
@@ -37,10 +40,11 @@ const ENTREPRISE = {
   areaServed: COMMUNES.map((c) => ({ "@type": "City", name: c })),
   vatID: "FR70106406465",
   taxID: "10640646500018",
-  knowsAbout: ["Fenêtres PVC", "Fenêtres aluminium", "Fenêtres bois", "Volets roulants", "Volets battants", "Portes de garage sectionnelles", "Portes d'entrée", "Portails", "Clôtures", "Moustiquaires"],
+  knowsAbout: ["Baies vitrées", "Brise-soleil orientables", "Portes intérieures", "Fenêtres PVC", "Fenêtres aluminium", "Fenêtres bois", "Volets roulants", "Volets battants", "Portes de garage sectionnelles", "Portes d'entrée", "Portails", "Clôtures", "Moustiquaires"],
 };
 
 // ---------- Blog : lecture des articles ----------
+const UNE = ["aides-changement-fenetres-2026", "prix-fenetre-sur-mesure", "fenetre-pvc-aluminium-ou-bois", "tva-reduite-5-5-fenetres", "baie-vitree-coulissante-ou-galandage", "bso-ou-volet-roulant"];
 function lireArticles() {
   return fs.readdirSync("content/blog").filter((f) => f.endsWith(".md")).map((f) => {
     const brut = fs.readFileSync(path.join("content/blog", f), "utf8");
@@ -51,7 +55,7 @@ function lireArticles() {
     meta.sources = (meta.sources || "").split(" ; ").filter(Boolean).map((s) => { const [label, url] = s.split("|"); return { label, url }; })
       .filter((s) => (vues.has(s.url) ? false : vues.add(s.url)));
     return { slug: f.replace(/\.md$/, ""), ...meta, md: m[2] };
-  }).sort((a, b) => (a.date < b.date ? 1 : -1));
+  }).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (UNE.indexOf(a.slug) + 1 || 99) - (UNE.indexOf(b.slug) + 1 || 99)));
 }
 
 // ---------- Mini-Markdown ----------
@@ -92,6 +96,10 @@ function markdown(md) {
 // Pour chaque cible : expressions qui déclenchent un lien. Un lien par cible et par page, jamais vers soi-même,
 // jamais dans un titre ni dans un lien existant, plafonné pour rester naturel.
 const CIBLES = [
+  { url: "/blog/aides-changement-fenetres-2026/", mots: ["MaPrimeRénov'", "éco-PTZ"] },
+  { url: "/blog/bso-ou-volet-roulant/", mots: ["confort d'été", "protection solaire"] },
+  { url: "/blog/porte-entree-alu-ou-pvc/", mots: ["ouvrant caché", "ouvrants cachés"] },
+  { url: "/blog/baie-vitree-coulissante-ou-galandage/", mots: ["baie à galandage"] },
   { url: "/blog/tva-reduite-5-5-fenetres/", mots: ["TVA à 5,5 %", "TVA réduite", "taux réduit", "5,5 %", "Uw"] },
   { url: "/blog/declaration-prealable-changer-fenetres/", mots: ["déclaration préalable", "architecte des Bâtiments de France", "PLU", "règlement de copropriété", "mairie"] },
   { url: "/blog/pose-renovation-ou-depose-totale/", mots: ["dépose totale", "pose en rénovation", "ancien dormant", "dormant", "calfeutrement"] },
@@ -102,8 +110,11 @@ const CIBLES = [
   { url: "/blog/porte-de-garage-sectionnelle-ou-laterale/", mots: ["sectionnelle latérale", "sectionnelle plafond", "retombée de linteau", "porte basculante", "basculante"] },
   { url: "/blog/portail-battant-ou-coulissant/", mots: ["portail coulissant", "portail battant", "refoulement", "autoportant"] },
   { url: "/blog/moustiquaire-moustique-tigre-lyon/", mots: ["moustique tigre", "moustiques"] },
-  { url: "/blog/prix-fenetre-sur-mesure/", mots: ["comparer deux devis", "prix d'une fenêtre", "fait varier le prix", "devis détaillé", "budget"] },
-  { url: "/fenetres/", mots: ["fenêtres sur mesure", "fenêtre sur mesure", "double vitrage", "triple vitrage", "oscillo-battant", "baies coulissantes", "baie coulissante", "fenêtres"] },
+  { url: "/blog/prix-fenetre-sur-mesure/", mots: ["comparer deux devis", "prix d'une fenêtre", "fait varier le prix", "devis détaillé"] },
+  { url: "/baies-vitrees/", mots: ["baies vitrées", "baie vitrée", "baies coulissantes", "baie coulissante", "galandage"] },
+  { url: "/brise-soleil-orientables/", mots: ["brise-soleil orientables", "brise-soleil orientable", "brise-soleil", "BSO"] },
+  { url: "/portes-interieures/", mots: ["portes intérieures", "porte intérieure", "bloc-porte"] },
+  { url: "/fenetres/", mots: ["fenêtres sur mesure", "fenêtre sur mesure", "double vitrage", "triple vitrage", "oscillo-battant", "fenêtres"] },
   { url: "/volets/", mots: ["volets roulants", "volet roulant", "volets battants", "volet battant", "volets"] },
   { url: "/portes-de-garage/", mots: ["portes de garage", "porte de garage", "garage"] },
   { url: "/portes-d-entree/", mots: ["portes d'entrée", "porte d'entrée"] },
@@ -142,27 +153,28 @@ function mailler(html, selfUrl, max = 9) {
   });
 }
 
+const vignette = (a, grand = false) => (a.photo ? `<span class="vignette">${photo(a.photo, { ratio: [16, 10], largeurs: grand ? [480, 800, 1200] : [400, 640], sizes: grand ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 600px) 100vw, 33vw" })}</span>` : "");
 // ---------- Gabarit ----------
-const COURT = { "portes-de-garage": "Garage", "portails-clotures": "Portails" };
-const NAV = [...produits.map((p) => ({ url: `/${p.slug}/`, t: COURT[p.slug] || p.nav })), { url: "/professionnels/", t: "Pros" }, { url: "/blog/", t: "Conseils" }];
 function entete(url, accueil) {
   return `<header class="top${accueil ? "" : " clair"}"><div class="wrap">
 <a class="marque" href="/"><img src="/assets/img/icon-light-52.webp" srcset="/assets/img/icon-light-52.webp 1x, /assets/img/icon-light-104.webp 2x" width="52" height="39" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav" aria-label="Navigation principale"><ul>${NAV.map((n) => `<li><a href="${n.url}"${url.startsWith(n.url) ? ' aria-current="page"' : ""}>${n.t}</a></li>`).join("")}</ul>
+<nav class="nav" id="nav" aria-label="Navigation principale"><ul>
+<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${PRODUITS.map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}>${p.nav}</a></li>`).join("")}</ul></details></li>
+${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/", "Contact"]].map(([u, t]) => `<li><a href="${u}"${url.startsWith(u) ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}</ul>
 <a class="btn btn-or" href="/contact/">Demander un devis</a></nav></div></header>`;
 }
 const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <div><a class="marque" href="/"><img src="/assets/img/icon-light-52.webp" srcset="/assets/img/icon-light-52.webp 1x, /assets/img/icon-light-104.webp 2x" width="52" height="39" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <p>Menuiserie sur mesure, fourniture et pose.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
-<div><h2>Nos produits</h2><ul>${produits.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
+<div><h2>Nos produits</h2><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
 <div><h2>Horizon Fenêtre</h2><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/mentions-legales/">Mentions légales</a></li></ul></div>
 <div><h2>Guides populaires</h2><ul><li><a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, alu ou bois ?</a></li><li><a href="/blog/tva-reduite-5-5-fenetres/">TVA à 5,5 %</a></li><li><a href="/blog/prix-fenetre-sur-mesure/">Prix d'une fenêtre</a></li><li><a href="/blog/declaration-prealable-changer-fenetres/">Déclaration préalable</a></li></ul></div>
 </div><div class="bas"><span>© ${new Date().getFullYear()} Horizon Fenêtre, une marque d'ESCOM HABITAT SARL</span><span>Interventions à Lyon, dans le Rhône et l'Ain</span></div></div></footer>
 <div class="barre-mobile"><a href="tel:${TEL_LIEN}">${icoTel}Appeler</a><a href="/contact/">Devis gratuit</a></div>`;
 
-const JS = `<script>(function(){var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}})();</script>`;
+const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}})();</script>`;
 
 function page({ url, title, description, body, schemas = [], accueil = false, noindex = false, ogType = "website" }) {
   const canon = SITE + url;
@@ -171,7 +183,7 @@ function page({ url, title, description, body, schemas = [], accueil = false, no
 <link rel="canonical" href="${canon}">${noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'}
 <meta property="og:locale" content="fr_FR"><meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Horizon Fenêtre"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canon}"><meta property="og:image" content="${SITE}/assets/img/og-horizon-fenetre.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#25313a"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
-<link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin><link rel="preconnect" href="https://images.unsplash.com">
 <style>${css}</style>${schemas.map(ld).join("")}</head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>${entete(url, accueil)}<main id="contenu">${body}</main>${pied()}${JS}</body></html>`;
 }
@@ -208,9 +220,7 @@ const plan = [];
 
 // ===== Accueil =====
 {
-  const ordreCat = ["fenetres", "volets", "portes-de-garage", "portes-d-entree", "portails-clotures", "moustiquaires"];
-  const cat = ordreCat.map((s, i) => { const p = produits.find((x) => x.slug === s); return `<a href="/${p.slug}/"${i === 0 ? ' class="grand"' : ""}>${dessins[p.slug]}<h3>${p.nav}</h3><p>${p.court}</p><span class="voir">Voir les ${p.nav.toLowerCase()}</span></a>`; }).join("")
-    + `<a href="/professionnels/">${dessins.professionnels}<h3>Professionnels</h3><p>Syndics, bailleurs, architectes, commerces : chiffrage sur plans.</p><span class="voir">Offre pros</span></a>`;
+  const cat = PRODUITS.map((p) => `<a href="/${p.slug}/"><span class="vignette">${photo(p.photo, { ratio: [4, 3], largeurs: [400, 640, 900], sizes: "(max-width: 600px) 100vw, (max-width: 1020px) 50vw, 33vw" })}</span><h3>${p.nav}</h3><p>${p.court}</p></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils vraiment gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé, sans engagement."],
     ["Dans quel secteur intervenez-vous ?", "À Lyon et dans toute la métropole, ainsi que dans le sud de l'Ain (Côtière, Dombes) et le Val de Saône. Pour un chantier plus éloigné, appelez-nous."],
@@ -218,19 +228,19 @@ const plan = [];
     ["Pouvez-vous fournir sans poser ?", "Oui, en fourniture seule pour les professionnels et les particuliers qui ont leur propre poseur."],
     ["Quel taux de TVA s'applique ?", "Dans un logement de plus de deux ans, 5,5 % pour les menuiseries performantes fournies et posées, 10 % pour les autres travaux d'amélioration, 20 % en neuf. Le taux est précisé sur chaque ligne du devis."],
   ];
-  const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/"><span class="rub">${a.rubrique}</span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
+  const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}</span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
 <section class="hero"><div class="wrap hero-grid">
 <div><h1><small>Menuiserie sur mesure à Lyon et Rillieux-la-Pape</small><span class="l">Mesuré chez vous.</span><span class="l">Fabriqué à vos cotes.</span><span class="l">Posé par nous.</span></h1>
-<p class="chapo">Fenêtres PVC, aluminium et bois, volets, portes de garage, portes d'entrée, portails et moustiquaires. Pour les particuliers comme pour les professionnels, de la prise de cotes à la dernière vis.</p>
+<p class="chapo">Fenêtres PVC, aluminium et bois, baies vitrées, volets et brise-soleil, portes d'entrée, de garage et intérieures, portails et moustiquaires. Pour les particuliers comme pour les professionnels, de la prise de cotes à la dernière vis.</p>
 <div class="actions"><a class="btn btn-or" href="/contact/">Demander une visite gratuite</a><a class="btn btn-ligne" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
-<ul class="hero-gammes" aria-label="Nos gammes">${produits.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
+<ul class="hero-gammes" aria-label="Nos gammes">${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
 <div class="scene" aria-hidden="true"><div class="halo"></div><div class="cadre"><div class="baie"><div class="ciel"></div><div class="soleil"></div>${ville}
 </div><div class="battants"><div class="vantail g"><div class="chassis"></div></div><div class="vantail d"><div class="chassis"></div><span class="poignee"></span></div></div></div><div class="appui"></div></div>
 </div></section>
 
-<section class="sec" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Sept familles de produits, toutes fabriquées sur mesure. Un seul interlocuteur, du premier rendez-vous à la réception du chantier.</p></div>
-<div class="cat">${cat}</div></div></section>
+<section class="sec" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure, du vitrage de la fenêtre à la lame du portail. Un seul interlocuteur, du premier rendez-vous à la réception du chantier.</p></div>
+<div class="cat3">${cat}</div></div></section>
 
 <section class="sec brume"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
 <div class="tab-scroll"><table class="mat"><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">PVC</th><th scope="col">Aluminium</th><th scope="col">Bois</th></tr></thead><tbody>
@@ -242,6 +252,7 @@ const plan = [];
 </tbody><caption>Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</caption></table></div></div></section>
 
 <section class="sec sombre"><div class="wrap"><div class="tete"><h2>Comment se passe un chantier</h2><p>Cinq étapes, avec la même personne de bout en bout.</p></div>
+<div class="bande-photos"><figure>${photo("mesureBaie", { ratio: [3, 4], largeurs: [360, 560], sizes: "(max-width: 760px) 50vw, 25vw", crop: "center" })}<figcaption>La prise de cotes, au millimètre.</figcaption></figure><figure class="large">${photo("pose", { ratio: [16, 10], largeurs: [560, 900, 1200], sizes: "(max-width: 760px) 100vw, 50vw" })}<figcaption>La pose : fixation, calage, calfeutrement.</figcaption></figure><figure>${photo("mesure", { ratio: [3, 4], largeurs: [360, 560], sizes: "(max-width: 760px) 50vw, 25vw", crop: "center" })}<figcaption>Le contrôle avant la réception.</figcaption></figure></div>
 <ol class="etapes">
 <li><h3>Visite et prise de cotes</h3><p>On mesure chaque ouverture, on regarde l'état des dormants, l'accès et les contraintes de la façade.</p></li>
 <li><h3>Devis détaillé</h3><p>Chaque produit est décrit ligne par ligne : dimensions, matériau, vitrage, performances, type de pose, TVA.</p></li>
@@ -251,10 +262,10 @@ const plan = [];
 </ol></div></section>
 
 <section class="sec"><div class="wrap duo">
-<div><h2>Particuliers</h2><p>Maison ou appartement, rénovation d'une seule fenêtre ou de toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
+<div><span class="vignette">${photo("salonJardin", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Particuliers</h2><p>Maison ou appartement, rénovation d'une seule fenêtre ou de toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
 <ul><li>Visite et devis gratuits</li><li>TVA à 5,5 % appliquée quand votre logement y a droit</li><li>Aide pour la déclaration préalable en mairie</li><li>Chantier propre, anciennes menuiseries évacuées</li></ul>
 <a class="btn btn-sombre" href="/contact/">Demander une visite</a></div>
-<div><h2>Professionnels</h2><p>Syndics, bailleurs, architectes, maîtres d'œuvre, agences, commerces et artisans du bâtiment.</p>
+<div><span class="vignette">${photo("immeuble", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Professionnels</h2><p>Syndics, bailleurs, architectes, maîtres d'œuvre, agences, commerces et artisans du bâtiment.</p>
 <ul><li>Chiffrage rapide sur plans ou après visite</li><li>Fourniture seule ou fourniture et pose</li><li>Planning tenu en site occupé</li><li>Un interlocuteur unique sur tout le chantier</li></ul>
 <a class="btn btn-or" href="/professionnels/">Voir l'offre pros</a></div>
 </div></section>
@@ -268,7 +279,7 @@ const plan = [];
 <section class="sec brume"><div class="wrap"><div class="tete"><h2>Questions fréquentes</h2></div>${faqHtml(faq)}</div></section>
 
 <section class="sec" id="devis"><div class="wrap zone"><div><h2>Demandez votre visite gratuite</h2><p>Décrivez-nous votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes.</p><p>Vous préférez téléphoner ?<br><a href="tel:${TEL_LIEN}" style="font-size:1.4rem;font-weight:800">${TEL}</a></p></div>${formulaire("accueil")}</div></section>`;
-  ecrire("/", page({ url: "/", accueil: true, title: "Menuiserie sur mesure à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, volets, portes de garage, portes d'entrée, portails et moustiquaires sur mesure. Fourniture et pose à Lyon et Rillieux-la-Pape.", body,
+  ecrire("/", page({ url: "/", accueil: true, title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes de garage, d'entrée et intérieures, portails. Fourniture et pose à Lyon et Rillieux-la-Pape.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
   plan.push({ url: "/", prio: "1.0" });
 }
@@ -279,8 +290,9 @@ for (const p of produits) {
   const items = [{ url: "/", t: "Accueil" }, { url, t: p.nav }];
   const lies = articles.filter((a) => a.md.includes(`](/${p.slug}/)`)).slice(0, 4);
   const voisins = produits.filter((x) => x.slug !== p.slug).slice(0, 3);
-  const contenu = mailler(p.contenu, url, 5);
-  const body = `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille"><div><h1>${p.h1}</h1><p>${p.chapo}</p></div>${dessins[p.slug]}</div></div></section>
+  const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [400, 640, 900], sizes: "(max-width: 760px) 100vw, 360px" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
+  const contenu = mailler(p.contenu, url, 6).replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${galerie}`);
+  const body = `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille photo"><div><h1>${p.h1}</h1><p>${p.chapo}</p></div><div class="cadre-photo">${photo(p.photo, { eager: true, ratio: [4, 3], largeurs: [480, 720, 960], sizes: "(max-width: 700px) 100vw, 42vw" })}</div></div></div></section>
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Visite et devis gratuits</h2><p>On vient prendre les cotes chez vous et on vous remet un devis détaillé.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-or" href="/contact/">Demander un devis</a></div>
 ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
@@ -321,7 +333,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <p>Fiches techniques, procès-verbaux de performance, attestations de TVA à faire signer par vos clients, éléments pour les dossiers de déclaration préalable.</p>
 <h2>Nos produits</h2>
 <p>Toute notre gamme est disponible pour les professionnels : <a href="/fenetres/">fenêtres PVC, aluminium et bois</a>, <a href="/volets/">volets roulants et battants</a>, <a href="/portes-de-garage/">portes de garage</a>, <a href="/portes-d-entree/">portes d'entrée</a>, <a href="/portails-clotures/">portails et clôtures</a> et <a href="/moustiquaires/">moustiquaires</a>.</p>`, url, 4);
-  const body = `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille"><div><h1>${pros.h1}</h1><p>${pros.chapo}</p></div>${dessins.professionnels}</div></div></section>
+  const body = `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille photo"><div><h1>${pros.h1}</h1><p>${pros.chapo}</p></div><div class="cadre-photo">${photo("immeuble", { eager: true, ratio: [4, 3], largeurs: [480, 720, 960], sizes: "(max-width: 700px) 100vw, 42vw" })}</div></div></div></section>
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-or" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;
   ecrire(url, page({ url, title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items), faqLd(faq)] }));
@@ -331,10 +343,10 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 // ===== Blog =====
 {
   const url = "/blog/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Conseils" }];
-  const cartes = articles.map((a, i) => `<a class="billet${i === 0 ? " une" : ""}" href="/blog/${a.slug}/"><div><span class="rub">${a.rubrique}</span><h3>${a.h1}</h3></div><div><p>${a.resume}</p><span class="meta">${dateFr(a.date)}</span></div></a>`).join("");
+  const cartes = articles.map((a, i) => `<a class="billet${i === 0 ? " une" : ""}" href="/blog/${a.slug}/">${vignette(a, i === 0)}<div><span class="rub">${a.rubrique}</span><h3>${a.h1}</h3></div><div><p>${a.resume}</p><span class="meta">${dateFr(a.date)}</span></div></a>`).join("");
   const body = `<section class="bandeau"><div class="wrap">${fil(items)}<h1>Conseils et guides menuiserie</h1><p>Choisir ses fenêtres, comprendre un devis, connaître les règles et les aides : ce qu'on explique tous les jours en visite, par écrit.</p></div></section>
 <section class="sec"><div class="wrap"><div class="billets">${cartes}</div></div></section>${appel()}`;
-  ecrire(url, page({ url, title: "Conseils fenêtres, volets, portes et portails | Blog Horizon Fenêtre", description: "Guides pratiques pour choisir ses fenêtres, volets, portes de garage et portails : matériaux, pose, TVA à 5,5 %, déclaration préalable, prix.", body,
+  ecrire(url, page({ url, title: "Conseils fenêtres, volets, portes, portails | Horizon Fenêtre", description: "Guides pratiques pour choisir ses fenêtres, volets, portes de garage et portails : matériaux, pose, TVA à 5,5 %, déclaration préalable, prix.", body,
     schemas: [{ "@context": "https://schema.org", "@type": "Blog", name: "Conseils Horizon Fenêtre", url: SITE + url, publisher: { "@id": SITE + "/#entreprise" }, blogPost: articles.map((a) => ({ "@type": "BlogPosting", headline: a.h1, url: `${SITE}/blog/${a.slug}/`, datePublished: a.date })) }, filLd(items)] }));
   plan.push({ url, prio: "0.7" });
 
@@ -348,6 +360,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
     const produitLie = produits.find((p) => a.md.includes(`](/${p.slug}/)`));
     const body = `<section class="bandeau"><div class="wrap">${fil(it)}<h1>${a.h1}</h1><p>${a.resume}</p><p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>, ${Math.max(3, Math.round(mots / 220))} min de lecture</p></div></section>
 <div class="wrap corps"><article class="prose">
+${a.photo ? `<figure class="une-photo">${photo(a.photo, { eager: true, ratio: [16, 9], largeurs: [640, 960, 1280], sizes: "(max-width: 900px) 100vw, 700px" })}</figure>` : ""}
 ${toc.length > 2 ? `<nav class="sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.t}</a></li>`).join("")}</ol></nav>` : ""}
 ${corps}
 ${a.sources.length ? `<div class="sources"><h2>Sources et liens utiles</h2><ul>${a.sources.map((s) => `<li><a href="${s.url}" class="ext" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul></div>` : ""}
@@ -355,7 +368,7 @@ ${a.sources.length ? `<div class="sources"><h2>Sources et liens utiles</h2><ul>$
 <aside class="cote"><div class="boite fonce"><h2>Un projet en tête ?</h2><p>Visite, prise de cotes et devis détaillé gratuits.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-or" href="/contact/">Demander un devis</a></div>
 ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produitLie.slug}/">${produitLie.h1}</a></li></ul></div>` : ""}
 <div class="boite"><h2>À lire aussi</h2><ul>${proches.map((x) => `<li><a href="/blog/${x.slug}/">${x.h1}</a></li>`).join("")}</ul></div></aside></div>
-<section class="sec brume" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/"><span class="rub">${x.rubrique}</span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
+<section class="sec brume" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}</span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
     ecrire(aurl, page({ url: aurl, ogType: "article", title: a.title, description: a.description, body, schemas: [
       { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: a.date, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: SITE + "/assets/img/og-horizon-fenetre.jpg", author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
       filLd(it)] }));
@@ -385,7 +398,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <h2>Données personnelles</h2><p>Les informations envoyées via le formulaire de contact (nom, téléphone, e-mail, commune, description du projet) servent uniquement à répondre à votre demande et à établir un devis. Elles ne sont ni vendues ni cédées. Elles sont conservées le temps nécessaire au traitement de votre demande puis, sans suite commerciale, supprimées dans un délai de trois ans. Le formulaire est transmis par le service FormSubmit.</p>
 <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à <a href="mailto:${MAIL}">${MAIL}</a>. Vous pouvez aussi saisir la <a href="https://www.cnil.fr" class="ext" target="_blank" rel="noopener">CNIL</a>.</p>
 <h2>Cookies</h2><p>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience.</p>
-<h2>Propriété intellectuelle</h2><p>Les textes, dessins et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite.</p></article></div>`;
+<h2>Propriété intellectuelle et crédits photo</h2><p>Les textes, dessins et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite.</p><p>Les photographies d'illustration proviennent de la banque d'images <a href="https://unsplash.com" class="ext" target="_blank" rel="noopener">Unsplash</a> (licence Unsplash) : ${CREDITS.join(", ")}. Elles illustrent les types de produits proposés et ne représentent pas des chantiers réalisés par Horizon Fenêtre.</p></article></div>`;
   ecrire(url, page({ url, title: "Mentions légales | Horizon Fenêtre", description: "Mentions légales du site Horizon Fenêtre, marque d'ESCOM HABITAT SARL à Rillieux-la-Pape : éditeur, hébergement, données personnelles.", body, schemas: [filLd(items)] }));
   plan.push({ url, prio: "0.2" });
   ecrire("/merci/", page({ url: "/merci/", noindex: true, title: "Demande envoyée | Horizon Fenêtre", description: "Votre demande a bien été envoyée.", body: `<section class="bandeau"><div class="wrap"><h1>Demande envoyée</h1><p>Merci. On vous rappelle sous 24 h ouvrées pour fixer la visite. Pour une urgence : <a href="tel:${TEL_LIEN}" style="color:#fff">${TEL}</a>.</p><p style="margin-top:1.5rem"><a class="btn btn-or" href="/blog/">Lire nos guides en attendant</a></p></div></section>` }));

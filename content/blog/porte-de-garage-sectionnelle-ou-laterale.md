@@ -2,6 +2,7 @@
 title: Porte de garage sectionnelle ou latérale : comment choisir ?
 h1: Porte de garage sectionnelle plafond ou latérale : comment choisir ?
 description: Retombée de linteau, plafond, refoulement, usage au quotidien : les critères concrets pour choisir entre porte de garage sectionnelle plafond et latérale.
+photo: garage
 rubrique: Portes de garage
 date: 2026-10-12
 motcle: porte de garage sectionnelle ou latérale

@@ -2,11 +2,14 @@
 export const produits = [
 {
 slug: "fenetres",
+photo: "maison",
+galerie: [["fenBlanche","Fenêtre PVC blanche deux vantaux : le grand classique de la rénovation."],["fenNoire","Profils fins et teinte sombre : plus de vitrage pour la même ouverture."],["salonJardin","Bien dimensionnées, les fenêtres changent l'usage d'une pièce."]],
 nav: "Fenêtres",
 court: "PVC, aluminium ou bois, du châssis fixe à la baie coulissante.",
-title: "Fenêtres sur mesure PVC, alu et bois à Lyon | Horizon Fenêtre",
+title: "Fenêtres PVC, alu, bois sur mesure à Lyon | Horizon Fenêtre",
 description: "Fenêtres sur mesure en PVC, aluminium ou bois, fabriquées à vos cotes et posées à Lyon, Rillieux-la-Pape et alentours. Visite et devis gratuits.",
 h1: "Fenêtres sur mesure en PVC, aluminium et bois à Lyon",
+motcle: "fenêtre sur mesure Lyon",
 chapo: "On mesure chaque ouverture chez vous, on commande la fenêtre au millimètre et on la pose nous-mêmes, en rénovation comme en dépose totale.",
 contenu: `
 <p class="lead">Une fenêtre bien choisie, c'est une pièce plus calme, moins de courants d'air et un chauffage qui travaille moins. Mal posée, la meilleure fenêtre du marché perd une bonne partie de ses qualités. Chez Horizon Fenêtre, on s'occupe des deux : le choix et la pose.</p>
@@ -40,6 +43,19 @@ contenu: `
 <p>En <strong>dépose totale</strong>, on retire tout jusqu'à la maçonnerie. Plus de lumière, une meilleure étanchéité à l'air, mais il faut reprendre les tableaux et parfois les finitions intérieures.</p>
 <p>Le bon choix dépend de l'état de vos dormants actuels, et ça se voit en visite, pas sur une photo. On vous explique les deux options dans notre article <a href="/blog/pose-renovation-ou-depose-totale/">pose en rénovation ou dépose totale</a>.</p>
 
+
+<h2>Comprendre les performances d'une fenêtre</h2>
+<p>Sur une fiche technique, quatre valeurs suffisent pour comparer deux fenêtres :</p>
+<ul>
+<li><strong>Uw</strong> : la déperdition thermique de la fenêtre complète (cadre et vitrage). Plus il est bas, mieux elle isole. C'est la valeur qui compte pour les aides et la TVA réduite.</li>
+<li><strong>Ug</strong> : la même mesure pour le vitrage seul. Un Ug excellent sur un cadre médiocre ne fait pas une bonne fenêtre.</li>
+<li><strong>Sw</strong> : la part d'énergie solaire qui traverse la fenêtre. Un Sw élevé chauffe gratuitement la maison l'hiver ; trop élevé plein sud, il fait surchauffer l'été.</li>
+<li><strong>Rw (C ; Ctr)</strong> : l'affaiblissement acoustique, en décibels. Le Ctr concerne le bruit routier, celui qui gêne le plus en ville.</li>
+</ul>
+
+<h2>Changement de fenêtres : ce qu'on vérifie en visite</h2>
+<p>Avant de chiffrer un remplacement de fenêtres, on regarde ce que les catalogues ne montrent pas : l'état des anciens dormants, la profondeur des tableaux, l'appui et son rejingot (le petit relief qui arrête l'eau), l'épaisseur du doublage intérieur pour choisir la bonne tapée d'isolation, la présence d'un coffre de volet roulant et celle des entrées d'air. C'est ce relevé qui évite les mauvaises surprises le jour de la pose.</p>
+
 <h2>Ce qui figure sur notre devis</h2>
 <p>Chaque fenêtre y est décrite avec ses cotes, son matériau, sa couleur intérieure et extérieure, son vitrage, ses performances (Uw et Sw), le type de pose et les finitions (habillages, bavettes, joints). La dépose et l'évacuation des anciennes menuiseries sont incluses. Si votre logement a plus de deux ans et que les fenêtres atteignent les seuils de performance, la <a href="/blog/tva-reduite-5-5-fenetres/">TVA à 5,5 %</a> s'applique directement sur la facture.</p>
 `,
@@ -52,9 +68,11 @@ faq: [
 },
 {
 slug: "volets",
+photo: "facadeVolets",
+galerie: [["voletRoulant","Volet roulant à lames : protection solaire, intimité et sécurité."],["voletBattant","Volets battants : le dessin d'origine respecté sur une façade de village."]],
 nav: "Volets",
 court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
-title: "Volets roulants et battants sur mesure à Lyon | Horizon Fenêtre",
+title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
 description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Pose en neuf ou rénovation à Lyon et Rillieux-la-Pape.",
 h1: "Volets roulants et volets battants sur mesure",
 chapo: "Motoriser des volets existants, ajouter un volet roulant sans toucher à la façade ou remplacer des battants fatigués : on vous conseille ce qui tient dans le temps.",
@@ -93,6 +111,8 @@ faq: [
 },
 {
 slug: "portes-de-garage",
+photo: "garage",
+galerie: [["garageNoir","Panneaux lisses et teinte sombre : la porte prolonge la façade."]],
 nav: "Portes de garage",
 court: "Sectionnelles plafond et latérales, motorisées ou manuelles.",
 title: "Porte de garage sectionnelle et latérale sur mesure | Lyon",
@@ -131,9 +151,11 @@ faq: [
 },
 {
 slug: "portes-d-entree",
+photo: "porte",
+galerie: [["porteInt","Vue intérieure : la vitrière éclaire l'entrée sans exposer la maison."]],
 nav: "Portes d'entrée",
 court: "Aluminium, PVC ou acier, isolantes et sécurisées.",
-title: "Porte d'entrée sur mesure alu, PVC, acier à Lyon | Horizon Fenêtre",
+title: "Porte d'entrée alu, PVC ou acier sur mesure à Lyon",
 description: "Portes d'entrée sur mesure en aluminium, PVC ou acier : isolation, serrure multipoints, design. Fourniture et pose à Lyon, Rillieux-la-Pape et environs.",
 h1: "Portes d'entrée sur mesure en aluminium, PVC et acier",
 chapo: "La porte d'entrée, c'est la première chose qu'on voit de chez vous et la dernière barrière quand vous partez. On la choisit pour les deux.",
@@ -163,9 +185,11 @@ faq: [
 },
 {
 slug: "portails-clotures",
+photo: "portail",
+galerie: [["portailBattant","Portail battant deux vantaux sur une allée plane."],["portailDesign","Portail plein à motif : l'aluminium permet presque tous les dessins."]],
 nav: "Portails et clôtures",
 court: "Portails battants ou coulissants, clôtures et portillons assortis.",
-title: "Portail et clôture aluminium sur mesure à Lyon | Horizon Fenêtre",
+title: "Portail et clôture alu sur mesure à Lyon | Horizon Fenêtre",
 description: "Portails battants et coulissants, portillons et clôtures aluminium sur mesure, motorisés ou manuels. Fourniture et pose à Lyon et dans l'Ain.",
 h1: "Portails, portillons et clôtures aluminium sur mesure",
 chapo: "Un portail se choisit autant pour la pente de l'allée et la place disponible que pour son dessin. On commence par là.",
@@ -202,9 +226,11 @@ faq: [
 },
 {
 slug: "moustiquaires",
+photo: "moustiquaire",
+galerie: [["moustiqSoir","Une toile bien tendue reste presque invisible."]],
 nav: "Moustiquaires",
 court: "Enroulables, plissées ou fixes, pour fenêtres et baies.",
-title: "Moustiquaire sur mesure fenêtre et baie à Lyon | Horizon Fenêtre",
+title: "Moustiquaire sur mesure pour fenêtre et baie à Lyon",
 description: "Moustiquaires sur mesure enroulables, plissées et fixes pour fenêtres, portes-fenêtres et baies coulissantes. Pose à Lyon, Rillieux-la-Pape et alentours.",
 h1: "Moustiquaires sur mesure pour fenêtres et baies",
 chapo: "Depuis l'arrivée du moustique tigre dans le Rhône, la moustiquaire n'est plus un accessoire : c'est ce qui permet de dormir fenêtre ouverte.",
@@ -236,12 +262,126 @@ faq: [
 ["Faut-il percer pour poser une moustiquaire ?", "Pour les modèles enroulables et plissés, oui, quelques fixations dans le tableau. Les cadres fixes peuvent se poser sans perçage."],
 ["Les moustiquaires se démontent-elles l'hiver ?", "Les cadres fixes se retirent facilement. Les enroulables et plissées restent en place, toile remontée."]
 ]
+},
+{
+slug: "baies-vitrees",
+photo: "baie",
+galerie: [["baieRepas","Une baie coulissante transforme la salle à manger en pièce ouverte sur le jardin."],["maisonBaies","Grandes baies vitrées en façade : on dimensionne le vitrage selon l'orientation."]],
+nav: "Baies vitrées",
+court: "Coulissantes, à galandage ou à frappe, en aluminium ou PVC.",
+title: "Baie vitrée coulissante ou galandage sur mesure | Lyon",
+description: "Baies vitrées coulissantes, à galandage ou à frappe, en aluminium ou PVC, sur mesure. Remplacement et création d'ouverture à Lyon et alentours.",
+h1: "Baies vitrées sur mesure : coulissantes, à galandage ou à frappe",
+chapo: "Une baie vitrée change une pièce plus que n'importe quelle autre menuiserie. On la dimensionne avec vous, selon l'orientation, l'usage et la place disponible.",
+contenu: `
+<p class="lead">La baie vitrée est la menuiserie qu'on remarque le plus en entrant dans une maison. C'est aussi celle où les erreurs coûtent le plus cher : un seuil mal pensé, un vitrage qui fait surchauffer le séjour, un vantail qui ne coulisse plus après trois hivers. On prend le temps de la concevoir.</p>
+
+<h2>Coulissant, galandage ou porte-fenêtre à frappe</h2>
+<p><strong>La baie coulissante</strong> est la plus demandée : les vantaux glissent l'un devant l'autre, rien ne déborde dans la pièce. En aluminium, les profils sont fins et supportent de grands vantaux ; en PVC, elle isole très bien pour un budget plus serré.</p>
+<p><strong>La baie à galandage</strong> va plus loin : les vantaux disparaissent dans l'épaisseur du mur, et l'ouverture est totale. Elle demande une cloison ou un doublage adapté de chaque côté, à prévoir en construction ou en grosse rénovation.</p>
+<p><strong>La porte-fenêtre à frappe</strong> (à la française) reste la plus étanche à l'air et la plus simple. Pour une ouverture de largeur moyenne, c'est souvent le meilleur choix.</p>
+<p>Notre guide <a href="/blog/baie-vitree-coulissante-ou-galandage/">baie coulissante ou galandage</a> détaille les critères de choix.</p>
+
+<h2>Aluminium ou PVC pour une baie vitrée</h2>
+<p>Au-delà de deux mètres et demi de large, l'aluminium s'impose presque toujours : sa rigidité permet des montants fins et de grands vantaux qui restent droits. Le PVC convient très bien aux baies de taille courante, avec d'excellentes performances thermiques. Les deux existent en teintes anthracite, blanches ou bicolores.</p>
+
+<h2>Les points techniques qui font une bonne baie</h2>
+<ul>
+<li><strong>Le seuil</strong> : un seuil bas ou encastré évite de buter en passant vers la terrasse, et facilite l'accès aux personnes à mobilité réduite.</li>
+<li><strong>Le vitrage</strong> : sur une façade sud ou ouest, un vitrage à contrôle solaire limite la surchauffe ; en rez-de-chaussée, un feuilleté de sécurité retarde l'effraction.</li>
+<li><strong>Les rails et roulements</strong> : de leur qualité dépend une baie qui coulisse encore d'un doigt dans dix ans.</li>
+<li><strong>La protection</strong> : volet roulant intégré, brise-soleil orientable ou store, à penser en même temps que la baie.</li>
+</ul>
+
+<h2>Remplacer une baie ou créer une ouverture</h2>
+<p>Remplacer une ancienne baie par une neuve se fait en rénovation ou en dépose totale, comme une fenêtre. Agrandir une fenêtre en baie, ou percer une nouvelle ouverture, touche à la structure du mur : il faut un linteau dimensionné, parfois l'avis d'un bureau d'études, et une <a href="/blog/declaration-prealable-changer-fenetres/">déclaration préalable</a> en mairie. On vous dit dès la visite ce que votre projet implique.</p>
+`,
+faq: [
+["Quelle largeur maximale pour une baie coulissante ?", "En aluminium, on dépasse facilement quatre mètres en plusieurs vantaux. La limite vient surtout du poids des vitrages et de l'accès au chantier pour les livrer."],
+["Une baie coulissante isole-t-elle moins bien qu'une porte-fenêtre ?", "Un peu moins à l'air, à cause des joints brosse. Les gammes récentes ont nettement réduit l'écart, et le vitrage compte davantage dans le bilan global."],
+["Peut-on installer un volet roulant sur une baie existante ?", "Oui, avec un coffre rénovation posé en façade ou sous le linteau. Pour une grande baie, on choisit des lames aluminium et une motorisation."]
+]
+},
+{
+slug: "brise-soleil-orientables",
+photo: "bso",
+galerie: [["maisonBaies","Les grandes surfaces vitrées exposées au sud sont les premières à bénéficier d'un BSO."]],
+nav: "Brise-soleil (BSO)",
+court: "Lames orientables pour doser la lumière et la chaleur.",
+title: "Brise-soleil orientable (BSO) sur mesure à Lyon",
+description: "Brise-soleil orientables (BSO) motorisés pour fenêtres et baies vitrées : lumière réglable, confort d'été, pose en neuf ou rénovation à Lyon.",
+h1: "Brise-soleil orientables (BSO) sur mesure",
+chapo: "Le BSO, c'est le volet qui laisse passer la lumière sans laisser entrer la chaleur. Sur une baie plein sud, il change les étés.",
+contenu: `
+<p class="lead">Un brise-soleil orientable est un store extérieur à lames aluminium dont on règle l'inclinaison. Lames fermées, il occulte comme un volet. Lames inclinées, il coupe le soleil direct tout en laissant entrer la lumière du jour.</p>
+
+<h2>BSO ou volet roulant : ce qui les distingue</h2>
+<p>Un volet roulant est soit ouvert, soit fermé : pour arrêter le soleil, il faut faire le noir. Le BSO dose. Il arrête la chaleur avant qu'elle ne touche le vitrage, ce qui est bien plus efficace qu'un store intérieur, et garde la pièce lumineuse. En contrepartie, il occulte un peu moins complètement et coûte plus cher. Notre guide <a href="/blog/bso-ou-volet-roulant/">BSO ou volet roulant</a> compare les deux en détail.</p>
+
+<h2>Comment il est fait</h2>
+<ul>
+<li><strong>Les lames</strong> : en aluminium, généralement de 80 ou 90 mm, bordées ou en forme de Z selon le modèle et le niveau d'occultation recherché.</li>
+<li><strong>Le guidage</strong> : par coulisses latérales, plus stables au vent, ou par câbles, plus discrets.</li>
+<li><strong>L'intégration</strong> : coffre apparent en façade, pose sous linteau, ou intégration invisible dans l'isolation par l'extérieur.</li>
+<li><strong>La manœuvre</strong> : motorisée dans la quasi-totalité des cas, avec télécommande, horloge ou capteur de soleil.</li>
+</ul>
+
+<h2>Le capteur de vent, indispensable</h2>
+<p>Un BSO déployé n'aime pas les rafales. On l'équipe d'un capteur de vent qui remonte automatiquement les lames quand le vent forcit. Dans la vallée du Rhône, où le vent du nord souffle fort, c'est une sécurité qu'on ne propose pas en option : on la prévoit.</p>
+
+<h2>Où le poser en priorité</h2>
+<p>Les baies vitrées et grandes fenêtres orientées sud et ouest, les pièces de vie sous toiture, les bureaux à domicile où l'écran devient illisible l'après-midi. En rénovation, on vérifie la place disponible au-dessus de l'ouverture pour le paquet de lames remontées et la solidité du support.</p>
+`,
+faq: [
+["Un BSO peut-il remplacer un volet roulant ?", "Oui, dans la plupart des pièces de vie. Dans une chambre où l'on veut le noir complet, le volet roulant reste plus occultant."],
+["Le BSO est-il bruyant par grand vent ?", "Bien posé et guidé par coulisses, il reste silencieux. Le capteur de vent le remonte avant que les rafales ne deviennent fortes."],
+["Peut-on poser un BSO sur une maison existante ?", "Oui, en coffre apparent ou sous le linteau. On vérifie à la visite la hauteur disponible et la nature du support."]
+]
+},
+{
+slug: "portes-interieures",
+photo: "couloir",
+galerie: [["portePlace","Porte à panneaux laquée blanche : un classique qui s'accorde avec toutes les teintes de murs."]],
+nav: "Portes intérieures",
+court: "Battantes ou coulissantes, pleines ou vitrées, posées propres.",
+title: "Portes intérieures sur mesure : fourniture et pose à Lyon",
+description: "Portes intérieures battantes, coulissantes ou à galandage, pleines ou vitrées, standard ou sur mesure. Remplacement de blocs-portes à Lyon et alentours.",
+h1: "Portes intérieures : battantes, coulissantes, pleines ou vitrées",
+chapo: "Remplacer les portes d'une maison, c'est souvent le changement qui modernise le plus pour un budget maîtrisé. À condition que la pose soit soignée.",
+contenu: `
+<p class="lead">Une porte intérieure se juge au quotidien : elle doit fermer sans forcer, ne pas résonner, et s'accorder avec le reste de la maison. On s'occupe du choix comme de la pose, huisserie comprise.</p>
+
+<h2>Porte seule ou bloc-porte</h2>
+<p>Si l'huisserie (le cadre fixé dans la cloison) est saine et d'équerre, on peut remplacer <strong>la porte seule</strong>, à condition de retrouver les bonnes dimensions et l'emplacement des paumelles. Si elle est abîmée, déformée ou d'un autre âge, on pose un <strong>bloc-porte</strong> complet : huisserie et porte livrées ensemble, déjà réglées. En rénovation, les huisseries à recouvrement habillent l'ancienne sans démolir la cloison.</p>
+
+<h2>Battante, coulissante ou à galandage</h2>
+<ul>
+<li><strong>Battante</strong> : la plus courante et la plus isolante phoniquement.</li>
+<li><strong>Coulissante en applique</strong> : la porte glisse le long du mur sur un rail apparent. Idéale quand le débattement d'une porte gêne.</li>
+<li><strong>À galandage</strong> : la porte disparaît dans la cloison. Elle demande un châssis spécifique intégré au mur.</li>
+</ul>
+
+<h2>Âme alvéolaire, tubulaire ou pleine</h2>
+<p>L'intérieur de la porte change tout au toucher et à l'oreille. L'<strong>âme alvéolaire</strong> est légère et économique. L'<strong>âme tubulaire</strong> donne une porte plus rigide qui sonne moins creux. L'<strong>âme pleine</strong> est la plus lourde et la plus isolante acoustiquement : à prévoir pour une chambre, un bureau ou une salle de bain.</p>
+
+<h2>Dimensions et finitions</h2>
+<p>Les portes standard font 204 cm de haut pour des largeurs de 63, 73, 83 ou 93 cm. Pour un passage confortable, notamment pour un fauteuil roulant, on conseille 83 cm et plus. Hors standard, on fabrique sur mesure. Côté finitions : prépeintes à peindre sur place, laquées en usine, plaquées bois, pleines ou vitrées pour faire circuler la lumière dans un couloir.</p>
+
+<h2>Le détail qu'on oublie : la ventilation</h2>
+<p>Dans un logement équipé d'une VMC, l'air doit circuler des pièces sèches vers la cuisine et la salle de bain. On laisse donc un jour sous les portes (le détalonnage) ou on prévoit une grille de transfert. Une porte posée au ras du sol dérègle la ventilation et favorise la condensation.</p>
+`,
+faq: [
+["Peut-on changer une porte sans changer l'huisserie ?", "Oui, si l'huisserie est en bon état et d'équerre. On relève les dimensions exactes et la position des paumelles avant de commander."],
+["Combien de temps pour remplacer toutes les portes d'une maison ?", "Pour une maison courante, une à deux journées en blocs-portes, selon le nombre de portes et les finitions."],
+["Les portes sont-elles livrées peintes ?", "Au choix : prépeintes pour une finition sur place, ou laquées en usine, prêtes à vivre dès la pose."]
+]
 }
+
 ];
 
 export const pros = {
 slug: "professionnels",
-title: "Menuiserie pour professionnels : syndics, bailleurs, archis | Lyon",
+title: "Menuiserie pour pros : syndics, bailleurs, architectes, Lyon",
 description: "Fourniture seule ou fourniture et pose de menuiseries pour syndics, bailleurs, architectes, maîtres d'œuvre, agences et commerces à Lyon et alentours.",
 h1: "Menuiseries pour les professionnels",
 chapo: "Syndics, bailleurs, architectes, maîtres d'œuvre, agences, commerces et artisans : un interlocuteur unique, des chiffrages rapides et un chantier tenu.",

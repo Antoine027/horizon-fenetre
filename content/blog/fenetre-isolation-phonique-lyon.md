@@ -2,6 +2,7 @@
 title: Fenêtre isolation phonique : réduire le bruit de la rue
 h1: Fenêtres et isolation phonique : comment réduire le bruit de la rue à Lyon
 description: Vitrage acoustique asymétrique, feuilleté, étanchéité, coffres de volets : ce qui réduit vraiment le bruit d'une rue, d'une rocade ou d'une voie ferrée.
+photo: salonJardin
 rubrique: Fenêtres
 date: 2026-10-12
 motcle: fenêtre isolation phonique

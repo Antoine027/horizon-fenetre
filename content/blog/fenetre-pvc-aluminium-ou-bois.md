@@ -2,6 +2,7 @@
 title: Fenêtre PVC, aluminium ou bois : lequel choisir en 2026 ?
 h1: Fenêtre PVC, aluminium ou bois : lequel choisir pour votre maison ?
 description: PVC, aluminium ou bois : isolation, entretien, esthétique, prix. Un menuisier lyonnais compare les trois matériaux de fenêtre, sans langue de bois.
+photo: fenBlanche
 rubrique: Fenêtres
 date: 2026-10-12
 motcle: fenêtre PVC aluminium ou bois

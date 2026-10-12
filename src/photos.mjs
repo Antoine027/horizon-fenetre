@@ -1,0 +1,46 @@
+// Photos d'illustration (licence Unsplash : usage commercial libre, sans attribution obligatoire).
+// À remplacer progressivement par les photos de vos propres chantiers.
+// clé : [identifiant Unsplash, largeur, hauteur, texte alternatif, photographe]
+export const PHOTOS = {
+  maison:      ["photo-1690731987727-ab5daed3620b", 2736, 1829, "Maison contemporaine aux fenêtres anthracite et porte de garage en bois", "Meri Vasilevski"],
+  maisonBaies: ["photo-1766603636700-e9d80473f40f", 6000, 3375, "Maison moderne avec grandes baies vitrées donnant sur la pelouse", "Alef Morais"],
+  immeuble:    ["photo-1712799430351-8baa17927177", 5000, 4000, "Petit immeuble résidentiel récent aux grandes surfaces vitrées", "Alex Zhao"],
+  salon:       ["photo-1608235376176-c11df9952002", 4000, 3000, "Séjour lumineux éclairé par de grandes fenêtres", "Collov Home Design"],
+  salonJardin: ["photo-1721932423849-e9033192b190", 3200, 2133, "Salon avec deux grandes fenêtres ouvrant sur un jardin", "Clay Banks"],
+  fenBlanche:  ["photo-1610395184793-8fa7bc4154a7", 5576, 4000, "Fenêtre blanche deux vantaux dans une pièce claire", "Hayffield L"],
+  fenNoire:    ["photo-1666679109000-58565a321da5", 3998, 5331, "Fenêtre à profils noirs fins donnant sur des arbres", "Shawn Rain"],
+  baie:        ["photo-1721902024148-287438cf3e05", 6000, 4000, "Baie vitrée coulissante ouvrant sur une terrasse", "Lisa Anna"],
+  baieRepas:   ["photo-1756470843828-617611d35cf6", 3400, 2267, "Salle à manger avec baie coulissante donnant sur le jardin", "Clay Banks"],
+  voletRoulant:["photo-1580368393844-28322c2ff03f", 2430, 3633, "Volet roulant blanc à lames descendu devant une fenêtre", "Markus Spiske"],
+  facadeVolets:["photo-1787601830156-ed49b807fe2d", 6000, 4000, "Façade grise équipée de volets roulants", "Pawel Czerwinski"],
+  voletBattant:["photo-1565786003772-eea5955c9eca", 3648, 2736, "Volets battants verts sur une façade de village fleurie", "Chantal Garnier"],
+  garage:      ["photo-1777106322601-578dc9213ace", 5760, 3840, "Maison blanche avec porte de garage anthracite", "Troy Mortier"],
+  garageNoir:  ["photo-1787672357682-de3aa5bbddbf", 5739, 4320, "Porte de garage sombre à panneaux lisses", "Divaris Shirichena"],
+  porte:       ["photo-1668911494256-becf9fea265b", 6718, 4479, "Porte d'entrée en bois avec vitrages à cadre noir sur une maison moderne", "Point3D Commercial Imaging Ltd."],
+  porteInt:    ["photo-1628744876657-abd5086695dc", 6240, 4160, "Porte d'entrée noire vitrée vue depuis l'entrée de la maison", "Zac Gudakov"],
+  portail:     ["photo-1759355787286-f1c5fd456a0d", 5100, 3400, "Portail noir et haie devant une maison contemporaine", "ubeyonroad"],
+  portailBattant:["photo-1715794497793-9c0dd2a5488f", 5184, 3888, "Portail battant métallique noir à l'entrée d'une allée", "Ben Grayland"],
+  portailDesign:["photo-1781155922144-21323fb774a0", 4160, 5771, "Portail plein noir à motif géométrique", "Declan Sun"],
+  moustiquaire:["photo-1789857431858-47e75dbca05b", 3725, 2483, "Toile de moustiquaire tendue devant une fenêtre", "Ben Iwara"],
+  moustiqSoir: ["photo-1686766877606-589505f431ad", 4814, 3209, "Moustiquaire au coucher du soleil, un papillon posé sur la toile", "Patti Black"],
+  bso:         ["photo-1788090834876-2b120fee1b4f", 3937, 2812, "Lames orientables de brise-soleil sur une façade", "Viktor Forgacs"],
+  portePlace:  ["photo-1677457836930-3af51eb6e9a5", 2786, 4187, "Porte intérieure blanche à panneaux sur mur bleu", "Ryunosuke Kikuno"],
+  couloir:     ["photo-1771354959667-96360bf59eab", 3334, 2223, "Entrée de maison avec portes intérieures blanches vitrées", "Clay Banks"],
+  pose:        ["photo-1646640381839-02748ae8ddf0", 6000, 4000, "Poseur fixant le dormant d'une menuiserie à la visseuse", "Jimmy Nilsson Masth"],
+  mesure:      ["photo-1667923006173-9e0d2251f608", 3376, 6000, "Main gantée prenant une cote au mètre ruban sur un cadre", "Gabriel Alenius"],
+  mesureBaie:  ["photo-1717231360802-41d29cb4b988", 3264, 4896, "Artisan mesurant une ouverture de fenêtre", "Dimas Rizki Pratama"],
+};
+
+// Génère une balise <img> responsive servie par le CDN Unsplash (AVIF/WebP automatique).
+export function photo(cle, { ratio = [4, 3], largeurs = [480, 800, 1200], sizes = "(max-width: 760px) 100vw, 50vw", eager = false, classe = "", crop = "entropy" } = {}) {
+  const [id, , , alt] = PHOTOS[cle];
+  const [rw, rh] = ratio;
+  const base = `https://images.unsplash.com/${id}`;
+  const url = (w) => `${base}?w=${w}&h=${Math.round((w * rh) / rw)}&fit=crop&crop=${crop}&auto=format&q=62`;
+  const src = url(largeurs[Math.min(1, largeurs.length - 1)]);
+  const srcset = largeurs.map((w) => `${url(w)} ${w}w`).join(", ");
+  const w0 = largeurs[Math.min(1, largeurs.length - 1)];
+  return `<img class="ph ${classe}" src="${src}" srcset="${srcset}" sizes="${sizes}" width="${w0}" height="${Math.round((w0 * rh) / rw)}" alt="${alt}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+}
+
+export const CREDITS = Object.values(PHOTOS).map((p) => p[4]).filter((v, i, a) => a.indexOf(v) === i);
