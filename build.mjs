@@ -12,7 +12,7 @@ const VISITE_JS = fs.readFileSync("src/visite.js", "utf8").split("\n").map((l) =
 const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
-const SITE = "https://horizonfenetre.com";
+const SITE = "https://www.horizonfenetre.com";
 const OUT = "dist";
 const TEL = "04 28 55 00 24";
 const TEL_LIEN = "+33428550024";
