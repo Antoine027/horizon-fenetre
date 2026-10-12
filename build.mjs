@@ -6,6 +6,9 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
+// Animation d'accueil : maison dessinée visitée au défilement (src/visite.svg + src/visite.js)
+const VISITE_SVG = fs.readFileSync("src/visite.svg", "utf8").trim();
+const VISITE_JS = fs.readFileSync("src/visite.js", "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("//")).join("\n");
 const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
@@ -277,16 +280,17 @@ const parcours = `<ol class="parcours">
   ];
   const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}</span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
-<section class="hero"><div class="wrap hero-grid">
-<div><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
+<section class="visite" id="visite" aria-label="Visite d'une maison, menuiserie par menuiserie"><div class="v-scene">
+${VISITE_SVG}<div class="v-voile" id="voile"></div>
+<div class="v-intro" id="vintro"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
 <h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
-<p class="chapo">Fenêtres, baies vitrées, volets, brise-soleil, portes d'entrée, de garage et intérieures, portails et moustiquaires. On vient mesurer, on conseille, on fournit sur mesure. La pose est confiée à notre installateur partenaire.</p>
+<p class="chapo">Fenêtres, volets, portes, portails, moustiquaires : on relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte de votre ouverture, et notre installateur partenaire s'occupe de la pose.</p>
 <div class="actions"><a class="btn btn-p" href="/contact/">Demander une visite gratuite</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
-<ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure, au millimètre</li><li>${I.outil}Pose par installateur partenaire</li></ul></div>
-<div class="fenetre"><div class="dormant"><div class="vue">${photo("salonJardin", { eager: true, ratio: [4, 4.6], largeurs: [480, 640, 900], sizes: "(max-width: 900px) 92vw, 520px" })}</div></div>
-<div class="battants" aria-hidden="true"><div class="vantail g"></div><div class="vantail d"></div></div>
-<div class="badge">${I.regle}<div><b>Cotes relevées chez vous</b><span>Chaque menuiserie est fabriquée à la dimension exacte de votre ouverture.</span></div></div></div>
-</div></section>
+<p class="v-indice"><span aria-hidden="true"></span>Faites défiler pour visiter la maison</p></div>
+<article class="v-carte" id="carte" aria-live="polite"><p class="v-num" id="cNum"></p><h2 id="cTitre"></h2><p class="v-txt" id="cTexte"></p><div class="v-var" id="cVar" role="group" aria-label="Type de volet" hidden><button type="button" data-v="roulant" aria-pressed="true">Volet roulant</button><button type="button" data-v="battant" aria-pressed="false">Volet battant</button></div><ul class="v-tags" id="cTags"></ul><a class="v-lien" id="cLien" href="/fenetres/">Voir la gamme →</a></article>
+<div class="v-fin" id="vfin" style="opacity:0;visibility:hidden"><p class="kicker">Une visite, un devis, une pose</p><h2>Toute la maison, un seul interlocuteur</h2><p class="chapo">On vient relever les cotes et on vous remet un devis détaillé, menuiserie par menuiserie. Horizon Fenêtre fournit, notre installateur partenaire pose.</p><div class="actions"><a class="btn btn-p" href="#devis">Demander un devis gratuit</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div></div>
+<ol class="v-rail" id="rail" aria-label="Étapes de la visite"></ol>
+</div></section><script>${VISITE_JS}</script>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>Horizon Fenêtre vous conseille, mesure et fournit. La pose est réalisée par notre installateur partenaire, avec qui on organise la livraison.</p></div>
 ${parcours}</div></section>
