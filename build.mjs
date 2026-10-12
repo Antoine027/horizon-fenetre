@@ -6,9 +6,6 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-// Maison dessinée interactive de la page d'accueil (section produits) (src/visite.svg + src/visite.js)
-const VISITE_SVG = fs.readFileSync("src/visite.svg", "utf8").trim();
-const VISITE_JS = fs.readFileSync("src/visite.js", "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("//")).join("\n");
 const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
@@ -265,9 +262,8 @@ const parcours = `<ol class="parcours">
 
 // ===== Accueil =====
 {
-  const ETAPES = { fenetres: 1, moustiquaires: 2, volets: 3, "baies-vitrees": 4, "brise-soleil-orientables": 5, "portes-d-entree": 6, "portes-de-garage": 7, "portails-clotures": 8 };
   const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
-  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}"${ETAPES[p.slug] ? ` data-etape="${ETAPES[p.slug]}"` : ""}>${photo(p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
+  const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}">${photo(p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
     ["Qui pose les menuiseries ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis et sa propre facture. Vous restez libre de faire poser par l'artisan de votre choix."],
@@ -288,14 +284,9 @@ const parcours = `<ol class="parcours">
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>Horizon Fenêtre vous conseille, mesure et fournit. La pose est réalisée par notre installateur partenaire, avec qui on organise la livraison.</p></div>
 ${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Une maison, toutes nos menuiseries</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure. Explorez la maison ou parcourez la gamme.</p></div>
-<div class="visite" id="visite"><div class="v-scene">
-${VISITE_SVG}
-<article class="v-carte" id="carte" aria-live="polite"><button class="v-fermer" id="vFermer" type="button" aria-label="Fermer la visite">×</button><p class="v-num" id="cNum"></p><h2 id="cTitre" tabindex="-1"></h2><p class="v-txt" id="cTexte"></p><div class="v-var" id="cVar" role="group" aria-label="Type de volet" hidden><button type="button" data-v="roulant" aria-pressed="true">Volet roulant</button><button type="button" data-v="battant" aria-pressed="false">Volet battant</button></div><ul class="v-tags" id="cTags"></ul><a class="v-lien" id="cLien" href="/fenetres/">Voir la gamme →</a><div class="v-nav"><button type="button" id="vPrec">← Précédent</button><button type="button" id="vSuiv" class="suiv">Suivant →</button></div></article>
-</div></div>
-<p class="v-aide">Cliquez sur un repère de la façade pour voir la menuiserie de près, ou ouvrez directement sa fiche ci-dessous.</p>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
-</div></section><script>${VISITE_JS}</script>
+</div></section>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
 <div class="carte" style="padding:0"><div class="tab-scroll"><table class="mat"><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">PVC</th><th scope="col">Aluminium</th><th scope="col">Bois</th></tr></thead><tbody>

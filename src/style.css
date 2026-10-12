@@ -104,63 +104,6 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 }
 @media (max-width:760px){.hero-photo .btn-s{display:none}}
 
-/* Maison interactive (section produits) */
-.visite{position:relative;height:clamp(440px,62vw,680px);border-radius:var(--r-l);overflow:hidden;background:#eaf5fa;box-shadow:0 30px 60px -40px rgba(51,69,77,.5)}
-.v-scene{position:relative;height:100%}
-.v-scene>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.lame,#fenG,#fenD,#porte,#tablier,#moustiq,#vbG,#vbD,#baieC,#garage,#portail{transform-box:fill-box}
-.lame{transform-origin:center}
-#fenG,#porte,#vbG{transform-origin:left center}
-#fenD,#vbD{transform-origin:right center}
-.v-point{cursor:pointer}
-.v-pt{fill:var(--ardoise);transition:fill .2s}
-.v-point:hover .v-pt,.v-point.allume .v-pt,.v-point:focus-visible .v-pt{fill:#c9a14a}
-.v-point.allume .v-pt{r:12}
-.v-point:focus{outline:none}
-.v-pt{transition:fill .2s,r .2s}
-.v-aide{margin:1rem 0 1.6rem;color:var(--texte-2);font-size:.95rem}
-#points{transition:opacity .4s}
-.en-visite #points{opacity:0;pointer-events:none}
-.v-carte{box-sizing:border-box;position:absolute;left:clamp(16px,3vw,32px);top:50%;width:min(24rem,calc(100% - 32px));background:#fff;border-radius:22px;padding:1.5rem 1.6rem 1.2rem;box-shadow:0 24px 60px -24px rgba(51,69,77,.45);opacity:0;transform:translateY(-44%);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
-.v-carte.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
-.v-num{font-size:.75rem;font-weight:700;letter-spacing:.14em;color:var(--brume);margin:0 0 .4rem;font-variant-numeric:tabular-nums}
-.v-carte h2{font-size:1.45rem;line-height:1.15;margin:0 2.2rem .55rem 0;letter-spacing:-.02em}
-.v-carte h2:focus{outline:none}
-.v-txt{margin:0 0 .9rem;font-size:.95rem;color:var(--texte-2)}
-.v-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .8rem;padding:0;list-style:none}
-.v-tags li{font-size:.78rem;font-weight:600;color:var(--ardoise-f);background:var(--ciel);border-radius:999px;padding:.3rem .7rem}
-.v-var{display:inline-flex;background:var(--ciel);border-radius:999px;padding:4px;gap:4px;margin:0 0 .9rem}
-.v-var[hidden]{display:none}
-.v-var button{all:unset;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--ardoise);padding:.5rem 1rem;border-radius:999px;transition:background .2s,color .2s}
-.v-var button[aria-pressed="true"]{background:var(--ardoise);color:#fff}
-.v-lien{font-weight:700;color:var(--ardoise);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
-.v-lien:hover{color:var(--brume)}
-.v-fermer{all:unset;cursor:pointer;position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;line-height:1;color:var(--ardoise)}
-.v-fermer:hover{background:var(--ciel)}
-.v-nav{display:flex;justify-content:space-between;gap:.6rem;margin-top:.6rem;padding-top:.8rem;border-top:1px solid var(--ciel-2)}
-.v-nav button{all:unset;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--ardoise);padding:.55rem 1rem;border-radius:999px}
-.v-nav button:hover{background:var(--ciel)}
-.v-nav button:disabled{opacity:.35;cursor:default;background:none}
-.v-nav .suiv{background:var(--ardoise);color:#fff}
-.v-nav .suiv:hover{background:var(--brume)}
-.v-rail{list-style:none;padding:0;margin:1.2rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
-.v-rail button{all:unset;cursor:pointer;font-size:.88rem;font-weight:650;color:var(--ardoise-f);background:#fff;border:1.5px solid var(--ciel-2);border-radius:999px;padding:.6rem 1rem;min-height:24px;transition:border-color .2s,background .2s,color .2s}
-.v-rail button:hover{border-color:var(--brume)}
-.v-rail button[aria-pressed="true"]{background:var(--ardoise);border-color:var(--ardoise);color:#fff}
-.v-plus{margin-top:1rem;color:var(--texte-2);font-size:.95rem}
-.v-var button:focus-visible,.v-rail button:focus-visible,.v-nav button:focus-visible,.v-fermer:focus-visible{outline:3px solid #c9a14a;outline-offset:3px}
-@media (max-width:700px){
-  .visite{height:min(150vw,640px)}
-  .v-carte{top:auto;bottom:12px;left:12px;width:calc(100% - 24px);transform:translateY(16px);padding:1.1rem 1.15rem .8rem}
-  .v-carte.on{transform:none}
-  .v-carte h2{font-size:1.25rem}
-  .v-txt{font-size:.9rem;margin-bottom:.6rem}
-  .v-tags{display:none}
-  .v-rail{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.3rem;scrollbar-width:none}
-  .v-rail li{flex:none}
-}
-@media (prefers-reduced-motion:reduce){.v-carte{transition:opacity .2s}html{scroll-behavior:auto}}
-
 /* sections */
 .sec{padding:clamp(4.5rem,9vw,7.5rem) 0}
 .sec.ciel{background:var(--ciel)}
