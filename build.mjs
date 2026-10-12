@@ -299,11 +299,11 @@ ${VISITE_SVG}
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
 <div class="carte" style="padding:0"><div class="tab-scroll"><table class="mat"><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">PVC</th><th scope="col">Aluminium</th><th scope="col">Bois</th></tr></thead><tbody>
-<tr><th scope="row">On le choisit pour</th><td>Isoler au meilleur prix, sans entretien</td><td>Des profils fins et de grandes baies</td><td>La matière, le cachet, les secteurs protégés</td></tr>
-<tr><th scope="row">Isolation</th><td>Très bonne</td><td>Bonne à très bonne, avec rupture de pont thermique</td><td>Très bonne</td></tr>
-<tr><th scope="row">Entretien</th><td>Un coup d'éponge</td><td>Un coup d'éponge</td><td>Lasure ou peinture régulière</td></tr>
-<tr><th scope="row">Couleurs</th><td>Blanc, plaxés unis et effet bois</td><td>Quasi toutes les teintes RAL</td><td>Lasures, peintures, essences</td></tr>
-<tr><th scope="row">Budget</th><td>Le plus accessible</td><td>Plus élevé</td><td>Plus élevé</td></tr>
+<tr><th scope="row">On le choisit pour</th><td data-label="PVC">Isoler au meilleur prix, sans entretien</td><td data-label="Aluminium">Des profils fins et de grandes baies</td><td data-label="Bois">La matière, le cachet, les secteurs protégés</td></tr>
+<tr><th scope="row">Isolation</th><td data-label="PVC">Très bonne</td><td data-label="Aluminium">Bonne à très bonne, avec rupture de pont thermique</td><td data-label="Bois">Très bonne</td></tr>
+<tr><th scope="row">Entretien</th><td data-label="PVC">Un coup d'éponge</td><td data-label="Aluminium">Un coup d'éponge</td><td data-label="Bois">Lasure ou peinture régulière</td></tr>
+<tr><th scope="row">Couleurs</th><td data-label="PVC">Blanc, plaxés unis et effet bois</td><td data-label="Aluminium">Quasi toutes les teintes RAL</td><td data-label="Bois">Lasures, peintures, essences</td></tr>
+<tr><th scope="row">Budget</th><td data-label="PVC">Le plus accessible</td><td data-label="Aluminium">Plus élevé</td><td data-label="Bois">Plus élevé</td></tr>
 </tbody></table></div></div>
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 

@@ -406,3 +406,16 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .parcours p{font-size:.88rem;margin:0;line-height:1.45}
   .parcours .qui{display:none}
 }
+
+/* Comparatif des matériaux : une carte par critère sur téléphone */
+@media (max-width:700px){
+  .mat,.mat tbody,.mat tr,.mat th,.mat td{display:block;width:100%}
+  .mat thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .mat tbody tr{padding:1rem 1.1rem;border-bottom:1px solid var(--ciel-2)}
+  .mat tbody tr:last-child{border-bottom:0}
+  .mat tbody th{width:auto;padding:0 0 .5rem;border:0;font-size:1.02rem;color:var(--ardoise-f)}
+  .mat td{display:grid;grid-template-columns:6.5rem 1fr;gap:.6rem;padding:.4rem 0;border:0;font-size:.93rem}
+  .mat td::before{content:attr(data-label);font-weight:700;color:var(--ardoise)}
+  .tab-scroll{overflow:visible}
+  .tab-scroll table.mat{min-width:0}
+}
