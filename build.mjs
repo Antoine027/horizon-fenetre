@@ -2,6 +2,7 @@
 // node build.mjs  → dossier dist/
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
@@ -179,7 +180,7 @@ const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <p>Menuiseries sur mesure : conseil, prise de cotes et fourniture. Pose par installateur partenaire.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
 <div><h2>Nos produits</h2><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
-<div><h2>Horizon Fenêtre</h2><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></div>
+<div><h2>Horizon Fenêtre</h2><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/partenaires/">Partenaires</a></li><li><a href="/plan-du-site/">Plan du site</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></div>
 <div><h2>Guides populaires</h2><ul><li><a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, alu ou bois ?</a></li><li><a href="/blog/aides-changement-fenetres-2026/">Aides 2026</a></li><li><a href="/blog/prix-fenetre-sur-mesure/">Prix d'une fenêtre</a></li><li><a href="/blog/declaration-prealable-changer-fenetres/">Déclaration préalable</a></li></ul></div>
 </div><div class="bas"><span>© ${new Date().getFullYear()} Horizon Fenêtre, une marque d'ESCOM HABITAT SARL</span><span>Ce site ne dépose aucun cookie</span></div></div></footer>
 <div class="barre-mobile"><a href="tel:${TEL_LIEN}">${icoTel}Appeler</a><a href="/contact/">Devis gratuit</a></div>`;
@@ -227,7 +228,27 @@ function formulaire(source) {
 }
 
 // ---------- Écriture ----------
-const ecrire = (url, html) => { const d = path.join(OUT, url); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, "index.html"), html); };
+// ---------- Dates de modification réelles (pour le sitemap) ----------
+// src/dates.json associe à chaque URL l'empreinte de son contenu et la date à laquelle ce contenu a changé.
+// En local, le fichier est mis à jour ; sur Vercel, il est seulement lu (dates stables d'un déploiement à l'autre).
+const FICHIER_DATES = "src/dates.json";
+const DATES = fs.existsSync(FICHIER_DATES) ? JSON.parse(fs.readFileSync(FICHIER_DATES, "utf8")) : {};
+const AUJOURDHUI = new Date().toISOString().slice(0, 10);
+const empreinte = (t) => crypto.createHash("sha1").update(t).digest("hex").slice(0, 16);
+function dateDe(url, contenu, defaut) {
+  const h = empreinte(contenu); const prec = DATES[url];
+  if (prec && prec.h === h) return prec.d;
+  const d = process.env.VERCEL ? (prec ? prec.d : defaut || AUJOURDHUI) : (prec ? AUJOURDHUI : defaut || AUJOURDHUI);
+  if (!process.env.VERCEL) DATES[url] = { h, d };
+  return d;
+}
+const INFOS = {};
+const ecrire = (url, html) => {
+  const d = path.join(OUT, url); fs.mkdirSync(d, { recursive: true }); fs.writeFileSync(path.join(d, "index.html"), html);
+  const main = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  const images = [...new Set([...main.matchAll(/<img class="ph[^"]*" src="([^"]+)"[^>]*alt="([^"]*)"/g)].map((m) => m[1].replace(/&amp;/g, "&").replace(/&w=\d+/, "&w=1200") + "\u0000" + m[2]))];
+  INFOS[url] = { main, images: images.map((x) => { const [loc, titre] = x.split("\u0000"); return { loc: SITE + loc, titre }; }) };
+};
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync("public", OUT, { recursive: true });
 const articles = lireArticles();
@@ -254,7 +275,7 @@ const parcours = `<ol class="parcours">
   const body = `
 <section class="hero"><div class="wrap hero-grid">
 <div><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
-<h1><span class="fin">Vos menuiseries,</span><span class="fin">mesurées chez vous,</span><span class="fort">livrées prêtes à poser.</span></h1>
+<h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
 <p class="chapo">Fenêtres, baies vitrées, volets, brise-soleil, portes d'entrée, de garage et intérieures, portails et moustiquaires. On vient mesurer, on conseille, on fournit sur mesure. La pose est confiée à notre installateur partenaire.</p>
 <div class="actions"><a class="btn btn-p" href="/contact/">Demander une visite gratuite</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
 <ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure, au millimètre</li><li>${I.outil}Pose par installateur partenaire</li></ul></div>
@@ -299,7 +320,7 @@ ${parcours}</div></section>
 <section class="sec" id="devis"><div class="wrap"><div class="devis"><div><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes.</p><p>Vous préférez téléphoner ?<br><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a></p></div>${formulaire("accueil")}</div></div></section>`;
   ecrire("/", page({ url: "/", title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes, portails sur mesure. Visite et prise de cotes gratuites à Lyon, pose par installateur partenaire.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
-  plan.push({ url: "/", prio: "1.0" });
+  plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });
 }
 
 // ===== Pages produits =====
@@ -318,7 +339,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
   ecrire(url, page({ url, title: p.title, description: p.description, body, schemas: [
     { "@context": "https://schema.org", "@type": "Service", name: p.h1, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
     filLd(items), faqLd(p.faq)] }));
-  plan.push({ url, prio: "0.9" });
+  plan.push({ url, groupe: "Nos produits", titre: p.nav });
 }
 
 // ===== Professionnels =====
@@ -354,7 +375,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;
   ecrire(url, page({ url, title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items), faqLd(faq)] }));
-  plan.push({ url, prio: "0.8" });
+  plan.push({ url, groupe: "Horizon Fenêtre", titre: "Professionnels" });
 }
 
 // ===== Blog =====
@@ -365,7 +386,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <section class="sec"><div class="wrap"><div class="billets">${cartes}</div></div></section>${appel()}`;
   ecrire(url, page({ url, title: "Conseils fenêtres, volets, portes, portails | Horizon Fenêtre", description: "Guides pratiques pour choisir fenêtres, baies vitrées, volets, portes et portails : matériaux, aides 2026, TVA, déclaration préalable, prix.", body,
     schemas: [{ "@context": "https://schema.org", "@type": "Blog", name: "Conseils Horizon Fenêtre", url: SITE + url, publisher: { "@id": SITE + "/#entreprise" }, blogPost: articles.map((a) => ({ "@type": "BlogPosting", headline: a.h1, url: `${SITE}/blog/${a.slug}/`, datePublished: a.date })) }, filLd(items)] }));
-  plan.push({ url, prio: "0.7" });
+  plan.push({ url, groupe: "Conseils et guides", titre: "Tous les conseils" });
 
   for (const a of articles) {
     const aurl = `/blog/${a.slug}/`;
@@ -373,9 +394,10 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
     const { html, toc } = markdown(a.md);
     const corps = mailler(html, aurl, 9);
     const mots = a.md.split(/\s+/).length;
+    const modif = dateDe(aurl, fs.readFileSync(path.join("content/blog", a.slug + ".md"), "utf8"), a.date);
     const proches = [...articles.filter((x) => x.slug !== a.slug && x.rubrique === a.rubrique), ...articles.filter((x) => x.slug !== a.slug && x.rubrique !== a.rubrique)].slice(0, 3);
     const produitLie = produits.find((p) => a.md.includes(`](/${p.slug}/)`));
-    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>, ${Math.max(3, Math.round(mots / 220))} min de lecture</p>`)}
+    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>${modif > a.date ? `, mis à jour le <time datetime="${modif}">${dateFr(modif)}</time>` : ""}, ${Math.max(3, Math.round(mots / 220))} min de lecture</p>`)}
 <div class="wrap corps"><article class="prose">
 ${a.photo ? `<figure class="une-photo">${photo(a.photo, { eager: true, ratio: [16, 9], largeurs: [640, 960, 1280], sizes: "(max-width: 900px) 100vw, 740px" })}</figure>` : ""}
 ${toc.length > 2 ? `<nav class="sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.t}</a></li>`).join("")}</ol></nav>` : ""}
@@ -387,9 +409,9 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <div class="boite"><h2>À lire aussi</h2><ul>${proches.map((x) => `<li><a href="/blog/${x.slug}/">${x.h1}</a></li>`).join("")}</ul></div></aside></div>
 <section class="sec ciel" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}</span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
     ecrire(aurl, page({ url: aurl, ogType: "article", title: a.title, description: a.description, body, schemas: [
-      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: a.date, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: SITE + "/assets/img/og-horizon-fenetre.jpg", author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
+      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: SITE + "/assets/img/og-horizon-fenetre.jpg", author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
       filLd(it)] }));
-    plan.push({ url: aurl, prio: "0.6", date: a.date });
+    plan.push({ url: aurl, date: modif, groupe: "Conseils et guides", titre: a.h1 });
   }
 }
 
@@ -403,9 +425,32 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <div class="boite"><h2>Adresse</h2><p>Horizon Fenêtre, ESCOM HABITAT<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p></div></aside></div>`;
   ecrire(url, page({ url, title: "Contact et devis gratuit | Horizon Fenêtre, Rillieux-la-Pape", description: `Demandez une visite et un devis gratuit pour vos fenêtres, volets, portes ou portail. Appelez le ${TEL} ou écrivez-nous. Lyon et alentours.`, body,
     schemas: [{ "@context": "https://schema.org", "@type": "ContactPage", url: SITE + url, about: ENTREPRISE }, filLd(items)] }));
-  plan.push({ url, prio: "0.8" });
+  plan.push({ url, groupe: "Horizon Fenêtre", titre: "Contact et devis" });
 }
 
+// ===== Partenaires =====
+{
+  const url = "/partenaires/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Partenaires" }];
+  const body = `${bandeauSimple(items, "Nos partenaires", "Les entreprises avec qui nous travaillons pour aller au bout de votre projet, de la fenêtre à la terrasse.")}
+<div class="wrap corps"><article class="prose">
+<h2>Instant Terrasse : vos terrasses sur mesure</h2>
+<p class="lead">Une nouvelle baie vitrée appelle souvent une terrasse à sa hauteur. Pour cette partie du projet, nous travaillons avec Instant Terrasse, concepteur de terrasses sur mesure à Lyon et dans sa région.</p>
+<p>Instant Terrasse conçoit des terrasses en <strong>bois</strong> (thermopin, thermofrêne, Kebony, Accoya, bambou), en <strong>composite</strong>, en <strong>carrelage et grès cérame</strong> et en <strong>aluminium</strong>. Ses terrasses reposent sur une ossature en aluminium posée sur plots réglables, ventilée sous les lames, plutôt que sur des lambourdes en bois qui finissent par pourrir.</p>
+<p>Instant Terrasse et Horizon Fenêtre sont deux marques de la même société, ESCOM HABITAT. Concrètement, si vous changez une baie vitrée et refaites la terrasse au même moment, les cotes du seuil et de la terrasse sont pensées ensemble, avec un seul interlocuteur.</p>
+<p><a href="https://www.instantterrasse.com/" class="ext" target="_blank" rel="noopener">Découvrir Instant Terrasse</a></p>
+<h2>Notre installateur partenaire</h2>
+<p>Horizon Fenêtre vend la fourniture et réalise la prise de cotes. La pose est confiée à un installateur partenaire indépendant, avec qui nous travaillons régulièrement. Il établit son propre devis et sa propre facture, intervient sur la base de nos cotes, et nous calons ensemble la livraison et la date de pose.</p>
+<p>Vos coordonnées ne lui sont transmises que si vous l'acceptez, en cochant la case prévue dans notre <a href="/contact/">formulaire de contact</a>.</p>
+<h2>Devenir partenaire</h2>
+<p>Vous êtes poseur, artisan du bâtiment, architecte ou apporteur d'affaires dans la région lyonnaise et vous cherchez un fournisseur de menuiseries sur mesure ? Écrivez-nous à <a href="mailto:${MAIL}">${MAIL}</a> ou consultez notre <a href="/professionnels/">offre pour les professionnels</a>.</p>
+</article>
+<aside class="cote"><div class="boite fonce"><h2>Un projet fenêtre et terrasse ?</h2><p>On vient prendre les cotes et on coordonne les deux.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div></aside></div>`;
+  ecrire(url, page({ url, title: "Nos partenaires : Instant Terrasse et pose | Horizon Fenêtre", description: "Instant Terrasse, concepteur de terrasses sur mesure à Lyon, et notre installateur partenaire pour la pose de vos menuiseries.", body,
+    schemas: [{ "@context": "https://schema.org", "@type": "WebPage", name: "Nos partenaires", url: SITE + url, about: [{ "@type": "Organization", name: "Instant Terrasse", url: "https://www.instantterrasse.com/", parentOrganization: { "@type": "Organization", name: "ESCOM HABITAT" } }] }, filLd(items)] }));
+  plan.push({ url, groupe: "Horizon Fenêtre", titre: "Partenaires" });
+}
+
+const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique change
 // ===== Mentions légales, confidentialité, merci, erreur, 404 =====
 {
   const url = "/mentions-legales/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Mentions légales" }];
@@ -416,7 +461,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <h2>Données personnelles et cookies</h2><p>Le traitement de vos données est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>. Ce site ne dépose aucun cookie ni traceur.</p>
 <h2>Propriété intellectuelle et crédits photo</h2><p>Les textes, dessins et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite.</p><p>Les photographies d'illustration proviennent de la banque d'images Unsplash (licence Unsplash) : ${CREDITS.join(", ")}. Elles illustrent les types de produits proposés et ne représentent pas des chantiers réalisés par Horizon Fenêtre.</p></article></div>`;
   ecrire(url, page({ url, title: "Mentions légales | Horizon Fenêtre", description: "Mentions légales du site Horizon Fenêtre, marque d'ESCOM HABITAT SARL à Rillieux-la-Pape : éditeur, activité, hébergement, crédits.", body, schemas: [filLd(items)] }));
-  plan.push({ url, prio: "0.2" });
+  plan.push({ url, groupe: "Informations", titre: "Mentions légales" });
 
   const curl = "/confidentialite/"; const citems = [{ url: "/", t: "Accueil" }, { url: curl, t: "Politique de confidentialité" }];
   const cbody = `${bandeauSimple(citems, "Politique de confidentialité", "Comment Horizon Fenêtre traite vos données personnelles, conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.")}<div class="wrap corps"><article class="prose">
@@ -446,18 +491,33 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr/fr/plaintes" class="ext" target="_blank" rel="noopener">CNIL</a>.</p>
 <h2>Cookies et traceurs</h2><p>Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience, aucun pixel publicitaire et aucun contenu intégré de réseau social. Aucun bandeau de consentement n'est donc nécessaire. Si cela change, cette page sera mise à jour et votre accord sera demandé au préalable.</p>
 <h2>Sécurité</h2><p>Le site est servi exclusivement en HTTPS, avec des en-têtes de sécurité stricts. Le formulaire est protégé contre les envois automatisés sans service tiers de type captcha.</p>
-<p><em>Dernière mise à jour : ${dateFr(new Date().toISOString().slice(0, 10))}.</em></p></article></div>`;
+<p><em>Dernière mise à jour : ${dateFr(MAJ_CONFIDENTIALITE)}.</em></p></article></div>`;
   ecrire(curl, page({ url: curl, title: "Politique de confidentialité | Horizon Fenêtre", description: "Données collectées, finalités, durées de conservation, destinataires et droits RGPD : la politique de confidentialité du site Horizon Fenêtre.", body: cbody, schemas: [filLd(citems)] }));
-  plan.push({ url: curl, prio: "0.2" });
+  plan.push({ url: curl, groupe: "Informations", titre: "Politique de confidentialité" });
 
   ecrire("/merci/", page({ url: "/merci/", noindex: true, title: "Demande envoyée | Horizon Fenêtre", description: "Votre demande a bien été envoyée.", body: bandeauSimple(null, "Demande envoyée", "Merci. On vous rappelle sous 24 h ouvrées pour fixer la visite.", `<p style="margin-top:1.5rem"><a class="btn btn-p" href="/blog/">Lire nos guides en attendant</a></p>`) }));
   ecrire("/erreur-envoi/", page({ url: "/erreur-envoi/", noindex: true, title: "Envoi impossible | Horizon Fenêtre", description: "Votre demande n'a pas pu être envoyée.", body: bandeauSimple(null, "Votre demande n'a pas pu être envoyée", `Vérifiez que les champs obligatoires sont remplis, puis réessayez. Vous pouvez aussi nous appeler au ${TEL} ou écrire à ${MAIL}.`, `<p style="margin-top:1.5rem"><a class="btn btn-p" href="/contact/">Revenir au formulaire</a></p>`) }));
   fs.writeFileSync(path.join(OUT, "404.html"), page({ url: "/404/", noindex: true, title: "Page introuvable | Horizon Fenêtre", description: "Cette page n'existe pas ou a été déplacée.", body: bandeauSimple(null, "Cette page n'existe pas", "Elle a peut-être été déplacée. Repartez de l'accueil ou consultez nos produits.", `<p style="margin-top:1.5rem"><a class="btn btn-p" href="/">Retour à l'accueil</a></p>`) }));
 }
 
-// ===== Sitemap, robots, manifest =====
-const today = new Date().toISOString().slice(0, 10);
-fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${plan.map((p) => `<url><loc>${SITE}${p.url}</loc><lastmod>${p.date || today}</lastmod><priority>${p.prio}</priority></url>`).join("\n")}\n</urlset>\n`);
+// ===== Plan du site (page lisible) =====
+{
+  const url = "/plan-du-site/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Plan du site" }];
+  plan.push({ url, groupe: "Informations", titre: "Plan du site" });
+  const groupes = ["Horizon Fenêtre", "Nos produits", "Conseils et guides", "Informations"];
+  const body = `${bandeauSimple(items, "Plan du site", "Toutes les pages du site Horizon Fenêtre.")}<div class="wrap corps"><article class="prose">${groupes.map((g) => `<h2>${g}</h2><ul>${plan.filter((p) => p.groupe === g).map((p) => `<li><a href="${p.url}">${p.titre}</a></li>`).join("")}</ul>`).join("")}</article></div>`;
+  ecrire(url, page({ url, title: "Plan du site | Horizon Fenêtre", description: "Plan du site Horizon Fenêtre : produits, conseils et guides, informations pratiques.", body, schemas: [filLd(items)] }));
+}
+
+// ===== Sitemap XML, robots, manifest =====
+const xml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const urlsSitemap = plan.map((p) => {
+  const info = INFOS[p.url];
+  const lastmod = p.date || dateDe(p.url, info.main);
+  return `  <url>\n    <loc>${xml(SITE + p.url)}</loc>\n    <lastmod>${lastmod}</lastmod>${info.images.map((im) => `\n    <image:image>\n      <image:loc>${xml(im.loc)}</image:loc>\n    </image:image>`).join("")}\n  </url>`;
+});
+fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urlsSitemap.join("\n")}\n</urlset>\n`);
+if (!process.env.VERCEL) fs.writeFileSync(FICHIER_DATES, JSON.stringify(Object.fromEntries(Object.entries(DATES).sort()), null, 1) + "\n");
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /merci/\nDisallow: /erreur-envoi/\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, "site.webmanifest"), JSON.stringify({ name: "Horizon Fenêtre", short_name: "Horizon Fenêtre", start_url: "/", display: "standalone", background_color: "#e9f6fb", theme_color: "#566f79", icons: [{ src: "/assets/img/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/img/icon-512.png", sizes: "512x512", type: "image/png" }] }));
 console.log(`OK : ${plan.length} pages indexables, ${articles.length} articles.`);
