@@ -263,7 +263,7 @@ const parcours = `<ol class="parcours">
 // ===== Accueil =====
 {
   const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
-  const VIGNETTES = { fenetres: "vFenetre", "baies-vitrees": "vBaie", volets: "voletRoulant", "brise-soleil-orientables": "bso", "portes-d-entree": "vPorte", "portes-de-garage": "vGarage", "portes-interieures": "portePlace", "portails-clotures": "vCloture", moustiquaires: "vMoustiq" };
+  const VIGNETTES = {};
   const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}">${photo(VIGNETTES[p.slug] || p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
@@ -458,7 +458,7 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
 <h2>Activité</h2><p>ESCOM HABITAT, sous le nom Horizon Fenêtre, vend des menuiseries sur mesure (fourniture seule) et réalise le conseil et la prise de cotes. La pose est réalisée par un installateur partenaire indépendant, qui établit son propre devis et sa propre facture et assume ses propres responsabilités et assurances pour les travaux qu'il réalise.</p>
 <h2>Hébergement</h2><p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. <a href="https://vercel.com" class="ext" target="_blank" rel="noopener">vercel.com</a></p>
 <h2>Données personnelles et cookies</h2><p>Le traitement de vos données est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>. Ce site ne dépose aucun cookie. La mesure d'audience est réalisée sans cookie et de façon anonyme.</p>
-<h2>Propriété intellectuelle et crédits photo</h2><p>Les textes, dessins et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite.</p><p>Les photographies d'illustration proviennent de la banque d'images Unsplash (licence Unsplash) : ${CREDITS.join(", ")}. Elles illustrent les types de produits proposés et ne représentent pas des chantiers réalisés par Horizon Fenêtre.</p></article></div>`;
+<h2>Propriété intellectuelle et crédits photo</h2><p>Les textes, dessins, illustrations de produits et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite. Les illustrations de produits sont des visuels d'ambiance, non contractuels.</p><p>Les photographies d'illustration proviennent de la banque d'images Unsplash (licence Unsplash) : ${CREDITS.join(", ")}. Elles illustrent les types de produits proposés et ne représentent pas des chantiers réalisés par Horizon Fenêtre.</p></article></div>`;
   ecrire(url, page({ url, title: "Mentions légales | Horizon Fenêtre", description: "Mentions légales du site Horizon Fenêtre, marque d'ESCOM HABITAT SARL à Rillieux-la-Pape : éditeur, activité, hébergement, crédits.", body, schemas: [filLd(items)] }));
   plan.push({ url, groupe: "Informations", titre: "Mentions légales" });
 

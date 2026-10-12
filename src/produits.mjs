@@ -2,7 +2,7 @@
 export const produits = [
 {
 slug: "fenetres",
-photo: "maison",
+photo: "pFenetre",
 galerie: [["fenBlanche","Fenêtre PVC blanche deux vantaux : le grand classique de la rénovation."],["fenNoire","Profils fins et teinte sombre : plus de vitrage pour la même ouverture."],["salonJardin","Bien dimensionnées, les fenêtres changent l'usage d'une pièce."]],
 nav: "Fenêtres",
 court: "PVC, aluminium ou bois, du châssis fixe à la baie coulissante.",
@@ -68,8 +68,8 @@ faq: [
 },
 {
 slug: "volets",
-photo: "facadeVolets",
-galerie: [["voletRoulant","Volet roulant à lames : protection solaire, intimité et sécurité."],["voletBattant","Volets battants : le dessin d'origine respecté sur une façade de village."]],
+photo: "pVolet",
+galerie: [["pBattants","Volets battants à persiennes : le dessin traditionnel, en aluminium sans entretien."],["voletRoulant","Volet roulant à lames : protection solaire, intimité et sécurité."],["voletBattant","Volets battants : le dessin d'origine respecté sur une façade de village."]],
 nav: "Volets",
 court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
 title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
@@ -111,7 +111,7 @@ faq: [
 },
 {
 slug: "portes-de-garage",
-photo: "garage",
+photo: "pGarage",
 galerie: [["garageNoir","Panneaux lisses et teinte sombre : la porte prolonge la façade."]],
 nav: "Portes de garage",
 court: "Sectionnelles plafond et latérales, motorisées ou manuelles.",
@@ -151,8 +151,8 @@ faq: [
 },
 {
 slug: "portes-d-entree",
-photo: "porte",
-galerie: [["porteInt","Vue intérieure : la vitrière éclaire l'entrée sans exposer la maison."]],
+photo: "pPorte",
+galerie: [["pPaliere","Porte palière d'appartement : sécurité et isolation phonique pour les immeubles."],["porteInt","Vue intérieure : la vitrière éclaire l'entrée sans exposer la maison."]],
 nav: "Portes d'entrée",
 court: "Aluminium, PVC ou acier, isolantes et sécurisées.",
 title: "Porte d'entrée alu, PVC ou acier sur mesure à Lyon",
@@ -185,7 +185,7 @@ faq: [
 },
 {
 slug: "portails-clotures",
-photo: "portail",
+photo: "pPortail",
 galerie: [["portailCoulissant","Portails à lames horizontales : la même ligne d'une maison à l'autre."],["portailBattant","Portail battant deux vantaux sur une allée plane."],["portailDesign","Portail plein à motif : l'aluminium permet presque tous les dessins."]],
 nav: "Portails et clôtures",
 court: "Portails battants ou coulissants, clôtures et portillons assortis.",
@@ -226,7 +226,7 @@ faq: [
 },
 {
 slug: "moustiquaires",
-photo: "moustiquaire",
+photo: "pMoustiq",
 galerie: [["moustiqSoir","Une toile bien tendue reste presque invisible."]],
 nav: "Moustiquaires",
 court: "Enroulables, plissées ou fixes, pour fenêtres et baies.",
@@ -265,7 +265,7 @@ faq: [
 },
 {
 slug: "baies-vitrees",
-photo: "baie",
+photo: "pBaie",
 galerie: [["baieRepas","Une baie coulissante transforme la salle à manger en pièce ouverte sur le jardin."],["maisonBaies","Grandes baies vitrées en façade : on dimensionne le vitrage selon l'orientation."]],
 nav: "Baies vitrées",
 court: "Coulissantes, à galandage ou à frappe, en aluminium ou PVC.",
@@ -304,7 +304,7 @@ faq: [
 },
 {
 slug: "brise-soleil-orientables",
-photo: "bso",
+photo: "pBso",
 galerie: [["bsoMaison","Lames baissées en plein été : la pièce reste à l'ombre sans être plongée dans le noir."],["maisonBaies","Les grandes surfaces vitrées exposées au sud sont les premières à bénéficier d'un BSO."]],
 nav: "Brise-soleil (BSO)",
 court: "Lames orientables pour doser la lumière et la chaleur.",
@@ -340,7 +340,7 @@ faq: [
 },
 {
 slug: "portes-interieures",
-photo: "couloir",
+photo: "pInterieure",
 galerie: [["porteBlanche","Porte blanche affleurante : elle se fond dans un couloir contemporain."],["portePlace","Porte à panneaux laquée blanche : un classique qui s'accorde avec toutes les teintes de murs."]],
 nav: "Portes intérieures",
 court: "Battantes ou coulissantes, pleines ou vitrées, standard ou sur mesure.",

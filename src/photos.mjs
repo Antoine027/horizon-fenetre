@@ -38,6 +38,18 @@ export const PHOTOS = {
   vGarage:     ["photo-1696992812596-3c0d4d2d1299", 4912, 3264, "Porte de garage sectionnelle grise à panneaux lisses", "Simeon Galabov"],
   vCloture:    ["photo-1711165727641-e66ddea755b0", 8095, 5399, "Clôture aluminium à lames verticales sur ciel bleu", "DL314 Lin"],
   vMoustiq:    ["photo-1758998243249-4cc82f0df9e8", 3552, 4736, "Fenêtre à cadre noir équipée d'une moustiquaire", "MBOR MC"],
+  // Illustrations propres à Horizon Fenêtre, servies depuis le site (public/assets/img/produits/).
+  pFenetre:    ["local:fenetre-anthracite", 1672, 941, "Fenêtre aluminium anthracite deux vantaux dans une façade enduite claire", null],
+  pBaie:       ["local:baie-coulissante", 1122, 1402, "Baie vitrée coulissante à profils anthracite ouvrant sur une terrasse", null],
+  pVolet:      ["local:volet-roulant-baie", 1672, 941, "Volet roulant anthracite à moitié baissé devant une baie vitrée", null],
+  pBattants:   ["local:volets-battants-facade", 1536, 1024, "Façade classique équipée de volets battants à persiennes gris anthracite", null],
+  pBso:        ["local:bso-baie", 1122, 1402, "Brise-soleil orientable à lames aluminium devant une baie vitrée", null],
+  pPorte:      ["local:porte-entree-alu", 1672, 831, "Porte d'entrée aluminium anthracite avec vitrage vertical et barre de tirage", null],
+  pPaliere:    ["local:porte-paliere", 1536, 1024, "Porte palière d'appartement en bois foncé à huisserie noire", null],
+  pGarage:     ["local:garage-sectionnelle", 1672, 831, "Porte de garage sectionnelle anthracite à panneaux lisses", null],
+  pInterieure: ["local:porte-interieure-noire", 1672, 941, "Porte intérieure noire à rainures horizontales dans une entrée lumineuse", null],
+  pPortail:    ["local:portail-battant", 1672, 941, "Portail battant aluminium anthracite entre deux piliers enduits", null],
+  pMoustiq:    ["local:moustiquaire-enroulable", 1122, 1402, "Moustiquaire enroulable intégrée à une fenêtre anthracite ouverte sur le jardin", null],
 };
 
 // Génère une balise <img> responsive. Les images sont recadrées chez Unsplash puis servies
@@ -45,8 +57,17 @@ export const PHOTOS = {
 // vers un tiers : pas de transfert d'adresse IP hors de l'hébergeur, conformité RGPD).
 export const LARGEURS = [360, 400, 480, 560, 640, 720, 800, 900, 960, 1200, 1280];
 export function photo(cle, { ratio = [4, 3], largeurs = [480, 800, 1200], sizes = "(max-width: 760px) 100vw, 50vw", eager = false, classe = "", crop = "entropy" } = {}) {
-  const [id, , , alt] = PHOTOS[cle];
+  const [id, W, , alt] = PHOTOS[cle];
   const [rw, rh] = ratio;
+  if (id.startsWith("local:")) {
+    const nom = id.slice(6);
+    const tailles = [...new Set([480, 800, 1200, 1600].filter((w) => w < W).concat(W))];
+    const choix = (w) => tailles.find((t) => t >= w) || tailles[tailles.length - 1];
+    const w0 = choix(largeurs[Math.min(1, largeurs.length - 1)]);
+    const srcset = tailles.map((w) => `/assets/img/produits/${nom}-${w}.webp ${w}w`).join(", ");
+    const hd = Math.round((w0 * rh) / rw);
+    return `<img class="ph ${classe}" src="/assets/img/produits/${nom}-${w0}.webp" srcset="${srcset}" sizes="${sizes}" width="${w0}" height="${hd}" alt="${alt}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  }
   const source = `https://images.unsplash.com/${id}?w=1600&h=${Math.round((1600 * rh) / rw)}&fit=crop&crop=${crop}&fm=jpg&q=82`;
   const url = (w) => `/_vercel/image?url=${encodeURIComponent(source)}&w=${w}&q=70`;
   const w0 = largeurs[Math.min(1, largeurs.length - 1)];
@@ -54,4 +75,4 @@ export function photo(cle, { ratio = [4, 3], largeurs = [480, 800, 1200], sizes 
   return `<img class="ph ${classe}" src="${url(w0)}" srcset="${srcset}" sizes="${sizes}" width="${w0}" height="${Math.round((w0 * rh) / rw)}" alt="${alt}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
-export const CREDITS = Object.values(PHOTOS).map((p) => p[4]).filter((v, i, a) => a.indexOf(v) === i);
+export const CREDITS = Object.values(PHOTOS).map((p) => p[4]).filter((v, i, a) => v && a.indexOf(v) === i);
