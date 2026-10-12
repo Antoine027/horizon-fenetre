@@ -141,7 +141,9 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .bento .fl svg{width:18px;height:18px}
 .bento a:hover .fl,.bento a:focus-visible .fl{opacity:1;transform:none}
 @media (max-width:980px){.bento{grid-template-columns:1fr 1fr}.bento a.c2{grid-column:span 2;grid-row:span 2}}
-@media (max-width:560px){.bento{grid-template-columns:1fr;grid-auto-rows:220px}.bento a.l2,.bento a.c2{grid-column:auto;grid-row:auto}}
+@media (max-width:560px){.bento{grid-template-columns:1fr;grid-auto-rows:220px}.bento a.l2,.bento a.c2{grid-column:auto;grid-row:auto}
+.bento a.portrait{grid-row:span 2}
+.bento a.portrait .ph{object-position:50% 40%}}
 
 /* comparatif */
 .carte{background:#fff;border-radius:var(--r-l);padding:clamp(1.2rem,3vw,2.2rem)}
