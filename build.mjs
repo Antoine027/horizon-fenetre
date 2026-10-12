@@ -228,9 +228,8 @@ function formulaire(source) {
 <div class="plein"><label for="${id("prod")}">Votre projet concerne</label><select id="${id("prod")}" name="produit">${options.map((o) => `<option>${o}</option>`).join("")}</select></div>
 <fieldset class="plein"><legend>Pour la pose</legend><div class="choix"><label><input type="radio" name="pose" value="Pose par l'installateur partenaire" checked> Je souhaite un devis de pose</label><label><input type="radio" name="pose" value="Fourniture seule"> Fourniture seule</label></div></fieldset>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Nombre de menuiseries, dimensions approximatives, matériau souhaité, délai…"></textarea></div>
-<div class="plein"><label class="case"><input type="checkbox" name="partage_installateur" value="oui"> J'accepte que mes coordonnées et la description de mon projet soient transmises à l'installateur partenaire d'Horizon Fenêtre pour qu'il établisse un devis de pose. (Facultatif)</label></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
-<p class="note">Vos données servent uniquement à répondre à votre demande et à établir un devis. Elles sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer à tout moment : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
+<p class="note">Vos données servent uniquement à répondre à votre demande et à établir un devis. Si vous demandez un devis de pose, elles sont aussi transmises à notre installateur partenaire pour qu'il l'établisse. Elles sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer à tout moment : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
 </form>`;
 }
 
@@ -261,10 +260,10 @@ fs.cpSync("public", OUT, { recursive: true });
 const articles = lireArticles();
 const plan = [];
 const parcours = `<ol class="parcours">
-<li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille sur les matériaux et les gammes, et on relève chaque ouverture au millimètre.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Devis de fourniture</h3><p>Chaque menuiserie est décrite ligne par ligne : cotes, matériau, vitrage, performances, accessoires. Fourniture facturée avec une TVA à 20 %.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Fabrication et livraison</h3><p>On contrôle les cotes une dernière fois, on lance la fabrication sur mesure et on cale la livraison avec le poseur.</p><span class="qui">Horizon Fenêtre</span></li>
-<li><h3>Pose</h3><p>Notre installateur partenaire vous remet son propre devis de pose et intervient sur la base de nos cotes. Vous pouvez aussi faire appel à votre artisan.</p><span class="qui partenaire">Installateur partenaire</span></li>
+<li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p><span class="qui">Horizon Fenêtre</span></li>
+<li><h3>Devis de fourniture</h3><p>Chaque menuiserie détaillée ligne par ligne : cotes, matériau, vitrage, performances. TVA à 20 %.</p><span class="qui">Horizon Fenêtre</span></li>
+<li><h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p><span class="qui">Horizon Fenêtre</span></li>
+<li><h3>Pose</h3><p>Notre installateur partenaire pose, sur son propre devis. Vous pouvez aussi choisir votre artisan.</p><span class="qui partenaire">Installateur partenaire</span></li>
 </ol>`;
 
 // ===== Accueil =====
@@ -478,14 +477,14 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
 <h2>Finalités et bases légales</h2>
 <ul>
 <li><strong>Répondre à votre demande, organiser la visite et établir un devis de fourniture</strong> : mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
-<li><strong>Transmettre votre demande à notre installateur partenaire</strong> pour qu'il établisse un devis de pose : uniquement si vous cochez la case prévue dans le formulaire, sur la base de votre consentement (article 6.1.a). Vous pouvez le retirer à tout moment.</li>
+<li><strong>Transmettre votre demande à notre installateur partenaire</strong> pour qu'il établisse un devis de pose : uniquement si vous demandez un devis de pose dans le formulaire, au titre des mesures précontractuelles prises à votre demande (article 6.1.b). Si vous choisissez « Fourniture seule », rien ne lui est transmis.</li>
 <li><strong>Gérer la relation commerciale</strong> si vous devenez client (exécution du contrat, obligations comptables et fiscales).</li>
 </ul>
 <p>Vos données ne sont jamais vendues, louées ni utilisées à des fins de prospection par des tiers. Nous ne faisons aucun profilage ni décision automatisée.</p>
 <h2>Destinataires</h2>
 <ul>
 <li>ESCOM HABITAT (Horizon Fenêtre), seul destinataire de votre demande.</li>
-<li>Notre installateur partenaire, uniquement avec votre consentement.</li>
+<li>Notre installateur partenaire, uniquement si vous demandez un devis de pose.</li>
 <li>Nos sous-traitants techniques, tenus par contrat à la confidentialité : l'hébergeur du site et fournisseur des statistiques de visite, Vercel Inc. (États-Unis), et notre prestataire d'envoi d'e-mails, Brevo (Sendinblue SAS, France, données hébergées dans l'Union européenne).</li>
 </ul>
 <h2>Transferts hors de l'Union européenne</h2><p>L'hébergeur Vercel Inc. est établi aux États-Unis. Il adhère au Data Privacy Framework UE–États-Unis et propose des clauses contractuelles types de la Commission européenne. Les fonctions du site qui reçoivent le formulaire sont exécutées dans la région de Paris. Le site ne charge aucune ressource depuis un autre domaine : les polices et les images sont servies par le site lui-même.</p>

@@ -84,13 +84,22 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .trio{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
 .trio li{background:rgba(255,255,255,.82);border-radius:var(--r);padding:.8rem .9rem;font-size:.86rem;font-weight:560;color:var(--ardoise-f);line-height:1.35;display:flex;gap:.55rem;align-items:flex-start}
 .trio svg{width:20px;height:20px;flex:none;color:var(--ardoise)}
-@media (max-width:900px){
+@media (max-width:1100px) and (min-width:701px){
+  .hero-photo .h-img{object-position:78% 55%}
+  .hero-photo::before{background:linear-gradient(90deg,rgba(233,246,251,.97) 0%,rgba(233,246,251,.92) 42%,rgba(233,246,251,.4) 62%,rgba(233,246,251,0) 78%)}
+  .h-txt>*{max-width:30rem}
+  .trio{grid-template-columns:1fr;max-width:22rem}
+}
+@media (max-width:700px){
   .hero-photo{flex-direction:column;align-items:stretch;min-height:0}
-  .hero-photo picture{position:relative;order:2}
-  .hero-photo .h-img{display:block;height:auto;aspect-ratio:16/10;object-position:50% 60%}
+  .hero-photo picture{position:relative;order:1}
+  .hero-photo .h-img{display:block;height:44svh;min-height:260px;object-position:50% 58%}
   .hero-photo::before{display:none}
-  .h-txt{order:1;padding-top:110px;padding-bottom:1.6rem}
-  .trio{grid-template-columns:1fr;gap:.4rem;margin-top:1.4rem}
+  .h-txt{order:2;padding-top:1.4rem;padding-bottom:1.6rem}
+  .hero-photo .kicker{font-size:.8rem;margin-bottom:.9rem}
+  .hero-photo h1{margin-bottom:.9rem}
+  .hero-photo .chapo{font-size:.98rem;margin-bottom:1.2rem}
+  .trio{grid-template-columns:1fr;gap:.4rem;margin-top:1.2rem}
   .trio li{padding:.55rem .8rem}
 }
 @media (max-width:760px){.hero-photo .btn-s{display:none}}
@@ -387,3 +396,13 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 
 @media (max-width:1100px){.parcours{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.parcours{grid-template-columns:1fr}}
+
+/* Comment ça se passe : version compacte sur téléphone */
+@media (max-width:700px){
+  .parcours{gap:.6rem}
+  .parcours li{display:grid;grid-template-columns:36px 1fr;column-gap:.85rem;align-items:start;padding:.85rem 1rem;border-radius:var(--r);background:var(--ciel)}
+  .parcours li::before{grid-row:span 2;width:36px;height:36px;font-size:1rem;margin:0;background:#fff}
+  .parcours h3{font-size:1rem;margin:0 0 .15rem}
+  .parcours p{font-size:.88rem;margin:0;line-height:1.45}
+  .parcours .qui{display:none}
+}

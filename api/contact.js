@@ -4,7 +4,7 @@
 // Variables d'environnement Vercel : BREVO_API_KEY (obligatoire),
 // CONTACT_TO (destinataire, par défaut contact@horizonfenetre.com), CONTACT_FROM (expéditeur vérifié dans Brevo).
 
-const CHAMPS = { nom: 120, telephone: 30, email: 160, commune: 120, profil: 40, produit: 80, pose: 60, message: 3000, origine: 20, partage_installateur: 5 };
+const CHAMPS = { nom: 120, telephone: 30, email: 160, commune: 120, profil: 40, produit: 80, pose: 60, message: 3000, origine: 20 };
 const OBLIGATOIRES = ["nom", "telephone", "email", "commune"];
 
 const aller = (res, chemin) => { res.statusCode = 303; res.setHeader("Location", chemin); res.setHeader("Cache-Control", "no-store"); res.end(); };
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
   const lignes = [
     ["Nom", d.nom], ["Téléphone", d.telephone], ["E-mail", d.email], ["Commune du chantier", d.commune],
     ["Profil", d.profil], ["Produit", d.produit], ["Pose", d.pose],
-    ["Transmission à l'installateur partenaire", d.partage_installateur === "oui" ? "OUI, consentement donné" : "NON, ne pas transmettre"],
+    ["Transmission à l'installateur partenaire", /fourniture seule/i.test(d.pose || "") ? "NON, fourniture seule" : "OUI, devis de pose demandé"],
     ["Formulaire", d.origine], ["Message", d.message || "(aucun)"],
   ];
   const texte = lignes.map(([k, v]) => `${k} : ${v}`).join("\n");
