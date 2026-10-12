@@ -1,6 +1,5 @@
-
 (function(){
-  const BASE = "";
+  // Maison interactive : la visite se lance au clic (bouton, points dorés ou repères), jamais au défilement.
   const S = [
     { r:[880,640,1520,700], hero:1 },
     { el:"fen", p:[375,465], r:[375,465,480,330], titre:"Fenêtres", url:"/fenetres/",
@@ -26,54 +25,130 @@
       tags:["Sectionnelle","Latérale","Télécommande"] },
     { el:"portail", p:[1212,890], r:[1212,880,760,280], titre:"Portails et clôtures", url:"/portails-clotures/",
       texte:"Battants ou coulissants, en aluminium, assortis à la clôture et à la porte de garage pour une façade cohérente.",
-      tags:["Coulissant","Motorisable","Clôture assortie"] },
-    { r:[880,640,1520,700], hero:1 }
+      tags:["Coulissant","Motorisable","Clôture assortie"] }
   ];
-  const N = S.length - 1;
-  document.getElementById("visite").classList.add("anime");
-  const svg = document.getElementById("maison");
+  const NB = S.length - 1;
   const $ = (id) => document.getElementById(id);
-  const section = $("visite"), carte = $("carte"), intro = $("vintro"), fin = $("vfin"), voile = $("voile");
+  const section = $("visite"), svg = $("maison"), carte = $("carte"), points = $("points"), rail = $("rail");
   const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const lames = Array.from(document.querySelectorAll(".lame"));
   const NS = "http://www.w3.org/2000/svg";
+  const cl = (v) => Math.max(0, Math.min(1, v));
+  const lisse = (t) => t * t * (3 - 2 * t);
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-  // Points de repère et rail de navigation
-  const points = $("points"), rail = $("rail");
+  let etape = 0, mode = "roulant", cam = null, depart = null, arrivee = null, t0 = 0, boucle = false;
+  const DUREE = reduit ? 0 : 1100;
+  const anim = new Array(NB + 1).fill(0);
+
+  // Points dorés et repères
   S.forEach((s, k) => {
-    if (!s.titre) return;
+    if (!k) return;
     const g = document.createElementNS(NS, "g");
     g.setAttribute("class", "v-point");
-    g.innerHTML = `<circle class="v-halo" cx="${s.p[0]}" cy="${s.p[1]}" r="14" fill="#c9a14a"/><circle cx="${s.p[0]}" cy="${s.p[1]}" r="9" fill="#c9a14a" stroke="#fff" stroke-width="3"/>`;
-    g.addEventListener("click", () => aller(k));
+    g.innerHTML = `<title>${s.titre}</title><circle class="v-halo" cx="${s.p[0]}" cy="${s.p[1]}" r="14" fill="#c9a14a"/><circle cx="${s.p[0]}" cy="${s.p[1]}" r="9" fill="#c9a14a" stroke="#fff" stroke-width="3"/>`;
+    g.addEventListener("click", () => aller(k, true));
     points.appendChild(g);
     const li = document.createElement("li");
-    li.innerHTML = `<button type="button" aria-label="${s.titre}"><span>${s.titre}</span><i></i></button>`;
-    li.firstChild.addEventListener("click", () => aller(k));
+    li.innerHTML = `<button type="button"><span>${s.titre}</span><i></i></button>`;
+    li.firstChild.addEventListener("click", () => aller(k, true));
     rail.appendChild(li);
   });
   const boutons = Array.from(rail.querySelectorAll("button"));
 
-  function course(){ return section.offsetHeight - innerHeight; }
-  function aller(k){
-    const y = section.offsetTop + (k / N) * course() + 2;
-    scrollTo({ top: y, behavior: reduit ? "auto" : "smooth" });
-  }
-
-  const cl = (v) => Math.max(0, Math.min(1, v));
-  const lisse = (t) => t * t * (3 - 2 * t);
-
-  function cadre(s, aspect, mobile){
+  function cadre(k){
+    const s = S[k], aspect = svg.clientWidth / svg.clientHeight, mobile = innerWidth <= 820;
     let [cx, cy, rw, rh] = s.r;
     if (mobile && s.hero) { rw = 1150; rh = 420; }
     const w = Math.max(rw, rh * aspect);
     let ox, oy;
-    if (mobile) { ox = 0; oy = s.hero ? -0.27 : 0.2; }
+    if (mobile) { ox = 0; oy = s.hero ? -0.31 : 0.2; }
     else { ox = s.hero ? -0.17 : -0.19; oy = 0.02; }
-    return { cx, cy, w, ox, oy };
+    return { cx, cy, w, ox, oy, aspect };
+  }
+  function poser(c){
+    const h = c.w / c.aspect;
+    svg.setAttribute("viewBox", `${(c.cx - c.w / 2 + c.ox * c.w).toFixed(1)} ${(c.cy - h / 2 + c.oy * h).toFixed(1)} ${c.w.toFixed(1)} ${h.toFixed(1)}`);
+  }
+  function melange(a, b, t){
+    return { cx: a.cx + (b.cx - a.cx) * t, cy: a.cy + (b.cy - a.cy) * t, w: a.w * Math.pow(b.w / a.w, t), ox: a.ox + (b.ox - a.ox) * t, oy: a.oy + (b.oy - a.oy) * t, aspect: b.aspect };
+  }
+  function appliquer(){
+    const a = anim.map(lisse);
+    const fen = Math.max(a[1], a[2]);
+    $("fenG").style.transform = `scaleX(${1 - 0.7 * fen}) skewY(${7 * fen}deg)`;
+    $("fenD").style.transform = `scaleX(${1 - 0.7 * fen}) skewY(${-7 * fen}deg)`;
+    $("moustiq").style.transform = `translateY(${(-142 + 142 * a[2]).toFixed(1)}px)`;
+    if (mode === "roulant") $("tablier").style.transform = `translateY(${(-158 + 158 * 0.78 * a[3]).toFixed(1)}px)`;
+    else { const sv = (-0.35 + 1.35 * a[3]).toFixed(3); $("vbG").style.transform = $("vbD").style.transform = `scaleX(${sv})`; }
+    $("baieC").style.transform = `translateX(${(-172 * a[4]).toFixed(1)}px)`;
+    const sy = (1 - 0.8 * a[5]).toFixed(3);
+    lames.forEach((l) => (l.style.transform = `scaleY(${sy})`));
+    $("porte").style.transform = `scaleX(${1 - 0.72 * a[6]}) skewY(${6 * a[6]}deg)`;
+    $("garage").style.transform = `translateY(${(-186 * a[7]).toFixed(1)}px)`;
+    $("portail").style.transform = `translateX(${(-322 * a[8]).toFixed(1)}px)`;
+  }
+  function tic(now){
+    let encore = false;
+    if (arrivee) {
+      const t = DUREE ? cl((now - t0) / DUREE) : 1;
+      cam = melange(depart, arrivee, ease(t));
+      if (t >= 1) { cam = arrivee; arrivee = null; } else encore = true;
+      poser(cam);
+    }
+    for (let k = 1; k <= NB; k++) {
+      const cible = !arrivee && (etape === k || (k === 1 && etape === 2)) ? 1 : 0;
+      let v = anim[k];
+      if (reduit) v = cible;
+      else { v += (cible - v) * (cible ? 0.07 : 0.12); if (Math.abs(cible - v) < 0.003) v = cible; else encore = true; }
+      anim[k] = v;
+    }
+    appliquer();
+    if (encore) requestAnimationFrame(tic); else boucle = false;
+  }
+  function relancer(){ if (!boucle) { boucle = true; requestAnimationFrame(tic); } }
+
+  function remplir(k){
+    const s = S[k];
+    $("cNum").textContent = `${k} / ${NB}`;
+    $("cTitre").textContent = s.titre;
+    $("cTexte").textContent = s.texte;
+    $("cTags").innerHTML = s.tags.map((t) => `<li>${t}</li>`).join("");
+    $("cLien").href = s.url;
+    $("cLien").textContent = `${s.lien || "Voir les " + s.titre.toLowerCase()} →`;
+    $("cVar").hidden = !s.variantes;
+    $("vPrec").disabled = k === 1;
+    $("vSuiv").textContent = k === NB ? "Terminer" : "Suivant →";
+  }
+  function aller(k, focus){
+    const avant = etape;
+    etape = k;
+    depart = cam; arrivee = cadre(k); t0 = performance.now();
+    section.classList.toggle("en-visite", k > 0);
+    boutons.forEach((b, j) => b.classList.toggle("on", j + 1 === k));
+    if (k > 0) {
+      if (avant > 0 && carte.classList.contains("on")) {
+        carte.classList.remove("on");
+        setTimeout(() => { if (etape === k) { remplir(k); carte.classList.add("on"); } }, 220);
+      } else { remplir(k); carte.classList.add("on"); }
+      if (focus) setTimeout(() => $("cTitre").focus({ preventScroll: true }), 50);
+    } else {
+      carte.classList.remove("on");
+      if (focus) $("vLancer").focus({ preventScroll: true });
+    }
+    relancer();
   }
 
-  let cible = 0, courant = 0, actif = -2, mode = "roulant";
+  $("vLancer").addEventListener("click", () => aller(1, true));
+  $("vPrec").addEventListener("click", () => etape > 1 && aller(etape - 1));
+  $("vSuiv").addEventListener("click", () => aller(etape < NB ? etape + 1 : 0, etape === NB));
+  $("vFermer").addEventListener("click", () => aller(0, true));
+  document.addEventListener("keydown", (e) => {
+    if (!etape) return;
+    if (e.key === "Escape") aller(0, true);
+    else if (e.key === "ArrowRight" && etape < NB) aller(etape + 1);
+    else if (e.key === "ArrowLeft" && etape > 1) aller(etape - 1);
+  });
   const varBtns = Array.from(document.querySelectorAll("#cVar button"));
   varBtns.forEach((btn) => btn.addEventListener("click", () => {
     mode = btn.dataset.v;
@@ -82,91 +157,8 @@
     $("battants").style.display = b ? "" : "none";
     $("coffre").style.display = b ? "none" : "";
     $("tablier").style.transform = "translateY(-158px)";
-    if (b) { // rejoue la fermeture des battants
-      const t0 = performance.now();
-      const anime = (t) => { const a = lisse(cl((t - t0) / 900)); const sv = -0.35 + 1.35 * a; $("vbG").style.transform = $("vbD").style.transform = `scaleX(${sv.toFixed(3)})`; if (a < 1) requestAnimationFrame(anime); };
-      requestAnimationFrame(anime);
-    } else rendre(courant);
+    anim[3] = 0; relancer();
   }));
-
-  function afficherCarte(k){
-    if (k === actif) return;
-    actif = k;
-    if (k < 1 || !S[k] || !S[k].titre) { carte.classList.remove("on"); return; }
-    const s = S[k];
-    const remplir = () => {
-      $("cNum").textContent = `${k} / ${N - 1}`;
-      $("cTitre").textContent = s.titre;
-      $("cTexte").textContent = s.texte;
-      $("cTags").innerHTML = s.tags.map((t) => `<li>${t}</li>`).join("");
-      $("cLien").href = BASE + s.url;
-      $("cLien").textContent = `${s.lien || "Voir les " + s.titre.toLowerCase()} →`;
-      $("cVar").hidden = !s.variantes;
-      carte.classList.add("on");
-    };
-    if (carte.classList.contains("on")) { carte.classList.remove("on"); setTimeout(() => { if (actif === k) remplir(); }, 220); }
-    else remplir();
-  }
-
-  function rendre(pos){
-    const aspect = innerWidth / innerHeight, mobile = innerWidth <= 820;
-    let i = Math.min(Math.floor(pos), N - 1), f = pos - i;
-    if (pos >= N) { i = N - 1; f = 1; }
-    const t = lisse(cl((f - 0.42) / 0.58));
-    const a = cadre(S[i], aspect, mobile), b = cadre(S[i + 1], aspect, mobile);
-    const w = a.w * Math.pow(b.w / a.w, t), h = w / aspect;
-    const cx = a.cx + (b.cx - a.cx) * t, cy = a.cy + (b.cy - a.cy) * t;
-    const ox = a.ox + (b.ox - a.ox) * t, oy = a.oy + (b.oy - a.oy) * t;
-    svg.setAttribute("viewBox", `${(cx - w / 2 + ox * w).toFixed(1)} ${(cy - h / 2 + oy * h).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`);
-
-    // Animation de chaque menuiserie à l'arrivée de la caméra
-    const an = (k) => cl((pos - (k - 0.2)) / 0.45);
-    const a1 = lisse(an(1)), am = lisse(an(2)), a2 = lisse(an(3)), a3 = lisse(an(4)), a4 = lisse(an(5)), a5 = lisse(an(6)), a6 = lisse(an(7)), a7 = lisse(an(8));
-    $("moustiq").style.transform = `translateY(${(-142 + 142 * am).toFixed(1)}px)`;
-    $("fenG").style.transform = `scaleX(${1 - 0.7 * a1}) skewY(${7 * a1}deg)`;
-    $("fenD").style.transform = `scaleX(${1 - 0.7 * a1}) skewY(${-7 * a1}deg)`;
-    if (mode === "roulant") $("tablier").style.transform = `translateY(${(-158 + 158 * 0.78 * a2).toFixed(1)}px)`;
-    else { const sv = -0.35 + 1.35 * a2; $("vbG").style.transform = `scaleX(${sv.toFixed(3)})`; $("vbD").style.transform = `scaleX(${sv.toFixed(3)})`; }
-    $("baieC").style.transform = `translateX(${(-172 * a3).toFixed(1)}px)`;
-    const sy = 1 - 0.8 * a4;
-    lames.forEach((l) => (l.style.transform = `scaleY(${sy.toFixed(3)})`));
-    $("porte").style.transform = `scaleX(${1 - 0.72 * a5}) skewY(${6 * a5}deg)`;
-    $("garage").style.transform = `translateY(${(-186 * a6).toFixed(1)}px)`;
-    $("portail").style.transform = `translateX(${(-322 * a7).toFixed(1)}px)`;
-
-    // Textes
-    const oIntro = 1 - cl(pos / 0.35), oFin = cl((pos - (N - 0.3)) / 0.3);
-    intro.style.opacity = oIntro; intro.style.visibility = oIntro > 0.01 ? "visible" : "hidden";
-    fin.style.opacity = oFin; fin.style.visibility = oFin > 0.01 ? "visible" : "hidden";
-    voile.style.opacity = Math.max(oIntro, oFin);
-    points.style.opacity = Math.max(1 - cl(pos / 0.3), oFin);
-    points.style.pointerEvents = (pos < 0.3 || pos > N - 0.3) ? "auto" : "none";
-    const d = cl((pos - (N - 0.7)) / 0.7);
-    $("crepuscule").setAttribute("opacity", (0.2 * d).toFixed(3));
-    $("lumieres").setAttribute("opacity", d.toFixed(3));
-
-    let k = -1;
-    if (f < 0.5) k = i; else if (f > 0.93) k = i + 1;
-    if (pos >= N - 0.05) k = N;
-    afficherCarte(k);
-    const etape = Math.round(pos);
-    boutons.forEach((btn, j) => btn.classList.toggle("on", j + 1 === etape));
-  }
-
-  function mesurer(){
-    const c = course();
-    const y = -section.getBoundingClientRect().top;
-    cible = c > 0 ? cl(y / c) * N : 0;
-  }
-  let boucle = false;
-  function tic(){
-    const ecart = cible - courant;
-    if (reduit || Math.abs(ecart) < 0.0008) courant = cible; else courant += ecart * 0.16;
-    rendre(courant);
-    if (courant !== cible) requestAnimationFrame(tic); else boucle = false;
-  }
-  function demander(){ mesurer(); if (!boucle) { boucle = true; requestAnimationFrame(tic); } }
-  addEventListener("scroll", demander, { passive: true });
-  addEventListener("resize", () => { mesurer(); rendre(courant); });
-  mesurer(); courant = cible; rendre(courant);
+  addEventListener("resize", () => { cam = cadre(etape); arrivee = null; poser(cam); });
+  cam = cadre(0); poser(cam); appliquer();
 })();

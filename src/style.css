@@ -70,9 +70,8 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 /* HERO : visite de la maison au défilement */
 .kicker{display:inline-block;font-size:.92rem;font-weight:650;color:var(--ardoise);background:#fff;border-radius:999px;padding:.4rem .9rem;margin-bottom:1.4rem}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem}
-.visite{position:relative;margin-top:-80px;height:100svh;background:var(--ciel)}
-.visite.anime{height:calc(9 * 95svh + 100svh)}
-.v-scene{position:sticky;top:0;height:100svh;overflow:hidden}
+.visite{position:relative;margin-top:-80px;height:100svh;min-height:640px;max-height:1100px;background:var(--ciel)}
+.v-scene{position:relative;height:100%;overflow:hidden}
 .v-scene>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .lame,#fenG,#fenD,#porte,#tablier,#moustiq,#vbG,#vbD,#baieC,#garage,#portail{transform-box:fill-box}
 .lame{transform-origin:center}
@@ -86,22 +85,21 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .v-point{cursor:pointer}
 .v-point .v-halo{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
 @keyframes pulse{from{transform:scale(.6);opacity:.7}to{transform:scale(2.2);opacity:0}}
+.v-voile,.v-intro{transition:opacity .45s ease,visibility .45s}
+.en-visite .v-voile,.en-visite .v-intro{opacity:0;visibility:hidden}
+#points{transition:opacity .4s}
+.en-visite #points{opacity:0;pointer-events:none}
 .v-voile{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(233,246,251,.95) 0%,rgba(233,246,251,.8) 36%,rgba(233,246,251,0) 60%)}
-.v-intro,.v-fin{position:absolute;left:max(16px,calc((100vw - var(--w)) / 2 + 24px));top:calc(50% + 40px);transform:translateY(-50%);max-width:40rem;padding-right:16px}
+.v-intro{position:absolute;left:max(16px,calc((100vw - var(--w)) / 2 + 24px));top:calc(50% + 40px);transform:translateY(-50%);max-width:40rem;padding-right:16px}
 .v-intro h1{font-size:clamp(2.5rem,1.2rem + 4.2vw,4.8rem);letter-spacing:-.045em;line-height:.98;margin-bottom:1.4rem}
 .v-intro h1 span{display:block}
 .v-intro h1 .fin{font-weight:300}
 .v-intro h1 .fort{font-weight:750;color:var(--ardoise)}
-.v-intro .chapo,.v-fin .chapo{font-size:1.1rem;color:var(--texte-2);max-width:32em;margin-bottom:1.8rem}
-.v-fin h2{font-size:clamp(1.9rem,1rem + 2.8vw,3.3rem);line-height:1.08;letter-spacing:-.03em;margin-bottom:1rem}
-.v-indice{margin-top:1.8rem;font-size:.88rem;font-weight:600;color:var(--ardoise);display:flex;align-items:center;gap:.6rem}
-.v-indice span{display:inline-block;width:22px;height:34px;border:2px solid var(--brume);border-radius:12px;position:relative}
-.v-indice span::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;margin-left:-2px;border-radius:2px;background:var(--ardoise);animation:molette 1.6s ease-in-out infinite}
-@keyframes molette{0%{transform:translateY(0);opacity:1}100%{transform:translateY(10px);opacity:0}}
+.v-intro .chapo{font-size:1.1rem;color:var(--texte-2);max-width:32em;margin-bottom:1.8rem}
 .v-carte{box-sizing:border-box;position:absolute;left:max(16px,calc((100vw - var(--w)) / 2 + 24px));top:calc(50% + 40px);width:min(25rem,calc(100% - 32px));background:#fff;border-radius:24px;padding:1.6rem 1.7rem 1.4rem;box-shadow:0 24px 60px -24px rgba(51,69,77,.45);opacity:0;transform:translateY(-44%);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
 .v-carte.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
 .v-carte .v-num{font-size:.75rem;font-weight:700;letter-spacing:.14em;color:var(--brume);margin:0 0 .4rem;font-variant-numeric:tabular-nums}
-.v-carte h2{font-size:1.6rem;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.02em}
+.v-carte h2{font-size:1.6rem;line-height:1.15;margin:0 2.2rem .6rem 0;letter-spacing:-.02em}
 .v-carte .v-txt{margin:0 0 1rem;font-size:.98rem;color:var(--texte-2)}
 .v-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .9rem;padding:0;list-style:none}
 .v-tags li{font-size:.78rem;font-weight:600;color:var(--ardoise-f);background:var(--ciel);border-radius:999px;padding:.3rem .7rem}
@@ -109,6 +107,22 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .v-var[hidden]{display:none}
 .v-var button{all:unset;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--ardoise);padding:.5rem 1rem;border-radius:999px;transition:background .2s,color .2s}
 .v-var button[aria-pressed="true"]{background:var(--ardoise);color:#fff}
+.v-lancer{all:unset;cursor:pointer;margin-top:1.6rem;display:inline-flex;align-items:center;gap:.8rem;font-weight:700;color:var(--ardoise-f);border-radius:999px;padding:.35rem 1.1rem .35rem .35rem;background:rgba(255,255,255,.75);box-shadow:0 10px 30px -14px rgba(51,69,77,.45);transition:background .2s,transform .2s}
+.v-lancer:hover{background:#fff;transform:translateY(-1px)}
+.v-lancer small{display:block;font-size:.78rem;font-weight:600;color:var(--brume)}
+.v-play{width:44px;height:44px;border-radius:50%;background:var(--ardoise);position:relative;flex:none;box-shadow:0 0 0 0 rgba(201,161,74,.6);animation:appel 2.4s ease-out infinite}
+.v-play::after{content:"";position:absolute;left:17px;top:13px;border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent}
+@keyframes appel{0%{box-shadow:0 0 0 0 rgba(201,161,74,.55)}70%{box-shadow:0 0 0 14px rgba(201,161,74,0)}100%{box-shadow:0 0 0 0 rgba(201,161,74,0)}}
+.v-lancer:focus-visible,.v-nav button:focus-visible,.v-fermer:focus-visible{outline:3px solid #c9a14a;outline-offset:3px}
+.v-fermer{all:unset;cursor:pointer;position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;line-height:1;color:var(--ardoise)}
+.v-fermer:hover{background:var(--ciel)}
+.v-carte h2:focus{outline:none}
+.v-nav{display:flex;justify-content:space-between;gap:.6rem;margin-top:.8rem;padding-top:.9rem;border-top:1px solid var(--ciel-2)}
+.v-nav button{all:unset;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--ardoise);padding:.55rem 1rem;border-radius:999px;min-height:24px}
+.v-nav button:hover{background:var(--ciel)}
+.v-nav button:disabled{opacity:.35;cursor:default;background:none}
+.v-nav .suiv{background:var(--ardoise);color:#fff}
+.v-nav .suiv:hover{background:var(--brume)}
 .v-lien{font-weight:700;color:var(--ardoise);text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 .v-lien:hover{color:var(--brume)}
 .v-rail{position:absolute;right:clamp(12px,2.4vw,36px);top:calc(50% + 40px);transform:translateY(-50%);display:flex;flex-direction:column;gap:.3rem;margin:0;padding:0;list-style:none}
@@ -120,21 +134,23 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .v-var button:focus-visible,.v-rail button:focus-visible{outline:3px solid var(--or,#c9a14a);outline-offset:2px}
 @media (max-width:820px){
   .v-voile{background:linear-gradient(180deg,rgba(233,246,251,.96) 0%,rgba(233,246,251,.88) 48%,rgba(233,246,251,0) 66%)}
-  .v-intro,.v-fin{top:96px;transform:none;left:16px;right:16px;padding-right:0}
+  .v-intro{top:96px;transform:none;left:16px;right:16px;padding-right:0}
   .v-intro .kicker{font-size:.8rem;margin-bottom:.9rem}
   .v-intro h1{margin-bottom:.9rem}
-  .v-intro .chapo,.v-fin .chapo{font-size:.95rem;margin-bottom:1rem}
+  .v-intro .chapo{font-size:.95rem;margin-bottom:1rem}
   .v-intro .btn{padding:.65rem 1rem;font-size:.9rem}
-  .v-indice{display:none}
+  .v-lancer{margin-top:1rem}
+  .v-nav{margin-top:.4rem;padding-top:.6rem}
   .v-carte{top:auto;bottom:16px;left:16px;transform:translateY(16px);padding:1.15rem 1.2rem .9rem}
   .v-carte.on{transform:none}
   .v-carte h2{font-size:1.3rem}
   .v-carte .v-txt{font-size:.92rem;margin-bottom:.7rem}
   .v-rail{display:none}
 }
-@media (max-width:760px){.v-carte{bottom:86px}}
+@media (max-width:760px){.v-carte{bottom:86px}.v-intro .btn-s{display:none}}
 @media (prefers-reduced-motion:reduce){
-  .v-nuage,.v-arbre,.v-point .v-halo,.v-indice span::after{animation:none}
+  .v-nuage,.v-arbre,.v-point .v-halo,.v-play{animation:none}
+  .v-voile,.v-intro{transition:none}
   .v-carte{transition:opacity .2s}
   html{scroll-behavior:auto}
 }
