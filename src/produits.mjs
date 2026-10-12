@@ -186,7 +186,7 @@ faq: [
 {
 slug: "portails-clotures",
 photo: "portail",
-galerie: [["portailBattant","Portail battant deux vantaux sur une allée plane."],["portailDesign","Portail plein à motif : l'aluminium permet presque tous les dessins."]],
+galerie: [["portailCoulissant","Portails à lames horizontales : la même ligne d'une maison à l'autre."],["portailBattant","Portail battant deux vantaux sur une allée plane."],["portailDesign","Portail plein à motif : l'aluminium permet presque tous les dessins."]],
 nav: "Portails et clôtures",
 court: "Portails battants ou coulissants, clôtures et portillons assortis.",
 title: "Portail et clôture alu sur mesure à Lyon | Horizon Fenêtre",
@@ -305,7 +305,7 @@ faq: [
 {
 slug: "brise-soleil-orientables",
 photo: "bso",
-galerie: [["maisonBaies","Les grandes surfaces vitrées exposées au sud sont les premières à bénéficier d'un BSO."]],
+galerie: [["bsoMaison","Lames baissées en plein été : la pièce reste à l'ombre sans être plongée dans le noir."],["maisonBaies","Les grandes surfaces vitrées exposées au sud sont les premières à bénéficier d'un BSO."]],
 nav: "Brise-soleil (BSO)",
 court: "Lames orientables pour doser la lumière et la chaleur.",
 title: "Brise-soleil orientable (BSO) sur mesure à Lyon",
@@ -341,7 +341,7 @@ faq: [
 {
 slug: "portes-interieures",
 photo: "couloir",
-galerie: [["portePlace","Porte à panneaux laquée blanche : un classique qui s'accorde avec toutes les teintes de murs."]],
+galerie: [["porteBlanche","Porte blanche affleurante : elle se fond dans un couloir contemporain."],["portePlace","Porte à panneaux laquée blanche : un classique qui s'accorde avec toutes les teintes de murs."]],
 nav: "Portes intérieures",
 court: "Battantes ou coulissantes, pleines ou vitrées, standard ou sur mesure.",
 title: "Portes intérieures sur mesure et blocs-portes à Lyon",
