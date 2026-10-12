@@ -197,7 +197,7 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .appel{padding:clamp(2.5rem,6vw,4rem) 0}
 .appel .boite-appel{background:var(--ardoise);color:#fff;border-radius:36px;padding:clamp(1.8rem,5vw,3.5rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem}
 .appel h2{color:#fff;margin:0;max-width:18em;font-size:clamp(1.6rem,1.1rem + 1.8vw,2.5rem)}
-.appel p{margin:.6rem 0 0;color:#e2edf1}
+.appel p{margin:.6rem 0 0;color:#f2f8fa}
 .appel .tel{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.1rem);font-weight:750;text-decoration:none;white-space:nowrap;color:#fff}
 .appel .btn-p{background:#fff;color:var(--ardoise-f)}
 .appel .btn-p:hover{background:var(--brume);color:var(--encre)}
@@ -368,6 +368,6 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .mat-carte dl{margin:0;display:grid;gap:.85rem}
   .mat-carte dl div{border-top:1px solid var(--ciel-2);padding-top:.75rem}
   .mat-carte dl div:first-child{border-top:0;padding-top:0}
-  .mat-carte dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brume);margin-bottom:.2rem}
+  .mat-carte dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ardoise);margin-bottom:.2rem}
   .mat-carte dd{margin:0;font-size:.95rem;color:var(--encre);line-height:1.45}
 }

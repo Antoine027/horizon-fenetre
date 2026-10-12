@@ -61,7 +61,7 @@ export function photo(cle, { ratio = [4, 3], largeurs = [480, 800, 1200], sizes 
   const [rw, rh] = ratio;
   if (id.startsWith("local:")) {
     const nom = id.slice(6);
-    const tailles = [...new Set([480, 800, 1200, 1600].filter((w) => w < W).concat(W))];
+    const tailles = [...new Set([480, 640, 800, 1200, 1600].filter((w) => w < W).concat(W))];
     const choix = (w) => tailles.find((t) => t >= w) || tailles[tailles.length - 1];
     const w0 = choix(largeurs[Math.min(1, largeurs.length - 1)]);
     const srcset = tailles.map((w) => `/assets/img/produits/${nom}-${w}.webp ${w}w`).join(", ");
