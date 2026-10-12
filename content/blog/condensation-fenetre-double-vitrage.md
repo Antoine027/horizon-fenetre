@@ -28,7 +28,7 @@ C'est le cas le plus courant. La vapeur d'eau de la maison (respiration, douche,
 
 L'[ADEME](https://agirpourlatransition.ademe.fr/particuliers/) détaille les bons gestes pour un air intérieur sain.
 
-Si la buée apparaît surtout **sur le bord du vitrage**, l'intercalaire est peut-être en aluminium classique. Les intercalaires « warm edge » à bord chaud, que nous posons en standard, limitent ce phénomène.
+Si la buée apparaît surtout **sur le bord du vitrage**, l'intercalaire est peut-être en aluminium classique. Les intercalaires « warm edge » à bord chaud, que nous proposons en standard, limitent ce phénomène.
 
 ## Cas 2 : de la buée côté extérieur
 
@@ -48,7 +48,7 @@ Là, c'est un **défaut** : le double vitrage a perdu son étanchéité. Le join
 
 ## Et après le remplacement ?
 
-Quand on change des fenêtres anciennes, on traite aussi le calfeutrement autour du cadre : c'est pour ça que le choix entre [pose en rénovation ou dépose totale](/blog/pose-renovation-ou-depose-totale/) compte. Si la maison donne sur une rue passante, c'est le bon moment pour envisager un vitrage acoustique. Et dans un logement de plus de deux ans, les nouvelles menuiseries performantes bénéficient en général de la TVA réduite.
+Quand on change des fenêtres anciennes, on traite aussi le calfeutrement autour du cadre : c'est pour ça que le choix entre [pose en rénovation ou dépose totale](/blog/pose-renovation-ou-depose-totale/) compte. Si la maison donne sur une rue passante, c'est le bon moment pour envisager un vitrage acoustique.
 
 ## Résumé
 

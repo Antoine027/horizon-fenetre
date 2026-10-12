@@ -37,7 +37,7 @@ L'éco-PTZ finance les travaux de rénovation énergétique sans intérêts, y c
 
 ### La TVA à 5,5 %
 
-C'est souvent l'aide la plus concrète : dans un logement de plus de deux ans, des fenêtres performantes fournies et posées par une entreprise sont facturées avec une TVA à 5,5 % au lieu de 20 %. Pas de dossier à monter, c'est directement sur la facture. Tout est détaillé dans notre article sur la [TVA à 5,5 % pour les fenêtres](/blog/tva-reduite-5-5-fenetres/).
+C'est souvent l'aide la plus concrète : dans un logement de plus de deux ans, des fenêtres performantes fournies et posées par une entreprise sont facturées avec une TVA à 5,5 % au lieu de 20 %. Pas de dossier à monter, c'est directement sur la facture. Attention : ce taux suppose que la même entreprise fournisse et pose. Quand la fourniture est achetée séparément, comme chez Horizon Fenêtre, elle est facturée à 20 %. Tout est détaillé dans notre article sur la [TVA à 5,5 % pour les fenêtres](/blog/tva-reduite-5-5-fenetres/).
 
 ### Les aides locales
 
@@ -59,6 +59,6 @@ Les « fenêtres à 1 € » ou le « reste à charge zéro » n'existent pas po
 | MaPrimeRénov' Parcours accompagné | Oui, dans une rénovation d'ampleur | Gain de deux classes DPE |
 | CEE | Oui | Demande avant signature |
 | Éco-PTZ | Oui | Logement de plus de deux ans |
-| TVA à 5,5 % | Oui | Menuiseries performantes, fourniture et pose |
+| TVA à 5,5 % | Oui | Fourniture et pose par la même entreprise |
 
 Notre conseil : choisissez d'abord la bonne fenêtre, ensuite le bon financement. Pour un projet chiffré ligne par ligne, avec les performances qui ouvrent droit au taux réduit, demandez une visite pour vos [fenêtres sur mesure](/fenetres/).

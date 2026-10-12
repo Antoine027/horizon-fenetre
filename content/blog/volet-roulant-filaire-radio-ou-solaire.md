@@ -1,7 +1,7 @@
 ---
 title: Volet roulant filaire, radio ou solaire : lequel choisir ?
 h1: Volet roulant motorisé : filaire, radio ou solaire ?
-description: Moteur filaire, radio ou solaire pour vos volets roulants : fonctionnement, fiabilité, pose en rénovation. Le comparatif d'un poseur de la région lyonnaise.
+description: Moteur filaire, radio ou solaire pour vos volets roulants : fonctionnement, fiabilité, pose en rénovation. Le comparatif d'un menuisier de la région lyonnaise.
 photo: voletRoulant
 rubrique: Volets
 date: 2026-10-12
@@ -72,7 +72,7 @@ Un volet roulant fermé aux heures chaudes est l'une des protections les plus ef
 
 ## Le volet, un vrai isolant
 
-Un volet roulant fermé la nuit ajoute une lame d'air devant la fenêtre et limite les pertes de chaleur. Quand sa résistance thermique additionnelle est suffisante, il peut même profiter de la TVA à 5,5 % dans un logement de plus de deux ans. Si vous changez les fenêtres en même temps, pensez au coffre intégré ou au bloc-baie, et à une moustiquaire enroulable logée dans le même tableau.
+Un volet roulant fermé la nuit ajoute une lame d'air devant la fenêtre et limite les pertes de chaleur. Si vous changez les fenêtres en même temps, pensez au coffre intégré ou au bloc-baie, et à une moustiquaire enroulable logée dans le même tableau.
 
 La même logique de motorisation s'applique d'ailleurs à la porte de garage et au portail : un seul type de télécommande radio peut parfois tout piloter.
 

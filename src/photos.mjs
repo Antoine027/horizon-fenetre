@@ -31,16 +31,18 @@ export const PHOTOS = {
   mesureBaie:  ["photo-1717231360802-41d29cb4b988", 3264, 4896, "Artisan mesurant une ouverture de fenêtre", "Dimas Rizki Pratama"],
 };
 
-// Génère une balise <img> responsive servie par le CDN Unsplash (AVIF/WebP automatique).
+// Génère une balise <img> responsive. Les images sont recadrées chez Unsplash puis servies
+// par l'optimiseur d'images de Vercel depuis le domaine du site (aucune requête du visiteur
+// vers un tiers : pas de transfert d'adresse IP hors de l'hébergeur, conformité RGPD).
+export const LARGEURS = [360, 400, 480, 560, 640, 720, 800, 900, 960, 1200, 1280];
 export function photo(cle, { ratio = [4, 3], largeurs = [480, 800, 1200], sizes = "(max-width: 760px) 100vw, 50vw", eager = false, classe = "", crop = "entropy" } = {}) {
   const [id, , , alt] = PHOTOS[cle];
   const [rw, rh] = ratio;
-  const base = `https://images.unsplash.com/${id}`;
-  const url = (w) => `${base}?w=${w}&h=${Math.round((w * rh) / rw)}&fit=crop&crop=${crop}&auto=format&q=62`;
-  const src = url(largeurs[Math.min(1, largeurs.length - 1)]);
-  const srcset = largeurs.map((w) => `${url(w)} ${w}w`).join(", ");
+  const source = `https://images.unsplash.com/${id}?w=1600&h=${Math.round((1600 * rh) / rw)}&fit=crop&crop=${crop}&fm=jpg&q=82`;
+  const url = (w) => `/_vercel/image?url=${encodeURIComponent(source)}&w=${w}&q=70`;
   const w0 = largeurs[Math.min(1, largeurs.length - 1)];
-  return `<img class="ph ${classe}" src="${src}" srcset="${srcset}" sizes="${sizes}" width="${w0}" height="${Math.round((w0 * rh) / rw)}" alt="${alt}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  const srcset = largeurs.map((w) => `${url(w)} ${w}w`).join(", ");
+  return `<img class="ph ${classe}" src="${url(w0)}" srcset="${srcset}" sizes="${sizes}" width="${w0}" height="${Math.round((w0 * rh) / rw)}" alt="${alt}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
 export const CREDITS = Object.values(PHOTOS).map((p) => p[4]).filter((v, i, a) => a.indexOf(v) === i);

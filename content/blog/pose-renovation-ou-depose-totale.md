@@ -1,7 +1,7 @@
 ---
 title: Pose en rénovation ou dépose totale : laquelle choisir ?
 h1: Changer ses fenêtres : pose en rénovation ou dépose totale ?
-description: Garder l'ancien dormant ou tout retirer ? Avantages, limites et coût des deux méthodes de pose de fenêtre, expliqués par un poseur de la région lyonnaise.
+description: Garder l'ancien dormant ou tout retirer ? Avantages, limites et coût des deux méthodes de pose de fenêtre, expliqués par un menuisier de la région lyonnaise.
 photo: pose
 rubrique: Fenêtres
 date: 2026-10-12
@@ -64,6 +64,6 @@ Une variante existe : la **dépose en feuillure**, où l'on retire le dormant sa
 
 Dans les deux cas, la qualité de la pose fait la différence : calage, fixation, mousse ou compribande adaptée, joint extérieur, bavette pour l'évacuation de l'eau. Les professionnels suivent pour cela les règles de l'art publiées par le [programme Proreno](https://www.proreno.fr/) et les DTU de la menuiserie.
 
-Sur nos devis, le type de pose est toujours indiqué ligne par ligne, avec les habillages et les finitions prévues. Pas de mauvaise surprise le jour du chantier.
+Sur nos devis de fourniture, le type de pose prévu est indiqué ligne par ligne, car il détermine les cotes de fabrication et les accessoires (habillages, tapées, bavettes). La pose elle-même est réalisée par notre installateur partenaire, sur la base de ces mêmes cotes.
 
 Vous voulez savoir ce qui convient à vos fenêtres ? Demandez une visite : on regarde chaque ouverture et on vous explique notre choix. Toutes nos [fenêtres sur mesure en PVC, aluminium et bois](/fenetres/) peuvent se poser dans les deux configurations.

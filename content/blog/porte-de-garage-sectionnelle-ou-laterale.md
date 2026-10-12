@@ -51,7 +51,7 @@ Lors de la visite, on prend quatre cotes qui orientent presque toujours le choix
 
 ## Isolation et motorisation
 
-Dans les deux cas, on pose des panneaux en acier double paroi injectés de mousse. Si le garage communique avec la maison ou sert d'atelier chauffé, c'est une différence nette avec une vieille basculante.
+Dans les deux cas, on propose des panneaux en acier double paroi injectés de mousse. Si le garage communique avec la maison ou sert d'atelier chauffé, c'est une différence nette avec une vieille basculante.
 
 La motorisation est désormais la norme. On ajoute un **déverrouillage extérieur** quand le garage n'a pas d'autre accès, pour ne jamais rester bloqué en cas de coupure de courant.
 

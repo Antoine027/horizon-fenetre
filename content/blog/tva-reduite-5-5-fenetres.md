@@ -11,6 +11,8 @@ sources: impots.gouv.fr – Taux de TVA dans le bâtiment|https://www.impots.gou
 ---
 Changer ses fenêtres avec une TVA à 5,5 % au lieu de 20 %, c'est une économie immédiate et visible sur la facture. Ce n'est pas une aide à demander : c'est l'entreprise qui applique le taux, à condition que tout soit en règle. Voici ce qu'il faut réunir.
 
+> Bon à savoir : Horizon Fenêtre vend la fourniture seule, facturée avec une TVA à 20 %. La pose est proposée par notre installateur partenaire, sur son propre devis. Cet article explique les règles générales pour que vous puissiez comparer les offres en connaissance de cause.
+
 ## Condition 1 : un logement de plus de deux ans
 
 Le taux réduit concerne les **locaux à usage d'habitation achevés depuis plus de deux ans**, résidence principale ou secondaire. Il s'applique que vous soyez propriétaire occupant, propriétaire bailleur, locataire ou syndicat de copropriétaires. Il n'y a **pas de condition de ressources**.
@@ -60,4 +62,4 @@ La TVA réduite se cumule avec d'autres dispositifs, mais leurs règles ont beau
 3. Fourniture et pose par la même entreprise.
 4. Attestation signée avant les travaux.
 
-Toutes nos [fenêtres sur mesure](/fenetres/), nos [volets](/volets/) et nos [portes d'entrée](/portes-d-entree/) sont chiffrés avec le taux qui s'applique à votre logement, performances à l'appui.
+Nos devis de [fenêtres sur mesure](/fenetres/), de [volets](/volets/) et de [portes d'entrée](/portes-d-entree/) indiquent toujours les performances (Uw, Sw, Ud) de chaque produit, pour que vous puissiez comparer sur des bases claires.

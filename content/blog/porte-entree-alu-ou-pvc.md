@@ -13,7 +13,7 @@ Changer sa porte d'entrée, c'est changer la façade, la sensation en rentrant c
 
 ## L'isolation
 
-Les deux matériaux isolent bien, à condition que le panneau de porte soit lui-même isolant : c'est l'âme du panneau, sa mousse et son épaisseur, qui font l'essentiel du travail. Regardez le coefficient **Ud** de la porte complète. Une porte d'entrée dont l'Ud ne dépasse pas 1,7 W/m².K peut bénéficier de la [TVA à 5,5 %](/blog/tva-reduite-5-5-fenetres/) dans un logement de plus de deux ans.
+Les deux matériaux isolent bien, à condition que le panneau de porte soit lui-même isolant : c'est l'âme du panneau, sa mousse et son épaisseur, qui font l'essentiel du travail. Regardez le coefficient **Ud** de la porte complète.
 
 Avantage léger au PVC à prix égal ; l'aluminium à rupture de pont thermique fait jeu égal dans les gammes de qualité.
 

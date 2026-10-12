@@ -45,7 +45,9 @@ Un appartement au 5e étage sans ascenseur, une fenêtre de toit, une rue où l'
 
 ## Le taux de TVA
 
-Dans un logement de plus de deux ans, avec des menuiseries performantes fournies et posées par une entreprise, la TVA est à **5,5 %** au lieu de 20 %. Tous les détails dans notre article sur la [TVA réduite](/blog/tva-reduite-5-5-fenetres/).
+Le taux dépend de qui fournit et de qui pose. Quand une même entreprise fournit et pose des menuiseries performantes dans un logement de plus de deux ans, la TVA peut descendre à 5,5 % (voir notre article sur la [TVA réduite](/blog/tva-reduite-5-5-fenetres/)).
+
+Chez Horizon Fenêtre, la fourniture est vendue seule et facturée avec une **TVA à 20 %**. La pose fait l'objet d'un devis séparé de notre installateur partenaire, avec son propre taux. Pour comparer deux offres, comparez toujours le total TTC, pose comprise.
 
 ## Comment comparer deux devis
 

@@ -7,12 +7,12 @@ galerie: [["fenBlanche","Fenêtre PVC blanche deux vantaux : le grand classique 
 nav: "Fenêtres",
 court: "PVC, aluminium ou bois, du châssis fixe à la baie coulissante.",
 title: "Fenêtres PVC, alu, bois sur mesure à Lyon | Horizon Fenêtre",
-description: "Fenêtres sur mesure en PVC, aluminium ou bois, fabriquées à vos cotes et posées à Lyon, Rillieux-la-Pape et alentours. Visite et devis gratuits.",
+description: "Fenêtres sur mesure en PVC, aluminium ou bois, fabriquées à vos cotes. Visite, prise de cotes et devis gratuits à Lyon et alentours, pose par installateur partenaire.",
 h1: "Fenêtres sur mesure en PVC, aluminium et bois à Lyon",
 motcle: "fenêtre sur mesure Lyon",
-chapo: "On mesure chaque ouverture chez vous, on commande la fenêtre au millimètre et on la pose nous-mêmes, en rénovation comme en dépose totale.",
+chapo: "On mesure chaque ouverture chez vous, on commande la fenêtre au millimètre, et notre installateur partenaire la pose en rénovation comme en dépose totale.",
 contenu: `
-<p class="lead">Une fenêtre bien choisie, c'est une pièce plus calme, moins de courants d'air et un chauffage qui travaille moins. Mal posée, la meilleure fenêtre du marché perd une bonne partie de ses qualités. Chez Horizon Fenêtre, on s'occupe des deux : le choix et la pose.</p>
+<p class="lead">Une fenêtre bien choisie, c'est une pièce plus calme, moins de courants d'air et un chauffage qui travaille moins. Mal mesurée ou mal posée, la meilleure fenêtre du marché perd une bonne partie de ses qualités. Chez Horizon Fenêtre, on vous conseille, on relève les cotes et on fournit la menuiserie ; la pose est confiée à notre installateur partenaire.</p>
 
 <h2>PVC, aluminium ou bois : choisir selon la maison, pas selon la mode</h2>
 <p><strong>Le PVC</strong> reste le choix le plus courant en rénovation à Lyon, et pour de bonnes raisons : il isole très bien, ne demande qu'un coup d'éponge et coûte moins cher que les autres matériaux. Il existe aujourd'hui en plaxé couleur ou effet bois, ce qui règle la question de l'aspect « plastique blanc » pour beaucoup de façades.</p>
@@ -20,7 +20,7 @@ contenu: `
 <p><strong>Le bois</strong> garde sa place dans les maisons anciennes, les secteurs protégés et chez ceux qui aiment la matière. Il isole naturellement bien, mais demande un entretien régulier de la lasure ou de la peinture. Pour ceux qui veulent le bois dedans sans l'entretien dehors, le mixte bois-alu est une bonne réponse.</p>
 <p>Pour aller plus loin, notre article <a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, aluminium ou bois : lequel choisir</a> compare les trois matériaux point par point.</p>
 
-<h2>Les types d'ouverture que nous posons</h2>
+<h2>Les types d'ouverture que nous proposons</h2>
 <ul>
 <li><strong>Ouverture à la française</strong> : un ou deux vantaux qui s'ouvrent vers l'intérieur, le grand classique.</li>
 <li><strong>Oscillo-battant</strong> : la même fenêtre, avec en plus une position basculée pour aérer sans ouvrir en grand. Très pratique dans les chambres et les salles de bain.</li>
@@ -38,10 +38,10 @@ contenu: `
 <li><strong>Vitrage à contrôle solaire</strong> pour les grandes baies plein sud ou ouest, qui transforment le séjour en serre l'été.</li>
 </ul>
 
-<h2>Rénovation ou dépose totale : on décide sur place</h2>
-<p>En <strong>pose en rénovation</strong>, on garde l'ancien dormant (le cadre fixé au mur) et on vient poser la nouvelle fenêtre dessus. C'est rapide, propre, sans reprise de plâtre, mais on perd quelques centimètres de vitrage.</p>
-<p>En <strong>dépose totale</strong>, on retire tout jusqu'à la maçonnerie. Plus de lumière, une meilleure étanchéité à l'air, mais il faut reprendre les tableaux et parfois les finitions intérieures.</p>
-<p>Le bon choix dépend de l'état de vos dormants actuels, et ça se voit en visite, pas sur une photo. On vous explique les deux options dans notre article <a href="/blog/pose-renovation-ou-depose-totale/">pose en rénovation ou dépose totale</a>.</p>
+<h2>Rénovation ou dépose totale : on le décide à la visite</h2>
+<p>En <strong>pose en rénovation</strong>, on garde l'ancien dormant (le cadre fixé au mur) et la nouvelle fenêtre vient se poser dessus. C'est rapide, propre, sans reprise de plâtre, mais on perd quelques centimètres de vitrage.</p>
+<p>En <strong>dépose totale</strong>, tout est retiré jusqu'à la maçonnerie. Plus de lumière, une meilleure étanchéité à l'air, mais il faut reprendre les tableaux et parfois les finitions intérieures.</p>
+<p>Le bon choix dépend de l'état de vos dormants actuels, et ça se voit en visite, pas sur une photo. Il conditionne aussi les cotes de fabrication : c'est pour ça qu'on le tranche avant de commander. On vous explique les deux options dans notre article <a href="/blog/pose-renovation-ou-depose-totale/">pose en rénovation ou dépose totale</a>.</p>
 
 
 <h2>Comprendre les performances d'une fenêtre</h2>
@@ -56,14 +56,14 @@ contenu: `
 <h2>Changement de fenêtres : ce qu'on vérifie en visite</h2>
 <p>Avant de chiffrer un remplacement de fenêtres, on regarde ce que les catalogues ne montrent pas : l'état des anciens dormants, la profondeur des tableaux, l'appui et son rejingot (le petit relief qui arrête l'eau), l'épaisseur du doublage intérieur pour choisir la bonne tapée d'isolation, la présence d'un coffre de volet roulant et celle des entrées d'air. C'est ce relevé qui évite les mauvaises surprises le jour de la pose.</p>
 
-<h2>Ce qui figure sur notre devis</h2>
-<p>Chaque fenêtre y est décrite avec ses cotes, son matériau, sa couleur intérieure et extérieure, son vitrage, ses performances (Uw et Sw), le type de pose et les finitions (habillages, bavettes, joints). La dépose et l'évacuation des anciennes menuiseries sont incluses. Si votre logement a plus de deux ans et que les fenêtres atteignent les seuils de performance, la <a href="/blog/tva-reduite-5-5-fenetres/">TVA à 5,5 %</a> s'applique directement sur la facture.</p>
+<h2>Ce qui figure sur notre devis de fourniture</h2>
+<p>Chaque fenêtre y est décrite avec ses cotes, son matériau, sa couleur intérieure et extérieure, son vitrage, ses performances (Uw et Sw), le type de pose prévu et les accessoires de finition (habillages, bavettes, tapées). La fourniture est facturée par Horizon Fenêtre avec une TVA à 20 %. La pose, la dépose et l'évacuation des anciennes menuiseries font l'objet d'un devis séparé de notre installateur partenaire.</p>
 `,
 faq: [
-["Quel délai entre la signature du devis et la pose ?", "Il dépend du fabricant et de la saison. Comptez en général quelques semaines pour la fabrication sur mesure ; le délai exact est indiqué sur le devis et confirmé à la commande."],
-["Peut-on changer des fenêtres en hiver ?", "Oui. On remplace les fenêtres une par une, chaque ouverture reste découverte très peu de temps. La plupart des chantiers de maison se font dans la journée."],
+["Quel délai entre la commande et la livraison ?", "Il dépend du fabricant et de la saison. Comptez en général quelques semaines pour la fabrication sur mesure ; le délai exact est indiqué sur le devis et confirmé à la commande. La date de pose se cale ensuite avec notre installateur partenaire."],
+["Peut-on changer des fenêtres en hiver ?", "Oui. Les fenêtres se remplacent une par une, chaque ouverture reste découverte très peu de temps."],
 ["Faut-il une autorisation pour changer ses fenêtres ?", "Si l'aspect extérieur change (matériau, couleur, découpage des vitres), une déclaration préalable en mairie est en principe nécessaire. En copropriété, vérifiez aussi le règlement. On détaille tout dans notre article sur la déclaration préalable."],
-["Proposez-vous la fourniture seule ?", "Oui, pour les professionnels et les particuliers qui ont leur poseur. La prise de cotes reste alors sous votre responsabilité."]
+["Qui pose les fenêtres ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis. Vous pouvez aussi faire poser par l'artisan de votre choix."]
 ]
 },
 {
@@ -73,7 +73,7 @@ galerie: [["voletRoulant","Volet roulant à lames : protection solaire, intimit�
 nav: "Volets",
 court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
 title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
-description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Pose en neuf ou rénovation à Lyon et Rillieux-la-Pape.",
+description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Prise de cotes à domicile à Lyon et Rillieux-la-Pape, pose par installateur partenaire.",
 h1: "Volets roulants et volets battants sur mesure",
 chapo: "Motoriser des volets existants, ajouter un volet roulant sans toucher à la façade ou remplacer des battants fatigués : on vous conseille ce qui tient dans le temps.",
 contenu: `
@@ -104,7 +104,7 @@ contenu: `
 <p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur. À l'inverse, des volets battants abîmés peuvent être remplacés par des volets roulants en coffre rénovation, ce qui évite d'ouvrir la fenêtre pour fermer les volets. On fait le point lors de la visite.</p>
 `,
 faq: [
-["Peut-on poser un volet roulant sans travaux à l'intérieur ?", "Oui, avec un coffre rénovation posé à l'extérieur. Aucune intervention dans la pièce, la pose prend en général quelques heures par fenêtre."],
+["Peut-on poser un volet roulant sans travaux à l'intérieur ?", "Oui, avec un coffre rénovation posé à l'extérieur. Aucune intervention dans la pièce."],
 ["Un volet roulant solaire fonctionne-t-il en hiver ?", "Oui. La batterie est dimensionnée pour plusieurs jours sans soleil. Sur une façade très ombragée, on préférera un moteur filaire."],
 ["Peut-on centraliser tous les volets ?", "Avec des moteurs radio, oui : une télécommande multicanal ou une box domotique permet de commander tous les volets ensemble."]
 ]
@@ -116,7 +116,7 @@ galerie: [["garageNoir","Panneaux lisses et teinte sombre : la porte prolonge la
 nav: "Portes de garage",
 court: "Sectionnelles plafond et latérales, motorisées ou manuelles.",
 title: "Porte de garage sectionnelle et latérale sur mesure | Lyon",
-description: "Portes de garage sectionnelles plafond et sectionnelles latérales sur mesure, isolées et motorisées. Fourniture et pose à Lyon et dans l'Ain.",
+description: "Portes de garage sectionnelles plafond et sectionnelles latérales sur mesure, isolées et motorisées. Visite et devis gratuits à Lyon et dans l'Ain, pose par installateur partenaire.",
 h1: "Portes de garage sectionnelles et latérales sur mesure",
 chapo: "Une porte de garage qu'on ouvre tous les jours doit être silencieuse, isolée et adaptée à votre garage, pas l'inverse. On vient mesurer avant de proposer un modèle.",
 contenu: `
@@ -141,10 +141,10 @@ contenu: `
 </ul>
 
 <h2>Remplacer une vieille porte basculante</h2>
-<p>C'est le chantier le plus fréquent : une basculante qui grince, qui laisse passer l'air et qu'on n'ose plus motoriser. On la dépose, on évacue les anciens éléments et on pose la nouvelle porte, généralement dans la journée. Les cotes de l'ouverture sont prises lors de la visite, retombée de linteau et écoinçons compris.</p>
+<p>C'est le chantier le plus fréquent : une basculante qui grince, qui laisse passer l'air et qu'on n'ose plus motoriser. Les cotes de l'ouverture sont prises lors de notre visite, retombée de linteau et écoinçons compris. Notre installateur partenaire dépose ensuite l'ancienne porte et pose la nouvelle, généralement dans la journée.</p>
 `,
 faq: [
-["Combien de temps dure la pose d'une porte de garage ?", "La plupart des remplacements se font en une journée, dépose de l'ancienne porte comprise."],
+["Combien de temps dure la pose d'une porte de garage ?", "La plupart des remplacements se font en une journée, dépose de l'ancienne porte comprise. La pose est assurée par notre installateur partenaire."],
 ["Une porte sectionnelle peut-elle être posée dans un garage sans plafond plat ?", "Oui, avec des rails adaptés à la pente ou à la charpente, sinon la latérale est souvent la meilleure solution. On le vérifie sur place."],
 ["Que se passe-t-il en cas de coupure de courant ?", "Toutes nos motorisations se débrayent manuellement depuis l'intérieur, et on ajoute un déverrouillage extérieur quand le garage n'a pas d'autre accès."]
 ]
@@ -156,7 +156,7 @@ galerie: [["porteInt","Vue intérieure : la vitrière éclaire l'entrée sans ex
 nav: "Portes d'entrée",
 court: "Aluminium, PVC ou acier, isolantes et sécurisées.",
 title: "Porte d'entrée alu, PVC ou acier sur mesure à Lyon",
-description: "Portes d'entrée sur mesure en aluminium, PVC ou acier : isolation, serrure multipoints, design. Fourniture et pose à Lyon, Rillieux-la-Pape et environs.",
+description: "Portes d'entrée sur mesure en aluminium, PVC ou acier : isolation, serrure multipoints, design. Visite et devis gratuits à Lyon, Rillieux-la-Pape et environs.",
 h1: "Portes d'entrée sur mesure en aluminium, PVC et acier",
 chapo: "La porte d'entrée, c'est la première chose qu'on voit de chez vous et la dernière barrière quand vous partez. On la choisit pour les deux.",
 contenu: `
@@ -171,14 +171,14 @@ contenu: `
 <p>Une serrure à 3 ou 5 points de fermeture est aujourd'hui la base. Mais une porte se force rarement par la serrure elle-même : on soigne donc aussi les paumelles anti-dégondage, le renfort de la gâche, et on propose un cylindre certifié A2P qui résiste au crochetage et à l'arrachement. Si vous avez une assurance habitation exigeante, dites-le-nous à la visite pour qu'on vous propose le bon niveau de certification.</p>
 
 <h2>L'isolation</h2>
-<p>On regarde le coefficient Ud de la porte complète, pas seulement celui du panneau. Une porte isolante bien posée, avec un seuil à rupture de pont thermique et des joints périphériques, supprime l'effet « mur froid » de l'entrée. Si l'Ud est inférieur ou égal à 1,7 W/m².K, la porte peut aussi bénéficier de la <a href="/blog/tva-reduite-5-5-fenetres/">TVA à 5,5 %</a>.</p>
+<p>On regarde le coefficient Ud de la porte complète, pas seulement celui du panneau. Une porte isolante bien posée, avec un seuil à rupture de pont thermique et des joints périphériques, supprime l'effet « mur froid » de l'entrée.</p>
 
 <h2>Dimensions standard ou sur mesure</h2>
 <p>Beaucoup de maisons des années 60 à 80 dans l'est lyonnais ont des ouvertures qui ne correspondent à aucune dimension standard. Nos portes sont fabriquées à la cote : pas de cadre de compensation disgracieux, pas de mousse à tout-va. Avec, si besoin, une imposte vitrée ou un fixe latéral pour éclairer l'entrée.</p>
 <p>En copropriété ou dans un lotissement avec cahier des charges, la teinte et le modèle peuvent être imposés : on vérifie avec vous avant de commander, et on vous explique les démarches dans notre article sur la <a href="/blog/declaration-prealable-changer-fenetres/">déclaration préalable</a>.</p>
 `,
 faq: [
-["Combien de temps la maison reste-t-elle ouverte pendant la pose ?", "La dépose et la pose se font dans la journée. Le soir, la nouvelle porte est fermée à clé."],
+["Combien de temps la maison reste-t-elle ouverte pendant la pose ?", "La dépose et la pose par notre installateur partenaire se font dans la journée. Le soir, la nouvelle porte est fermée à clé."],
 ["Peut-on avoir une porte d'entrée avec serrure connectée ?", "Oui, la plupart des fabricants proposent des serrures motorisées avec badge, empreinte digitale ou smartphone, en option."],
 ["La porte d'entrée peut-elle être d'une couleur différente à l'intérieur et à l'extérieur ?", "Oui, en aluminium et en PVC plaxé on peut choisir deux teintes différentes."]
 ]
@@ -190,7 +190,7 @@ galerie: [["portailBattant","Portail battant deux vantaux sur une allée plane."
 nav: "Portails et clôtures",
 court: "Portails battants ou coulissants, clôtures et portillons assortis.",
 title: "Portail et clôture alu sur mesure à Lyon | Horizon Fenêtre",
-description: "Portails battants et coulissants, portillons et clôtures aluminium sur mesure, motorisés ou manuels. Fourniture et pose à Lyon et dans l'Ain.",
+description: "Portails battants et coulissants, portillons et clôtures aluminium sur mesure, motorisés ou manuels. Visite et devis gratuits à Lyon et dans l'Ain.",
 h1: "Portails, portillons et clôtures aluminium sur mesure",
 chapo: "Un portail se choisit autant pour la pente de l'allée et la place disponible que pour son dessin. On commence par là.",
 contenu: `
@@ -213,7 +213,7 @@ contenu: `
 <p>Bras articulés ou vérins pour un battant, moteur à crémaillère pour un coulissant. On prévoit les cellules photoélectriques, le feu clignotant et le déverrouillage manuel. Si le câble électrique n'arrive pas au portail, une alimentation solaire est possible pour un usage raisonnable.</p>
 
 <h2>Les clôtures</h2>
-<p>En aluminium, une clôture ne rouille pas, ne se peint pas et ne bouge pas. Lames pleines, claustras, barreaudage : on la pose sur muret existant ou sur poteaux scellés. Si un muret ou des plots béton sont nécessaires, on les intègre au chantier.</p>
+<p>En aluminium, une clôture ne rouille pas, ne se peint pas et ne bouge pas. Lames pleines, claustras, barreaudage : elle se pose sur muret existant ou sur poteaux scellés. Si un muret ou des plots béton sont nécessaires, on le prévoit dès la visite avec notre installateur partenaire.</p>
 
 <h2>Avant de commander : les règles d'urbanisme</h2>
 <p>Dans beaucoup de communes de la métropole de Lyon et de l'Ain, la pose d'une clôture ou d'un portail est soumise à déclaration préalable, avec des hauteurs et des teintes encadrées par le PLU. On vous indique ce qu'il faut vérifier, et on vous fournit les plans et visuels du modèle pour constituer le dossier.</p>
@@ -231,7 +231,7 @@ galerie: [["moustiqSoir","Une toile bien tendue reste presque invisible."]],
 nav: "Moustiquaires",
 court: "Enroulables, plissées ou fixes, pour fenêtres et baies.",
 title: "Moustiquaire sur mesure pour fenêtre et baie à Lyon",
-description: "Moustiquaires sur mesure enroulables, plissées et fixes pour fenêtres, portes-fenêtres et baies coulissantes. Pose à Lyon, Rillieux-la-Pape et alentours.",
+description: "Moustiquaires sur mesure enroulables, plissées et fixes pour fenêtres, portes-fenêtres et baies coulissantes. Prise de cotes à domicile à Lyon et alentours.",
 h1: "Moustiquaires sur mesure pour fenêtres et baies",
 chapo: "Depuis l'arrivée du moustique tigre dans le Rhône, la moustiquaire n'est plus un accessoire : c'est ce qui permet de dormir fenêtre ouverte.",
 contenu: `
@@ -309,7 +309,7 @@ galerie: [["maisonBaies","Les grandes surfaces vitrées exposées au sud sont le
 nav: "Brise-soleil (BSO)",
 court: "Lames orientables pour doser la lumière et la chaleur.",
 title: "Brise-soleil orientable (BSO) sur mesure à Lyon",
-description: "Brise-soleil orientables (BSO) motorisés pour fenêtres et baies vitrées : lumière réglable, confort d'été, pose en neuf ou rénovation à Lyon.",
+description: "Brise-soleil orientables (BSO) motorisés pour fenêtres et baies vitrées : lumière réglable, confort d'été, en neuf ou en rénovation à Lyon.",
 h1: "Brise-soleil orientables (BSO) sur mesure",
 chapo: "Le BSO, c'est le volet qui laisse passer la lumière sans laisser entrer la chaleur. Sur une baie plein sud, il change les étés.",
 contenu: `
@@ -343,16 +343,16 @@ slug: "portes-interieures",
 photo: "couloir",
 galerie: [["portePlace","Porte à panneaux laquée blanche : un classique qui s'accorde avec toutes les teintes de murs."]],
 nav: "Portes intérieures",
-court: "Battantes ou coulissantes, pleines ou vitrées, posées propres.",
-title: "Portes intérieures sur mesure : fourniture et pose à Lyon",
+court: "Battantes ou coulissantes, pleines ou vitrées, standard ou sur mesure.",
+title: "Portes intérieures sur mesure et blocs-portes à Lyon",
 description: "Portes intérieures battantes, coulissantes ou à galandage, pleines ou vitrées, standard ou sur mesure. Remplacement de blocs-portes à Lyon et alentours.",
 h1: "Portes intérieures : battantes, coulissantes, pleines ou vitrées",
-chapo: "Remplacer les portes d'une maison, c'est souvent le changement qui modernise le plus pour un budget maîtrisé. À condition que la pose soit soignée.",
+chapo: "Remplacer les portes d'une maison, c'est souvent le changement qui modernise le plus pour un budget maîtrisé. À condition de bien relever les cotes.",
 contenu: `
-<p class="lead">Une porte intérieure se juge au quotidien : elle doit fermer sans forcer, ne pas résonner, et s'accorder avec le reste de la maison. On s'occupe du choix comme de la pose, huisserie comprise.</p>
+<p class="lead">Une porte intérieure se juge au quotidien : elle doit fermer sans forcer, ne pas résonner, et s'accorder avec le reste de la maison. On vous aide à choisir, on relève les cotes huisserie comprise, et notre installateur partenaire s'occupe de la pose.</p>
 
 <h2>Porte seule ou bloc-porte</h2>
-<p>Si l'huisserie (le cadre fixé dans la cloison) est saine et d'équerre, on peut remplacer <strong>la porte seule</strong>, à condition de retrouver les bonnes dimensions et l'emplacement des paumelles. Si elle est abîmée, déformée ou d'un autre âge, on pose un <strong>bloc-porte</strong> complet : huisserie et porte livrées ensemble, déjà réglées. En rénovation, les huisseries à recouvrement habillent l'ancienne sans démolir la cloison.</p>
+<p>Si l'huisserie (le cadre fixé dans la cloison) est saine et d'équerre, on peut remplacer <strong>la porte seule</strong>, à condition de retrouver les bonnes dimensions et l'emplacement des paumelles. Si elle est abîmée, déformée ou d'un autre âge, mieux vaut un <strong>bloc-porte</strong> complet : huisserie et porte livrées ensemble, déjà réglées. En rénovation, les huisseries à recouvrement habillent l'ancienne sans démolir la cloison.</p>
 
 <h2>Battante, coulissante ou à galandage</h2>
 <ul>
@@ -382,7 +382,7 @@ faq: [
 export const pros = {
 slug: "professionnels",
 title: "Menuiserie pour pros : syndics, bailleurs, architectes, Lyon",
-description: "Fourniture seule ou fourniture et pose de menuiseries pour syndics, bailleurs, architectes, maîtres d'œuvre, agences et commerces à Lyon et alentours.",
+description: "Fourniture de menuiseries sur mesure pour artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces à Lyon. Pose possible par installateur partenaire.",
 h1: "Menuiseries pour les professionnels",
-chapo: "Syndics, bailleurs, architectes, maîtres d'œuvre, agences, commerces et artisans : un interlocuteur unique, des chiffrages rapides et un chantier tenu.",
+chapo: "Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces : des menuiseries sur mesure chiffrées vite, livrées dans les temps, avec la pose en option.",
 };
