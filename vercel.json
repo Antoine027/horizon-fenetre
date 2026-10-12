@@ -5,9 +5,6 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": true,
-  "regions": [
-    "cdg1"
-  ],
   "images": {
     "sizes": [
       360,
