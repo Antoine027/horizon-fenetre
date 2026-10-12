@@ -223,7 +223,7 @@ function formulaire(source) {
 <div><label for="${id("prod")}">Votre projet concerne</label><select id="${id("prod")}" name="produit">${options.map((o) => `<option>${o}</option>`).join("")}</select></div>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
-<p class="note">Vos données servent uniquement à répondre à votre demande et à établir un devis. Si vous souhaitez la pose, elles sont transmises à notre installateur partenaire pour qu'il établisse son devis. Elles sont conservées 3 ans au plus après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer à tout moment : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
+<p class="note">ESCOM HABITAT traite vos données pour répondre à votre demande. Vos droits : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
 </form>`;
 }
 
