@@ -2,7 +2,7 @@
 title: Baie vitrée coulissante ou à galandage : comment choisir
 h1: Baie vitrée coulissante ou à galandage : laquelle choisir ?
 description: Ouverture, isolation, travaux, budget : les vraies différences entre une baie vitrée coulissante classique et une baie à galandage, et quand choisir chacune.
-photo: baieRepas
+photo: pBaie
 rubrique: Baies vitrées
 date: 2026-10-12
 motcle: baie vitrée coulissante ou galandage

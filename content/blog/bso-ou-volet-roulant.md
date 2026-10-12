@@ -2,7 +2,7 @@
 title: BSO ou volet roulant : lequel choisir pour l'été ?
 h1: Brise-soleil orientable ou volet roulant : lequel choisir ?
 description: Confort d'été, lumière, occultation, vent, budget : le comparatif entre brise-soleil orientable (BSO) et volet roulant, pièce par pièce.
-photo: bso
+photo: pBso
 rubrique: Volets
 date: 2026-10-12
 motcle: BSO ou volet roulant

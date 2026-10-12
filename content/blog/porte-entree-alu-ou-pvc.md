@@ -2,7 +2,7 @@
 title: Porte d'entrée alu ou PVC : laquelle choisir ?
 h1: Porte d'entrée aluminium ou PVC : laquelle choisir ?
 description: Isolation, sécurité, design, entretien, budget : les vraies différences entre une porte d'entrée en aluminium et une porte d'entrée en PVC.
-photo: porte
+photo: pPorte
 rubrique: Portes d'entrée
 date: 2026-10-12
 motcle: porte d'entrée alu ou PVC

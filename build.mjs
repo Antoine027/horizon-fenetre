@@ -189,14 +189,22 @@ const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 const SCRIPT_ANALYTICS = "/_vercel/insights/script.js";
 const SCRIPT_SPEED = "/_vercel/speed-insights/script.js";
 const MESURE = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script><script defer src="${SCRIPT_ANALYTICS}"></script><script defer src="${SCRIPT_SPEED}"></script>`;
-const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}})();</script>`;
+const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}var bm=document.querySelector('.barre-mobile');if(bm&&'IntersectionObserver' in window){var gene=new Set();function maj(){bm.classList.toggle('visible',scrollY>320&&gene.size===0);}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?gene.add(e.target):gene.delete(e.target);});maj();});document.querySelectorAll('main form,#devis,.pied,.appel,.h-txt .actions,.boite-appel').forEach(function(el){io.observe(el);});addEventListener('scroll',maj,{passive:true});maj();}})();</script>`;
 
-function page({ url, title, description, body, schemas = [], noindex = false, ogType = "website", preload = "" }) {
+// Image mise en avant (partage, Google) : illustration locale 1200×630 ou photo Unsplash recadrée.
+function imageUne(cle) {
+  const p = cle && PHOTOS[cle];
+  if (!p) return { src: SITE + "/assets/img/og-horizon-fenetre.jpg", alt: "Horizon Fenêtre, menuiseries sur mesure" };
+  const src = p[0].startsWith("local:") ? `${SITE}/assets/img/og/${p[0].slice(6)}.jpg` : `https://images.unsplash.com/${p[0]}?w=1200&h=630&fit=crop&crop=entropy&fm=jpg&q=80`;
+  return { src, alt: p[3] };
+}
+function page({ url, title, description, body, schemas = [], noindex = false, ogType = "website", preload = "", une = null }) {
+  const img = une ? (typeof une === "string" && une.startsWith("http") ? { src: une, alt: title } : imageUne(une)) : imageUne(null);
   const canon = SITE + url;
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canon}">${noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'}
-<meta property="og:locale" content="fr_FR"><meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Horizon Fenêtre"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canon}"><meta property="og:image" content="${SITE}/assets/img/og-horizon-fenetre.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="fr_FR"><meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Horizon Fenêtre"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canon}"><meta property="og:image" content="${img.src}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(img.alt)}"><meta name="twitter:image" content="${img.src}"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#e9f6fb"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>${preload}
 <style>${css}</style>${schemas.map(ld).join("")}</head><body>
@@ -297,6 +305,7 @@ ${parcours}</div></section>
 <tr><th scope="row">Couleurs</th><td data-label="PVC">Blanc, plaxés unis et effet bois</td><td data-label="Aluminium">Quasi toutes les teintes RAL</td><td data-label="Bois">Lasures, peintures, essences</td></tr>
 <tr><th scope="row">Budget</th><td data-label="PVC">Le plus accessible</td><td data-label="Aluminium">Plus élevé</td><td data-label="Bois">Plus élevé</td></tr>
 </tbody></table></div></div>
+<div class="mat-cartes" role="list"><article class="mat-carte" role="listitem"><h3>PVC</h3><dl><div><dt>On le choisit pour</dt><dd>Isoler au meilleur prix, sans entretien</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Blanc, plaxés unis et effet bois</dd></div><div><dt>Budget</dt><dd>Le plus accessible</dd></div></dl></article><article class="mat-carte" role="listitem"><h3>Aluminium</h3><dl><div><dt>On le choisit pour</dt><dd>Des profils fins et de grandes baies</dd></div><div><dt>Isolation</dt><dd>Bonne à très bonne, avec rupture de pont thermique</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Quasi toutes les teintes RAL</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article><article class="mat-carte" role="listitem"><h3>Bois</h3><dl><div><dt>On le choisit pour</dt><dd>La matière, le cachet, les secteurs protégés</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Lasure ou peinture régulière</dd></div><div><dt>Couleurs</dt><dd>Lasures, peintures, essences</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article></div>
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap duo">
@@ -317,7 +326,7 @@ ${parcours}</div></section>
 <section class="sec ciel"><div class="wrap"><div class="tete"><h2>Questions fréquentes</h2></div>${faqHtml(faq)}</div></section>
 
 <section class="sec" id="devis"><div class="wrap"><div class="devis"><div><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes.</p><p>Vous préférez téléphoner ?<br><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a></p></div>${formulaire("accueil")}</div></div></section>`;
-  ecrire("/", page({ url: "/", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1920.avif 1920w, /assets/img/hero-maison-2560.avif 2560w, /assets/img/hero-maison-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes, portails sur mesure. Visite et prise de cotes gratuites à Lyon, pose par installateur partenaire.", body,
+  ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/accueil.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1920.avif 1920w, /assets/img/hero-maison-2560.avif 2560w, /assets/img/hero-maison-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Fenêtres PVC, alu et bois, baies vitrées, volets, BSO, portes, portails sur mesure. Visite et prise de cotes gratuites à Lyon, pose par installateur partenaire.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
   plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });
 }
@@ -335,8 +344,8 @@ for (const p of produits) {
 <aside class="cote"><div class="boite fonce"><h2>Visite et devis gratuits</h2><p>On vient prendre les cotes chez vous et on vous remet un devis de fourniture détaillé.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div>
 ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
 <section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/">${dessins[v.slug]}${v.nav}</a>`).join("")}</div></div></section>${appel()}`;
-  ecrire(url, page({ url, title: p.title, description: p.description, body, schemas: [
-    { "@context": "https://schema.org", "@type": "Service", name: p.h1, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
+  ecrire(url, page({ url, une: p.photo, title: p.title, description: p.description, body, schemas: [
+    { "@context": "https://schema.org", "@type": "Service", name: p.h1, image: imageUne(p.photo).src, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
     filLd(items), faqLd(p.faq)] }));
   plan.push({ url, groupe: "Nos produits", titre: p.nav });
 }
@@ -373,7 +382,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
   const body = `${bandeauPhoto(items, pros.h1, pros.chapo, "immeuble")}
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;
-  ecrire(url, page({ url, title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items), faqLd(faq)] }));
+  ecrire(url, page({ url, une: "pPaliere", title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items), faqLd(faq)] }));
   plan.push({ url, groupe: "Horizon Fenêtre", titre: "Professionnels" });
 }
 
@@ -383,7 +392,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
   const cartes = articles.map((a, i) => `<a class="billet${i === 0 ? " une" : ""}" href="/blog/${a.slug}/">${vignette(a, i === 0)}<div><span class="rub">${a.rubrique}</span><h3>${a.h1}</h3></div><div><p>${a.resume}</p><span class="meta">${dateFr(a.date)}</span></div></a>`).join("");
   const body = `${bandeauSimple(items, "Conseils et guides menuiserie", "Choisir ses fenêtres, comprendre un devis, connaître les règles et les aides : ce qu'on explique tous les jours en visite, par écrit.")}
 <section class="sec"><div class="wrap"><div class="billets">${cartes}</div></div></section>${appel()}`;
-  ecrire(url, page({ url, title: "Conseils fenêtres, volets, portes, portails | Horizon Fenêtre", description: "Guides pratiques pour choisir fenêtres, baies vitrées, volets, portes et portails : matériaux, aides 2026, TVA, déclaration préalable, prix.", body,
+  ecrire(url, page({ url, une: "pFenetre", title: "Conseils fenêtres, volets, portes, portails | Horizon Fenêtre", description: "Guides pratiques pour choisir fenêtres, baies vitrées, volets, portes et portails : matériaux, aides 2026, TVA, déclaration préalable, prix.", body,
     schemas: [{ "@context": "https://schema.org", "@type": "Blog", name: "Conseils Horizon Fenêtre", url: SITE + url, publisher: { "@id": SITE + "/#entreprise" }, blogPost: articles.map((a) => ({ "@type": "BlogPosting", headline: a.h1, url: `${SITE}/blog/${a.slug}/`, datePublished: a.date })) }, filLd(items)] }));
   plan.push({ url, groupe: "Conseils et guides", titre: "Tous les conseils" });
 
@@ -407,8 +416,8 @@ ${a.sources.length ? `<div class="sources"><h2>Sources et liens utiles</h2><ul>$
 ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produitLie.slug}/">${produitLie.h1}</a></li></ul></div>` : ""}
 <div class="boite"><h2>À lire aussi</h2><ul>${proches.map((x) => `<li><a href="/blog/${x.slug}/">${x.h1}</a></li>`).join("")}</ul></div></aside></div>
 <section class="sec ciel" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}</span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
-    ecrire(aurl, page({ url: aurl, ogType: "article", title: a.title, description: a.description, body, schemas: [
-      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: SITE + "/assets/img/og-horizon-fenetre.jpg", author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
+    ecrire(aurl, page({ url: aurl, une: a.photo, ogType: "article", title: a.title, description: a.description, body, schemas: [
+      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: imageUne(a.photo).src, author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
       filLd(it)] }));
     plan.push({ url: aurl, date: modif, groupe: "Conseils et guides", titre: a.h1 });
   }
@@ -422,7 +431,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 <aside class="cote"><div class="boite fonce"><h2>Par téléphone</h2><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><p>Le moyen le plus rapide pour fixer une visite.</p></div>
 <div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div>
 <div class="boite"><h2>Adresse</h2><p>Horizon Fenêtre, ESCOM HABITAT<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p></div></aside></div>`;
-  ecrire(url, page({ url, title: "Contact et devis gratuit | Horizon Fenêtre, Rillieux-la-Pape", description: `Demandez une visite et un devis gratuit pour vos fenêtres, volets, portes ou portail. Appelez le ${TEL} ou écrivez-nous. Lyon et alentours.`, body,
+  ecrire(url, page({ url, une: "pPorte", title: "Contact et devis gratuit | Horizon Fenêtre, Rillieux-la-Pape", description: `Demandez une visite et un devis gratuit pour vos fenêtres, volets, portes ou portail. Appelez le ${TEL} ou écrivez-nous. Lyon et alentours.`, body,
     schemas: [{ "@context": "https://schema.org", "@type": "ContactPage", url: SITE + url, about: ENTREPRISE }, filLd(items)] }));
   plan.push({ url, groupe: "Horizon Fenêtre", titre: "Contact et devis" });
 }

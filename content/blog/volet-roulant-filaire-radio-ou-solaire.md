@@ -2,7 +2,7 @@
 title: Volet roulant filaire, radio ou solaire : lequel choisir ?
 h1: Volet roulant motorisé : filaire, radio ou solaire ?
 description: Moteur filaire, radio ou solaire pour vos volets roulants : fonctionnement, fiabilité, pose en rénovation. Le comparatif d'un menuisier de la région lyonnaise.
-photo: voletRoulant
+photo: pVolet
 rubrique: Volets
 date: 2026-10-12
 motcle: volet roulant filaire radio solaire

@@ -2,7 +2,7 @@
 title: Portail battant ou coulissant : les critères pour choisir
 h1: Portail battant ou coulissant : lequel pour votre entrée ?
 description: Pente de l'allée, place disponible, motorisation, sol : les critères concrets pour choisir entre un portail battant et un portail coulissant en aluminium.
-photo: portailBattant
+photo: pPortail
 rubrique: Portails et clôtures
 date: 2026-10-12
 motcle: portail battant ou coulissant

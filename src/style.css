@@ -92,8 +92,8 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 }
 @media (max-width:700px){
   .hero-photo{flex-direction:column;align-items:stretch;min-height:0}
-  .hero-photo picture{position:relative;order:1}
-  .hero-photo .h-img{display:block;height:44svh;min-height:260px;object-position:50% 58%}
+  .hero-photo picture{position:relative;order:1;margin:96px 16px 0}
+  .hero-photo .h-img{display:block;height:36svh;min-height:230px;object-position:50% 58%;border-radius:22px}
   .hero-photo::before{display:none}
   .h-txt{order:2;padding-top:1.4rem;padding-bottom:1.6rem}
   .hero-photo .kicker{font-size:.8rem;margin-bottom:.9rem}
@@ -321,8 +321,9 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 /* barre d'action mobile */
 .barre-mobile{display:none}
 @media (max-width:760px){
-  .barre-mobile{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:30}
-  .barre-mobile a{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:54px;border-radius:999px;font-weight:700;text-decoration:none;background:#fff;color:var(--ardoise-f);box-shadow:0 10px 30px -10px rgba(31,47,54,.45)}
+  .barre-mobile{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom, 0px));z-index:30;transform:translateY(calc(100% + 40px));transition:transform .3s ease}
+  .barre-mobile.visible{transform:none}
+  .barre-mobile a{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;border-radius:999px;font-weight:700;text-decoration:none;background:#fff;color:var(--ardoise-f);box-shadow:0 10px 30px -10px rgba(31,47,54,.45)}
   .barre-mobile a+a{background:var(--ardoise);color:#fff}
   .barre-mobile svg{width:18px;height:18px}
   body{padding-bottom:76px}
@@ -354,15 +355,17 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .parcours .qui{display:none}
 }
 
-/* Comparatif des matériaux : une carte par critère sur téléphone */
+/* Comparatif des matériaux : une carte par matériau, en carrousel, sur téléphone */
+.mat-cartes{display:none}
 @media (max-width:700px){
-  .mat,.mat tbody,.mat tr,.mat th,.mat td{display:block;width:100%}
-  .mat thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .mat tbody tr{padding:1rem 1.1rem;border-bottom:1px solid var(--ciel-2)}
-  .mat tbody tr:last-child{border-bottom:0}
-  .mat tbody th{width:auto;padding:0 0 .5rem;border:0;font-size:1.02rem;color:var(--ardoise-f)}
-  .mat td{display:grid;grid-template-columns:6.5rem 1fr;gap:.6rem;padding:.4rem 0;border:0;font-size:.93rem}
-  .mat td::before{content:attr(data-label);font-weight:700;color:var(--ardoise)}
-  .tab-scroll{overflow:visible}
-  .tab-scroll table.mat{min-width:0}
+  .carte:has(> .tab-scroll .mat){display:none}
+  .mat-cartes{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:.2rem 16px 1rem;scrollbar-width:none}
+  .mat-cartes::-webkit-scrollbar{display:none}
+  .mat-carte{scroll-snap-align:start;background:#fff;border:1px solid var(--ciel-2);border-radius:var(--r-l);padding:1.3rem 1.3rem 1.1rem;box-shadow:0 18px 40px -28px rgba(51,69,77,.45)}
+  .mat-carte h3{display:inline-block;font-size:1.15rem;color:#fff;background:var(--ardoise);border-radius:999px;padding:.35rem 1rem;margin:0 0 1rem}
+  .mat-carte dl{margin:0;display:grid;gap:.85rem}
+  .mat-carte dl div{border-top:1px solid var(--ciel-2);padding-top:.75rem}
+  .mat-carte dl div:first-child{border-top:0;padding-top:0}
+  .mat-carte dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brume);margin-bottom:.2rem}
+  .mat-carte dd{margin:0;font-size:.95rem;color:var(--encre);line-height:1.45}
 }

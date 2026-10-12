@@ -2,7 +2,7 @@
 title: Moustique tigre à Lyon : quelle moustiquaire choisir ?
 h1: Moustique tigre à Lyon : bien choisir sa moustiquaire
 description: Enroulable, plissée, cadre fixe : quelle moustiquaire pour quelle fenêtre face au moustique tigre à Lyon ? Conseils de pose et choix de toile.
-photo: moustiqSoir
+photo: pMoustiq
 rubrique: Moustiquaires
 date: 2026-10-12
 motcle: moustiquaire moustique tigre Lyon
