@@ -185,6 +185,10 @@ const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 </div><div class="bas"><span>© ${new Date().getFullYear()} Horizon Fenêtre, une marque d'ESCOM HABITAT SARL</span><span>Ce site ne dépose aucun cookie</span></div></div></footer>
 <div class="barre-mobile"><a href="tel:${TEL_LIEN}">${icoTel}Appeler</a><a href="/contact/">Devis gratuit</a></div>`;
 
+// Mesure d'audience Vercel (sans cookie) : chemins des scripts fournis par Vercel, modifiables ici si le tableau de bord en indique d'autres.
+const SCRIPT_ANALYTICS = "/_vercel/insights/script.js";
+const SCRIPT_SPEED = "/_vercel/speed-insights/script.js";
+const MESURE = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script><script defer src="${SCRIPT_ANALYTICS}"></script><script defer src="${SCRIPT_SPEED}"></script>`;
 const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}})();</script>`;
 
 function page({ url, title, description, body, schemas = [], noindex = false, ogType = "website", preload = "" }) {
@@ -196,7 +200,7 @@ function page({ url, title, description, body, schemas = [], noindex = false, og
 <meta name="theme-color" content="#e9f6fb"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>${preload}
 <style>${css}</style>${schemas.map(ld).join("")}</head><body>
-<a class="skip" href="#contenu">Aller au contenu</a>${entete(url)}<main id="contenu">${body}</main>${pied()}${JS}</body></html>`;
+<a class="skip" href="#contenu">Aller au contenu</a>${entete(url)}<main id="contenu">${body}</main>${pied()}${JS}${noindex ? "" : MESURE}</body></html>`;
 }
 
 const fil = (items) => `<nav class="fil" aria-label="Fil d'Ariane"><ol>${items.map((it, i) => (i < items.length - 1 ? `<li><a href="${it.url}">${it.t}</a></li>` : `<li aria-current="page">${it.t}</li>`)).join("")}</ol></nav>`;
@@ -458,7 +462,7 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
 <h2>Éditeur du site</h2><p>Horizon Fenêtre est un nom commercial de la société <strong>ESCOM HABITAT</strong>, SARL.<br>Siège social : ${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}.<br>SIRET : 106 406 465 00018. TVA intracommunautaire : FR70 106 406 465.<br>Téléphone : ${TEL}. E-mail : <a href="mailto:${MAIL}">${MAIL}</a>.<br>Directeur de la publication : Antoine Escolle.</p>
 <h2>Activité</h2><p>ESCOM HABITAT, sous le nom Horizon Fenêtre, vend des menuiseries sur mesure (fourniture seule) et réalise le conseil et la prise de cotes. La pose est réalisée par un installateur partenaire indépendant, qui établit son propre devis et sa propre facture et assume ses propres responsabilités et assurances pour les travaux qu'il réalise.</p>
 <h2>Hébergement</h2><p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. <a href="https://vercel.com" class="ext" target="_blank" rel="noopener">vercel.com</a></p>
-<h2>Données personnelles et cookies</h2><p>Le traitement de vos données est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>. Ce site ne dépose aucun cookie ni traceur.</p>
+<h2>Données personnelles et cookies</h2><p>Le traitement de vos données est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>. Ce site ne dépose aucun cookie. La mesure d'audience est réalisée sans cookie et de façon anonyme.</p>
 <h2>Propriété intellectuelle et crédits photo</h2><p>Les textes, dessins et le logo Horizon Fenêtre sont la propriété d'ESCOM HABITAT. Toute reproduction sans autorisation est interdite.</p><p>Les photographies d'illustration proviennent de la banque d'images Unsplash (licence Unsplash) : ${CREDITS.join(", ")}. Elles illustrent les types de produits proposés et ne représentent pas des chantiers réalisés par Horizon Fenêtre.</p></article></div>`;
   ecrire(url, page({ url, title: "Mentions légales | Horizon Fenêtre", description: "Mentions légales du site Horizon Fenêtre, marque d'ESCOM HABITAT SARL à Rillieux-la-Pape : éditeur, activité, hébergement, crédits.", body, schemas: [filLd(items)] }));
   plan.push({ url, groupe: "Informations", titre: "Mentions légales" });
@@ -478,18 +482,18 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
 <ul>
 <li>ESCOM HABITAT (Horizon Fenêtre), seul destinataire de votre demande.</li>
 <li>Notre installateur partenaire, uniquement avec votre consentement.</li>
-<li>Nos sous-traitants techniques, tenus par contrat à la confidentialité : l'hébergeur du site, Vercel Inc. (États-Unis), et notre prestataire d'envoi d'e-mails, Brevo (Sendinblue SAS, France, données hébergées dans l'Union européenne).</li>
+<li>Nos sous-traitants techniques, tenus par contrat à la confidentialité : l'hébergeur du site et fournisseur des statistiques de visite, Vercel Inc. (États-Unis), et notre prestataire d'envoi d'e-mails, Brevo (Sendinblue SAS, France, données hébergées dans l'Union européenne).</li>
 </ul>
 <h2>Transferts hors de l'Union européenne</h2><p>L'hébergeur Vercel Inc. est établi aux États-Unis. Il adhère au Data Privacy Framework UE–États-Unis et propose des clauses contractuelles types de la Commission européenne. Les fonctions du site qui reçoivent le formulaire sont exécutées dans la région de Paris. Le site ne charge aucune ressource depuis un autre domaine : les polices et les images sont servies par le site lui-même.</p>
 <h2>Durées de conservation</h2>
 <ul>
 <li>Demandes sans suite : 3 ans au plus après notre dernier échange, puis suppression.</li>
 <li>Clients : durée de la relation commerciale, puis archivage pendant les durées légales (10 ans pour les pièces comptables).</li>
-<li>Journaux techniques de l'hébergeur : durée limitée fixée par celui-ci, à des fins de sécurité.</li>
+<li>Journaux techniques de l'hébergeur : durée limitée fixée par celui-ci, à des fins de sécurité.</li><li>Statistiques de visite : données agrégées et anonymes, sans durée de conservation de données personnelles.</li>
 </ul>
 <h2>Vos droits</h2><p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données, ainsi que du droit de retirer votre consentement et de définir des directives sur le sort de vos données après votre décès. Pour les exercer, écrivez à <a href="mailto:${MAIL}">${MAIL}</a> ou à l'adresse postale ci-dessus. Nous répondons dans un délai d'un mois.</p>
 <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr/fr/plaintes" class="ext" target="_blank" rel="noopener">CNIL</a>.</p>
-<h2>Cookies et traceurs</h2><p>Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience, aucun pixel publicitaire et aucun contenu intégré de réseau social. Aucun bandeau de consentement n'est donc nécessaire. Si cela change, cette page sera mise à jour et votre accord sera demandé au préalable.</p>
+<h2>Cookies et mesure d'audience</h2><p>Ce site ne dépose aucun cookie et n'utilise aucun pixel publicitaire ni contenu intégré de réseau social.</p><p>Pour savoir quelles pages sont consultées et vérifier la rapidité du site, nous utilisons Vercel Web Analytics et Vercel Speed Insights. Ces outils fonctionnent sans cookie et sans rien enregistrer sur votre appareil. Ils produisent uniquement des statistiques agrégées (pages vues, provenance, type d'appareil, pays, temps de chargement) et ne permettent pas de vous identifier : l'adresse IP n'est pas conservée et l'identifiant technique de visite est renouvelé chaque jour. Ces mesures servent uniquement à améliorer le site (intérêt légitime, article 6.1.f du RGPD). Aucun bandeau de consentement n'est donc nécessaire.</p><p>Si nous ajoutions un jour un outil qui dépose des cookies, votre accord serait demandé au préalable.</p>
 <h2>Sécurité</h2><p>Le site est servi exclusivement en HTTPS, avec des en-têtes de sécurité stricts. Le formulaire est protégé contre les envois automatisés sans service tiers de type captcha.</p>
 <p><em>Dernière mise à jour : ${dateFr(MAJ_CONFIDENTIALITE)}.</em></p></article></div>`;
   ecrire(curl, page({ url: curl, title: "Politique de confidentialité | Horizon Fenêtre", description: "Données collectées, finalités, durées de conservation, destinataires et droits RGPD : la politique de confidentialité du site Horizon Fenêtre.", body: cbody, schemas: [filLd(citems)] }));
