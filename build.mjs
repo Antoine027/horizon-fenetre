@@ -147,13 +147,13 @@ const COURT = { "portes-de-garage": "Garage", "portails-clotures": "Portails" };
 const NAV = [...produits.map((p) => ({ url: `/${p.slug}/`, t: COURT[p.slug] || p.nav })), { url: "/professionnels/", t: "Pros" }, { url: "/blog/", t: "Conseils" }];
 function entete(url, accueil) {
   return `<header class="top${accueil ? "" : " clair"}"><div class="wrap">
-<a class="marque" href="/"><img src="/assets/img/icon-light-96.webp" width="96" height="73" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
+<a class="marque" href="/"><img src="/assets/img/icon-light-52.webp" srcset="/assets/img/icon-light-52.webp 1x, /assets/img/icon-light-104.webp 2x" width="52" height="39" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav class="nav" id="nav" aria-label="Navigation principale"><ul>${NAV.map((n) => `<li><a href="${n.url}"${url.startsWith(n.url) ? ' aria-current="page"' : ""}>${n.t}</a></li>`).join("")}</ul>
 <a class="btn btn-or" href="/contact/">Demander un devis</a></nav></div></header>`;
 }
 const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
-<div><a class="marque" href="/"><img src="/assets/img/icon-light-96.webp" width="96" height="73" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
+<div><a class="marque" href="/"><img src="/assets/img/icon-light-52.webp" srcset="/assets/img/icon-light-52.webp 1x, /assets/img/icon-light-104.webp 2x" width="52" height="39" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <p>Menuiserie sur mesure, fourniture et pose.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
 <div><h2>Nos produits</h2><ul>${produits.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>

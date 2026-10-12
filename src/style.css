@@ -1,3 +1,4 @@
+@font-face{font-family:"Montserrat Repli";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Helvetica");size-adjust:113.39%;ascent-override:85.43%;descent-override:22.14%;line-gap-override:0%}
 @font-face{font-family:"Montserrat";src:url(/assets/fonts/montserrat.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 :root{
   --ardoise:#25313a;--ardoise-2:#2f3d47;--ardoise-3:#3c4c58;
@@ -6,7 +7,7 @@
   --texte:#25313a;--texte-2:#4d5c67;
   --metal:linear-gradient(100deg,#566673 0%,#a9b6bf 38%,#e6ecef 50%,#9aa8b2 64%,#5d6d79 100%);
   --r:6px;--w:1180px;
-  --font:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font:"Montserrat","Montserrat Repli",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 button,input,select,textarea{font:inherit}
@@ -76,18 +77,18 @@ p{margin:0 0 1.1em}
 
 /* la fenêtre animée */
 .scene{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:4/5;perspective:1400px}
-.halo{position:absolute;inset:-30% -30% -10%;background:radial-gradient(closest-side,rgba(224,184,79,.38),rgba(224,184,79,0) 70%);opacity:0;animation:halo 2.6s 1.5s ease-out forwards;pointer-events:none}
+.halo{position:absolute;inset:-30% -30% -10%;background:radial-gradient(closest-side,rgba(224,184,79,.38),rgba(224,184,79,0) 70%);opacity:0;animation:halo 1.4s .7s ease-out forwards;pointer-events:none}
 .cadre{position:absolute;inset:0;border-radius:3px;padding:18px;background:var(--metal);box-shadow:0 40px 80px rgba(0,0,0,.45),inset 0 0 0 2px rgba(255,255,255,.08)}
 .cadre::before{content:"";position:absolute;inset:8px;border:2px solid rgba(37,49,58,.55);pointer-events:none}
 .baie{position:relative;width:100%;height:100%;overflow:hidden;background:#1d2830;transform-style:preserve-3d}
 .ciel{position:absolute;inset:0;background:linear-gradient(180deg,#22313c 0%,#3b5163 34%,#8e8a7e 62%,#e7b965 78%,#f3d79a 84%)}
-.soleil{position:absolute;left:50%;top:70%;width:34%;aspect-ratio:1;margin-left:-17%;border-radius:50%;background:radial-gradient(circle,#fff6d8 0%,#f5d77f 35%,#e0b84f 60%,rgba(224,184,79,0) 72%);transform:translateY(40%);animation:leve 2.8s 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.soleil{position:absolute;left:50%;top:70%;width:34%;aspect-ratio:1;margin-left:-17%;border-radius:50%;background:radial-gradient(circle,#fff6d8 0%,#f5d77f 35%,#e0b84f 60%,rgba(224,184,79,0) 72%);transform:translateY(40%);animation:leve 1.6s .5s cubic-bezier(.2,.7,.2,1) forwards}
 .ville{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;color:#1f2a32}
 .appui{position:absolute;left:-7%;right:-7%;bottom:-10px;height:12px;background:var(--metal);box-shadow:0 6px 12px rgba(0,0,0,.35);z-index:3}
 .battants{position:absolute;inset:18px;z-index:4;perspective:1100px;perspective-origin:50% 45%;pointer-events:none}
 .vantail{position:absolute;top:0;bottom:0;width:50%;z-index:4;transform-style:preserve-3d;transition:transform 1.8s cubic-bezier(.65,.05,.25,1)}
-.vantail.g{left:0;transform-origin:left center;animation:ouvreG 1.9s .55s cubic-bezier(.65,.05,.25,1) forwards}
-.vantail.d{right:0;transform-origin:right center;animation:ouvreD 1.9s .55s cubic-bezier(.65,.05,.25,1) forwards}
+.vantail.g{left:0;transform-origin:left center;animation:ouvreG 1.4s .25s cubic-bezier(.65,.05,.25,1) forwards}
+.vantail.d{right:0;transform-origin:right center;animation:ouvreD 1.4s .25s cubic-bezier(.65,.05,.25,1) forwards}
 .vantail .chassis{position:absolute;inset:0;border:12px solid #3a4a55;box-shadow:0 10px 30px rgba(0,0,0,.35);background:linear-gradient(115deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.03) 30%,rgba(255,255,255,0) 55%,rgba(255,255,255,.1) 75%,rgba(255,255,255,.02) 100%),rgba(160,185,200,.12);box-shadow:inset 0 0 0 2px rgba(255,255,255,.07)}
 .vantail .chassis::after{content:"";position:absolute;left:0;right:0;top:50%;height:10px;margin-top:-5px;background:#33434e}
 .vantail.d .poignee{position:absolute;left:3px;top:50%;width:6px;height:46px;margin-top:-23px;border-radius:3px;background:var(--metal);z-index:2}
