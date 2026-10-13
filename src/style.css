@@ -269,7 +269,7 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .billet .vignette{aspect-ratio:16/10;border-radius:18px;margin-bottom:1rem}
 .billet:hover .ph{transform:scale(1.035)}
 .billet .rub,.billet h3,.billet p,.billet .meta{padding:0 .6rem}
-.billet .rub{font-size:.82rem;font-weight:650;color:var(--ardoise);margin-bottom:.4rem}
+
 .billet h3{font-size:1.15rem;margin-bottom:.5rem}
 .billet p{font-size:.95rem;color:var(--texte-2);margin:0 0 .8rem}
 .billet .meta{font-size:.85rem;color:var(--texte-2);margin-top:auto}
@@ -371,3 +371,17 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .mat-carte dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ardoise);margin-bottom:.2rem}
   .mat-carte dd{margin:0;font-size:.95rem;color:var(--encre);line-height:1.45}
 }
+
+/* Étiquette de catégorie et temps de lecture des guides */
+.billet .rub{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:.6rem;font-size:0}
+.billet .rub{font-size:.76rem;font-weight:700;color:var(--ardoise-f)}
+.billet .rub em{font-style:normal;font-weight:600;color:var(--texte-2);display:inline-flex;align-items:center;gap:.6rem}
+.billet .rub em::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--brume)}
+/* Engagements et garanties */
+.garanties{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.garanties li{background:var(--ciel);border-radius:var(--r-l);padding:1.5rem 1.4rem}
+.g-ico{display:inline-grid;place-items:center;min-width:56px;height:56px;padding:0 .7rem;border-radius:16px;background:var(--ardoise);color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;margin-bottom:1rem}
+.garanties h3{font-size:1.08rem;margin-bottom:.45rem}
+.garanties p{font-size:.93rem;color:var(--texte-2);margin:0}
+@media (max-width:1000px){.garanties{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.garanties{grid-template-columns:1fr;gap:.6rem}.g-ico{white-space:nowrap;font-size:.9rem;min-width:60px;padding:0 .5rem}.garanties li{display:grid;grid-template-columns:64px 1fr;column-gap:1rem;padding:1.1rem}.g-ico{grid-row:span 2;margin:0}}

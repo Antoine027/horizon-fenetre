@@ -55,7 +55,7 @@ function lireArticles() {
     const vues = new Set();
     meta.sources = (meta.sources || "").split(" ; ").filter(Boolean).map((s) => { const [label, url] = s.split("|"); return { label, url }; })
       .filter((s) => (vues.has(s.url) ? false : vues.add(s.url)));
-    return { slug: f.replace(/\.md$/, ""), ...meta, md: m[2] };
+    return { slug: f.replace(/\.md$/, ""), ...meta, md: m[2], lecture: Math.max(2, Math.round(m[2].split(/\s+/).length / 200)) };
   }).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (UNE.indexOf(a.slug) + 1 || 99) - (UNE.indexOf(b.slug) + 1 || 99)));
 }
 
@@ -280,7 +280,7 @@ const parcours = `<ol class="parcours">
     ["Dans quel secteur intervenez-vous ?", "À Lyon et dans toute la métropole, dans le sud de l'Ain (Côtière, Dombes) et le Val de Saône. Pour un projet plus éloigné, appelez-nous."],
     ["Vendez-vous aux professionnels ?", "Oui. Artisans, syndics, bailleurs, architectes et commerces : chiffrage sur plans ou après visite, livraison sur chantier."],
   ];
-  const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}</span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
+  const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
 <section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/hero-maison-640.avif 640w, /assets/img/hero-maison-960.avif 960w, /assets/img/hero-maison-1280.avif 1280w, /assets/img/hero-maison-1920.avif 1920w, /assets/img/hero-maison-2560.avif 2560w, /assets/img/hero-maison-3840.avif 3840w" sizes="100vw"><img class="h-img" src="/assets/img/hero-maison-1920.webp" srcset="/assets/img/hero-maison-640.webp 640w, /assets/img/hero-maison-960.webp 960w, /assets/img/hero-maison-1280.webp 1280w, /assets/img/hero-maison-1920.webp 1920w, /assets/img/hero-maison-2560.webp 2560w, /assets/img/hero-maison-3840.webp 3840w" sizes="100vw" width="3840" height="2149" alt="Maison contemporaine aux grandes baies vitrées équipées de brise-soleil orientables, terrasse et piscine" fetchpriority="high" decoding="async"></picture>
 <div class="wrap h-txt"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
@@ -292,6 +292,14 @@ const parcours = `<ol class="parcours">
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p></div>
 ${parcours}</div></section>
+
+<section class="sec"><div class="wrap"><div class="tete"><h2>Nos engagements et garanties</h2><p>Ce qui est écrit sur votre devis, et ce que la loi vous garantit.</p></div>
+<ul class="garanties">
+<li><span class="g-ico">CE</span><h3>Menuiseries marquées CE</h3><p>Chaque fenêtre et porte extérieure est livrée avec son marquage CE et sa déclaration de performances (norme NF EN 14351-1).</p></li>
+<li><span class="g-ico">Uw</span><h3>Performances écrites sur le devis</h3><p>Uw, Sw, Ud, affaiblissement acoustique : les valeurs du fabricant figurent ligne par ligne, pour comparer sur des bases claires.</p></li>
+<li><span class="g-ico">2 ans</span><h3>Garantie légale de conformité</h3><p>En tant que vendeur, nous répondons de la conformité de la menuiserie livrée, en plus de la garantie contre les vices cachés.</p></li>
+<li><span class="g-ico">10 ans</span><h3>Pose couverte par la décennale</h3><p>La pose est réalisée par un professionnel assuré en responsabilité décennale, comme l'exige la loi. Son attestation vous est remise avec son devis.</p></li>
+</ul></div></section>
 
 <section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
@@ -389,7 +397,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 // ===== Blog =====
 {
   const url = "/blog/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Conseils" }];
-  const cartes = articles.map((a, i) => `<a class="billet${i === 0 ? " une" : ""}" href="/blog/${a.slug}/">${vignette(a, i === 0)}<div><span class="rub">${a.rubrique}</span><h3>${a.h1}</h3></div><div><p>${a.resume}</p><span class="meta">${dateFr(a.date)}</span></div></a>`).join("");
+  const cartes = articles.map((a, i) => `<a class="billet${i === 0 ? " une" : ""}" href="/blog/${a.slug}/">${vignette(a, i === 0)}<div><span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3></div><div><p>${a.resume}</p><span class="meta">${dateFr(a.date)}</span></div></a>`).join("");
   const body = `${bandeauSimple(items, "Conseils et guides menuiserie", "Choisir ses fenêtres, comprendre un devis, connaître les règles et les aides : ce qu'on explique tous les jours en visite, par écrit.")}
 <section class="sec"><div class="wrap"><h2 class="sr">Tous nos guides</h2><div class="billets">${cartes}</div></div></section>${appel()}`;
   ecrire(url, page({ url, une: "pFenetre", title: "Conseils fenêtres, volets, portes, portails | Horizon Fenêtre", description: "Guides pratiques pour choisir fenêtres, baies vitrées, volets, portes et portails : matériaux, aides 2026, TVA, déclaration préalable, prix.", body,
@@ -405,7 +413,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
     const modif = dateDe(aurl, fs.readFileSync(path.join("content/blog", a.slug + ".md"), "utf8"), a.date);
     const proches = [...articles.filter((x) => x.slug !== a.slug && x.rubrique === a.rubrique), ...articles.filter((x) => x.slug !== a.slug && x.rubrique !== a.rubrique)].slice(0, 3);
     const produitLie = produits.find((p) => a.md.includes(`](/${p.slug}/)`));
-    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>${modif > a.date ? `, mis à jour le <time datetime="${modif}">${dateFr(modif)}</time>` : ""}, ${Math.max(3, Math.round(mots / 220))} min de lecture</p>`)}
+    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>${modif > a.date ? `, mis à jour le <time datetime="${modif}">${dateFr(modif)}</time>` : ""}, ${a.lecture} min de lecture</p>`)}
 <div class="wrap corps"><article class="prose">
 ${a.photo ? `<figure class="une-photo">${photo(a.photo, { eager: true, ratio: [16, 9], largeurs: [640, 960, 1280], sizes: "(max-width: 900px) 100vw, 740px" })}</figure>` : ""}
 ${toc.length > 2 ? `<nav class="sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.t}</a></li>`).join("")}</ol></nav>` : ""}
@@ -415,7 +423,7 @@ ${a.sources.length ? `<div class="sources"><h2>Sources et liens utiles</h2><ul>$
 <aside class="cote"><div class="boite fonce"><h2>Un projet en tête ?</h2><p>Visite, prise de cotes et devis de fourniture gratuits.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div>
 ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produitLie.slug}/">${produitLie.h1}</a></li></ul></div>` : ""}
 <div class="boite"><h2>À lire aussi</h2><ul>${proches.map((x) => `<li><a href="/blog/${x.slug}/">${x.h1}</a></li>`).join("")}</ul></div></aside></div>
-<section class="sec ciel" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}</span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
+<section class="sec ciel" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}<em>${x.lecture} min de lecture</em></span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
     ecrire(aurl, page({ url: aurl, une: a.photo, ogType: "article", title: a.title, description: a.description, body, schemas: [
       { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: imageUne(a.photo).src, author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
       filLd(it)] }));
