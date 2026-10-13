@@ -134,5 +134,11 @@
       "destination": "https://www.instantterrasse.com/",
       "permanent": true
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/controle",
+      "schedule": "0 7 1 * *"
+    }
   ]
 }

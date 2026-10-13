@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         sender: { name: "Site Horizon Fenêtre", email: de },
         to: [{ email: vers }],
         replyTo: { email: d.email, name: d.nom },
-        subject: `Demande de devis : ${d.produit || "projet"} à ${d.commune}`,
+        subject: `Demande de devis : ${d.produit || "projet"} – ${d.nom}`,
         textContent: texte,
         htmlContent,
       }),
