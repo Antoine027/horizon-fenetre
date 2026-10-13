@@ -378,3 +378,10 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .billet .rub em{font-style:normal;font-weight:600;color:var(--texte-2);display:inline-flex;align-items:center;gap:.6rem}
 .billet .rub em::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--brume)}
 
+
+/* Étapes : apparition une à une, de gauche à droite (opacité et translation seulement : aucun décalage de mise en page) */
+.parcours.anim li{opacity:0;transform:translateX(-24px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.parcours.anim.vu li{opacity:1;transform:none}
+.parcours.anim.vu li:nth-child(2){transition-delay:.18s}
+.parcours.anim.vu li:nth-child(3){transition-delay:.36s}
+.parcours.anim.vu li:nth-child(4){transition-delay:.54s}
