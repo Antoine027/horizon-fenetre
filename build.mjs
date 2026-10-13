@@ -263,9 +263,9 @@ const articles = lireArticles();
 const plan = [];
 const parcours = `<ol class="parcours">
 <li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p></li>
-<li><h3>Devis de fourniture et pose</h3><p>Chaque menuiserie détaillée ligne par ligne : cotes, matériau, vitrage, performances.</p></li>
+<li><h3>Devis de fourniture et pose</h3><p>Chaque menuiserie détaillée : cotes, matériau, vitrage, performances.</p></li>
 <li><h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p></li>
-<li><h3>Pose avec décennale</h3><p>On organise la pose avec notre poseur partenaire, assuré en garantie décennale, à partir de nos cotes. Vous pouvez aussi choisir votre artisan.</p></li>
+<li><h3>Pose avec décennale</h3><p>On organise la pose avec notre poseur partenaire, assuré en garantie décennale.</p></li>
 </ol>`;
 
 // ===== Accueil =====
