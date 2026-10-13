@@ -154,7 +154,7 @@ function mailler(html, selfUrl, max = 9) {
   });
 }
 
-const vignette = (a, grand = false) => (a.photo ? `<span class="vignette">${photo(a.photo, { ratio: [16, 10], largeurs: grand ? [480, 800, 1200] : [400, 640], sizes: grand ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 600px) 100vw, 33vw" })}</span>` : "");
+const vignette = (a, grand = false) => (a.photo ? `<span class="vignette">${photo(a.photo, { ratio: [16, 10], largeurs: grand ? [480, 800, 1200] : [400, 640, 960, 1200], sizes: grand ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 600px) 100vw, 33vw" })}</span>` : "");
 
 // ---------- Icônes ----------
 const ico = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -309,10 +309,10 @@ ${parcours}</div></section>
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap duo">
-<div><span class="vignette">${photo("salon", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Particuliers</h2><p>Maison ou appartement, une seule fenêtre ou toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
+<div><span class="vignette">${photo("salon", { ratio: [16, 9], largeurs: [480, 800, 1200], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Particuliers</h2><p>Maison ou appartement, une seule fenêtre ou toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
 <ul><li>Visite et prise de cotes gratuites</li><li>Devis de fourniture détaillé, performances à l'appui</li><li>Pose organisée par nos soins</li><li>Aide pour la déclaration préalable en mairie</li></ul>
 <a class="btn btn-p" href="/contact/">Demander une visite</a></div>
-<div><span class="vignette">${photo("immeuble", { ratio: [16, 9], largeurs: [480, 800], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Professionnels</h2><p>Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces.</p>
+<div><span class="vignette">${photo("immeuble", { ratio: [16, 9], largeurs: [480, 800, 1200], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Professionnels</h2><p>Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces.</p>
 <ul><li>Chiffrage rapide sur plans ou après visite</li><li>Fourniture sur mesure livrée sur chantier</li><li>Pose possible sur demande</li><li>Un interlocuteur unique pour la fourniture</li></ul>
 <a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div>
 </div></section>
@@ -337,7 +337,7 @@ for (const p of produits) {
   const items = [{ url: "/", t: "Accueil" }, { url, t: p.nav }];
   const lies = articles.filter((a) => a.md.includes(`](/${p.slug}/)`)).slice(0, 4);
   const voisins = PRODUITS.filter((x) => x.slug !== p.slug).slice(0, 3);
-  const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [400, 640, 900], sizes: "(max-width: 760px) 100vw, 360px" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
+  const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [480, 800, 1200, 1600], sizes: "(max-width: 760px) 100vw, 50vw" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
   const contenu = mailler(p.contenu, url, 6).replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${galerie}`);
   const body = `${bandeauPhoto(items, p.h1, p.chapo, p.photo)}
 <div class="wrap corps"><article class="prose">${contenu}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
