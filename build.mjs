@@ -295,10 +295,9 @@ ${parcours}</div></section>
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Nos engagements et garanties</h2><p>Ce qui est écrit sur votre devis, et ce que la loi vous garantit.</p></div>
 <ul class="garanties">
-<li><span class="g-ico">CE</span><h3>Menuiseries marquées CE</h3><p>Chaque fenêtre et porte extérieure est livrée avec son marquage CE et sa déclaration de performances (norme NF EN 14351-1).</p></li>
-<li><span class="g-ico">Uw</span><h3>Performances écrites sur le devis</h3><p>Uw, Sw, Ud, affaiblissement acoustique : les valeurs du fabricant figurent ligne par ligne, pour comparer sur des bases claires.</p></li>
-<li><span class="g-ico">2 ans</span><h3>Garantie légale de conformité</h3><p>En tant que vendeur, nous répondons de la conformité de la menuiserie livrée, en plus de la garantie contre les vices cachés.</p></li>
-<li><span class="g-ico">10 ans</span><h3>Pose couverte par la décennale</h3><p>La pose est réalisée par un professionnel assuré en responsabilité décennale, comme l'exige la loi. Son attestation vous est remise avec son devis.</p></li>
+<li><span class="g-ico">NF</span><h3>Fenêtres certifiées NF</h3><p>Nos fenêtres portent la marque NF : leurs performances (isolation, étanchéité à l'air et à l'eau, résistance au vent) sont contrôlées par un organisme indépendant.</p></li>
+<li><span class="g-ico">10 ans</span><h3>Garantie fabricant de 10 ans</h3><p>Chaque fenêtre est couverte 10 ans par son fabricant. Les conditions de garantie de chaque produit vous sont remises avec le devis.</p></li>
+<li><span class="g-ico">Décennale</span><h3>Pose couverte par la décennale</h3><p>La pose est réalisée par un professionnel assuré en responsabilité décennale, comme l'exige la loi. Son attestation vous est remise avec son devis.</p></li>
 </ul></div></section>
 
 <section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
