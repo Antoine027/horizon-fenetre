@@ -293,13 +293,6 @@ const parcours = `<ol class="parcours">
 <section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p></div>
 ${parcours}</div></section>
 
-<section class="sec"><div class="wrap"><div class="tete"><h2>Nos engagements et garanties</h2><p>Ce qui est écrit sur votre devis, et ce que la loi vous garantit.</p></div>
-<ul class="garanties">
-<li><span class="g-ico">NF</span><h3>Profilés PVC certifiés NF</h3><p>Les profilés de nos fenêtres PVC sont certifiés NF « Profilés de fenêtres en PVC » (NF 126) par le CSTB : qualité et durabilité contrôlées par un organisme indépendant (décision n° 2241-589, vérifiable sur <a href="https://evaluation.cstb.fr/" rel="noopener">evaluation.cstb.fr</a>).</p></li>
-<li><span class="g-ico">10 ans</span><h3>Garantie fabricant de 10 ans</h3><p>Chaque fenêtre est couverte 10 ans par son fabricant. Les conditions de garantie de chaque produit vous sont remises avec le devis.</p></li>
-<li><span class="g-ico">Décennale</span><h3>Pose couverte par la décennale</h3><p>La pose est réalisée par un professionnel assuré en responsabilité décennale, comme l'exige la loi. Son attestation vous est remise avec son devis.</p></li>
-</ul></div></section>
-
 <section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
 </div></section>

@@ -377,12 +377,4 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .billet .rub{font-size:.76rem;font-weight:700;color:var(--ardoise-f)}
 .billet .rub em{font-style:normal;font-weight:600;color:var(--texte-2);display:inline-flex;align-items:center;gap:.6rem}
 .billet .rub em::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--brume)}
-/* Engagements et garanties */
-.garanties{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.garanties li{background:var(--ciel);border-radius:var(--r-l);padding:1.5rem 1.4rem}
-.g-ico{display:inline-grid;place-items:center;min-width:56px;height:56px;padding:0 .7rem;border-radius:16px;background:var(--ardoise);color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;margin-bottom:1rem}
-.garanties h3{font-size:1.08rem;margin-bottom:.45rem}
-.garanties p{font-size:.93rem;color:var(--texte-2);margin:0}
-@media (max-width:900px) and (min-width:561px){.garanties{grid-template-columns:1fr}}
-@media (max-width:560px){.garanties{grid-template-columns:1fr;gap:.6rem}.g-ico{white-space:nowrap;font-size:.75rem;min-width:0;width:84px;padding:0 .3rem}.garanties li{display:grid;grid-template-columns:84px 1fr;column-gap:1rem;padding:1.1rem}.g-ico{grid-row:span 2;margin:0}}
-.garanties p a{color:var(--ardoise-f);text-decoration:underline;text-decoration-color:var(--brume);text-underline-offset:2px}
+
