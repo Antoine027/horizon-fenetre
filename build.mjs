@@ -206,7 +206,7 @@ function page({ url, title, description, body, schemas = [], noindex = false, og
 <title>${esc(title)}</title><meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canon}">${noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">'}
 <meta property="og:locale" content="fr_FR"><meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Horizon Fenêtre"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canon}"><meta property="og:image" content="${img.src}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(img.alt)}"><meta name="twitter:image" content="${img.src}"><meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#e9f6fb"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#e9f6fb"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/icon-192.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="alternate" type="application/rss+xml" title="Conseils Horizon Fenêtre" href="/blog/rss.xml">
 <link rel="preload" href="/assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>${preload}
 <style>${css}</style>${schemas.map(ld).join("")}</head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>${entete(url)}<main id="contenu">${body}</main>${pied()}${JS}${mesure ? MESURE : ""}${url === "/merci/" ? SUIVI_DEVIS : ""}</body></html>`;
@@ -527,6 +527,13 @@ const urlsSitemap = plan.map((p) => {
 });
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urlsSitemap.join("\n")}\n</urlset>\n`);
 if (!process.env.VERCEL) fs.writeFileSync(FICHIER_DATES, JSON.stringify(Object.fromEntries(Object.entries(DATES).sort()), null, 1) + "\n");
+// Flux des articles du blog (pour l'appli de communication, les lecteurs RSS et Google)
+{
+  const items = articles.map((a) => ({ id: a.slug, titre: a.h1, titre_seo: a.title, url: `${SITE}/blog/${a.slug}/`, date_publication: a.date, date_modification: DATES[`/blog/${a.slug}/`]?.d || a.date, rubrique: a.rubrique, resume: a.resume, description: a.description, image: imageUne(a.photo).src, marque: "Horizon Fenêtre", canal: "Article site" }));
+  fs.writeFileSync(path.join(OUT, "blog", "flux.json"), JSON.stringify({ site: SITE, marque: "Horizon Fenêtre", mis_a_jour: AUJOURDHUI, articles: items }, null, 2));
+  const x = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  fs.writeFileSync(path.join(OUT, "blog", "rss.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Conseils Horizon Fenêtre</title><link>${SITE}/blog/</link><description>Guides menuiserie : fenêtres, volets, portes, portails.</description><language>fr-FR</language>${items.map((i) => `<item><title>${x(i.titre)}</title><link>${i.url}</link><guid>${i.url}</guid><pubDate>${new Date(i.date_publication + "T08:00:00+02:00").toUTCString()}</pubDate><category>${x(i.rubrique)}</category><description>${x(i.resume)}</description></item>`).join("")}</channel></rss>`);
+}
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /merci/\nDisallow: /erreur-envoi/\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, "site.webmanifest"), JSON.stringify({ name: "Horizon Fenêtre", short_name: "Horizon Fenêtre", start_url: "/", display: "standalone", background_color: "#e9f6fb", theme_color: "#566f79", icons: [{ src: "/assets/img/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/img/icon-512.png", sizes: "512x512", type: "image/png" }] }));
 console.log(`OK : ${plan.length} pages indexables, ${articles.length} articles.`);
