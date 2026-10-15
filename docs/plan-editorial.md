@@ -7,7 +7,7 @@ Statut : `à faire` → `publié` (la tâche met à jour cette colonne et la dat
 
 | Date | Slug | Titre de travail | Recherche visée | Liens prioritaires | Statut |
 |---|---|---|---|---|---|
-| 2026-10-27 | double-ou-triple-vitrage | Double ou triple vitrage : lequel choisir à Lyon | double ou triple vitrage | /fenetres/ | à faire |
+| 2026-10-27 | double-ou-triple-vitrage | Double ou triple vitrage : lequel choisir à Lyon | double ou triple vitrage | /fenetres/ | publié le 2026-10-15 |
 | 2026-11-10 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | à faire |
 | 2026-11-24 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? | porte de garage isolée | /portes-de-garage/ | à faire |
 | 2026-12-08 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | à faire |
