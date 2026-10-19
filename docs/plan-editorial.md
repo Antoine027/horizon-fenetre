@@ -53,6 +53,10 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 
 Deux articles par semaine est un maximum, pas un objectif à tenir coûte que coûte. Si le sujet prévu ne répond pas à une vraie question de client, recoupe trop un guide existant, ou ne peut pas être sourcé correctement, la tâche ne publie pas de nouvel article ce jour-là : elle enrichit plutôt un guide existant (piste Search Console ou notes de terrain d'Antoine) et le signale. Jamais d'article de remplissage.
 
+## Notes de terrain d'Antoine (à réutiliser)
+
+- BSO : pas de protection contre l'effraction ; beaucoup d'assurances exigent alors un vitrage de sécurité. Alternatives qui dosent la lumière en gardant la sécurité : volet roulant à lames orientables, volet battant à lames orientables. (19/10/2026)
+
 ## Auteur et relecture
 
 Chaque article est signé Antoine Escolle. Antoine reçoit le lien à chaque publication et relit l'article ; s'il demande une correction, elle passe avant toute nouvelle publication. Ses remarques de terrain (questions de clients, erreurs vues en visite) sont à intégrer aux articles concernés.
@@ -87,12 +91,13 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 | 2026-10-19 | /blog/baie-vitree-coulissante-ou-galandage/ | Title et H1 commencent par « à galandage » ; ajout des sections « Combien de place faut-il », « Galandage en PVC, aluminium ou bois », « En résumé » et appel vers /contact/ | baie vitrée galandage (+ baie coulissante ou à galandage en pvc/alu/bois) | page : 186 / 0 / 0 % / 42,8 ; requête : 48 / 0 / 0 % / 41,0 (7 jours) |
 | 2026-10-19 | plan | Ajout du sujet « fenêtre horizontale » (sans page dédiée) au 23/10 ; porte de garage isolée décalée au 11/12 | fenetres horizontales, fenetre horizontal(e) | ≈ 200 impr. cumulées sur 3 mois, pos. 38 à 54, 0 clic |
 | 2026-10-19 | tout le site | Redirection 301 de horizonfenetre.com vers www.horizonfenetre.com (doublons www / sans www dans Google) | – | plusieurs pages indexées en double (ex. /fenetres/ sans www : 95 impr., pos. 25,8) |
+| 2026-10-19 | /blog/bso-ou-volet-roulant/ + /brise-soleil-orientables/ | Remarque terrain d'Antoine : BSO sans protection anti-effraction, vitrage de sécurité souvent exigé par l'assurance, alternatives à lames orientables ; sections « sécurité », « alternatives », « inconvénients du BSO », ligne au comparatif, FAQ produit | bso inconvénient | guide : 27 / 0 / 0 % / 44,1 ; requête : 7 / 0 / 0 % / 24,7 (3 mois) |
 
 ### Pistes relevées dans l'export du 2026-10-19 (3 mois), à traiter par ordre
 
 1. /blog/porte-entree-alu-ou-pvc/ : 98 impr., pos. 51, 0 clic. Variantes : « porte d'entrée alu ou pvc » (21, pos. 45), « alu ou pvc pour porte d'entrée » (6, pos. 15), « porte alu ou pvc », « porte d'entrée pvc ou aluminium ». Enrichir (tableau prix/isolation/entretien, FAQ) et retravailler title/description.
 2. /blog/condensation-fenetre-double-vitrage/ : 81 impr., pos. 32. Requête « probleme condensation fenetre double vitrage ».
-3. /brise-soleil-orientables/ : 69 impr., pos. 69 ; « bso inconvénient » (7, pos. 25) → section inconvénients dans /blog/bso-ou-volet-roulant/.
+3. ~~/brise-soleil-orientables/ : « bso inconvénient » → section inconvénients dans /blog/bso-ou-volet-roulant/.~~ (traitée le 2026-10-19, avec la remarque terrain d'Antoine sur la sécurité)
 4. « porte de garage avec fenetre » (16, pos. 50) et « porte sectionnelle vitrée » → section hublots / panneaux vitrés dans /blog/porte-de-garage-sectionnelle-ou-laterale/.
 5. Marque : « horizon menuiserie(s) » pos. 20 à 26 → vérifier que la page d'accueil et /contact/ citent « Horizon Fenêtre, menuiseries sur mesure ».
 6. À ne pas viser : « fenêtre horizon battant / coulissante / élite » (≈ 500 impr., beaucoup depuis le Canada) correspond à une autre marque ; « nettoyer terrasse bois » relève d'Instant Terrasse (déjà redirigé).

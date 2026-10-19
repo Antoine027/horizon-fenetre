@@ -329,12 +329,17 @@ contenu: `
 <h2>Le capteur de vent, indispensable</h2>
 <p>Un BSO déployé n'aime pas les rafales. On l'équipe d'un capteur de vent qui remonte automatiquement les lames quand le vent forcit. Dans la vallée du Rhône, où le vent du nord souffle fort, c'est une sécurité qu'on ne propose pas en option : on la prévoit.</p>
 
+<h2>BSO et sécurité : à vérifier avant de choisir</h2>
+<p>Contrairement à un volet roulant ou à un volet battant, un BSO ne protège pas contre l'effraction. Quand il remplace un volet, de nombreux assureurs demandent un <strong>vitrage de sécurité</strong> (feuilleté retardateur d'effraction) sur les ouvertures accessibles, surtout en rez-de-chaussée. Vérifiez les conditions de votre contrat avant de vous décider.</p>
+<p>Si vous voulez doser la lumière sans renoncer à la sécurité, il existe des <a href="/volets/">volets roulants à lames orientables</a> et des volets battants à lames orientables : ils se ferment et se verrouillent comme un volet classique, et leurs lames s'inclinent pour laisser passer la lumière.</p>
+
 <h2>Où le poser en priorité</h2>
 <p>Les baies vitrées et grandes fenêtres orientées sud et ouest, les pièces de vie sous toiture, les bureaux à domicile où l'écran devient illisible l'après-midi. En rénovation, on vérifie la place disponible au-dessus de l'ouverture pour le paquet de lames remontées et la solidité du support.</p>
 `,
 faq: [
 ["Un BSO peut-il remplacer un volet roulant ?", "Oui, dans la plupart des pièces de vie. Dans une chambre où l'on veut le noir complet, le volet roulant reste plus occultant."],
 ["Le BSO est-il bruyant par grand vent ?", "Bien posé et guidé par coulisses, il reste silencieux. Le capteur de vent le remonte avant que les rafales ne deviennent fortes."],
+["Un BSO protège-t-il contre les cambriolages ?", "Non. Ses lames orientent la lumière mais ne résistent pas à une effraction. Beaucoup d'assurances demandent alors un vitrage de sécurité sur la fenêtre ou la baie : vérifiez votre contrat. Les volets roulants ou battants à lames orientables sont une alternative qui garde la protection d'un volet."],
 ["Peut-on poser un BSO sur une maison existante ?", "Oui, en coffre apparent ou sous le linteau. On vérifie à la visite la hauteur disponible et la nature du support."]
 ]
 },
