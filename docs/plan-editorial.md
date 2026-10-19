@@ -53,6 +53,8 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 
 Données : export de Google Search Console déposé par Antoine dans `docs/search-console/` (voir le README de ce dossier). Sans export récent (plus de 21 jours), la tâche n'optimise rien et le signale dans son message.
 
+S'il reste des « Pistes relevées » non traitées en fin de plan, traiter la première d'abord, puis la marquer « (traitée le AAAA-MM-JJ) ».
+
 À chaque exécution, **une action d'optimisation au plus** sur un article ou une page existante, choisie par ordre de priorité :
 1. **Beaucoup d'impressions, peu de clics** (CTR nettement sous la moyenne du site, position ≤ 10) → réécrire `title` et `description` pour mieux répondre à la recherche (chiffre clé, bénéfice, question posée), sans promesse invérifiable.
 2. **Position 5 à 20 sur une requête utile** → enrichir l'article : section ou FAQ qui répond exactement à cette requête, intertitre reformulé, lien interne depuis un article proche.
