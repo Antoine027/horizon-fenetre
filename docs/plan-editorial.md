@@ -80,6 +80,14 @@ S'il reste des « Pistes relevées » non traitées en fin de plan, traiter la p
 
 Ne jamais changer un slug publié. Noter chaque action dans le journal ci-dessous (date, page, action, requête visée, chiffres avant : impressions, clics, CTR, position), pour mesurer l'effet à l'export suivant.
 
+## Synchronisation avec le CRM d'Antoine (onglet Communication)
+
+Chaque article du plan existe aussi comme publication dans le CRM ESCOM Habitat (https://claude.ai/artifact/RNy3bSJDETntJsyytWDehe), base de données, collection `com`, document `blog-<slug>`. Champs : `titre`, `canaux: ["site"]`, `marque: "hf"`, `statut`, `echeance` (date prévue, AAAA-MM-JJ), `datePub`, `updatedAt`.
+- Article publié → mettre à jour le document : `statut: "publie"`, `datePub` = date du jour, `titre` = titre final (h1), `updatedAt`.
+- Sujet ajouté ou date déplacée dans le plan → créer ou mettre à jour le document (`statut: "programme"`, `echeance`).
+- Sujet retiré du plan → `statut: "abandonne"` (ne pas supprimer).
+- Ne jamais toucher aux autres documents de la collection (publications d'Antoine, Instant Terrasse).
+
 ## Mesure des visites et des contacts (Vercel Web Analytics)
 
 Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, équipe `team_w4UHwTbt4EeZyABIXdWDfLFi` (ESCOM). À chaque exécution, lire les pages vues des 28 derniers jours par page (`requestPath`) et par provenance (`referrerHostname`).
