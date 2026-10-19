@@ -22,7 +22,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-11-17 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portails-clotures/ | à faire |
 | 2026-11-20 | changer-fenetres-par-ou-commencer | Changer ses fenêtres : par où commencer (check-list avant la visite) | changer ses fenêtres par où commencer | /contact/ | à faire |
 | 2026-11-24 | fenetres-maison-annees-70-lyon | Maison des années 60-70 à Lyon : quelles fenêtres changer en priorité | rénovation fenêtres maison ancienne | /fenetres/ | à faire |
-| 2026-11-27 | volet-battant-alu-bois-pvc | Volets battants : aluminium, bois ou PVC | volet battant aluminium | /volets/ | à faire |
+| 2026-10-19 | remplacer-volets-battants | Remplacer ses volets battants : volets roulants ou battants neufs (remplace « Volets battants : alu, bois ou PVC », intégré en section matériaux) | remplacer volets battants | /volets/ | publié le 2026-10-19 |
 | 2026-12-01 | porte-interieure-bloc-porte-coulissante | Portes intérieures : bloc-porte, porte seule ou coulissante | porte intérieure sur mesure | /portes-interieures/ | à faire |
 | 2026-12-04 | baie-vitree-seuil-plat | Baie vitrée à seuil plat : accessibilité et étanchéité | baie vitrée seuil plat | /baies-vitrees/ | à faire |
 | 2026-12-08 | fenetre-secteur-protege-abf-lyon | Fenêtres en secteur protégé à Lyon : ABF, Vieux Lyon, Croix-Rousse | fenêtre ABF Lyon | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
@@ -58,6 +58,7 @@ Deux articles par semaine est un maximum, pas un objectif à tenir coûte que co
 Règle : chaque note de terrain va à deux endroits. **Page produit** : l'essentiel en 2 ou 3 phrases, orienté décision, avec un lien vers le guide. **Guide** : le détail (tableau, cas, solutions). On ne recopie jamais le même texte sur les deux, pour éviter que deux pages se concurrencent sur la même recherche. Vérifier aussi que la page produit ne contredit pas une note.
 
 - BSO : pas de protection contre l'effraction ; beaucoup d'assurances exigent alors un vitrage de sécurité. Alternatives qui dosent la lumière en gardant la sécurité : volet roulant à lames orientables, volet battant à lames orientables (Antoine les fournit ; présentés sur /volets/). (19/10/2026)
+- Remplacer des volets battants existants : volet roulant = pas besoin d'ouvrir la fenêtre, commande à distance/domotique, coffre souvent visible de l'intérieur (légère perte de lumière), gonds à retirer + reprise d'enduit (sinon coulures de rouille), moins cher. Battants neufs = aspect et cachet conservés, gonds réutilisés, pas de perte de lumière, pas d'entretien en alu, meilleure isolation thermique et phonique (panneau isolant plus épais que le tablier de lames d'un volet roulant), meilleure sécurité, motorisables, plus chers. (19/10/2026)
 - Pose rénovation / dépose totale : rénovation = perte de lumière, habillage large, isolation empilée (pont thermique) ; dépose totale = pas de perte voire gain de lumière (cadres plus fins), habillage réduit, calfeutrement refait. Reprise des tableaux pas systématique : risque faible sur placo, plus fort sur brique enduite ; solutions : reprise enduit/peinture ou habillage. (19/10/2026)
 
 ## Auteur et relecture

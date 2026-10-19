@@ -104,7 +104,8 @@ contenu: `
 <p>Pleins, persiennés, semi-persiennés, à barres et écharpe (le fameux « Z ») ou à cadre : on reprend le dessin d'origine si la mairie ou l'architecte des Bâtiments de France l'impose.</p>
 
 <h2>Remplacer ou motoriser des volets existants</h2>
-<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur. À l'inverse, des volets battants abîmés peuvent être remplacés par des volets roulants en coffre rénovation, ce qui évite d'ouvrir la fenêtre pour fermer les volets. On fait le point lors de la visite.</p>
+<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur.</p>
+<p>Des volets battants usés peuvent être remplacés de deux façons. <strong>Par des volets roulants</strong> en coffre rénovation : plus besoin d'ouvrir la fenêtre, commande à distance possible et prix plus bas, mais une légère perte de lumière due au coffre, une façade qui change, et des gonds à retirer avec une petite reprise d'enduit pour éviter les coulures de rouille. <strong>Par des volets battants neufs</strong> : la façade et le cachet de la maison sont conservés, les gonds réutilisés, aucune perte de lumière, pas d'entretien en aluminium, et une meilleure isolation et sécurité grâce à un panneau plus épais que les lames d'un volet roulant ; ils coûtent plus cher, et peuvent être motorisés. Notre guide <a href="/blog/remplacer-volets-battants/">remplacer ses volets battants</a> compare les deux en détail.</p>
 `,
 faq: [
 ["Comment avoir de la lumière avec les volets fermés ?", "Avec des volets à lames orientables, roulants ou battants : une fois fermés et verrouillés, leurs lames s'inclinent pour laisser passer la lumière et l'air. On garde la protection d'un volet, ce qu'un brise-soleil orientable n'offre pas."],
