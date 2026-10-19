@@ -12,7 +12,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 |---|---|---|---|---|---|
 | 2026-10-20 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | à faire |
 | 2026-10-15 | double-ou-triple-vitrage | Double ou triple vitrage : lequel choisir à Lyon | double ou triple vitrage | /fenetres/ | publié le 2026-10-15 |
-| 2026-10-23 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? | porte de garage isolée | /portes-de-garage/ | à faire |
+| 2026-10-23 | fenetre-horizontale-bandeau | Fenêtre horizontale (en bandeau) : intérêt, contraintes et règles | fenêtre horizontale | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2026-10-27 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | à faire |
 | 2026-10-30 | delai-changement-fenetres | Combien de temps pour changer ses fenêtres : visite, fabrication, pose | délai fabrication fenêtre | /contact/ + /blog/prix-fenetre-sur-mesure/ | à faire |
 | 2026-11-03 | motoriser-volet-roulant | Motoriser ses volets roulants existants : quand c'est possible | motoriser volet roulant | /volets/ + /blog/volet-roulant-filaire-radio-ou-solaire/ | à faire |
@@ -26,6 +26,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-12-01 | porte-interieure-bloc-porte-coulissante | Portes intérieures : bloc-porte, porte seule ou coulissante | porte intérieure sur mesure | /portes-interieures/ | à faire |
 | 2026-12-04 | baie-vitree-seuil-plat | Baie vitrée à seuil plat : accessibilité et étanchéité | baie vitrée seuil plat | /baies-vitrees/ | à faire |
 | 2026-12-08 | fenetre-secteur-protege-abf-lyon | Fenêtres en secteur protégé à Lyon : ABF, Vieux Lyon, Croix-Rousse | fenêtre ABF Lyon | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
+| 2026-12-11 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? (parler aussi des hublots et panneaux vitrés) | porte de garage isolée | /portes-de-garage/ | à faire |
 | 2027-03-16 | hauteur-cloture | Hauteur de clôture : ce que dit la règle et comment choisir | hauteur clôture | /portails-clotures/ | à faire |
 | 2027-04-06 | moustiquaire-baie-vitree | Moustiquaire pour baie vitrée et porte-fenêtre | moustiquaire baie vitrée | /moustiquaires/ | à faire |
 | 2027-05-04 | garder-maison-fraiche-ete | Garder la maison fraîche l'été : vitrage, volets, BSO | protéger maison chaleur | /brise-soleil-orientables/ | à faire |
@@ -66,4 +67,14 @@ Ne jamais changer un slug publié. Noter chaque action dans le journal ci-dessou
 | Date | Page | Action | Requête visée | Avant (impr. / clics / CTR / pos.) |
 |---|---|---|---|---|
 | 2026-10-19 | /blog/baie-vitree-coulissante-ou-galandage/ | Title et H1 commencent par « à galandage » ; ajout des sections « Combien de place faut-il », « Galandage en PVC, aluminium ou bois », « En résumé » et appel vers /contact/ | baie vitrée galandage (+ baie coulissante ou à galandage en pvc/alu/bois) | page : 186 / 0 / 0 % / 42,8 ; requête : 48 / 0 / 0 % / 41,0 (7 jours) |
+| 2026-10-19 | plan | Ajout du sujet « fenêtre horizontale » (sans page dédiée) au 23/10 ; porte de garage isolée décalée au 11/12 | fenetres horizontales, fenetre horizontal(e) | ≈ 200 impr. cumulées sur 3 mois, pos. 38 à 54, 0 clic |
 | 2026-10-19 | tout le site | Redirection 301 de horizonfenetre.com vers www.horizonfenetre.com (doublons www / sans www dans Google) | – | plusieurs pages indexées en double (ex. /fenetres/ sans www : 95 impr., pos. 25,8) |
+
+### Pistes relevées dans l'export du 2026-10-19 (3 mois), à traiter par ordre
+
+1. /blog/porte-entree-alu-ou-pvc/ : 98 impr., pos. 51, 0 clic. Variantes : « porte d'entrée alu ou pvc » (21, pos. 45), « alu ou pvc pour porte d'entrée » (6, pos. 15), « porte alu ou pvc », « porte d'entrée pvc ou aluminium ». Enrichir (tableau prix/isolation/entretien, FAQ) et retravailler title/description.
+2. /blog/condensation-fenetre-double-vitrage/ : 81 impr., pos. 32. Requête « probleme condensation fenetre double vitrage ».
+3. /brise-soleil-orientables/ : 69 impr., pos. 69 ; « bso inconvénient » (7, pos. 25) → section inconvénients dans /blog/bso-ou-volet-roulant/.
+4. « porte de garage avec fenetre » (16, pos. 50) et « porte sectionnelle vitrée » → section hublots / panneaux vitrés dans /blog/porte-de-garage-sectionnelle-ou-laterale/.
+5. Marque : « horizon menuiserie(s) » pos. 20 à 26 → vérifier que la page d'accueil et /contact/ citent « Horizon Fenêtre, menuiseries sur mesure ».
+6. À ne pas viser : « fenêtre horizon battant / coulissante / élite » (≈ 500 impr., beaucoup depuis le Canada) correspond à une autre marque ; « nettoyer terrasse bois » relève d'Instant Terrasse (déjà redirigé).
