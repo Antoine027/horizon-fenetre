@@ -72,6 +72,14 @@ S'il reste des « Pistes relevées » non traitées en fin de plan, traiter la p
 
 Ne jamais changer un slug publié. Noter chaque action dans le journal ci-dessous (date, page, action, requête visée, chiffres avant : impressions, clics, CTR, position), pour mesurer l'effet à l'export suivant.
 
+## Mesure des visites et des contacts (Vercel Web Analytics)
+
+Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, équipe `team_w4UHwTbt4EeZyABIXdWDfLFi` (ESCOM). À chaque exécution, lire les pages vues des 28 derniers jours par page (`requestPath`) et par provenance (`referrerHostname`).
+- Conversions : visites de `/merci` (demande de devis envoyée) et de `/suivi/appel-telephone` (clic sur le numéro).
+- Pour choisir l'optimisation : à trafic Google égal, privilégier les pages qui amènent des visites vers `/contact` ; un article qui reçoit des visites mais ne mène jamais au contact → renforcer son appel à l'action.
+- Une grande partie des visites directes (sans provenance) peut venir d'Antoine lui-même : ne pas en tirer de conclusion.
+- Dans le message final, une ligne de chiffres : visites venues de Google, demandes de devis, clics téléphone sur 28 jours.
+
 ## Journal des optimisations
 
 | Date | Page | Action | Requête visée | Avant (impr. / clics / CTR / pos.) |
