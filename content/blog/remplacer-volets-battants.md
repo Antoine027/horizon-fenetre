@@ -38,7 +38,7 @@ On remplace les volets à l'identique, ou dans un matériau plus moderne, en gar
 - **l'aspect de la façade est conservé**, et avec lui le cachet de la bâtisse. Sur une maison ancienne, une ferme ou une maison de village, c'est souvent ce qui fait son charme ;
 - **les gonds existants peuvent être réutilisés**, donc pas de reprise de façade ;
 - **aucune perte de lumière** : rien ne vient s'ajouter dans l'ouverture ;
-- **plus d'entretien en aluminium** : fini la peinture à refaire ;
+- **plus d'entretien en PVC ou en aluminium** : fini la peinture à refaire ;
 - **une meilleure isolation thermique et phonique** : le panneau isolant d'un volet battant est plus épais que le tablier d'un volet roulant, c'est-à-dire l'ensemble de ses lames ;
 - **une meilleure sécurité** une fois fermés et verrouillés ;
 - la **motorisation reste possible**, pour ceux qui ne veulent plus ouvrir la fenêtre.
@@ -57,9 +57,9 @@ On remplace les volets à l'identique, ou dans un matériau plus moderne, en gar
 | Lumière | Légère perte (coffre) | Aucune perte |
 | Aspect de la façade | Modifié | Conservé |
 | Gonds existants | À retirer, enduit à reprendre | Réutilisés |
-| Isolation thermique et phonique | Moins bonne | Meilleure (panneau plus épais) |
-| Sécurité | Moins bonne | Meilleure |
-| Entretien | Faible | Nul en aluminium |
+| Isolation thermique et phonique | Bonne | Supérieure (panneau plus épais) |
+| Sécurité | Bonne | Supérieure |
+| Entretien | Aucun | Aucun (en PVC ou aluminium) |
 | Prix | Plus accessible | Plus élevé |
 
 ## Quel matériau pour des volets battants neufs ?
@@ -78,7 +78,7 @@ Des volets battants neufs du même aspect que les anciens posent généralement 
 
 ## Notre conseil
 
-- Vous tenez au **caractère de la maison**, à l'isolation et à la sécurité : choisissez des **volets battants neufs**, en aluminium pour ne plus avoir d'entretien, motorisés si vous le souhaitez.
+- Vous tenez au **caractère de la maison**, à l'isolation et à la sécurité : choisissez des **volets battants neufs**, en PVC ou en aluminium pour ne plus avoir d'entretien, motorisés si vous le souhaitez.
 - Vous voulez avant tout le **confort d'usage** et le **budget le plus serré** : le **volet roulant** est la bonne réponse, à condition d'accepter le changement de façade et de prévoir la reprise d'enduit à l'emplacement des gonds.
 
 Rien n'empêche de mélanger : des battants neufs sur la façade principale, des volets roulants côté jardin ou sur les fenêtres difficiles d'accès.
