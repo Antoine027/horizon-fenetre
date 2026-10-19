@@ -80,4 +80,4 @@ Rien n'oblige à mettre le même vitrage partout : on peut très bien choisir du
 
 Lors de la visite et de la prise de cotes, on note pour chaque ouverture l'orientation, les dimensions, le type d'ouverture et l'état de la maçonnerie. C'est ce relevé qui permet de proposer un vitrage adapté à chaque façade plutôt qu'un choix unique. Le devis de fourniture indique ensuite les valeurs Uw et Sw de chaque menuiserie, ce qui permet de comparer les options. Pour savoir ce qui fait varier le montant, consultez notre guide sur le [prix d'une fenêtre sur mesure](/blog/prix-fenetre-sur-mesure/).
 
-Horizon Fenêtre fournit les menuiseries, et la pose est assurée par un installateur partenaire, sur son propre devis. Découvrez nos [fenêtres sur mesure](/fenetres/) ou [demandez une visite](/contact/) pour en parler sur place.
+Horizon Fenêtre fournit les menuiseries, et la pose est assurée par un installateur partenaire. Découvrez nos [fenêtres sur mesure](/fenetres/) ou [demandez une visite](/contact/) pour en parler sur place.

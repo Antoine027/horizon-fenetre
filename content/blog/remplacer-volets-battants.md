@@ -83,4 +83,4 @@ Des volets battants neufs du même aspect que les anciens posent généralement 
 
 Rien n'empêche de mélanger : des battants neufs sur la façade principale, des volets roulants côté jardin ou sur les fenêtres difficiles d'accès.
 
-Horizon Fenêtre fournit les volets sur mesure, après une visite et une prise de cotes chez vous ; la pose est assurée par un installateur partenaire, sur son propre devis. Découvrez nos [volets roulants et battants](/volets/), ou [demandez une visite](/contact/) pour en parler devant votre façade.
+Horizon Fenêtre fournit les volets sur mesure, après une visite et une prise de cotes chez vous ; la pose est assurée par un installateur partenaire. Découvrez nos [volets roulants et battants](/volets/), ou [demandez une visite](/contact/) pour en parler devant votre façade.

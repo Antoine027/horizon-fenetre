@@ -11,7 +11,7 @@ sources: impots.gouv.fr – Taux de TVA dans le bâtiment|https://www.impots.gou
 ---
 Changer ses fenêtres avec une TVA à 5,5 % au lieu de 20 %, c'est une économie immédiate et visible sur la facture. Ce n'est pas une aide à demander : c'est l'entreprise qui applique le taux, à condition que tout soit en règle. Voici ce qu'il faut réunir.
 
-> Bon à savoir : Horizon Fenêtre vend la fourniture seule, facturée avec une TVA à 20 %. La pose est proposée par notre installateur partenaire, sur son propre devis. Cet article explique les règles générales pour que vous puissiez comparer les offres en connaissance de cause.
+> Bon à savoir : Horizon Fenêtre vend la fourniture seule, facturée avec une TVA à 20 %. La pose est proposée par notre installateur partenaire. Cet article explique les règles générales pour que vous puissiez comparer les offres en connaissance de cause.
 
 ## Condition 1 : un logement de plus de deux ans
 

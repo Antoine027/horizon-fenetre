@@ -94,4 +94,4 @@ Transformer une fenêtre en baie, c'est toucher à la structure du mur : il faut
 - Vous voulez ouvrir toute la largeur et vous avez un pan de mur libre à côté : la **baie à galandage** vaut la peine d'être étudiée.
 - Vous remplacez une baie existante sans toucher aux cloisons, ou le budget compte : la **baie coulissante classique** est le bon choix.
 
-Horizon Fenêtre fournit la baie sur mesure, après une visite et une prise de cotes sur place ; la pose est assurée par un installateur partenaire, sur son propre devis. Découvrez nos [baies vitrées sur mesure](/baies-vitrees/), ou [demandez une visite](/contact/) : on regarde vos murs avant de vous parler de catalogue.
+Horizon Fenêtre fournit la baie sur mesure, après une visite et une prise de cotes sur place ; la pose est assurée par un installateur partenaire. Découvrez nos [baies vitrées sur mesure](/baies-vitrees/), ou [demandez une visite](/contact/) : on regarde vos murs avant de vous parler de catalogue.

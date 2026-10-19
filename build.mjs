@@ -357,7 +357,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
   const faq = [
     ["Travaillez-vous sur plans ?", "Oui. Envoyez-nous les plans et le descriptif, on vous retourne un chiffrage de fourniture. Les cotes définitives sont toujours relevées sur place avant fabrication."],
     ["Vendez-vous aux artisans poseurs ?", "Oui, c'est même le cœur de notre métier : fourniture sur mesure, conseil sur les gammes et relevé de cotes si vous le souhaitez."],
-    ["Pouvez-vous proposer la pose ?", "Oui, par notre installateur partenaire, sur son propre devis. Utile pour les syndics, bailleurs et commerces qui veulent un interlocuteur pour la pose."],
+    ["Pouvez-vous proposer la pose ?", "Oui, par notre installateur partenaire. Utile pour les syndics, bailleurs et commerces qui veulent un interlocuteur pour la pose."],
   ];
   const contenu = mailler(`
 <p class="lead">On connaît les contraintes d'un chantier professionnel : un budget validé en amont, des délais qui s'enchaînent avec les autres corps d'état et des menuiseries qui doivent arriver aux bonnes cotes. On s'organise autour.</p>
@@ -375,7 +375,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <h3>Le relevé de cotes</h3>
 <p>On peut relever les cotes sur site pour sécuriser la fabrication, ou travailler sur les vôtres si vous préférez.</p>
 <h3>La pose en option</h3>
-<p>Si vous n'avez pas d'équipe de pose, notre installateur partenaire peut intervenir sur son propre devis. La livraison est calée avec lui.</p>
+<p>Si vous n'avez pas d'équipe de pose, notre installateur partenaire peut intervenir. La livraison est calée avec lui.</p>
 <h3>Les documents dont vous avez besoin</h3>
 <p>Fiches techniques, procès-verbaux de performance, éléments pour les dossiers de déclaration préalable.</p>
 <h2>Nos produits</h2>
