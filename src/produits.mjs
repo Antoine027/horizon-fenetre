@@ -39,8 +39,8 @@ contenu: `
 </ul>
 
 <h2>Rénovation ou dépose totale : on le décide à la visite</h2>
-<p>En <strong>pose en rénovation</strong>, on garde l'ancien dormant (le cadre fixé au mur) et la nouvelle fenêtre vient se poser dessus. C'est rapide, propre, sans reprise de plâtre, mais on perd quelques centimètres de vitrage.</p>
-<p>En <strong>dépose totale</strong>, tout est retiré jusqu'à la maçonnerie. Plus de lumière, une meilleure étanchéité à l'air, mais il faut reprendre les tableaux et parfois les finitions intérieures.</p>
+<p>En <strong>pose en rénovation</strong>, on garde l'ancien dormant (le cadre fixé au mur) et la nouvelle fenêtre vient se poser dedans. C'est rapide et sans travaux sur les murs, mais le nouveau cadre s'ajoute à l'ancien : on perd de la lumière, les habillages sont plus larges, et l'isolation autour de la fenêtre s'empile (ancien calfeutrement, ancien cadre, nouveau calfeutrement), avec un risque de pont thermique.</p>
+<p>En <strong>dépose totale</strong>, tout est retiré jusqu'à la maçonnerie. Pas de perte de lumière, souvent même un gain grâce à des cadres plus fins, un habillage réduit ou absent, et un calfeutrement refait à neuf. Le tableau intérieur peut être abîmé à la dépose : c'est rare sur une cloison en plaque de plâtre, plus fréquent sur un mur en brique enduit. Une dépose soignée suffit souvent ; sinon, on reprend l'enduit et la peinture, ou on pose un habillage.</p>
 <p>Le bon choix dépend de l'état de vos dormants actuels, et ça se voit en visite, pas sur une photo. Il conditionne aussi les cotes de fabrication : c'est pour ça qu'on le tranche avant de commander. On vous explique les deux options dans notre article <a href="/blog/pose-renovation-ou-depose-totale/">pose en rénovation ou dépose totale</a>.</p>
 
 
