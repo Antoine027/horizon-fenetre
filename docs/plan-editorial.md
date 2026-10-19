@@ -57,7 +57,7 @@ Deux articles par semaine est un maximum, pas un objectif à tenir coûte que co
 
 Règle : chaque note de terrain va à deux endroits. **Page produit** : l'essentiel en 2 ou 3 phrases, orienté décision, avec un lien vers le guide. **Guide** : le détail (tableau, cas, solutions). On ne recopie jamais le même texte sur les deux, pour éviter que deux pages se concurrencent sur la même recherche. Vérifier aussi que la page produit ne contredit pas une note.
 
-- BSO : pas de protection contre l'effraction ; beaucoup d'assurances exigent alors un vitrage de sécurité. Alternatives qui dosent la lumière en gardant la sécurité : volet roulant à lames orientables, volet battant à lames orientables. (19/10/2026)
+- BSO : pas de protection contre l'effraction ; beaucoup d'assurances exigent alors un vitrage de sécurité. Alternatives qui dosent la lumière en gardant la sécurité : volet roulant à lames orientables, volet battant à lames orientables (Antoine les fournit ; présentés sur /volets/). (19/10/2026)
 - Pose rénovation / dépose totale : rénovation = perte de lumière, habillage large, isolation empilée (pont thermique) ; dépose totale = pas de perte voire gain de lumière (cadres plus fins), habillage réduit, calfeutrement refait. Reprise des tableaux pas systématique : risque faible sur placo, plus fort sur brique enduite ; solutions : reprise enduit/peinture ou habillage. (19/10/2026)
 
 ## Auteur et relecture

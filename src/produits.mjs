@@ -88,6 +88,8 @@ contenu: `
 </ul>
 <h3>Le tablier</h3>
 <p>Les lames <strong>PVC</strong> conviennent aux fenêtres de taille courante et restent économiques. Au-delà d'une certaine largeur, ou sur une baie exposée, on passe à des lames <strong>aluminium à mousse isolante</strong>, plus rigides et plus résistantes aux tentatives d'effraction.</p>
+<h3>Le volet roulant à lames orientables</h3>
+<p>Une fois descendu, ses lames pivotent pour laisser entrer la lumière et l'air, comme un brise-soleil, tout en gardant la protection d'un volet fermé et verrouillé. C'est la solution quand on veut doser la lumière sans renoncer à la sécurité, notamment en rez-de-chaussée, où un <a href="/brise-soleil-orientables/">brise-soleil orientable</a> conduit souvent l'assureur à exiger un vitrage de sécurité.</p>
 <h3>La manœuvre</h3>
 <p>Sangle, manivelle, moteur filaire avec interrupteur, moteur radio avec télécommande ou moteur solaire autonome : chaque option a ses avantages. Le solaire évite de tirer un câble, ce qui le rend très pratique en rénovation. Le filaire reste le plus simple et le plus fiable sur la durée. On a écrit <a href="/blog/volet-roulant-filaire-radio-ou-solaire/">un comparatif complet des motorisations</a> pour vous aider à trancher.</p>
 
@@ -98,12 +100,14 @@ contenu: `
 <li><strong>PVC</strong> : le choix économique pour des volets pleins à barres et écharpe ou des persiennes simples.</li>
 <li><strong>Bois</strong> : le seul matériau accepté dans certains secteurs protégés, à peindre ou lasurer.</li>
 </ul>
+<p><strong>À lames orientables</strong> : le volet se ferme et se verrouille comme un volet battant classique, et ses lames s'inclinent pour régler la lumière. C'est la version moderne de la persienne, utile quand on veut de l'ombre sans fermer la maison dans le noir.</p>
 <p>Pleins, persiennés, semi-persiennés, à barres et écharpe (le fameux « Z ») ou à cadre : on reprend le dessin d'origine si la mairie ou l'architecte des Bâtiments de France l'impose.</p>
 
 <h2>Remplacer ou motoriser des volets existants</h2>
 <p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur. À l'inverse, des volets battants abîmés peuvent être remplacés par des volets roulants en coffre rénovation, ce qui évite d'ouvrir la fenêtre pour fermer les volets. On fait le point lors de la visite.</p>
 `,
 faq: [
+["Comment avoir de la lumière avec les volets fermés ?", "Avec des volets à lames orientables, roulants ou battants : une fois fermés et verrouillés, leurs lames s'inclinent pour laisser passer la lumière et l'air. On garde la protection d'un volet, ce qu'un brise-soleil orientable n'offre pas."],
 ["Peut-on poser un volet roulant sans travaux à l'intérieur ?", "Oui, avec un coffre rénovation posé à l'extérieur. Aucune intervention dans la pièce."],
 ["Un volet roulant solaire fonctionne-t-il en hiver ?", "Oui. La batterie est dimensionnée pour plusieurs jours sans soleil. Sur une façade très ombragée, on préférera un moteur filaire."],
 ["Peut-on centraliser tous les volets ?", "Avec des moteurs radio, oui : une télécommande multicanal ou une box domotique permet de commander tous les volets ensemble."]
