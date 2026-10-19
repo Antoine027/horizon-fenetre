@@ -74,8 +74,6 @@ Une variante existe : la **dépose en feuillure**, où l'on retire le dormant sa
 
 Le dernier point est souvent oublié. En rénovation, on garde l'ancien cadre et le calfeutrement d'origine (mousse, mastic, joint), puis on ajoute un nouveau calfeutrement et un nouveau cadre. Chaque couche en plus crée une jonction, et chaque jonction est un risque de **pont thermique**, c'est-à-dire un point par où la chaleur s'échappe et où l'air peut passer. En dépose totale, il ne reste que le mur, un calfeutrement neuf et le nouveau cadre.
 
-> Bon à savoir : en visite, on regarde l'état de l'ancien calfeutrement autour du dormant. S'il est sec, fissuré ou absent, poser en rénovation revient à enfermer ce défaut derrière la nouvelle fenêtre.
-
 ## Comment on décide
 
 | Situation | Pose conseillée |

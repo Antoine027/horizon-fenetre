@@ -93,7 +93,7 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 | 2026-10-19 | plan | Ajout du sujet « fenêtre horizontale » (sans page dédiée) au 23/10 ; porte de garage isolée décalée au 11/12 | fenetres horizontales, fenetre horizontal(e) | ≈ 200 impr. cumulées sur 3 mois, pos. 38 à 54, 0 clic |
 | 2026-10-19 | tout le site | Redirection 301 de horizonfenetre.com vers www.horizonfenetre.com (doublons www / sans www dans Google) | – | plusieurs pages indexées en double (ex. /fenetres/ sans www : 95 impr., pos. 25,8) |
 | 2026-10-19 | /blog/bso-ou-volet-roulant/ + /brise-soleil-orientables/ | Remarque terrain d'Antoine : BSO sans protection anti-effraction, vitrage de sécurité souvent exigé par l'assurance, alternatives à lames orientables ; sections « sécurité », « alternatives », « inconvénients du BSO », ligne au comparatif, FAQ produit | bso inconvénient | guide : 27 / 0 / 0 % / 44,1 ; requête : 7 / 0 / 0 % / 24,7 (3 mois) |
-| 2026-10-19 | /blog/pose-renovation-ou-depose-totale/ | Notes terrain d'Antoine : tableau lumière / habillage / isolation, encadré pont thermique, reprise des tableaux nuancée (placo / brique, enduit ou habillage), description réécrite | pose rénovation ou dépose totale | guide : 27 / 0 / 0 % / 48,9 (3 mois) |
+| 2026-10-19 | /blog/pose-renovation-ou-depose-totale/ | Notes terrain d'Antoine : tableau lumière / habillage / isolation, explication du pont thermique, reprise des tableaux nuancée (placo / brique, enduit ou habillage), description réécrite | pose rénovation ou dépose totale | guide : 27 / 0 / 0 % / 48,9 (3 mois) |
 
 ### Pistes relevées dans l'export du 2026-10-19 (3 mois), à traiter par ordre
 
