@@ -282,6 +282,9 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .sommaire p{font-weight:700;margin:0 0 .5rem;color:var(--ardoise-f)}
 .sommaire ol{margin:0;padding-left:1.2rem;font-size:.97rem}
 .sources{font-size:.92rem;color:var(--texte-2);border-top:1px solid var(--ciel-2);padding-top:1.2rem;margin-top:2.5rem}
+.auteur{margin-top:2rem;padding:1.1rem 1.3rem;background:var(--ciel-2);border-radius:10px;font-size:.95rem}
+.auteur p{margin:0}
+.auteur .auteur-nom{font-weight:700;margin-bottom:.3rem}
 .sources h2{font-size:1.1rem!important;margin-top:0!important}
 .ext::after{content:"↗";font-size:.8em;margin-left:.15em;display:inline-block}
 

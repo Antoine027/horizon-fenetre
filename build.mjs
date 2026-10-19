@@ -406,19 +406,20 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
     const modif = dateDe(aurl, fs.readFileSync(path.join("content/blog", a.slug + ".md"), "utf8"), a.date);
     const proches = [...articles.filter((x) => x.slug !== a.slug && x.rubrique === a.rubrique), ...articles.filter((x) => x.slug !== a.slug && x.rubrique !== a.rubrique)].slice(0, 3);
     const produitLie = produits.find((p) => a.md.includes(`](/${p.slug}/)`));
-    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>${modif > a.date ? `, mis à jour le <time datetime="${modif}">${dateFr(modif)}</time>` : ""}, ${a.lecture} min de lecture</p>`)}
+    const body = `${bandeauSimple(it, a.h1, a.resume, `<p class="art-meta">${a.rubrique}, par Antoine Escolle, publié le <time datetime="${a.date}">${dateFr(a.date)}</time>${modif > a.date ? `, mis à jour le <time datetime="${modif}">${dateFr(modif)}</time>` : ""}, ${a.lecture} min de lecture</p>`)}
 <div class="wrap corps"><article class="prose">
 ${a.photo ? `<figure class="une-photo">${photo(a.photo, { eager: true, ratio: [16, 9], largeurs: [640, 960, 1280], sizes: "(max-width: 900px) 100vw, 740px" })}</figure>` : ""}
 ${toc.length > 2 ? `<nav class="sommaire" aria-label="Sommaire"><p>Au sommaire</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.t}</a></li>`).join("")}</ol></nav>` : ""}
 ${corps}
 ${a.sources.length ? `<div class="sources"><h2>Sources et liens utiles</h2><ul>${a.sources.map((s) => `<li><a href="${s.url}" class="ext" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul></div>` : ""}
+<div class="auteur"><p class="auteur-nom">Rédigé par Antoine Escolle</p><p>Antoine dirige Horizon Fenêtre, marque d'ESCOM HABITAT à Rillieux-la-Pape. Il fait lui-même les visites et les prises de cotes chez les particuliers de la métropole de Lyon et de l'Ain, et relit chaque guide avant publication.</p></div>
 </article>
 <aside class="cote"><div class="boite fonce"><h2>Un projet en tête ?</h2><p>Visite, prise de cotes et devis de fourniture gratuits.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div>
 ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produitLie.slug}/">${produitLie.h1}</a></li></ul></div>` : ""}
 <div class="boite"><h2>À lire aussi</h2><ul>${proches.map((x) => `<li><a href="/blog/${x.slug}/">${x.h1}</a></li>`).join("")}</ul></div></aside></div>
 <section class="sec ciel" style="padding-top:3.5rem;padding-bottom:3.5rem"><div class="wrap"><h2 style="font-size:1.6rem">Continuer la lecture</h2><div class="billets">${proches.map((x) => `<a class="billet" href="/blog/${x.slug}/">${vignette(x)}<span class="rub">${x.rubrique}<em>${x.lecture} min de lecture</em></span><h3>${x.h1}</h3><p>${x.resume}</p></a>`).join("")}</div></div></section>${appel()}`;
     ecrire(aurl, page({ url: aurl, une: a.photo, ogType: "article", title: a.title, description: a.description, body, schemas: [
-      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: imageUne(a.photo).src, author: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
+      { "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, description: a.description, datePublished: a.date, dateModified: modif, inLanguage: "fr-FR", mainEntityOfPage: SITE + aurl, image: imageUne(a.photo).src, author: { "@type": "Person", name: "Antoine Escolle", jobTitle: "Gérant", worksFor: { "@type": "Organization", name: "Horizon Fenêtre", url: SITE + "/" } }, publisher: { "@type": "Organization", name: "Horizon Fenêtre", logo: { "@type": "ImageObject", url: SITE + "/assets/img/icon-512.png" } }, keywords: a.motcle, articleSection: a.rubrique, wordCount: mots },
       filLd(it)] }));
     plan.push({ url: aurl, date: modif, groupe: "Conseils et guides", titre: a.h1 });
   }

@@ -49,6 +49,14 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 5. Pas de chiffre ou de promesse invérifiable. Réglementation et aides : vérifier sur les sites officiels le jour de la rédaction.
 6. Titre (title) de 60 caractères au plus, une seule recherche principale, mot-clé utilisé naturellement.
 
+## Règle de frein (qualité avant volume)
+
+Deux articles par semaine est un maximum, pas un objectif à tenir coûte que coûte. Si le sujet prévu ne répond pas à une vraie question de client, recoupe trop un guide existant, ou ne peut pas être sourcé correctement, la tâche ne publie pas de nouvel article ce jour-là : elle enrichit plutôt un guide existant (piste Search Console ou notes de terrain d'Antoine) et le signale. Jamais d'article de remplissage.
+
+## Auteur et relecture
+
+Chaque article est signé Antoine Escolle. Antoine reçoit le lien à chaque publication et relit l'article ; s'il demande une correction, elle passe avant toute nouvelle publication. Ses remarques de terrain (questions de clients, erreurs vues en visite) sont à intégrer aux articles concernés.
+
 ## Optimisation Search Console (à chaque exécution)
 
 Données : export de Google Search Console déposé par Antoine dans `docs/search-console/` (voir le README de ce dossier). Sans export récent (plus de 21 jours), la tâche n'optimise rien et le signale dans son message.
