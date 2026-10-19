@@ -10,22 +10,22 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 
 | Date | Slug | Titre de travail | Recherche visée | Liens prioritaires | Statut |
 |---|---|---|---|---|---|
-| 2026-10-23 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | à faire |
+| 2026-10-20 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | à faire |
 | 2026-10-15 | double-ou-triple-vitrage | Double ou triple vitrage : lequel choisir à Lyon | double ou triple vitrage | /fenetres/ | publié le 2026-10-15 |
-| 2026-10-27 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? | porte de garage isolée | /portes-de-garage/ | à faire |
-| 2026-10-30 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | à faire |
-| 2026-11-03 | delai-changement-fenetres | Combien de temps pour changer ses fenêtres : visite, fabrication, pose | délai fabrication fenêtre | /contact/ + /blog/prix-fenetre-sur-mesure/ | à faire |
-| 2026-11-06 | motoriser-volet-roulant | Motoriser ses volets roulants existants : quand c'est possible | motoriser volet roulant | /volets/ + /blog/volet-roulant-filaire-radio-ou-solaire/ | à faire |
-| 2026-11-10 | type-ouverture-fenetre | Oscillo-battant, soufflet, coulissant : quelle ouverture pour quelle pièce | type d'ouverture fenêtre | /fenetres/ | à faire |
-| 2026-11-13 | couleur-fenetre-anthracite-blanc | Couleur des menuiseries : anthracite, blanc, bicolore et règles du PLU | couleur fenêtre anthracite | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
-| 2026-11-17 | changer-fenetres-copropriete | Changer ses fenêtres en copropriété : autorisations, AG, syndic | changer fenêtre copropriété | /professionnels/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
-| 2026-11-20 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portails-clotures/ | à faire |
-| 2026-11-24 | changer-fenetres-par-ou-commencer | Changer ses fenêtres : par où commencer (check-list avant la visite) | changer ses fenêtres par où commencer | /contact/ | à faire |
-| 2026-11-27 | fenetres-maison-annees-70-lyon | Maison des années 60-70 à Lyon : quelles fenêtres changer en priorité | rénovation fenêtres maison ancienne | /fenetres/ | à faire |
-| 2026-12-01 | volet-battant-alu-bois-pvc | Volets battants : aluminium, bois ou PVC | volet battant aluminium | /volets/ | à faire |
-| 2026-12-04 | porte-interieure-bloc-porte-coulissante | Portes intérieures : bloc-porte, porte seule ou coulissante | porte intérieure sur mesure | /portes-interieures/ | à faire |
-| 2026-12-08 | baie-vitree-seuil-plat | Baie vitrée à seuil plat : accessibilité et étanchéité | baie vitrée seuil plat | /baies-vitrees/ | à faire |
-| 2026-12-11 | fenetre-secteur-protege-abf-lyon | Fenêtres en secteur protégé à Lyon : ABF, Vieux Lyon, Croix-Rousse | fenêtre ABF Lyon | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
+| 2026-10-23 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? | porte de garage isolée | /portes-de-garage/ | à faire |
+| 2026-10-27 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | à faire |
+| 2026-10-30 | delai-changement-fenetres | Combien de temps pour changer ses fenêtres : visite, fabrication, pose | délai fabrication fenêtre | /contact/ + /blog/prix-fenetre-sur-mesure/ | à faire |
+| 2026-11-03 | motoriser-volet-roulant | Motoriser ses volets roulants existants : quand c'est possible | motoriser volet roulant | /volets/ + /blog/volet-roulant-filaire-radio-ou-solaire/ | à faire |
+| 2026-11-06 | type-ouverture-fenetre | Oscillo-battant, soufflet, coulissant : quelle ouverture pour quelle pièce | type d'ouverture fenêtre | /fenetres/ | à faire |
+| 2026-11-10 | couleur-fenetre-anthracite-blanc | Couleur des menuiseries : anthracite, blanc, bicolore et règles du PLU | couleur fenêtre anthracite | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
+| 2026-11-13 | changer-fenetres-copropriete | Changer ses fenêtres en copropriété : autorisations, AG, syndic | changer fenêtre copropriété | /professionnels/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
+| 2026-11-17 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portails-clotures/ | à faire |
+| 2026-11-20 | changer-fenetres-par-ou-commencer | Changer ses fenêtres : par où commencer (check-list avant la visite) | changer ses fenêtres par où commencer | /contact/ | à faire |
+| 2026-11-24 | fenetres-maison-annees-70-lyon | Maison des années 60-70 à Lyon : quelles fenêtres changer en priorité | rénovation fenêtres maison ancienne | /fenetres/ | à faire |
+| 2026-11-27 | volet-battant-alu-bois-pvc | Volets battants : aluminium, bois ou PVC | volet battant aluminium | /volets/ | à faire |
+| 2026-12-01 | porte-interieure-bloc-porte-coulissante | Portes intérieures : bloc-porte, porte seule ou coulissante | porte intérieure sur mesure | /portes-interieures/ | à faire |
+| 2026-12-04 | baie-vitree-seuil-plat | Baie vitrée à seuil plat : accessibilité et étanchéité | baie vitrée seuil plat | /baies-vitrees/ | à faire |
+| 2026-12-08 | fenetre-secteur-protege-abf-lyon | Fenêtres en secteur protégé à Lyon : ABF, Vieux Lyon, Croix-Rousse | fenêtre ABF Lyon | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2027-03-16 | hauteur-cloture | Hauteur de clôture : ce que dit la règle et comment choisir | hauteur clôture | /portails-clotures/ | à faire |
 | 2027-04-06 | moustiquaire-baie-vitree | Moustiquaire pour baie vitrée et porte-fenêtre | moustiquaire baie vitrée | /moustiquaires/ | à faire |
 | 2027-05-04 | garder-maison-fraiche-ete | Garder la maison fraîche l'été : vitrage, volets, BSO | protéger maison chaleur | /brise-soleil-orientables/ | à faire |
