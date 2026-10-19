@@ -65,3 +65,5 @@ Ne jamais changer un slug publié. Noter chaque action dans le journal ci-dessou
 
 | Date | Page | Action | Requête visée | Avant (impr. / clics / CTR / pos.) |
 |---|---|---|---|---|
+| 2026-10-19 | /blog/baie-vitree-coulissante-ou-galandage/ | Title et H1 commencent par « à galandage » ; ajout des sections « Combien de place faut-il », « Galandage en PVC, aluminium ou bois », « En résumé » et appel vers /contact/ | baie vitrée galandage (+ baie coulissante ou à galandage en pvc/alu/bois) | page : 186 / 0 / 0 % / 42,8 ; requête : 48 / 0 / 0 % / 41,0 (7 jours) |
+| 2026-10-19 | tout le site | Redirection 301 de horizonfenetre.com vers www.horizonfenetre.com (doublons www / sans www dans Google) | – | plusieurs pages indexées en double (ex. /fenetres/ sans www : 95 impr., pos. 25,8) |

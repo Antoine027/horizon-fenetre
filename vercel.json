@@ -109,6 +109,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "horizonfenetre.com"
+        }
+      ],
+      "destination": "https://www.horizonfenetre.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/nos-menuiseries/",
       "destination": "/",
       "permanent": true
