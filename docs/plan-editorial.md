@@ -10,7 +10,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 
 | Date | Slug | Titre de travail | Recherche visée | Liens prioritaires | Statut |
 |---|---|---|---|---|---|
-| 2026-10-20 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | à faire |
+| 2026-10-20 | fenetre-courant-d-air | Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer | fenêtre courant d'air | /fenetres/ + /blog/condensation-fenetre-double-vitrage/ | publié le 2026-10-20 |
 | 2026-10-15 | double-ou-triple-vitrage | Double ou triple vitrage : lequel choisir à Lyon | double ou triple vitrage | /fenetres/ | publié le 2026-10-15 |
 | 2026-10-23 | fenetre-horizontale-bandeau | Fenêtre horizontale (en bandeau) : intérêt, contraintes et règles | fenêtre horizontale | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2026-10-27 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | à faire |
@@ -105,10 +105,11 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 | 2026-10-19 | tout le site | Redirection 301 de horizonfenetre.com vers www.horizonfenetre.com (doublons www / sans www dans Google) | – | plusieurs pages indexées en double (ex. /fenetres/ sans www : 95 impr., pos. 25,8) |
 | 2026-10-19 | /blog/bso-ou-volet-roulant/ + /brise-soleil-orientables/ | Remarque terrain d'Antoine : BSO sans protection anti-effraction, vitrage de sécurité souvent exigé par l'assurance, alternatives à lames orientables ; sections « sécurité », « alternatives », « inconvénients du BSO », ligne au comparatif, FAQ produit | bso inconvénient | guide : 27 / 0 / 0 % / 44,1 ; requête : 7 / 0 / 0 % / 24,7 (3 mois) |
 | 2026-10-19 | /blog/pose-renovation-ou-depose-totale/ | Notes terrain d'Antoine : tableau lumière / habillage / isolation, explication du pont thermique, reprise des tableaux nuancée (placo / brique, enduit ou habillage), description réécrite | pose rénovation ou dépose totale | guide : 27 / 0 / 0 % / 48,9 (3 mois) |
+| 2026-10-20 | /blog/porte-entree-alu-ou-pvc/ | Title « Porte d'entrée alu ou PVC : comparatif et conseils » et description réécrite (Ud, prix) ; ajout des sections « Le prix : ce qui fait vraiment la différence », « Questions fréquentes » (4 questions) et appel à l'action vers /contact/ (visite, prise de cotes, installateur partenaire) | porte d'entrée alu ou pvc (+ porte d entrée pvc ou alu, alu ou pvc pour porte d entrée) | page : 98 / 0 / 0 % / 51,3 ; requête : 21 / 0 / 0 % / 45,2 (3 mois) |
 
 ### Pistes relevées dans l'export du 2026-10-19 (3 mois), à traiter par ordre
 
-1. /blog/porte-entree-alu-ou-pvc/ : 98 impr., pos. 51, 0 clic. Variantes : « porte d'entrée alu ou pvc » (21, pos. 45), « alu ou pvc pour porte d'entrée » (6, pos. 15), « porte alu ou pvc », « porte d'entrée pvc ou aluminium ». Enrichir (tableau prix/isolation/entretien, FAQ) et retravailler title/description.
+1. ~~/blog/porte-entree-alu-ou-pvc/ : 98 impr., pos. 51, 0 clic. Variantes : « porte d'entrée alu ou pvc » (21, pos. 45), « alu ou pvc pour porte d'entrée » (6, pos. 15), « porte alu ou pvc », « porte d'entrée pvc ou aluminium ». Enrichir (tableau prix/isolation/entretien, FAQ) et retravailler title/description.~~ (traitée le 2026-10-20)
 2. /blog/condensation-fenetre-double-vitrage/ : 81 impr., pos. 32. Requête « probleme condensation fenetre double vitrage ».
 3. ~~/brise-soleil-orientables/ : « bso inconvénient » → section inconvénients dans /blog/bso-ou-volet-roulant/.~~ (traitée le 2026-10-19, avec la remarque terrain d'Antoine sur la sécurité)
 4. « porte de garage avec fenetre » (16, pos. 50) et « porte sectionnelle vitrée » → section hublots / panneaux vitrés dans /blog/porte-de-garage-sectionnelle-ou-laterale/.

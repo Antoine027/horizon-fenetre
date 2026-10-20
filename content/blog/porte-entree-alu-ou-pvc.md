@@ -1,7 +1,7 @@
 ---
-title: Porte d'entrée alu ou PVC : laquelle choisir ?
+title: Porte d'entrée alu ou PVC : comparatif et conseils
 h1: Porte d'entrée aluminium ou PVC : laquelle choisir ?
-description: Isolation, sécurité, design, entretien, budget : les vraies différences entre une porte d'entrée en aluminium et une porte d'entrée en PVC.
+description: Porte d'entrée alu ou PVC ? Isolation (Ud), sécurité, design, entretien et prix comparés, avec les cas où chaque matériau s'impose.
 photo: pPorte
 rubrique: Portes d'entrée
 date: 2026-10-12
@@ -43,6 +43,18 @@ Les deux se nettoient à l'eau savonneuse. L'aluminium thermolaqué garde sa tei
 | Teintes foncées au soleil | Aucun souci | Gamme adaptée nécessaire |
 | Budget | Plus élevé | Plus accessible |
 
+## Le prix : ce qui fait vraiment la différence
+
+À dimensions et équipements comparables, une porte d'entrée en PVC coûte en général moins cher qu'une porte en aluminium. Mais l'écart dépend surtout de ce qu'on met dedans :
+
+- **le panneau** : un modèle simple, plein ou avec un petit vitrage, ou un panneau monobloc avec ouvrant caché ;
+- **le vitrage** : sa taille, et s'il est feuilleté pour la sécurité ;
+- **la serrure** : multipoints standard, automatique ou motorisée, cylindre de sécurité ;
+- **les options** : barre de tirage, teinte bicolore, imposte ou partie fixe vitrée sur le côté ;
+- **les dimensions** : une porte hors standard ou une grande largeur coûte plus cher dans les deux matériaux.
+
+Une porte PVC très équipée peut donc coûter autant qu'une porte alu simple. Pour comparer deux devis, vérifiez qu'ils parlent de la même chose : même Ud, même serrure, même vitrage, même seuil.
+
 ## Et l'acier ?
 
 L'acier est le plus robuste à épaisseur égale. On le conseille pour une porte donnant directement sur la rue, un accès de service ou un local exposé.
@@ -53,4 +65,20 @@ L'acier est le plus robuste à épaisseur égale. On le conseille pour une porte
 - **Rénovation avec budget maîtrisé, maison traditionnelle** : PVC de bonne gamme.
 - **Porte très exposée, sur rue** : aluminium ou acier.
 
-Quel que soit le matériau, une porte se juge aussi à sa pose : un seuil bien calé, des joints continus et une fermeture qui ne force pas. Découvrez nos [portes d'entrée sur mesure](/portes-d-entree/), ou demandez une visite pour voir les modèles adaptés à votre façade.
+## Questions fréquentes
+
+### Porte d'entrée PVC ou alu : laquelle isole le mieux ?
+À gamme équivalente, les deux isolent très bien. C'est le panneau, son isolant et son épaisseur, qui fait l'essentiel. Comparez le coefficient Ud de la porte complète plutôt que le matériau.
+
+### Une porte d'entrée en PVC est-elle moins sûre ?
+Elle est moins rigide que l'aluminium, mais une porte PVC renforcée par des profils acier, avec une serrure multipoints et un bon cylindre, offre un niveau de sécurité suffisant pour la plupart des maisons. La serrure et le cylindre comptent autant que le matériau.
+
+### Peut-on avoir une couleur différente dedans et dehors ?
+Oui dans les deux matériaux. En aluminium, le thermolaquage permet une teinte par face. En PVC, on obtient le même effet avec une face plaxée, souvent dans une gamme de teintes plus restreinte.
+
+### Faut-il une autorisation pour changer de porte d'entrée ?
+Si la nouvelle porte change l'aspect de la façade (couleur, matériau, vitrage), une déclaration préalable en mairie est en principe nécessaire. Notre guide sur la [déclaration préalable](/blog/declaration-prealable-changer-fenetres/) détaille les cas courants.
+
+## Choisir sa porte avec Horizon Fenêtre
+
+Quel que soit le matériau, une porte se juge aussi à sa pose : un seuil bien calé, des joints continus et une fermeture qui ne force pas. Horizon Fenêtre fournit des [portes d'entrée sur mesure](/portes-d-entree/) en aluminium, PVC ou acier. Antoine vient faire la visite et la prise de cotes pour vous montrer les modèles adaptés à votre façade, et la pose est réalisée par un installateur partenaire. [Demandez une visite](/contact/) pour comparer les deux matériaux sur votre projet.
