@@ -5,7 +5,7 @@ Site statique de Horizon Fenêtre (marque d'ESCOM HABITAT, Rillieux-la-Pape). G�
 ## Modèle commercial (à respecter dans tous les textes)
 - Horizon Fenêtre vend la **fourniture seule**, facturée avec une **TVA à 20 %**.
 - Antoine (Horizon Fenêtre) fait la **visite et la prise de cotes**.
-- La **pose** est réalisée par un **installateur partenaire**, jamais nommé. Il est assuré en **garantie décennale** (confirmé par Antoine le 21/10/2026) : la mention « pose avec décennale » est donc juste. Antoine remet au client son devis de fourniture et le devis de pose de l'installateur partenaire (deux devis distincts).
+- La **pose** est réalisée par un **installateur partenaire**, jamais nommé. Il est assuré en **garantie décennale** (confirmé par Antoine le 21/10/2026) : la mention « pose avec décennale » est donc juste. Antoine remet au client son devis de fourniture et le devis de pose de l'installateur partenaire (deux devis distincts) ; la mention « Devis de fourniture et pose » de la page d'accueil est validée par Antoine, ne pas la modifier.
 - Ne jamais écrire « nous posons », ne jamais inventer de chantier, client, avis, certification (RGE…), garantie ou année d'expérience.
 - Téléphone 04 28 55 00 24, e-mail contact@horizonfenetre.com. Zone : Lyon, métropole, Côtière, Dombes, Val de Saône.
 
