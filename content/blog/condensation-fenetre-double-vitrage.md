@@ -28,7 +28,7 @@ C'est le cas le plus courant. La vapeur d'eau de la maison (respiration, douche,
 
 L'ADEME recommande d'ouvrir grand les fenêtres 5 à 10 minutes par jour, et de ne pas laisser une fenêtre entrebâillée longtemps : le mur se refroidit et la condensation s'y forme à son tour. Aérer brièvement la salle de bain après la douche et la cuisine pendant la cuisson aide aussi à évacuer l'humidité.
 
-Si la buée apparaît surtout **sur le bord du vitrage**, l'intercalaire est peut-être en aluminium classique. Les intercalaires « warm edge » à bord chaud, que nous proposons en standard, limitent ce phénomène.
+Si la buée apparaît surtout **sur le bord du vitrage**, l'intercalaire est peut-être en aluminium classique. Les intercalaires « warm edge » à bord chaud, que nous proposons en option, limitent ce phénomène.
 
 ## Cas 2 : de la condensation sur le double vitrage, côté extérieur
 

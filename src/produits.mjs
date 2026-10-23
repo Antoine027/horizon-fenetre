@@ -30,7 +30,7 @@ contenu: `
 </ul>
 
 <h2>Le vitrage, là où se joue une bonne partie du confort</h2>
-<p>Le standard aujourd'hui, c'est un double vitrage à isolation renforcée avec gaz argon et intercalaire « warm edge ». Pour la majorité des logements lyonnais, c'est le bon compromis. On propose d'autres vitrages quand la situation le demande :</p>
+<p>Le standard aujourd'hui, c'est un double vitrage à isolation renforcée avec gaz argon, avec en option un intercalaire « warm edge » à bord chaud, qui limite la buée en bordure du vitrage. Pour la majorité des logements lyonnais, c'est le bon compromis. On propose d'autres vitrages quand la situation le demande :</p>
 <ul>
 <li><strong>Vitrage acoustique</strong> à verres d'épaisseurs différentes, pour les logements en bord de périphérique, d'A42 ou d'A46, ou sur les grands axes de Villeurbanne et Vaulx-en-Velin.</li>
 <li><strong>Vitrage feuilleté de sécurité</strong> en rez-de-chaussée ou pour les portes-fenêtres accessibles depuis le jardin.</li>
