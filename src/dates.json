@@ -1,15 +1,15 @@
 {
  "/": {
-  "h": "6d6ebb35d9423cff",
-  "d": "2026-10-21"
+  "h": "539e1cbc55cb7b61",
+  "d": "2026-10-23"
  },
  "/baies-vitrees/": {
   "h": "e1334b655ec4e726",
   "d": "2026-10-19"
  },
  "/blog/": {
-  "h": "5307329f71905f83",
-  "d": "2026-10-20"
+  "h": "7c7f6269bddf97ad",
+  "d": "2026-10-23"
  },
  "/blog/aides-changement-fenetres-2026/": {
   "h": "7cc8f08a0c33631f",
@@ -24,8 +24,8 @@
   "d": "2026-10-19"
  },
  "/blog/condensation-fenetre-double-vitrage/": {
-  "h": "e56830f980e575b9",
-  "d": "2026-10-12"
+  "h": "1974c85c66a80153",
+  "d": "2026-10-23"
  },
  "/blog/declaration-prealable-changer-fenetres/": {
   "h": "6cd1593bd5d5c836",
@@ -38,6 +38,10 @@
  "/blog/fenetre-courant-d-air/": {
   "h": "3e7e0161a7411569",
   "d": "2026-10-20"
+ },
+ "/blog/fenetre-horizontale-bandeau/": {
+  "h": "243e578431783d30",
+  "d": "2026-10-23"
  },
  "/blog/fenetre-isolation-phonique-lyon/": {
   "h": "3da4982647c3251a",
@@ -96,8 +100,8 @@
   "d": "2026-10-12"
  },
  "/fenetres/": {
-  "h": "cf856deb0fde57b8",
-  "d": "2026-10-20"
+  "h": "16c2e854e0d2203e",
+  "d": "2026-10-23"
  },
  "/mentions-legales/": {
   "h": "0496dac08879721b",
@@ -112,8 +116,8 @@
   "d": "2026-10-19"
  },
  "/plan-du-site/": {
-  "h": "9f46573f95fad771",
-  "d": "2026-10-20"
+  "h": "f2a23df1986540f5",
+  "d": "2026-10-23"
  },
  "/portails-clotures/": {
   "h": "64f9d8e718773b55",
@@ -136,7 +140,7 @@
   "d": "2026-10-19"
  },
  "/volets/": {
-  "h": "903e87bff48a2987",
-  "d": "2026-10-20"
+  "h": "abfedd0715954605",
+  "d": "2026-10-23"
  }
 }
