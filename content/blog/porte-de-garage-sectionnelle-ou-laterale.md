@@ -1,7 +1,7 @@
 ---
 title: Porte de garage sectionnelle ou latérale : comment choisir ?
 h1: Porte de garage sectionnelle plafond ou latérale : comment choisir ?
-description: Retombée de linteau, plafond, refoulement, usage au quotidien : les critères concrets pour choisir entre porte de garage sectionnelle plafond et latérale.
+description: Sectionnelle plafond ou latérale ? Retombée de linteau, refoulement, usage, hublots et panneaux vitrés : les critères concrets pour bien choisir.
 photo: pGarage
 rubrique: Portes de garage
 date: 2026-10-12
@@ -49,6 +49,21 @@ Lors de la visite, on prend quatre cotes qui orientent presque toujours le choix
 | Accès piéton fréquent par le garage | Latérale, ou plafond avec portillon |
 | Garage très bas de plafond | Latérale ou plafond avec rails spécifiques |
 
+## Porte de garage avec fenêtre : hublots ou panneaux vitrés
+
+Un garage sans fenêtre est sombre dès que la porte est fermée. Les deux types de portes peuvent recevoir des parties vitrées, ce qui évite d'allumer pour aller chercher un outil ou un vélo.
+
+- **Les hublots** : ronds, carrés ou rectangulaires, alignés sur un panneau. Ils apportent un peu de lumière et un effet décoratif, sans changer le caractère de la porte.
+- **Un panneau vitré** : sur une sectionnelle plafond, une section entière (en général la plus haute) reçoit une rangée de vitrages encadrés. C'est la solution qui éclaire le plus.
+- **Une porte largement vitrée**, à cadre aluminium : plutôt réservée aux garages transformés en atelier ou en pièce de vie.
+
+Ce qu'il faut savoir avant de choisir :
+
+- **l'isolation** : une partie vitrée isole moins qu'un panneau plein injecté de mousse. Si le garage est chauffé ou communique avec la maison, on limite la surface vitrée ;
+- **la discrétion** : placés en haut de la porte, les vitrages éclairent sans laisser voir l'intérieur depuis la rue ; un vitrage dépoli ou opale fait le reste ;
+- **la sécurité** : un vitrage placé hors de portée de main ne donne pas accès au déverrouillage intérieur ;
+- **l'aération** : les vitrages d'une porte sectionnelle sont fixes. Une porte de garage avec fenêtre ouvrante n'est pas une solution courante ; pour aérer, on prévoit plutôt une grille de ventilation dans la porte ou une vraie fenêtre dans le mur.
+
 ## Isolation et motorisation
 
 Dans les deux cas, on propose des panneaux en acier double paroi injectés de mousse. Si le garage communique avec la maison ou sert d'atelier chauffé, c'est une différence nette avec une vieille basculante.
@@ -59,4 +74,4 @@ La motorisation est désormais la norme. On ajoute un **déverrouillage extérie
 
 Changer l'aspect de la porte de garage (couleur, matériau, dessin) relève des mêmes règles que pour les fenêtres : on vous explique tout dans notre article sur la [déclaration préalable](/blog/declaration-prealable-changer-fenetres/), et les textes sont sur [Service-Public.fr](https://www.service-public.gouv.fr/particuliers/vosdroits/F36762).
 
-Pour voir les modèles et options, rendez-vous sur notre page [portes de garage sectionnelles et latérales](/portes-de-garage/), ou demandez directement une visite : les quatre mesures se prennent en dix minutes.
+Pour voir les modèles et options, rendez-vous sur notre page [portes de garage sectionnelles et latérales](/portes-de-garage/), ou [demandez une visite](/contact/) : Antoine prend les quatre mesures et vous montre les options de hublots et de panneaux vitrés. La pose est ensuite réalisée par un installateur partenaire.

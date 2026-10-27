@@ -100,6 +100,7 @@ const CIBLES = [
   { url: "/blog/aides-changement-fenetres-2026/", mots: ["MaPrimeRénov'", "éco-PTZ"] },
   { url: "/blog/bso-ou-volet-roulant/", mots: ["confort d'été", "protection solaire"] },
   { url: "/blog/porte-entree-alu-ou-pvc/", mots: ["ouvrant caché", "ouvrants cachés"] },
+  { url: "/blog/porte-entree-securisee/", mots: ["cylindre certifié A2P", "cylindre A2P", "anti-dégondage", "serrure multipoints"] },
   { url: "/blog/baie-vitree-coulissante-ou-galandage/", mots: ["baie à galandage"] },
   { url: "/blog/tva-reduite-5-5-fenetres/", mots: ["TVA à 5,5 %", "TVA réduite", "taux réduit", "5,5 %", "Uw"] },
   { url: "/blog/declaration-prealable-changer-fenetres/", mots: ["déclaration préalable", "architecte des Bâtiments de France", "PLU", "règlement de copropriété", "mairie"] },

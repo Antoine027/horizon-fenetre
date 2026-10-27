@@ -1,15 +1,15 @@
 {
  "/": {
-  "h": "539e1cbc55cb7b61",
-  "d": "2026-10-23"
+  "h": "88b803f4d7ce3dd3",
+  "d": "2026-10-27"
  },
  "/baies-vitrees/": {
   "h": "e1334b655ec4e726",
   "d": "2026-10-19"
  },
  "/blog/": {
-  "h": "7c7f6269bddf97ad",
-  "d": "2026-10-23"
+  "h": "a00c48664c22fe18",
+  "d": "2026-10-27"
  },
  "/blog/aides-changement-fenetres-2026/": {
   "h": "7cc8f08a0c33631f",
@@ -60,12 +60,16 @@
   "d": "2026-10-12"
  },
  "/blog/porte-de-garage-sectionnelle-ou-laterale/": {
-  "h": "5507dd83c3d964c8",
-  "d": "2026-10-12"
+  "h": "b144d38bfab24e3b",
+  "d": "2026-10-27"
  },
  "/blog/porte-entree-alu-ou-pvc/": {
   "h": "23273e9d9dc903a5",
   "d": "2026-10-20"
+ },
+ "/blog/porte-entree-securisee/": {
+  "h": "7396fb584113f8df",
+  "d": "2026-10-27"
  },
  "/blog/pose-renovation-ou-depose-totale/": {
   "h": "366cdca3aff5da1e",
@@ -100,8 +104,8 @@
   "d": "2026-10-12"
  },
  "/fenetres/": {
-  "h": "8abb345f7e128e1a",
-  "d": "2026-10-23"
+  "h": "c1d953812ce886ec",
+  "d": "2026-10-27"
  },
  "/mentions-legales/": {
   "h": "0496dac08879721b",
@@ -116,16 +120,16 @@
   "d": "2026-10-19"
  },
  "/plan-du-site/": {
-  "h": "f2a23df1986540f5",
-  "d": "2026-10-23"
+  "h": "785977dfe5a5ff50",
+  "d": "2026-10-27"
  },
  "/portails-clotures/": {
   "h": "64f9d8e718773b55",
   "d": "2026-10-19"
  },
  "/portes-d-entree/": {
-  "h": "a00516ae1a354e0f",
-  "d": "2026-10-19"
+  "h": "d3090f6db4f1e5ff",
+  "d": "2026-10-27"
  },
  "/portes-de-garage/": {
   "h": "a67e874667fdc199",
@@ -140,7 +144,7 @@
   "d": "2026-10-19"
  },
  "/volets/": {
-  "h": "abfedd0715954605",
-  "d": "2026-10-23"
+  "h": "47bc8f7793d17b36",
+  "d": "2026-10-27"
  }
 }
