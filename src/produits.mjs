@@ -173,7 +173,7 @@ contenu: `
 <p><strong>L'acier</strong> est le plus robuste à épaisseur égale. On le recommande quand la porte donne directement sur la rue ou en accès de service.</p>
 
 <h2>La sécurité, au-delà du nombre de points</h2>
-<p>Une serrure à 3 ou 5 points de fermeture est aujourd'hui la base. Mais une porte se force rarement par la serrure elle-même : on soigne donc aussi les paumelles anti-dégondage, le renfort de la gâche, et on propose un cylindre certifié A2P qui résiste au crochetage et à l'arrachement. Si vous avez une assurance habitation exigeante, dites-le-nous à la visite pour qu'on vous propose le bon niveau de certification.</p>
+<p>Une serrure 5 points est aujourd'hui le minimum sur une porte d'entrée de maison (les 3 points, c'était l'ancienne génération). Mais une porte se force rarement par la serrure elle-même : on soigne donc aussi les paumelles anti-dégondage, le renfort de la gâche, et on propose un cylindre certifié A2P qui résiste au crochetage et à l'arrachement. Si vous avez une assurance habitation exigeante, dites-le-nous à la visite pour qu'on vous propose le bon niveau de certification.</p>
 
 <h2>L'isolation</h2>
 <p>On regarde le coefficient Ud de la porte complète, pas seulement celui du panneau. Une porte isolante bien posée, avec un seuil à rupture de pont thermique et des joints périphériques, supprime l'effet « mur froid » de l'entrée.</p>

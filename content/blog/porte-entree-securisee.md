@@ -17,13 +17,14 @@ L'Agence Qualité Construction rappelle qu'un cambrioleur renonce en moyenne apr
 
 C'est exactement ce que mesurent les certifications : un temps de résistance.
 
-## La serrure : 3, 5 ou 7 points ?
+## La serrure : 5 points, aujourd'hui le minimum
 
 Une serrure multipoints verrouille la porte à plusieurs endroits du cadre en un seul tour de clé.
 
-- **3 points** : trois points sur le côté de la serrure. C'est aujourd'hui la base sur une porte d'entrée neuve.
-- **5 points** : on ajoute un point en haut et un en bas de la porte. La porte ne peut plus être soulevée ou écartée dans les angles.
-- **7 points et plus** : utile surtout sur les grandes portes, au-delà de 2,10 m de haut, où le vantail est plus souple.
+- **3 points** : c'est ce qui se faisait avant. Un pêne dormant au milieu de l'ouvrant, un point en haut et un en bas.
+- **5 points** : c'est aujourd'hui le minimum sur une porte d'entrée de maison neuve. En général, le pêne dormant au centre et quatre galets (rouleaux) répartis sur le côté de l'ouvrant, ou bien deux galets et deux crochets. Les crochets s'accrochent dans la gâche et résistent mieux quand on essaie d'écarter la porte de son cadre.
+
+Ce sont les configurations des portes d'entrée de maison classiques. Les portes blindées et les portes palières d'appartement ont leurs propres systèmes de verrouillage, différents.
 
 Plus de points, c'est une porte qui reste plaquée sur toute sa hauteur : meilleure résistance au pied-de-biche, mais aussi meilleure étanchéité à l'air.
 
@@ -83,7 +84,7 @@ Une porte très sécurisée ne sert à rien si la porte-fenêtre du jardin s'ouv
 ## Questions fréquentes
 
 ### Combien de points de fermeture pour une porte d'entrée de maison ?
-Trois points sont un minimum. Cinq points sont conseillés pour une maison isolée ou une porte peu visible de la rue, car la porte est verrouillée aussi en haut et en bas.
+Cinq points, au minimum, sur une porte neuve : le pêne dormant et quatre galets, ou deux galets et deux crochets. Les serrures 3 points (pêne au milieu, un point en haut, un en bas) correspondent aux portes d'ancienne génération.
 
 ### Un cylindre A2P suffit-il à sécuriser une porte ?
 Non. Il protège contre le crochetage et l'arrachement, mais la porte peut encore céder par les paumelles, la gâche ou le cadre. Il faut un niveau homogène sur l'ensemble.

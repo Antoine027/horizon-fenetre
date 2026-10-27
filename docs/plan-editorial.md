@@ -61,6 +61,7 @@ Règle : chaque note de terrain va à deux endroits. **Page produit** : l'essent
 - Remplacer des volets battants existants : volet roulant = pas besoin d'ouvrir la fenêtre, commande à distance/domotique, coffre souvent visible de l'intérieur (légère perte de lumière), gonds à retirer + reprise d'enduit (sinon coulures de rouille), moins cher. Battants neufs = aspect et cachet conservés, gonds réutilisés, pas de perte de lumière, pas d'entretien en alu, meilleure isolation thermique et phonique (panneau isolant plus épais que le tablier de lames d'un volet roulant), meilleure sécurité, motorisables, plus chers. (19/10/2026)
 - Pose rénovation / dépose totale : rénovation = perte de lumière, habillage large, isolation empilée (pont thermique) ; dépose totale = pas de perte voire gain de lumière (cadres plus fins), habillage réduit, calfeutrement refait. Reprise des tableaux pas systématique : risque faible sur placo, plus fort sur brique enduite ; solutions : reprise enduit/peinture ou habillage. (19/10/2026)
 - Intercalaire « warm edge » (bord chaud) : proposé en **option**, pas en standard. (23/10/2026)
+- Serrure de porte d'entrée de maison classique : **5 points minimum** aujourd'hui (pêne dormant + 4 galets sur le côté de l'ouvrant, ou 2 galets + 2 crochets). Le 3 points (pêne dormant au milieu + un point en haut + un en bas) est l'ancienne génération. Portes blindées et palières : systèmes différents. (27/10/2026)
 
 ## Auteur et relecture
 
