@@ -1,15 +1,15 @@
 {
  "/": {
-  "h": "1d80b6f59132ff91",
-  "d": "2026-10-27"
+  "h": "3d53be1fc39e64b5",
+  "d": "2026-10-30"
  },
  "/baies-vitrees/": {
   "h": "e1334b655ec4e726",
   "d": "2026-10-19"
  },
  "/blog/": {
-  "h": "b2c551907b4acad0",
-  "d": "2026-10-27"
+  "h": "123cc58e9e98ae60",
+  "d": "2026-10-30"
  },
  "/blog/aides-changement-fenetres-2026/": {
   "h": "7cc8f08a0c33631f",
@@ -30,6 +30,10 @@
  "/blog/declaration-prealable-changer-fenetres/": {
   "h": "6cd1593bd5d5c836",
   "d": "2026-10-12"
+ },
+ "/blog/delai-changement-fenetres/": {
+  "h": "982efca2b4dc123b",
+  "d": "2026-10-30"
  },
  "/blog/double-ou-triple-vitrage/": {
   "h": "45c498aee6079264",
@@ -100,12 +104,12 @@
   "d": "2026-10-12"
  },
  "/contact/": {
-  "h": "4f830cac9db2454b",
-  "d": "2026-10-12"
+  "h": "d80ce4de0a9ecdad",
+  "d": "2026-10-30"
  },
  "/fenetres/": {
-  "h": "c1d953812ce886ec",
-  "d": "2026-10-27"
+  "h": "b3b3c5a17b858056",
+  "d": "2026-10-30"
  },
  "/mentions-legales/": {
   "h": "0496dac08879721b",
@@ -120,8 +124,8 @@
   "d": "2026-10-19"
  },
  "/plan-du-site/": {
-  "h": "785977dfe5a5ff50",
-  "d": "2026-10-27"
+  "h": "002fc27aaa0a7a7b",
+  "d": "2026-10-30"
  },
  "/portails-clotures/": {
   "h": "64f9d8e718773b55",
