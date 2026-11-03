@@ -121,3 +121,10 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 4. ~~« porte de garage avec fenetre » (16, pos. 50) et « porte sectionnelle vitrée » → section hublots / panneaux vitrés dans /blog/porte-de-garage-sectionnelle-ou-laterale/.~~ (traitée le 2026-10-27)
 5. ~~Marque : « horizon menuiserie(s) » pos. 20 à 26 → vérifier que la page d'accueil et /contact/ citent « Horizon Fenêtre, menuiseries sur mesure ».~~ (traitée le 2026-10-30)
 6. À ne pas viser : « fenêtre horizon battant / coulissante / élite » (≈ 500 impr., beaucoup depuis le Canada) correspond à une autre marque ; « nettoyer terrasse bois » relève d'Instant Terrasse (déjà redirigé).
+
+### Pistes relevées dans l'export du 2026-11-03 (3 mois, données jusqu'au 31/10), à traiter par ordre
+
+1. /blog/fenetre-courant-d-air/ : 530 impr., 10 clics, CTR 1,9 %, pos. 7,5. Requêtes : « fenetre air qui passe » (5, pos. 6,6), « réglage fenêtre bois air qui passe » (7, 1 clic, pos. 8), « air qui passe autour des fenêtres » (7, pos. 11,9). Réécrire title et description.
+2. /blog/remplacer-volets-battants/ : 106 impr., 2 clics, pos. 16,3. Requêtes : « changer ses volets battants » (14, pos. 14,9), « remplacer volets » (10, pos. 16,2), « changer volets battants » (6, pos. 17,7). Intertitre et FAQ.
+3. /blog/fenetre-horizontale-bandeau/ : 165 impr., 4 clics, pos. 8,5. « fenêtre en bandeau » est en pos. 8,6 mais « fenetres horizontales » (84, pos. 36,8) et « fenetre horizontale » (65, pos. 38,4) restent loin. Renforcer le mot « horizontale » dans les intertitres.
+4. À mesurer à l'export suivant, sans y retoucher avant 28 jours : /blog/baie-vitree-coulissante-ou-galandage/ (802 impr., 0 clic, pos. 40,3 ; à reprendre à partir du 16/11 si la position ne bouge pas), /blog/pose-renovation-ou-depose-totale/ (148 impr., 0 clic, pos. 50,2).
