@@ -1,7 +1,7 @@
 ---
-title: Aides pour changer ses fenêtres en 2026 : ce qui reste
+title: Aides fenêtres 2026 : ce qui change depuis septembre
 h1: Aides pour changer ses fenêtres en 2026 : ce qui a changé, ce qui reste
-description: MaPrimeRénov' par geste, CEE, éco-PTZ, TVA à 5,5 % : le point sur les aides au remplacement des fenêtres après la réforme de septembre 2026.
+description: Depuis le 1er septembre 2026, MaPrimeRénov' par geste exclut les fenêtres, sauf DPE F ou G. CEE, éco-PTZ, TVA à 5,5 % : les aides qui restent possibles.
 photo: salonJardin
 rubrique: Aides et réglementation
 date: 2026-10-12

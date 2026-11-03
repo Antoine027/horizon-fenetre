@@ -108,6 +108,7 @@ const CIBLES = [
   { url: "/blog/fenetre-pvc-aluminium-ou-bois/", mots: ["PVC, aluminium ou bois", "rupture de pont thermique", "mixte bois-alu", "bois-aluminium", "profils fins", "PVC"] },
   { url: "/blog/fenetre-isolation-phonique-lyon/", mots: ["vitrage acoustique", "isolation phonique", "vitrage asymétrique", "bruit"] },
   { url: "/blog/condensation-fenetre-double-vitrage/", mots: ["condensation", "buée", "VMC", "entrées d'air", "humidité"] },
+  { url: "/blog/motoriser-volet-roulant/", mots: ["motoriser ses volets", "motoriser un volet", "motoriser vos volets"] },
   { url: "/blog/volet-roulant-filaire-radio-ou-solaire/", mots: ["moteur solaire", "moteur radio", "moteur filaire", "motorisation", "motoriser"] },
   { url: "/blog/porte-de-garage-sectionnelle-ou-laterale/", mots: ["sectionnelle latérale", "sectionnelle plafond", "retombée de linteau", "porte basculante", "basculante"] },
   { url: "/blog/portail-battant-ou-coulissant/", mots: ["portail coulissant", "portail battant", "refoulement", "autoportant"] },

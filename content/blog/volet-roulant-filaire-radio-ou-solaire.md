@@ -78,6 +78,6 @@ La même logique de motorisation s'applique d'ailleurs à la porte de garage et 
 
 ## Et les volets existants ?
 
-Un volet roulant manuel en bon état peut souvent être **motorisé sans être remplacé** : on change l'axe, on ajoute le moteur et on retire la sangle. On l'évalue lors de la visite.
+Un volet roulant manuel en bon état peut souvent être **motorisé sans être remplacé** : on change l'axe, on ajoute le moteur et on retire la sangle. Notre guide [motoriser ses volets roulants existants](/blog/motoriser-volet-roulant/) détaille les points à vérifier, et on l'évalue lors de la visite.
 
 Découvrez toutes nos solutions de [volets roulants et battants sur mesure](/volets/), en neuf comme en rénovation.

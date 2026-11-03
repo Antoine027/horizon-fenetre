@@ -104,7 +104,7 @@ contenu: `
 <p>Pleins, persiennés, semi-persiennés, à barres et écharpe (le fameux « Z ») ou à cadre : on reprend le dessin d'origine si la mairie ou l'architecte des Bâtiments de France l'impose.</p>
 
 <h2>Remplacer ou motoriser des volets existants</h2>
-<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur.</p>
+<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur. Notre guide <a href="/blog/motoriser-volet-roulant/">motoriser ses volets roulants existants</a> liste ce qu'il faut vérifier.</p>
 <p>Des volets battants usés peuvent être remplacés de deux façons. <strong>Par des volets roulants</strong> en coffre rénovation : plus besoin d'ouvrir la fenêtre, commande à distance possible et prix plus bas, mais une légère perte de lumière due au coffre, une façade qui change, et des gonds à retirer avec une petite reprise d'enduit pour éviter les coulures de rouille. <strong>Par des volets battants neufs</strong> : la façade et le cachet de la maison sont conservés, les gonds réutilisés, aucune perte de lumière, pas d'entretien en PVC ou en aluminium, et une meilleure isolation et sécurité grâce à un panneau plus épais que les lames d'un volet roulant ; ils coûtent plus cher, et peuvent être motorisés. Notre guide <a href="/blog/remplacer-volets-battants/">remplacer ses volets battants</a> compare les deux en détail.</p>
 `,
 faq: [
