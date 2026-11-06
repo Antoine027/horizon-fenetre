@@ -113,6 +113,7 @@ const CIBLES = [
   { url: "/blog/porte-de-garage-sectionnelle-ou-laterale/", mots: ["sectionnelle latérale", "sectionnelle plafond", "retombée de linteau", "porte basculante", "basculante"] },
   { url: "/blog/portail-battant-ou-coulissant/", mots: ["portail coulissant", "portail battant", "refoulement", "autoportant"] },
   { url: "/blog/moustiquaire-moustique-tigre-lyon/", mots: ["moustique tigre", "moustiques"] },
+  { url: "/blog/type-ouverture-fenetre/", mots: ["type d'ouverture", "types d'ouverture"] },
   { url: "/blog/prix-fenetre-sur-mesure/", mots: ["comparer deux devis", "prix d'une fenêtre", "fait varier le prix", "devis détaillé"] },
   { url: "/baies-vitrees/", mots: ["baies vitrées", "baie vitrée", "baies coulissantes", "baie coulissante", "galandage"] },
   { url: "/brise-soleil-orientables/", mots: ["brise-soleil orientables", "brise-soleil orientable", "brise-soleil", "BSO"] },

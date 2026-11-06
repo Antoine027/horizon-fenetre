@@ -28,6 +28,7 @@ contenu: `
 <li><strong>Soufflet</strong> : basculante vers l'intérieur, idéale en imposte ou pour les petites fenêtres en hauteur.</li>
 <li><strong>Châssis fixe</strong> : pour gagner de la lumière là où on n'a pas besoin d'ouvrir.</li>
 </ul>
+<p>Pour choisir pièce par pièce, voir notre guide <a href="/blog/type-ouverture-fenetre/">quelle ouverture pour quelle pièce</a>.</p>
 
 <h2>Le vitrage, là où se joue une bonne partie du confort</h2>
 <p>Le standard aujourd'hui, c'est un double vitrage à isolation renforcée avec gaz argon, avec en option un intercalaire « warm edge » à bord chaud, qui limite la buée en bordure du vitrage. Pour la majorité des logements lyonnais, c'est le bon compromis. On propose d'autres vitrages quand la situation le demande :</p>

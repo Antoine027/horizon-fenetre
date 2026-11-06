@@ -1,7 +1,7 @@
 ---
-title: Fenêtre qui laisse passer l'air : régler ou remplacer ?
+title: Air qui passe par une fenêtre : 5 causes et solutions
 h1: Fenêtre qui laisse passer l'air : régler, changer les joints ou remplacer
-description: Courant d'air autour d'une fenêtre : comment trouver la fuite, quand un réglage ou des joints neufs suffisent, et quand le remplacement se justifie.
+description: Fenêtre fermée mais de l'air qui passe ? Le test de la feuille pour trouver la fuite, puis que faire : régler, changer les joints, calfeutrer ou remplacer.
 photo: vFenetre
 rubrique: Fenêtres
 date: 2026-10-20

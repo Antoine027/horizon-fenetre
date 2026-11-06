@@ -16,7 +16,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-10-27 | porte-entree-securisee | Porte d'entrée sécurisée : serrure, cylindre, vitrage | porte d'entrée sécurisée | /portes-d-entree/ | publié le 2026-10-27 |
 | 2026-10-30 | delai-changement-fenetres | Combien de temps pour changer ses fenêtres : visite, fabrication, pose | délai fabrication fenêtre | /contact/ + /blog/prix-fenetre-sur-mesure/ | publié le 2026-10-30 |
 | 2026-11-03 | motoriser-volet-roulant | Motoriser ses volets roulants existants : quand c'est possible | motoriser volet roulant | /volets/ + /blog/volet-roulant-filaire-radio-ou-solaire/ | publié le 2026-11-03 |
-| 2026-11-06 | type-ouverture-fenetre | Oscillo-battant, soufflet, coulissant : quelle ouverture pour quelle pièce | type d'ouverture fenêtre | /fenetres/ | à faire |
+| 2026-11-06 | type-ouverture-fenetre | Oscillo-battant, soufflet, coulissant : quelle ouverture pour quelle pièce | type d'ouverture fenêtre | /fenetres/ | publié le 2026-11-06 |
 | 2026-11-10 | couleur-fenetre-anthracite-blanc | Couleur des menuiseries : anthracite, blanc, bicolore et règles du PLU | couleur fenêtre anthracite | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2026-11-13 | changer-fenetres-copropriete | Changer ses fenêtres en copropriété : autorisations, AG, syndic | changer fenêtre copropriété | /professionnels/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2026-11-17 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portails-clotures/ | à faire |
@@ -31,6 +31,9 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2027-04-06 | moustiquaire-baie-vitree | Moustiquaire pour baie vitrée et porte-fenêtre | moustiquaire baie vitrée | /moustiquaires/ | à faire |
 | 2027-05-04 | garder-maison-fraiche-ete | Garder la maison fraîche l'été : vitrage, volets, BSO | protéger maison chaleur | /brise-soleil-orientables/ | à faire |
 | 2027-06-01 | securiser-fenetres-vacances | Sécuriser ses fenêtres avant de partir en vacances | sécuriser fenêtre | /fenetres/ | à faire |
+| 2026-12-15 | infiltration-eau-fenetre | Infiltration d'eau par une fenêtre : d'où elle vient et que faire | infiltration eau fenêtre double vitrage | /fenetres/ + /blog/pose-renovation-ou-depose-totale/ | à faire |
+| 2026-12-18 | entree-air-fenetre | Entrée d'air de fenêtre : froid qui rentre, bruit, peut-on la boucher ? | aération fenêtre froid qui rentre | /fenetres/ + /blog/fenetre-courant-d-air/ | à faire |
+| 2026-12-22 | vocabulaire-fenetre-devis | Dormant, ouvrant, montant, meneau : comprendre le vocabulaire d'un devis de fenêtre | montant de fenêtre | /blog/prix-fenetre-sur-mesure/ + /fenetres/ | à faire |
 
 ## Mises à jour d'articles existants (le même jour que l'article prévu, sans créer de nouvelle page)
 
@@ -112,6 +115,7 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 | 2026-10-27 | /blog/porte-de-garage-sectionnelle-ou-laterale/ | Ajout de la section « Porte de garage avec fenêtre : hublots ou panneaux vitrés » (isolation, discrétion, sécurité, aération, vitrages fixes) ; description réécrite (hublots et panneaux vitrés) ; appel à l'action vers /contact/ (visite, installateur partenaire) | porte de garage avec fenetre (+ porte sectionnelle vitrée, porte de garage avec fenetre ouvrante) | page : 19 / 0 / 0 % / 26,0 ; requête : 16 / 0 / 0 % / 49,7 (3 mois) |
 | 2026-10-30 | / + /contact/ | Piste « marque » : descriptions de l'accueil et de /contact/ commencent par « Horizon Fenêtre, menuiseries sur mesure » ; encadré Adresse de /contact/ : « Horizon Fenêtre, menuiseries sur mesure ». Title de l'accueil inchangé (page qui convertit déjà) | horizon menuiserie, horizon menuiseries | requêtes : 16 / 0 / 0 % / 20,1 et 13 / 0 / 0 % / 26,6 ; accueil (sans www) 373 / 16 / 4,3 % / 10,5 ; /contact/ (www) 24 / 1 / 4,2 % / 2,9 (3 mois) |
 | 2026-11-03 | /blog/aides-changement-fenetres-2026/ | Title « Aides fenêtres 2026 : ce qui change depuis septembre » (avant : « Aides pour changer ses fenêtres en 2026 : ce qui reste ») et description réécrite (fin du par geste au 1er septembre, exception DPE F ou G, aides restantes) ; information recoupée (décret n° 2026-822) | aide changement fenetre, aides fenêtres 2026 | page : 18 / 0 / 0 % / 10,2 ; requête : 1 / 0 / 0 % / 45,0 (3 mois) |
+| 2026-11-06 | /blog/fenetre-courant-d-air/ | Title « Air qui passe par une fenêtre : 5 causes et solutions » (avant : « Fenêtre qui laisse passer l'air : régler ou remplacer ? ») et description réécrite (test de la feuille, 4 solutions) ; H1 inchangé | fenetre air qui passe, air qui passe autour des fenêtres, réglage fenêtre bois air qui passe | page : 530 / 10 / 1,9 % / 7,5 ; requêtes : 5 / 0 / 0 % / 6,6 ; 7 / 0 / 0 % / 11,9 ; 7 / 1 / 14,3 % / 8,0 (3 mois) |
 
 ### Pistes relevées dans l'export du 2026-10-19 (3 mois), à traiter par ordre
 
@@ -124,7 +128,7 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 
 ### Pistes relevées dans l'export du 2026-11-03 (3 mois, données jusqu'au 31/10), à traiter par ordre
 
-1. /blog/fenetre-courant-d-air/ : 530 impr., 10 clics, CTR 1,9 %, pos. 7,5. Requêtes : « fenetre air qui passe » (5, pos. 6,6), « réglage fenêtre bois air qui passe » (7, 1 clic, pos. 8), « air qui passe autour des fenêtres » (7, pos. 11,9). Réécrire title et description.
+1. ~~/blog/fenetre-courant-d-air/ : 530 impr., 10 clics, CTR 1,9 %, pos. 7,5. Requêtes : « fenetre air qui passe » (5, pos. 6,6), « réglage fenêtre bois air qui passe » (7, 1 clic, pos. 8), « air qui passe autour des fenêtres » (7, pos. 11,9). Réécrire title et description.~~ (traitée le 2026-11-06)
 2. /blog/remplacer-volets-battants/ : 106 impr., 2 clics, pos. 16,3. Requêtes : « changer ses volets battants » (14, pos. 14,9), « remplacer volets » (10, pos. 16,2), « changer volets battants » (6, pos. 17,7). Intertitre et FAQ.
 3. /blog/fenetre-horizontale-bandeau/ : 165 impr., 4 clics, pos. 8,5. « fenêtre en bandeau » est en pos. 8,6 mais « fenetres horizontales » (84, pos. 36,8) et « fenetre horizontale » (65, pos. 38,4) restent loin. Renforcer le mot « horizontale » dans les intertitres.
 4. À mesurer à l'export suivant, sans y retoucher avant 28 jours : /blog/baie-vitree-coulissante-ou-galandage/ (802 impr., 0 clic, pos. 40,3 ; à reprendre à partir du 16/11 si la position ne bouge pas), /blog/pose-renovation-ou-depose-totale/ (148 impr., 0 clic, pos. 50,2).
