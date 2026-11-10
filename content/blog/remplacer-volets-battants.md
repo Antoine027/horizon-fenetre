@@ -13,6 +13,16 @@ Des volets battants qui ne ferment plus bien, du bois qui se fend, une peinture 
 
 Il n'y a pas de mauvaise réponse, mais les deux choix n'ont pas du tout les mêmes conséquences, sur la façade comme au quotidien.
 
+## Remplacer ses vieux volets : quelles options ?
+
+Quand on veut changer ses volets battants, trois solutions reviennent en visite :
+
+- **des volets roulants**, à la place des battants : le plus pratique au quotidien et le moins cher ;
+- **des volets battants neufs**, pleins ou persiennés : la façade garde son aspect ;
+- **des volets battants à lames orientables** : on garde des battants, mais on peut doser la lumière volets fermés.
+
+Avant tout, on regarde l'état des volets actuels. Si le bois est sain et que seules la peinture ou une ferrure sont à reprendre, une remise en état peut suffire. Quand le bois se fend, que les volets frottent ou ne ferment plus, le remplacement devient plus raisonnable. Voici les deux grandes options en détail.
+
 ## Option 1 : passer au volet roulant
 
 Le volet roulant se pose le plus souvent en **coffre rénovation**, fixé en façade ou sous le linteau, sans travaux à l'intérieur.
@@ -75,6 +85,20 @@ Les volets battants existent aussi **à lames orientables** : fermés et verroui
 Remplacer des volets battants par des volets roulants change l'aspect extérieur de la maison. Selon [Service-Public.fr](https://www.service-public.gouv.fr/particuliers/vosdroits/F36762), remplacer ses volets par un autre modèle demande alors une **déclaration préalable de travaux** en mairie. Le PLU de votre commune peut aussi imposer un type de volet ou une teinte, surtout près d'un monument protégé.
 
 Des volets battants neufs du même aspect que les anciens posent généralement moins de questions, mais un changement de couleur ou de matériau visible peut lui aussi nécessiter une déclaration. Notre guide sur la [déclaration préalable](/blog/declaration-prealable-changer-fenetres/) fait le point.
+
+## Questions fréquentes
+
+### Peut-on changer ses volets battants sans changer les fenêtres ?
+Oui. Des volets battants neufs se fixent sur les gonds existants quand ils sont en bon état. Un volet roulant en coffre rénovation se pose en façade ou sous le linteau, sans toucher à la fenêtre. On vérifie simplement en visite que la fenêtre ne gêne pas le passage du tablier ou l'ouverture des battants.
+
+### Par quoi remplacer des volets battants en bois ?
+Par des volets battants en aluminium ou en PVC si vous voulez garder l'aspect sans l'entretien, par du bois neuf si la façade l'exige, ou par des volets roulants si le confort d'usage passe avant le cachet. Le comparatif ci-dessus résume les différences.
+
+### Y a-t-il des aides pour changer ses volets battants ?
+Les volets isolants peuvent bénéficier de la TVA à 5,5 % quand la fourniture et la pose sont facturées par la même entreprise, sous conditions de performance. Horizon Fenêtre vend la fourniture seule, facturée à 20 %. Les règles sont détaillées dans notre guide sur la [TVA réduite](/blog/tva-reduite-5-5-fenetres/).
+
+### Faut-il prévenir la mairie pour remplacer ses volets ?
+Oui dès que l'aspect change : passer des battants aux volets roulants, changer de couleur ou de matériau visible. Une déclaration préalable est alors en principe nécessaire (voir la section « Et la mairie ? » plus haut).
 
 ## Notre conseil
 
