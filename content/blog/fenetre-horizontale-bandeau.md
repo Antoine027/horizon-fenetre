@@ -1,7 +1,7 @@
 ---
 title: Fenêtre horizontale (en bandeau) : intérêt et règles
 h1: Fenêtre horizontale en bandeau : intérêt, contraintes et règles
-description: Fenêtre plus large que haute : où elle a du sens, quelle ouverture choisir, et les règles à vérifier avant de percer (mairie, voisins, garde-corps).
+description: Fenêtre horizontale ou en bandeau : où la placer, quelle ouverture choisir (coulissant, soufflet, fixe) et les règles à vérifier avant de percer.
 photo: fenNoire
 rubrique: Fenêtres
 date: 2026-10-23
@@ -9,9 +9,9 @@ motcle: fenêtre horizontale
 resume: Au-dessus d'un plan de travail, en haut d'un mur de chambre ou face à un paysage, la fenêtre en bandeau a de vrais atouts. Elle demande aussi de bien choisir son ouverture et de vérifier quelques règles avant de percer.
 sources: Service-Public.fr – Autorisation pour changer fenêtres, volets, porte|https://www.service-public.gouv.fr/particuliers/vosdroits/F36762 ; Légifrance – Code civil, article 678 (vues sur le voisin)|https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006430226 ; DREAL Occitanie – Garde-corps et fenêtres basses|https://www.occitanie.developpement-durable.gouv.fr/IMG/pdf/502-_garde-corps_et_fenetres_basses.pdf
 ---
-Une fenêtre horizontale, ou fenêtre en bandeau, est simplement une fenêtre **nettement plus large que haute**. On la voit sur les maisons contemporaines, mais elle n'a rien de nouveau : Le Corbusier en faisait déjà l'un de ses principes d'architecture avec la « fenêtre en longueur ». Bien placée, elle règle des problèmes que la fenêtre classique gère mal. Mal pensée, elle devient difficile à ouvrir, à nettoyer ou à faire accepter en mairie.
+Une fenêtre horizontale, ou fenêtre en bandeau, est simplement une fenêtre rectangulaire **nettement plus large que haute**. On la voit sur les maisons contemporaines, mais elle n'a rien de nouveau : Le Corbusier en faisait déjà l'un de ses principes d'architecture avec la « fenêtre en longueur ». Bien placée, elle règle des problèmes que la fenêtre classique gère mal. Mal pensée, elle devient difficile à ouvrir, à nettoyer ou à faire accepter en mairie.
 
-## Où une fenêtre horizontale a du sens
+## Où installer une fenêtre horizontale
 
 Ce format répond à des situations précises. Les plus courantes :
 
@@ -23,7 +23,7 @@ Ce format répond à des situations précises. Les plus courantes :
 
 Côté lumière, une règle simple aide à choisir la hauteur : plus le haut de la fenêtre est placé haut, plus la lumière va loin dans la pièce. Un bandeau posé bas éclaire surtout le sol près de la façade. Un bandeau posé haut éclaire mieux le fond de la pièce, mais on perd la vue.
 
-## Quelle ouverture pour une fenêtre en bandeau ?
+## Quelle ouverture pour une fenêtre horizontale ?
 
 C'est le point le plus important, et celui qu'on oublie souvent. Une fenêtre à la française classique s'ouvre vers l'intérieur. Sur un format très large et peu haut, un vantail qui pivote peut heurter un robinet, une hotte ou un meuble, et devient lourd et encombrant une fois ouvert.
 
@@ -46,13 +46,23 @@ Chaque gamme a ses **dimensions maximales par vantail**. Sur une grande longueur
 - le nettoyage de la face extérieure, surtout pour un fixe à l'étage ;
 - la largeur exacte de l'ouverture, prise en plusieurs points : sur une grande longueur, quelques millimètres d'écart d'un bout à l'autre sont fréquents.
 
-## PVC ou aluminium pour une grande longueur ?
+## Fenêtre fixe horizontale : quand c'est un bon choix
+
+Un châssis fixe, sans aucun ouvrant, est le plus simple et le plus fin des bandeaux : pas de vantail, pas de poignée, donc plus de vitrage pour la même largeur. Il convient bien en partie haute d'un mur, dans une cage d'escalier ou à côté d'un ouvrant qui assure l'aération.
+
+Trois limites à garder en tête :
+
+- **il n'aère pas** : dans une cuisine ou une salle de bain, prévoyez un ouvrant ailleurs dans la pièce, ou combinez fixe et soufflet sur la même fenêtre ;
+- **sa face extérieure ne s'atteint pas depuis la pièce** : à l'étage, un fixe hors de portée d'une échelle devient vite une vitre sale ;
+- **près d'une limite de propriété**, un fixe en verre translucide placé en hauteur peut correspondre à un jour de souffrance (voir plus bas), alors qu'un vitrage clair qui s'ouvre crée une vue.
+
+## Fenêtres horizontales : PVC ou aluminium ?
 
 Sur un bandeau, la finesse des profils compte beaucoup : c'est elle qui donne l'effet de « ligne » recherché. L'**aluminium** est souvent choisi pour cette raison, et parce qu'il reste rigide sur de grandes portées. Le **PVC** convient très bien sur des longueurs moyennes, avec des renforts adaptés à la taille. Notre comparatif [PVC, aluminium ou bois](/blog/fenetre-pvc-aluminium-ou-bois/) détaille les différences d'isolation, d'entretien et de prix.
 
 Pour l'occultation, un **volet roulant** s'adapte bien à une grande largeur, à condition de prévoir la place du coffre au-dessus de l'ouverture. Nos [volets roulants et battants](/volets/) sont fournis sur mesure.
 
-## Créer ou agrandir une ouverture : les travaux avant la fenêtre
+## Créer une fenêtre horizontale dans un mur : les travaux avant la menuiserie
 
 Remplacer une fenêtre horizontale existante, c'est un remplacement de menuiserie classique. **Créer** un bandeau dans un mur plein, ou transformer une fenêtre verticale en fenêtre horizontale, c'est autre chose : il faut ouvrir le mur.
 
@@ -64,7 +74,7 @@ Dans ce cas :
 
 La menuiserie arrive en dernier. On peut en revanche venir voir le projet tôt, pour que les dimensions de l'ouverture correspondent à une fenêtre réalisable dans la gamme choisie.
 
-## Les règles à vérifier avant de percer
+## Fenêtre horizontale : les règles à vérifier avant de percer
 
 ### L'urbanisme : mairie et PLU
 
