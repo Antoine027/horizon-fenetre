@@ -145,5 +145,17 @@ Accès par le connecteur Vercel : projet `prj_wTYp25d8AoP61KMo6ZSJY6zKINnM`, éq
 5. ~~« bso vent fort » (14, pos. 35,4) : le guide /blog/bso-ou-volet-roulant/ n'a qu'un court paragraphe sur le vent. Enrichir la section « Le vent » (capteur, remontée automatique, exposition) plutôt que créer une page. (relevée le 2026-11-10)~~ (traitée le 2026-11-17)
 6. « baie coulissante sans montant » (15, pos. 44,7) : sans page dédiée → sujet ajouté au plan le 29/12. (relevée le 2026-11-10)
 7. « portail aluminium ou pvc », « portail alu ou pvc », « quel portail pour une zone venteuse » (≈ 13 impr. cumulées, pos. 90 à 98) : sans page dédiée → sujet ajouté au plan le 12/01/2027. (relevée le 2026-11-13)
-8. « porte de garage sans rail au plafond » (12, pos. 31,7) : enrichir /blog/porte-de-garage-sectionnelle-ou-laterale/ (intertitre ou FAQ) plutôt que créer une page. (relevée le 2026-11-17)
+8. ~~« porte de garage sans rail au plafond » (12, pos. 31,7) : enrichir /blog/porte-de-garage-sectionnelle-ou-laterale/ (intertitre ou FAQ) plutôt que créer une page. (relevée le 2026-11-17)~~ (reprise dans l'export du 2026-11-17, piste 2)
 9. « fenêtre phonique ar6 » (12, pos. 56,3) : expliquer les classes AR dans /blog/fenetre-isolation-phonique-lyon/ si elles n'y sont pas. (relevée le 2026-11-17)
+
+### Pistes relevées dans l'export du 2026-11-17 (6 derniers mois, données jusqu'au 15/11), à traiter par ordre
+
+Attention : cet export couvre 6 mois (les précédents 3 mois). Le site étant récent, les cumuls restent comparables ; l'écart avec l'export du 03/11 correspond à peu près aux deux premières semaines de novembre.
+
+Effets mesurés : /blog/fenetre-courant-d-air/ (title du 06/11) : +827 impr. et +18 clics en deux semaines, soit un CTR de 2,2 % sur la période (1,9 % avant), pos. 8,5 ; à confirmer. /blog/fenetre-horizontale-bandeau/ : « fenetre horizontale » passe de pos. 38,4 à 27,8 et « fenetre rectangulaire horizontale » est en pos. 14 (intertitres du 13/11, trop récent pour conclure). /blog/remplacer-volets-battants/ (FAQ du 10/11) : 223 impr., 3 clics, pos. 15,7, stable.
+
+1. /blog/baie-vitree-coulissante-ou-galandage/ : 1 490 impr., 0 clic, pos. 39,7, sans progrès depuis l'optimisation du 19/10. « baie vitree galandage » 512 impr., pos. 40,3 ; « baie vitrée à galandage » 120, pos. 47,6 ; « prix baie vitrée galandage » 29, pos. 31,7. Reprendre : title et H1 centrés sur « baie vitrée à galandage », section prix (ce qui fait varier le prix, sans chiffre inventé), FAQ.
+2. /blog/porte-de-garage-sectionnelle-ou-laterale/ : 434 impr., 0 clic, pos. 31,9. « porte de garage sectionnelle latérale » 91, pos. 34,7 ; « porte de garage laterale/latérale » 49 + 39, pos. 32 à 36 ; « porte de garage sans rail au plafond » 39, pos. 27,9 ; « porte de garage basculante sans rail de guidage au plafond » 19, pos. 24,8. Intertitre « porte de garage sans rail au plafond » et FAQ ; title/description à revoir (remplace la piste 8 de l'export du 03/11).
+3. « étanchéité à l'air fenêtre » (16, pos. 19,1) et « aération fenêtre froid qui rentre » (31, pos. 36,2) : la seconde est déjà au plan le 18/12 ; vérifier que /blog/fenetre-courant-d-air/ emploie « étanchéité à l'air ».
+4. « triple vitrage » (26, pos. 36,3) : vérifier l'intertitre et la description de /blog/double-ou-triple-vitrage/.
+
