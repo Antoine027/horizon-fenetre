@@ -109,7 +109,10 @@ const CIBLES = [
   { url: "/blog/fenetre-isolation-phonique-lyon/", mots: ["vitrage acoustique", "isolation phonique", "vitrage asymétrique", "bruit"] },
   { url: "/blog/condensation-fenetre-double-vitrage/", mots: ["condensation", "buée", "VMC", "entrées d'air", "humidité"] },
   { url: "/blog/motoriser-volet-roulant/", mots: ["motoriser ses volets", "motoriser un volet", "motoriser vos volets"] },
-  { url: "/blog/volet-roulant-filaire-radio-ou-solaire/", mots: ["moteur solaire", "moteur radio", "moteur filaire", "motorisation", "motoriser"] },
+  { url: "/blog/portail-motorise/", mots: ["portail motorisé", "portails motorisés", "motoriser un portail", "motoriser votre portail", "motorisation du portail"] },
+  { url: "/blog/portail-motorise/", mots: ["motorisation", "motoriser"], sur: ["/portails-clotures/", "/blog/portail-battant-ou-coulissant/"] },
+  // Le comparatif des moteurs de volets ne doit pas capter « motorisation » sur les pages portail et garage.
+  { url: "/blog/volet-roulant-filaire-radio-ou-solaire/", mots: ["moteur solaire", "moteur radio", "moteur filaire", "motorisation", "motoriser"], sauf: ["/portails-clotures/", "/blog/portail-battant-ou-coulissant/", "/blog/portail-motorise/", "/portes-de-garage/", "/blog/porte-de-garage-sectionnelle-ou-laterale/"] },
   { url: "/blog/porte-de-garage-sectionnelle-ou-laterale/", mots: ["sectionnelle latérale", "sectionnelle plafond", "retombée de linteau", "porte basculante", "basculante"] },
   { url: "/blog/portail-battant-ou-coulissant/", mots: ["portail coulissant", "portail battant", "refoulement", "autoportant"] },
   { url: "/blog/moustiquaire-moustique-tigre-lyon/", mots: ["moustique tigre", "moustiques"] },
@@ -137,6 +140,7 @@ function mailler(html, selfUrl, max = 9) {
     for (const c of CIBLES) {
       if (compte >= max || dansBloc >= 2) break;
       if (dejaLies.has(c.url)) continue;
+      if ((c.sur && !c.sur.includes(selfUrl)) || (c.sauf && c.sauf.includes(selfUrl))) continue;
       for (const mot of c.mots) {
         const re = new RegExp(`(^|[^${LETTRE}])(${mot.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?![${LETTRE}])`);
         const parts = contenu.split(/(<a [\s\S]*?<\/a>|<[^>]+>)/);
