@@ -20,6 +20,11 @@ export const dessins = {
     `<rect x="32" y="6" width="56" height="106"/><rect x="38" y="12" width="44" height="100"/>
      <rect x="47" y="22" width="9" height="64"/><path d="M74 48v28" stroke-width="4"/><path d="M20 112h80"/>`,
     "Dessin d'une porte d'entrée vitrée"),
+  "porte-blindee-lyon": s(
+    `<rect x="30" y="6" width="60" height="106"/><rect x="37" y="13" width="46" height="99"/>
+     <circle cx="60" cy="34" r="2.4"/><path d="M76 58h-8" stroke-width="3.4"/><path d="M76 66v4"/>
+     <path d="M37 24h-4M37 60h-4M37 96h-4M83 30h4M83 62h4M83 94h4"/><path d="M18 112h84"/>`,
+    "Dessin d'une porte blindée palière avec ses points de fermeture"),
   "portails-clotures": s(
     `<rect x="6" y="30" width="12" height="82"/><rect x="102" y="30" width="12" height="82"/>
      <path d="M18 44q21-10 42-4 21-6 42 4M18 106h84M60 40v66"/>

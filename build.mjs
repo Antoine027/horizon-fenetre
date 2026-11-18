@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
+const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
 const SITE = "https://www.horizonfenetre.com";
@@ -278,7 +278,7 @@ const parcours = `<ol class="parcours">
 
 // ===== Accueil =====
 {
-  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portes-de-garage": "l2", "portails-clotures": "l2" };
+  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portails-clotures": "l2" };
   const VIGNETTES = {};
   const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}${PHOTOS[VIGNETTES[p.slug] || p.photo][2] > PHOTOS[VIGNETTES[p.slug] || p.photo][1] ? ` portrait" style="--flou:url(/assets/img/produits/${PHOTOS[VIGNETTES[p.slug] || p.photo][0].slice(6)}-flou.webp)` : ""}">${photo(VIGNETTES[p.slug] || p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [

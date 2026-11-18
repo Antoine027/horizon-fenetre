@@ -181,12 +181,75 @@ contenu: `
 
 <h2>Dimensions standard ou sur mesure</h2>
 <p>Beaucoup de maisons des années 60 à 80 dans l'est lyonnais ont des ouvertures qui ne correspondent à aucune dimension standard. Nos portes sont fabriquées à la cote : pas de cadre de compensation disgracieux, pas de mousse à tout-va. Avec, si besoin, une imposte vitrée ou un fixe latéral pour éclairer l'entrée.</p>
+<p>Pour un appartement, voyez notre page <a href="/porte-blindee-lyon/">porte blindée et porte palière</a>.</p>
 <p>En copropriété ou dans un lotissement avec cahier des charges, la teinte et le modèle peuvent être imposés : on vérifie avec vous avant de commander, et on vous explique les démarches dans notre article sur la <a href="/blog/declaration-prealable-changer-fenetres/">déclaration préalable</a>.</p>
 `,
 faq: [
 ["Combien de temps la maison reste-t-elle ouverte pendant la pose ?", "La dépose et la pose par notre installateur partenaire se font dans la journée. Le soir, la nouvelle porte est fermée à clé."],
 ["Peut-on avoir une porte d'entrée avec serrure connectée ?", "Oui, la plupart des fabricants proposent des serrures motorisées avec badge, empreinte digitale ou smartphone, en option."],
 ["La porte d'entrée peut-elle être d'une couleur différente à l'intérieur et à l'extérieur ?", "Oui, en aluminium et en PVC plaxé on peut choisir deux teintes différentes."]
+]
+},
+{
+slug: "porte-blindee-lyon",
+photo: "pBlindee",
+galerie: [["blindee10","Diamant 10 : A2P BP1, fermeture 5 points, ici en finition gris anthracite."],["blindee20","Diamant 20 : A2P BP2, 7 ou 9 points de fermeture, ici laquée vert olive."],["opaline","Opaline : la porte sécurisée d'appartement, coupe-feu certifiée."],["blindeeDv","Diamant double vantaux tiercé : pour les grandes entrées des immeubles anciens."],["blindee20b","Diamant 20 en décor bois clair, avec un bâti de la même teinte."],["blindeePene","Les pênes rotatifs anti-sciage verrouillent tous les points en un seul tour de clé."]],
+nav: "Portes blindées",
+court: "Portes palières blindées A2P pour appartement.",
+title: "Porte blindée et porte palière à Lyon | Horizon Fenêtre",
+description: "Portes blindées Picard Serrures A2P BP1 et BP2 pour appartement, sur mesure et posées sur le bâti existant. Visite et devis gratuits à Lyon.",
+h1: "Porte blindée et porte palière sur mesure à Lyon",
+motcle: "porte blindée Lyon",
+chapo: "Votre porte d'appartement ne vous rassure plus ? On vient prendre les cotes, on vous aide à choisir le bon niveau de sécurité et on organise la pose.",
+contenu: `
+<p class="lead">Une porte blindée certifiée retarde une effraction de plusieurs minutes, et un cambrioleur pressé passe son chemin. Elle coupe aussi le bruit de la cage d'escalier et les courants d'air froid du palier.</p>
+
+<h2>Porte blindée ou porte palière : quelle différence ?</h2>
+<p>La porte palière, c'est la porte qui donne sur le palier de l'immeuble. La porte blindée, c'est une porte renforcée contre l'effraction. À Lyon, les deux se rejoignent presque toujours : quand on remplace une porte palière, on la remplace par une porte blindée.</p>
+<p>Une vraie porte blindée se reconnaît à quatre éléments : une structure en acier, une serrure multipoints, des protections anti-dégondage côté paumelles et un bâti métallique solidement fixé au mur.</p>
+
+<h2>Les niveaux de sécurité A2P</h2>
+<p>La certification A2P est délivrée par le CNPP, un organisme indépendant. Il mesure en laboratoire le temps qu'il faut pour forcer la porte complète : vantail, bâti, serrure et cylindre.</p>
+<ul>
+<li><strong>A2P BP1</strong> : au moins 5 minutes de résistance au pied-de-biche et à la frappe. Le bon niveau pour la plupart des appartements.</li>
+<li><strong>A2P BP2</strong> : au moins 10 minutes, perceuse comprise. Pour un rez-de-chaussée, un logement souvent vide ou si votre assureur le demande.</li>
+</ul>
+<p>Le numéro de certification figure sur la porte. Gardez-le avec votre facture : c'est ce que votre assureur vous demandera.</p>
+
+<h2>Nos portes Picard Serrures</h2>
+<p>Nous proposons les portes de <strong>Picard Serrures</strong>, fabricant français de portes blindées. Elles sont fabriquées sur mesure, aux cotes relevées chez vous, et se posent sur le bâti existant, sans casser le mur ni refaire les peintures du palier.</p>
+<div class="tab-scroll"><table><thead><tr><th scope="col"><span class="sr">Caractéristique</span></th><th scope="col">Opaline</th><th scope="col">Diamant 10</th><th scope="col">Diamant 20</th></tr></thead><tbody>
+<tr><th scope="row">Type</th><td>Porte sécurisée</td><td>Porte blindée</td><td>Porte blindée</td></tr>
+<tr><th scope="row">Certification</th><td>Serrure A2P*</td><td>Porte A2P BP1</td><td>Porte A2P BP2</td></tr>
+<tr><th scope="row">Points de fermeture</th><td>3</td><td>5</td><td>7 ou 9</td></tr>
+<tr><th scope="row">Épaisseur</th><td>63 mm</td><td>82 mm</td><td>82 mm</td></tr>
+<tr><th scope="row">Isolation phonique</th><td>36 dB</td><td>40 dB (42 dB en coupe-feu)</td><td>42 dB (44 dB en option)</td></tr>
+<tr><th scope="row">Isolation thermique (Ud)</th><td>2 W/m².K</td><td>1,3 W/m².K</td><td>1,2 W/m².K</td></tr>
+<tr><th scope="row">Coupe-feu</th><td>EI1 15 ou EI2 30</td><td>Option EI2 30</td><td>Option EI2 30</td></tr>
+</tbody></table></div>
+<p><strong>Opaline</strong> convient à une porte d'appartement ou de communication (entre un garage et la maison, par exemple) quand on cherche une bonne protection à budget maîtrisé. <strong>Diamant 10</strong> est la porte blindée certifiée la plus accessible. <strong>Diamant 20</strong> va plus loin, avec davantage de points de fermeture et une structure en acier de 2 mm.</p>
+<p><strong>Diamant double vantaux tiercé</strong> : pour les larges entrées des immeubles anciens, fréquentes dans le 2e, le 6e ou à la Croix-Rousse. Un grand vantail sert au passage, le petit s'ouvre pour les meubles. Elle est certifiée A2P BP1, avec 6 ou 7 points de fermeture, une structure en acier de 2 mm et des pênes haut et bas sur chaque vantail.</p>
+<p>Toutes sont livrées avec des clés brevetées et une carte de propriété numérotée : un double ne peut être fait que sur présentation de cette carte. Picard Serrures les garantit 10 ans, selon ses conditions de garantie.</p>
+
+<h2>Pourquoi un bloc-porte complet plutôt qu'un simple blindage</h2>
+<p>Blinder une porte existante consiste à visser une tôle et une serrure multipoints sur l'ancien vantail. C'est moins cher, mais la porte reste aussi faible que son ancien cadre et ses gonds. Seule une porte complète peut être certifiée A2P dans son ensemble : c'est pour cette raison que nous ne proposons que des portes complètes.</p>
+
+<h2>Finitions</h2>
+<p>Côté palier, la copropriété impose souvent une teinte ou un modèle : on adapte le panneau extérieur pour garder l'aspect de l'immeuble. Côté intérieur, vous choisissez librement parmi les panneaux décor bois, les laques et les moulures. Les profils du bâti peuvent être de deux couleurs, et un entrebâilleur peut être ajouté en option.</p>
+
+<h2>Copropriété : ce qu'il faut vérifier avant de commander</h2>
+<ul>
+<li><strong>Même aspect côté palier</strong> (couleur, matière, sens d'ouverture) : en principe, pas besoin de vote.</li>
+<li><strong>Aspect modifié</strong> : il faut l'accord de l'assemblée générale, à la majorité de l'article 25 de la loi du 10 juillet 1965.</li>
+<li><strong>Sécurité incendie</strong> : si l'immeuble impose une porte coupe-feu ou un ferme-porte, la nouvelle porte doit les conserver.</li>
+<li><strong>Locataire</strong> : l'accord écrit du propriétaire est nécessaire.</li>
+</ul>
+<p>Pensez à relire votre règlement de copropriété avant de commander.</p>
+`,
+faq: [
+["Faut-il l'accord du syndic pour changer sa porte palière ?", "Seulement si l'aspect côté palier change. Si la nouvelle porte garde la même apparence, un vote n'est en principe pas nécessaire. Vérifiez toujours le règlement de copropriété."],
+["Quel niveau A2P choisir pour un appartement ?", "Le BP1 suffit dans la plupart des appartements. Le BP2 se justifie pour un logement exposé, souvent inoccupé, ou si votre contrat d'assurance l'impose."],
+["Faut-il refaire le bâti ou casser le mur ?", "Non. Les portes Picard Serrures que nous proposons se posent sur le bâti existant, sans travaux de maçonnerie. La pose est assurée par notre installateur partenaire."]
 ]
 },
 {
