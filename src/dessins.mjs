@@ -25,11 +25,14 @@ export const dessins = {
      <circle cx="60" cy="34" r="2.4"/><path d="M76 58h-8" stroke-width="3.4"/><path d="M76 66v4"/>
      <path d="M37 24h-4M37 60h-4M37 96h-4M83 30h4M83 62h4M83 94h4"/><path d="M18 112h84"/>`,
     "Dessin d'une porte blindée palière avec ses points de fermeture"),
-  "portails-clotures": s(
+  "portail-aluminium-lyon": s(
     `<rect x="6" y="30" width="12" height="82"/><rect x="102" y="30" width="12" height="82"/>
      <path d="M18 44q21-10 42-4 21-6 42 4M18 106h84M60 40v66"/>
      <path d="M26 42v64M34 41v65M42 40v66M50 40v66M70 40v66M78 40v66M86 41v65M94 42v64"/><path d="M2 112h116"/>`,
     "Dessin d'un portail deux vantaux entre piliers"),
+  "cloture-aluminium-lyon": s(
+    `<path d="M14 40v72M50 40v72M86 40v72"/><path d="M14 52h72M14 66h72M14 80h72M14 94h72"/><path d="M86 52h20M86 66h20M86 80h20M86 94h20M106 40v72"/><path d="M4 112h112"/>`,
+    "Dessin d'une clôture à lames horizontales entre poteaux"),
   moustiquaires: s(
     `<rect x="22" y="8" width="76" height="104"/><rect x="29" y="15" width="62" height="90"/>
      <path d="M29 30h62M29 45h62M29 60h62M29 75h62M29 90h62M44 15v90M60 15v90M76 15v90" stroke-width="1"/>

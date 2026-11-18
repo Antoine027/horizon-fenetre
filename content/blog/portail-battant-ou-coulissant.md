@@ -52,10 +52,10 @@ Il glisse le long de la clôture, sur un rail au sol ou en version **autoportant
 
 ## Le dessin, ensuite
 
-Plein pour l'intimité, ajouré pour garder la vue, semi-ajouré pour le compromis. En aluminium, les possibilités sont très larges, et on fabrique le portillon et la [clôture](/portails-clotures/) assortis.
+Plein pour l'intimité, ajouré pour garder la vue, semi-ajouré pour le compromis. En aluminium, les possibilités sont très larges, et on fabrique le portillon et la [clôture](/portail-aluminium-lyon/) assortis.
 
 ## Avant de commander : vérifier le PLU
 
 Les portails et clôtures sont très encadrés par les plans locaux d'urbanisme : hauteur maximale, teinte, type de clôture. Dans beaucoup de communes, une déclaration préalable est demandée. Consultez le règlement de votre commune sur le [Géoportail de l'urbanisme](https://www.geoportail-urbanisme.gouv.fr/) et les règles générales sur [Service-Public.fr](https://www.service-public.gouv.fr/particuliers/vosdroits/F36762). Notre article sur la [déclaration préalable](/blog/declaration-prealable-changer-fenetres/) détaille la procédure.
 
-Découvrez nos [portails, portillons et clôtures aluminium sur mesure](/portails-clotures/), ou demandez une visite : on regarde l'entrée avec vous.
+Découvrez nos [portails, portillons et clôtures aluminium sur mesure](/portail-aluminium-lyon/), ou demandez une visite : on regarde l'entrée avec vous.

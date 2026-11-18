@@ -50,6 +50,6 @@ On fournit à nos clients les fiches techniques, teintes et visuels nécessaires
 
 ## Et pour les portes et volets ?
 
-Les mêmes règles s'appliquent aux [portes d'entrée](/portes-d-entree/), aux [volets](/volets/) et aux [portes de garage](/portes-de-garage/). Pour les [portails et clôtures](/portails-clotures/), la déclaration est très fréquemment exigée par les PLU de la métropole lyonnaise, avec des hauteurs et des teintes encadrées.
+Les mêmes règles s'appliquent aux [portes d'entrée](/portes-d-entree/), aux [volets](/volets/) et aux [portes de garage](/portes-de-garage/). Pour les [portails et clôtures](/portail-aluminium-lyon/), la déclaration est très fréquemment exigée par les PLU de la métropole lyonnaise, avec des hauteurs et des teintes encadrées.
 
 En cas de doute, posez-nous la question lors de la visite : on vous dit ce qu'il faut vérifier et auprès de qui, avant que vous signiez quoi que ce soit.

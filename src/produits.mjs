@@ -253,44 +253,119 @@ faq: [
 ]
 },
 {
-slug: "portails-clotures",
+slug: "portail-aluminium-lyon",
 photo: "pPortail",
-galerie: [["portailCoulissant","Portails à lames horizontales : la même ligne d'une maison à l'autre."],["portailBattant","Portail battant deux vantaux sur une allée plane."],["portailDesign","Portail plein à motif : l'aluminium permet presque tous les dessins."]],
-nav: "Portails et clôtures",
-court: "Portails battants ou coulissants, clôtures et portillons assortis.",
-title: "Portail et clôture alu sur mesure à Lyon | Horizon Fenêtre",
-description: "Portails battants et coulissants, portillons et clôtures aluminium sur mesure, motorisés ou manuels. Visite et devis gratuits à Lyon et dans l'Ain.",
-h1: "Portails, portillons et clôtures aluminium sur mesure",
-chapo: "Un portail se choisit autant pour la pente de l'allée et la place disponible que pour son dessin. On commence par là.",
+galerie: [],
+nav: "Portails",
+court: "Battants, coulissants ou autoportants, avec portillon assorti.",
+title: "Portail aluminium sur mesure à Lyon | Horizon Fenêtre",
+description: "Portails aluminium CETAL sur mesure, battants ou coulissants, portillon assorti, motorisation Somfy. Visite et devis gratuits à Lyon et dans l'Ain.",
+h1: "Portail aluminium sur mesure à Lyon",
+motcle: "portail aluminium Lyon",
+chapo: "Un portail se choisit autant pour la pente de l'allée et la place disponible que pour son dessin. On commence par là, chez vous.",
 contenu: `
-<p class="lead">Portail, portillon et clôture forment un ensemble : on vous propose des modèles assortis, dans la même teinte et le même dessin, pour que la limite de votre terrain ait une vraie cohérence.</p>
+<p class="lead">Nous proposons les portails aluminium de <strong>CETAL</strong>, fabricant français installé dans le Grand Est depuis 1993. Chaque portail est fabriqué et laqué dans son usine, aux cotes relevées chez vous, avec le portillon et la clôture assortis si vous le souhaitez.</p>
 
-<h2>Battant ou coulissant ?</h2>
-<p>Le <strong>portail battant</strong> s'ouvre en deux vantaux (ou un seul) vers l'intérieur de la propriété. Il demande une allée dégagée et plutôt plane sur la profondeur des vantaux. C'est le plus simple à poser sur des piliers existants.</p>
-<p>Le <strong>portail coulissant</strong> glisse le long de la clôture. Il ne prend aucune place dans l'allée, ce qui le rend idéal sur une entrée en pente montante ou une cour où l'on se gare près du portail. Il faut en revanche une longueur de refoulement à côté de l'ouverture et un rail ou une version autoportante.</p>
+<h2>Battant, coulissant ou autoportant ?</h2>
+<ul>
+<li><strong>Battant</strong> : 1 ou 2 vantaux, égaux ou inégaux. En version 2/3-1/3, le petit vantail sert de passage piéton au quotidien. L'ouverture peut aller jusqu'à 180°, et un gond spécial permet de poser le portail sur une allée en pente.</li>
+<li><strong>Coulissant sur rail</strong> : il glisse le long de la clôture et ne prend aucune place dans l'allée. Le rail est fixé sur une longrine béton, sur toute la longueur de l'ouverture et du refoulement.</li>
+<li><strong>Autoportant</strong> : un coulissant sans rail au sol, suspendu et posé sur un massif béton. Pour les terrains plats où l'on ne veut pas de rail dans le passage.</li>
+<li><strong>Télescopique, repliable 3 ou 4 vantaux, antagoniste</strong> : pour les entrées où la place manque d'un côté ou de l'autre.</li>
+</ul>
 <p>On développe les critères dans notre article <a href="/blog/portail-battant-ou-coulissant/">portail battant ou coulissant</a>.</p>
 
-<h2>Le dessin</h2>
+<h2>Le dessin : ajouré, semi-occultant ou occultant</h2>
+<p>On choisit d'abord le degré d'intimité, puis le style.</p>
 <ul>
-<li><strong>Plein</strong> : lames horizontales ou verticales, pour une intimité complète.</li>
-<li><strong>Semi-ajouré</strong> : lames pleines en bas, barreaudage ou claire-voie en haut.</li>
-<li><strong>Ajouré</strong> : barreaux, pour garder la vue sur la maison et le jardin.</li>
+<li><strong>Ajouré</strong> : barreaux ou planches espacées, pour garder la lumière et la vue.</li>
+<li><strong>Occultant partiel</strong> : le compromis entre intimité et clarté.</li>
+<li><strong>Occultant</strong> : entièrement plein, pour se protéger des regards.</li>
 </ul>
-<p>Sommet droit, chapeau de gendarme, biais : on peut reprendre le style d'un ancien portail ou partir sur un modèle contemporain.</p>
+<p>Les modèles vont du très contemporain (lames horizontales, tôles découpées, tresses) au plus classique, et jusqu'aux portails rétro à volutes et barreaux. Le dessus peut être droit, en biais, concave, convexe ou en chapeau de gendarme. Vous pouvez aussi faire reproduire le dessin de votre porte d'entrée ou de garage, ou faire découper votre numéro de rue dans le portail.</p>
 
-<h2>La motorisation</h2>
-<p>Bras articulés ou vérins pour un battant, moteur à crémaillère pour un coulissant. On prévoit les cellules photoélectriques, le feu clignotant et le déverrouillage manuel. Si le câble électrique n'arrive pas au portail, une alimentation solaire est possible pour un usage raisonnable.</p>
+<h2>Le portillon assorti</h2>
+<p>Le portillon reprend exactement le modèle et la teinte du portail. Il peut intégrer une boîte aux lettres, une serrure à double béquille et un visiophone dans le poteau. Si le terrain le permet, un portail battant 2/3-1/3 peut aussi faire office de portillon.</p>
 
-<h2>Les clôtures</h2>
-<p>En aluminium, une clôture ne rouille pas, ne se peint pas et ne bouge pas. Lames pleines, claustras, barreaudage : elle se pose sur muret existant ou sur poteaux scellés. Si un muret ou des plots béton sont nécessaires, on le prévoit dès la visite avec notre installateur partenaire.</p>
+<h2>Couleurs et laquage</h2>
+<p>24 teintes standard, dont 4 tons bois, et en option toutes les autres teintes d'architecture extérieure. La bicoloration est possible. Le laquage est fait en usine avec des peintures haute durabilité (Qualicoat classe 2), avec les labels QualiLaquage et QualiMarine. Un simple lavage à l'eau savonneuse suffit à l'entretien.</p>
+
+<h2>Solide et sûr</h2>
+<ul>
+<li>Cadre assemblé mécaniquement, sans soudure ni vis apparente.</li>
+<li>Paumelles réglables dans les trois directions, indémontables portail fermé.</li>
+<li>Serrure et gâche inox à pêne dormant.</li>
+<li>Système anti-soulèvement sur les portails coulissants.</li>
+<li>Portail conforme à la norme européenne EN 13241-1, avec plaque d'identification CE.</li>
+</ul>
+<p>CETAL garantit la fabrication de ses portails 30 ans, et l'accrochage du laquage 30 ans sans dégressivité, selon ses conditions de garantie.</p>
+
+<h2>La motorisation Somfy</h2>
+<p>Les portails CETAL sont motorisés avec des moteurs <strong>Somfy</strong> :</p>
+<ul>
+<li><strong>Motorisation intégrée</strong> pour portail battant : invisible, logée dans le portail, ouverture à 90° en 15 secondes.</li>
+<li><strong>Motorisation apparente</strong> pour les configurations atypiques : ouverture vers l'extérieur, à 180°, vantaux inégaux, allée en pente.</li>
+<li><strong>Moteur intégré au poteau</strong> pour portail coulissant, jusqu'à 6 m et 350 kg.</li>
+</ul>
+<p>Tous sont pilotables depuis un smartphone avec la box TaHoma, et compatibles visiophone, clavier à code et caméra. Une batterie de secours est proposée en option. Pour vous aider à choisir, lisez notre article <a href="/blog/portail-motorise/">portail motorisé : ce qu'il faut prévoir</a>.</p>
 
 <h2>Avant de commander : les règles d'urbanisme</h2>
-<p>Dans beaucoup de communes de la métropole de Lyon et de l'Ain, la pose d'une clôture ou d'un portail est soumise à déclaration préalable, avec des hauteurs et des teintes encadrées par le PLU. On vous indique ce qu'il faut vérifier, et on vous fournit les plans et visuels du modèle pour constituer le dossier.</p>
+<p>Dans beaucoup de communes de la métropole de Lyon et de l'Ain, la pose d'un portail ou d'une clôture est soumise à déclaration préalable, avec des hauteurs et des teintes encadrées par le PLU. On vous indique ce qu'il faut vérifier, et on vous fournit les plans et le visuel du modèle pour le dossier.</p>
+<p>Pour fermer le reste du terrain, voyez nos <a href="/cloture-aluminium-lyon/">clôtures et brise-vue aluminium</a>, assortis au portail.</p>
 `,
 faq: [
-["Quelle hauteur maximale pour une clôture ?", "Elle dépend du PLU de votre commune et parfois du règlement de lotissement. On vérifie avec vous avant de valider le modèle."],
-["Peut-on motoriser un portail existant ?", "Souvent oui, si le portail est en bon état et les piliers solides. On le vérifie à la visite."],
-["Un portail coulissant sans rail au sol, c'est possible ?", "Oui, avec un portail autoportant, monté sur des galets en dehors de l'ouverture. Il demande plus de longueur de refoulement."]
+["Peut-on poser un portail sur une allée en pente ?", "Oui. Un portail battant peut recevoir un gond de pente qui le relève à l'ouverture, et un coulissant s'adapte aussi aux terrains en pente. On choisit la solution à la visite."],
+["Peut-on motoriser un portail plus tard ?", "Oui, tous les portails CETAL peuvent être motorisés. Si vous y pensez, prévoyez une gaine électrique jusqu'au pilier avant les travaux."],
+["Un portail coulissant sans rail au sol, c'est possible ?", "Oui, c'est le portail autoportant, suspendu et posé sur un massif béton. Il convient aux terrains plats et demande une longueur de refoulement suffisante."]
+]
+},
+{
+slug: "cloture-aluminium-lyon",
+photo: "pPortail",
+galerie: [],
+nav: "Clôtures",
+court: "Clôtures et brise-vue aluminium, assortis au portail.",
+title: "Clôture aluminium et brise-vue à Lyon | Horizon Fenêtre",
+description: "Clôtures et brise-vue aluminium CETAL sur mesure, assortis à votre portail, sur muret ou au sol. Visite et devis gratuits à Lyon et dans l'Ain.",
+h1: "Clôture aluminium et brise-vue sur mesure à Lyon",
+motcle: "clôture aluminium Lyon",
+chapo: "Fermer son terrain, se protéger des regards ou cacher les poubelles : une clôture aluminium ne rouille pas, ne se peint pas et reste droite.",
+contenu: `
+<p class="lead">Nous proposons les clôtures et brise-vue aluminium de <strong>CETAL</strong>, fabricant français depuis 1993. Ils reprennent les mêmes modèles et les mêmes teintes que les portails : toute la limite du terrain garde la même ligne.</p>
+
+<h2>Une clôture assortie au portail</h2>
+<p>Chaque modèle de portail existe en clôture : barreaux, planches, lames horizontales, tôles découpées. On choisit le degré d'intimité :</p>
+<ul>
+<li><strong>Ajourée</strong> : elle marque la limite sans fermer la vue.</li>
+<li><strong>Occultante partielle</strong> : des espaces entre les lames pour laisser passer l'air et la lumière.</li>
+<li><strong>Occultante</strong> : pleine, pour une vraie intimité.</li>
+</ul>
+<p>Selon le modèle, les remplissages se posent en applique, en lisse, dans un cadre fermé ou sans traverse haute. Le choix des remplissages peut même se panacher sur une même clôture.</p>
+
+<h2>Sur muret, au sol, en pente</h2>
+<p>La clôture se pose au sol ou sur un muret existant, à plat, en redans ou en suivant la pente du terrain. Les poteaux aluminium sont assortis aux panneaux. CETAL a développé un poteau à système de dilatation intégré et caché : l'aluminium s'allonge jusqu'à 1,3 mm par mètre entre l'hiver et l'été, et ce poteau absorbe le mouvement pour que la clôture ne se déforme pas. Pour les angles, un poteau à angle variable assure la continuité entre deux panneaux.</p>
+
+<h2>Le brise-vue</h2>
+<p>Le brise-vue CETAL se pose sur la terrasse ou dans le jardin pour créer un coin à l'abri des regards, ou masquer ce qu'on ne veut pas voir : poubelles, outils, compteurs. Plusieurs remplissages sont possibles :</p>
+<ul>
+<li>lames ajourées, persiennes horizontales, verticales ou à 45° ;</li>
+<li>tôles décoratives découpées ou perforées ;</li>
+<li>vitrage, en trois niveaux de transparence ;</li>
+<li>impression numérique, pour un décor sur mesure.</li>
+</ul>
+<p>Des jardinières en aluminium, unies ou bicolores avec évacuation du trop-plein d'eau, peuvent s'accrocher sur les lames ajourées. Un portillon assorti complète l'ensemble.</p>
+
+<h2>Couleurs et garantie</h2>
+<p>Comme les portails : 24 teintes standard dont 4 tons bois, toutes les teintes d'architecture en option, bicoloration possible, laquage haute durabilité Qualicoat classe 2 réalisé en usine. CETAL garantit la fabrication de ses clôtures et brise-vue 30 ans, et l'accrochage du laquage 30 ans sans dégressivité, selon ses conditions de garantie.</p>
+
+<h2>Avant de commander : hauteur et déclaration préalable</h2>
+<p>La hauteur et l'aspect d'une clôture sont souvent encadrés par le PLU de la commune ou le règlement du lotissement, et la pose peut demander une déclaration préalable. On vérifie avec vous avant de valider le modèle, et on vous fournit le visuel pour le dossier.</p>
+<p>Pour l'entrée, voyez nos <a href="/portail-aluminium-lyon/">portails aluminium sur mesure</a>, dans le même modèle et la même teinte.</p>
+`,
+faq: [
+["Quelle hauteur maximale pour une clôture ?", "Elle dépend du PLU de votre commune et parfois du règlement de lotissement. On le vérifie avec vous avant de valider le modèle."],
+["Peut-on poser une clôture sur un muret existant ?", "Oui, si le muret est sain. Les poteaux se fixent dessus, et la clôture peut suivre la pente ou des redans. On vérifie le muret à la visite."],
+["Un brise-vue peut-il se poser sur une terrasse ?", "Oui, c'est un de ses usages principaux : créer un coin à l'abri des regards ou masquer les poubelles et les outils."]
 ]
 },
 {

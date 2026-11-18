@@ -115,4 +115,4 @@ C'est déconseillé pour un battant qui s'ouvre vers le haut de l'allée. Un por
 
 ## Préparer votre projet avec Horizon Fenêtre
 
-Horizon Fenêtre fournit des [portails aluminium sur mesure](/portails-clotures/), battants ou coulissants, motorisés ou manuels, avec portillon et clôture assortis. Antoine vient faire la visite et la prise de cotes : il regarde les piliers, l'allée, l'arrivée électrique et l'accès, pour vous conseiller le bon moteur. La pose est réalisée par un installateur partenaire, avec son propre devis. [Demandez une visite](/contact/) pour faire le point sur votre entrée.
+Horizon Fenêtre fournit des [portails aluminium sur mesure](/portail-aluminium-lyon/), battants ou coulissants, motorisés ou manuels, avec portillon et clôture assortis. Antoine vient faire la visite et la prise de cotes : il regarde les piliers, l'allée, l'arrivée électrique et l'accès, pour vous conseiller le bon moteur. La pose est réalisée par un installateur partenaire, avec son propre devis. [Demandez une visite](/contact/) pour faire le point sur votre entrée.

@@ -19,7 +19,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-11-06 | type-ouverture-fenetre | Oscillo-battant, soufflet, coulissant : quelle ouverture pour quelle pièce | type d'ouverture fenêtre | /fenetres/ | publié le 2026-11-06 |
 | 2026-11-10 | couleur-fenetre-anthracite-blanc | Couleur des menuiseries : anthracite, blanc, bicolore et règles du PLU | couleur fenêtre anthracite | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | publié le 2026-11-10 |
 | 2026-11-13 | changer-fenetres-copropriete | Changer ses fenêtres en copropriété : autorisations, AG, syndic | changer fenêtre copropriété | /professionnels/ + /blog/declaration-prealable-changer-fenetres/ | publié le 2026-11-13 |
-| 2026-11-17 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portails-clotures/ | publié le 2026-11-17 |
+| 2026-11-17 | portail-motorise | Portail motorisé : ce qu'il faut prévoir avant la pose | motorisation portail | /portail-aluminium-lyon/ | publié le 2026-11-17 |
 | 2026-11-20 | changer-fenetres-par-ou-commencer | Changer ses fenêtres : par où commencer (check-list avant la visite) | changer ses fenêtres par où commencer | /contact/ | à faire |
 | 2026-11-24 | fenetres-maison-annees-70-lyon | Maison des années 60-70 à Lyon : quelles fenêtres changer en priorité | rénovation fenêtres maison ancienne | /fenetres/ | à faire |
 | 2026-10-19 | remplacer-volets-battants | Remplacer ses volets battants : volets roulants ou battants neufs (remplace « Volets battants : alu, bois ou PVC », intégré en section matériaux) | remplacer volets battants | /volets/ | publié le 2026-10-19 |
@@ -27,7 +27,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-12-04 | baie-vitree-seuil-plat | Baie vitrée à seuil plat : accessibilité et étanchéité | baie vitrée seuil plat | /baies-vitrees/ | à faire |
 | 2026-12-08 | fenetre-secteur-protege-abf-lyon | Fenêtres en secteur protégé à Lyon : ABF, Vieux Lyon, Croix-Rousse | fenêtre ABF Lyon | /fenetres/ + /blog/declaration-prealable-changer-fenetres/ | à faire |
 | 2026-12-11 | porte-de-garage-isolee | Porte de garage isolée : utile ou pas ? (parler aussi des hublots et panneaux vitrés) | porte de garage isolée | /portes-de-garage/ | à faire |
-| 2027-03-16 | hauteur-cloture | Hauteur de clôture : ce que dit la règle et comment choisir | hauteur clôture | /portails-clotures/ | à faire |
+| 2027-03-16 | hauteur-cloture | Hauteur de clôture : ce que dit la règle et comment choisir | hauteur clôture | /cloture-aluminium-lyon/ | à faire |
 | 2027-04-06 | moustiquaire-baie-vitree | Moustiquaire pour baie vitrée et porte-fenêtre | moustiquaire baie vitrée | /moustiquaires/ | à faire |
 | 2027-05-04 | garder-maison-fraiche-ete | Garder la maison fraîche l'été : vitrage, volets, BSO | protéger maison chaleur | /brise-soleil-orientables/ | à faire |
 | 2027-06-01 | securiser-fenetres-vacances | Sécuriser ses fenêtres avant de partir en vacances | sécuriser fenêtre | /fenetres/ | à faire |
@@ -36,7 +36,7 @@ Quand il reste moins de 6 lignes « à faire » datées dans les 3 semaines à v
 | 2026-12-22 | vocabulaire-fenetre-devis | Dormant, ouvrant, montant, meneau : comprendre le vocabulaire d'un devis de fenêtre | montant de fenêtre | /blog/prix-fenetre-sur-mesure/ + /fenetres/ | à faire |
 | 2026-12-29 | baie-coulissante-sans-montant | Baie coulissante sans montant visible : angle vitré, montant central fin, ce qui est possible | baie coulissante sans montant | /baies-vitrees/ + /blog/baie-vitree-coulissante-ou-galandage/ | à faire |
 | 2027-01-08 | volet-roulant-bloque-reparer-ou-remplacer | Volet roulant bloqué ou qui ne descend plus : réparer ou remplacer | volet roulant bloqué | /volets/ + /blog/motoriser-volet-roulant/ | à faire |
-| 2027-01-12 | portail-aluminium-ou-pvc | Portail aluminium ou PVC : tenue au vent, entretien, motorisation (expliquer honnêtement pourquoi on fournit de l'alu) | portail aluminium ou pvc | /portails-clotures/ + /blog/portail-battant-ou-coulissant/ | à faire |
+| 2027-01-12 | portail-aluminium-ou-pvc | Portail aluminium ou PVC : tenue au vent, entretien, motorisation (expliquer honnêtement pourquoi on fournit de l'alu) | portail aluminium ou pvc | /portail-aluminium-lyon/ + /blog/portail-battant-ou-coulissant/ | à faire |
 | 2027-01-15 | porte-entree-frotte-ferme-mal | Porte d'entrée qui frotte ou ferme mal : régler, changer les joints ou remplacer | porte d'entrée qui frotte | /portes-d-entree/ + /blog/porte-entree-securisee/ | à faire |
 | 2027-01-19 | changer-fenetres-en-hiver | Changer ses fenêtres en hiver : est-ce une bonne idée ? (froid pendant la pose, délais, séchage des joints, maison chauffée) | changer fenêtre en hiver | /fenetres/ + /blog/delai-changement-fenetres/ | à faire |
 | 2027-01-22 | vitrage-feuillete-securite | Vitrage feuilleté de sécurité : où il est utile (rez-de-chaussée, garde-corps, BSO et assurance) | vitrage feuilleté fenêtre | /fenetres/ + /blog/bso-ou-volet-roulant/ + /blog/porte-entree-securisee/ | à faire |

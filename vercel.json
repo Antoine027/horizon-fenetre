@@ -120,6 +120,11 @@
       "permanent": true
     },
     {
+      "source": "/portails-clotures/",
+      "destination": "/portail-aluminium-lyon/",
+      "permanent": true
+    },
+    {
       "source": "/nos-menuiseries/",
       "destination": "/",
       "permanent": true

@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-de-garage", "portes-interieures", "portails-clotures", "moustiquaires"];
+const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-de-garage", "portes-interieures", "portail-aluminium-lyon", "cloture-aluminium-lyon", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
 const SITE = "https://www.horizonfenetre.com";
@@ -104,15 +104,15 @@ const CIBLES = [
   { url: "/blog/baie-vitree-coulissante-ou-galandage/", mots: ["baie à galandage"] },
   { url: "/blog/tva-reduite-5-5-fenetres/", mots: ["TVA à 5,5 %", "TVA réduite", "taux réduit", "5,5 %", "Uw"] },
   { url: "/blog/declaration-prealable-changer-fenetres/", mots: ["déclaration préalable", "architecte des Bâtiments de France", "PLU", "règlement de copropriété", "mairie"] },
-  { url: "/blog/pose-renovation-ou-depose-totale/", mots: ["dépose totale", "pose en rénovation", "ancien dormant", "dormant", "calfeutrement"] },
+  { url: "/blog/pose-renovation-ou-depose-totale/", mots: ["dépose totale", "pose en rénovation", "ancien dormant", "dormant", "calfeutrement"], sauf: ["/portail-aluminium-lyon/", "/cloture-aluminium-lyon/", "/porte-blindee-lyon/"] },
   { url: "/blog/fenetre-pvc-aluminium-ou-bois/", mots: ["PVC, aluminium ou bois", "rupture de pont thermique", "mixte bois-alu", "bois-aluminium", "profils fins", "PVC"] },
   { url: "/blog/fenetre-isolation-phonique-lyon/", mots: ["vitrage acoustique", "isolation phonique", "vitrage asymétrique", "bruit"] },
   { url: "/blog/condensation-fenetre-double-vitrage/", mots: ["condensation", "buée", "VMC", "entrées d'air", "humidité"] },
   { url: "/blog/motoriser-volet-roulant/", mots: ["motoriser ses volets", "motoriser un volet", "motoriser vos volets"] },
   { url: "/blog/portail-motorise/", mots: ["portail motorisé", "portails motorisés", "motoriser un portail", "motoriser votre portail", "motorisation du portail"] },
-  { url: "/blog/portail-motorise/", mots: ["motorisation", "motoriser"], sur: ["/portails-clotures/", "/blog/portail-battant-ou-coulissant/"] },
+  { url: "/blog/portail-motorise/", mots: ["motorisation", "motoriser"], sur: ["/portail-aluminium-lyon/", "/blog/portail-battant-ou-coulissant/"] },
   // Le comparatif des moteurs de volets ne doit pas capter « motorisation » sur les pages portail et garage.
-  { url: "/blog/volet-roulant-filaire-radio-ou-solaire/", mots: ["moteur solaire", "moteur radio", "moteur filaire", "motorisation", "motoriser"], sauf: ["/portails-clotures/", "/blog/portail-battant-ou-coulissant/", "/blog/portail-motorise/", "/portes-de-garage/", "/blog/porte-de-garage-sectionnelle-ou-laterale/"] },
+  { url: "/blog/volet-roulant-filaire-radio-ou-solaire/", mots: ["moteur solaire", "moteur radio", "moteur filaire", "motorisation", "motoriser"], sauf: ["/portail-aluminium-lyon/", "/cloture-aluminium-lyon/", "/blog/portail-battant-ou-coulissant/", "/blog/portail-motorise/", "/portes-de-garage/", "/blog/porte-de-garage-sectionnelle-ou-laterale/"] },
   { url: "/blog/porte-de-garage-sectionnelle-ou-laterale/", mots: ["sectionnelle latérale", "sectionnelle plafond", "retombée de linteau", "porte basculante", "basculante"] },
   { url: "/blog/portail-battant-ou-coulissant/", mots: ["portail coulissant", "portail battant", "refoulement", "autoportant"] },
   { url: "/blog/moustiquaire-moustique-tigre-lyon/", mots: ["moustique tigre", "moustiques"] },
@@ -125,7 +125,8 @@ const CIBLES = [
   { url: "/volets/", mots: ["volets roulants", "volet roulant", "volets battants", "volet battant", "volets"] },
   { url: "/portes-de-garage/", mots: ["portes de garage", "porte de garage", "garage"] },
   { url: "/portes-d-entree/", mots: ["portes d'entrée", "porte d'entrée"] },
-  { url: "/portails-clotures/", mots: ["portails", "portail", "clôtures", "clôture"] },
+  { url: "/portail-aluminium-lyon/", mots: ["portails", "portail", "portillon"] },
+  { url: "/cloture-aluminium-lyon/", mots: ["clôtures", "clôture", "brise-vue"] },
   { url: "/moustiquaires/", mots: ["moustiquaires", "moustiquaire"] },
   { url: "/professionnels/", mots: ["professionnels", "syndic", "bailleurs", "architectes"] },
   { url: "/contact/", mots: ["demandez une visite", "Demandez une visite", "demander une visite", "visite gratuite", "visite"] },
@@ -285,7 +286,7 @@ const parcours = `<ol class="parcours">
 
 // ===== Accueil =====
 {
-  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2", "portails-clotures": "l2" };
+  const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2" };
   const VIGNETTES = {};
   const bento = PRODUITS.map((p) => `<a href="/${p.slug}/" class="${tailles[p.slug] || ""}${PHOTOS[VIGNETTES[p.slug] || p.photo][2] > PHOTOS[VIGNETTES[p.slug] || p.photo][1] ? ` portrait" style="--flou:url(/assets/img/produits/${PHOTOS[VIGNETTES[p.slug] || p.photo][0].slice(6)}-flou.webp)` : ""}">${photo(VIGNETTES[p.slug] || p.photo, { ratio: tailles[p.slug] === "c2" ? [1, 1] : tailles[p.slug] ? [2, 1] : [1, 1], largeurs: tailles[p.slug] ? [560, 800, 1200] : [400, 560], sizes: tailles[p.slug] ? "(max-width: 560px) 100vw, 50vw" : "(max-width: 560px) 100vw, (max-width: 980px) 50vw, 25vw" })}<span class="fl">${I.fleche}</span><span class="txt"><h3>${p.nav}</h3><p>${p.court}</p></span></a>`).join("");
   const faq = [
@@ -310,7 +311,7 @@ const parcours = `<ol class="parcours">
 <h2>Comment ça se passe</h2>
 </div>${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Dix familles de menuiseries, toutes fabriquées sur mesure.</p></div>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Onze familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
 </div></section>
 
@@ -388,7 +389,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <h3>Les documents dont vous avez besoin</h3>
 <p>Fiches techniques, procès-verbaux de performance, éléments pour les dossiers de déclaration préalable.</p>
 <h2>Nos produits</h2>
-<p>Toute notre gamme est disponible pour les professionnels : <a href="/fenetres/">fenêtres PVC, aluminium et bois</a>, <a href="/baies-vitrees/">baies vitrées</a>, <a href="/volets/">volets roulants et battants</a>, <a href="/brise-soleil-orientables/">brise-soleil orientables</a>, <a href="/portes-de-garage/">portes de garage</a>, <a href="/portes-d-entree/">portes d'entrée</a>, <a href="/portes-interieures/">portes intérieures</a>, <a href="/portails-clotures/">portails et clôtures</a> et <a href="/moustiquaires/">moustiquaires</a>.</p>`, url, 4);
+<p>Toute notre gamme est disponible pour les professionnels : <a href="/fenetres/">fenêtres PVC, aluminium et bois</a>, <a href="/baies-vitrees/">baies vitrées</a>, <a href="/volets/">volets roulants et battants</a>, <a href="/brise-soleil-orientables/">brise-soleil orientables</a>, <a href="/portes-de-garage/">portes de garage</a>, <a href="/portes-d-entree/">portes d'entrée</a>, <a href="/portes-interieures/">portes intérieures</a>, <a href="/portail-aluminium-lyon/">portails</a>, <a href="/cloture-aluminium-lyon/">clôtures</a> et <a href="/moustiquaires/">moustiquaires</a>.</p>`, url, 4);
   const body = `${bandeauPhoto(items, pros.h1, pros.chapo, "immeuble")}
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;
