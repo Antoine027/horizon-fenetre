@@ -4,11 +4,11 @@
 // Variables d'environnement Vercel : BREVO_API_KEY (obligatoire),
 // CONTACT_TO (destinataire, par défaut contact@horizonfenetre.com), CONTACT_FROM (expéditeur vérifié dans Brevo).
 
-const CHAMPS = { nom: 120, telephone: 30, email: 160, produit: 80, message: 3000, origine: 20 };
+const CHAMPS = { nom: 120, telephone: 30, email: 160, produit: 400, message: 3000, origine: 20 };
 const OBLIGATOIRES = ["nom", "telephone", "email"];
 
 const aller = (res, chemin) => { res.statusCode = 303; res.setHeader("Location", chemin); res.setHeader("Cache-Control", "no-store"); res.end(); };
-const propre = (v, max) => String(v ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
+const propre = (v, max) => String(Array.isArray(v) ? v.join(", ") : v ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
 const html = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 async function lireCorps(req) {
@@ -16,7 +16,9 @@ async function lireCorps(req) {
   const morceaux = [];
   for await (const m of req) morceaux.push(m);
   const brut = Buffer.concat(morceaux).toString("utf8").slice(0, 20000);
-  return Object.fromEntries(new URLSearchParams(brut));
+  const o = {};
+  for (const [k, v] of new URLSearchParams(brut)) o[k] = k in o ? [].concat(o[k], v) : v;
+  return o;
 }
 
 export default async function handler(req, res) {

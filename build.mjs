@@ -164,6 +164,7 @@ function mailler(html, selfUrl, max = 9) {
 const vignette = (a, grand = false) => (a.photo ? `<span class="vignette">${photo(a.photo, { ratio: [16, 10], largeurs: grand ? [480, 800, 1200] : [400, 640, 960, 1200], sizes: grand ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 600px) 100vw, 33vw" })}</span>` : "");
 
 // ---------- Icônes ----------
+const icoMail = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`;
 const ico = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
 const I = {
   regle: ico('<path d="M3 17 17 3l4 4L7 21z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/>'),
@@ -176,9 +177,9 @@ const I = {
 function entete(url) {
   return `<header class="top"><div class="barre">
 <a class="marque" href="/"><img src="/assets/img/icon-46.webp" srcset="/assets/img/icon-46.webp 1x, /assets/img/icon-92.webp 2x" width="46" height="35" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<div class="top-ic"><a href="tel:${TEL_LIEN}" aria-label="Appeler le ${TEL}">${icoTel}</a><a href="mailto:${MAIL}" aria-label="Écrire à ${MAIL}">${icoMail}</a><button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span></button></div>
 <nav class="nav" id="nav" aria-label="Navigation principale"><ul>
-<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${PRODUITS.map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}>${p.nav}</a></li>`).join("")}</ul></details></li>
+<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${PRODUITS.map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}><img class="mm-vig" src="/assets/img/produits/${PHOTOS[p.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span class="mm-txt"><b>${p.nav}</b><small>${p.court}</small></span></a></li>`).join("")}</ul></details></li>
 ${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/", "Contact"]].map(([u, t]) => `<li><a href="${u}"${url.startsWith(u) ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}</ul>
 <a class="btn btn-p" href="/contact/">Demander un devis</a></nav></div></header>`;
 }
@@ -186,9 +187,9 @@ const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <div><a class="marque" href="/"><img src="/assets/img/icon-light-46.webp" srcset="/assets/img/icon-light-46.webp 1x, /assets/img/icon-light-92.webp 2x" width="46" height="35" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <p>Menuiseries sur mesure : conseil, prise de cotes et fourniture. Pose sur demande.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
-<div><h2>Nos produits</h2><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></div>
-<div><h2>Horizon Fenêtre</h2><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/partenaires/">Partenaires</a></li><li><a href="/plan-du-site/">Plan du site</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></div>
-<div><h2>Guides populaires</h2><ul><li><a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, alu ou bois ?</a></li><li><a href="/blog/aides-changement-fenetres-2026/">Aides 2026</a></li><li><a href="/blog/prix-fenetre-sur-mesure/">Prix d'une fenêtre</a></li><li><a href="/blog/declaration-prealable-changer-fenetres/">Déclaration préalable</a></li></ul></div>
+<details class="pied-groupe" open><summary><h2>Nos produits</h2></summary><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></details>
+<details class="pied-groupe" open><summary><h2>Horizon Fenêtre</h2></summary><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/partenaires/">Partenaires</a></li><li><a href="/plan-du-site/">Plan du site</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></details>
+<details class="pied-groupe" open><summary><h2>Guides populaires</h2></summary><ul><li><a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, alu ou bois ?</a></li><li><a href="/blog/aides-changement-fenetres-2026/">Aides 2026</a></li><li><a href="/blog/prix-fenetre-sur-mesure/">Prix d'une fenêtre</a></li><li><a href="/blog/declaration-prealable-changer-fenetres/">Déclaration préalable</a></li></ul></details>
 </div><div class="bas"><span>© ${new Date().getFullYear()} Horizon Fenêtre, une marque d'ESCOM HABITAT SARL</span><span>Ce site ne dépose aucun cookie</span></div></div></footer>
 <div class="barre-mobile"><a href="tel:${TEL_LIEN}">${icoTel}Appeler</a><a href="/contact/">Devis gratuit</a></div>`;
 
@@ -197,7 +198,7 @@ const SCRIPT_ANALYTICS = "/_vercel/insights/script.js";
 const SCRIPT_SPEED = "/_vercel/speed-insights/script.js";
 const MESURE = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script><script defer src="${SCRIPT_ANALYTICS}"></script><script defer src="${SCRIPT_SPEED}"></script>`;
 const SUIVI_DEVIS = `<script>window.va&&va('event',{name:'Demande de devis'});</script>`;
-const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.textContent=o?'Fermer':'Menu';});}var pc=document.querySelector('.parcours');if(pc&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=pc.getBoundingClientRect();if(r.top>innerHeight){pc.classList.add('anim');var po=new IntersectionObserver(function(es){if(es[0].isIntersecting){pc.classList.add('vu');po.disconnect();}},{threshold:.25});po.observe(pc);}}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&window.va){va('event',{name:'Appel téléphone'});va('pageview',{route:'/suivi/appel-telephone/',path:'/suivi/appel-telephone/'});}});var bm=document.querySelector('.barre-mobile');if(bm&&'IntersectionObserver' in window){var gene=new Set();function maj(){bm.classList.toggle('visible',scrollY>320&&gene.size===0);}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?gene.add(e.target):gene.delete(e.target);});maj();});document.querySelectorAll('main form,#devis,.pied,.appel,.h-txt .actions,.boite-appel').forEach(function(el){io.observe(el);});addEventListener('scroll',maj,{passive:true});maj();}})();</script>`;
+const JS = `<script>(function(){document.addEventListener('click',function(e){document.querySelectorAll('.deroule details[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');if(b){b.addEventListener('click',function(){var o=n.classList.toggle('ouvert');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');document.body.classList.toggle('menu-ouvert',o);});}var tp=document.querySelector('.top');if(tp){var y0=scrollY;addEventListener('scroll',function(){var y=scrollY;if(Math.abs(y-y0)>6){tp.classList.toggle('cache',y>y0&&y>200&&!document.body.classList.contains('menu-ouvert'));y0=y;}},{passive:true});}if(matchMedia('(max-width:700px)').matches){document.querySelectorAll('.pied-groupe').forEach(function(d){d.open=false;});document.querySelectorAll('.bento,.billets.car,.galerie').forEach(function(c){var k=c.children.length;if(k<2)return;var d=document.createElement('div');d.className='points';d.setAttribute('aria-hidden','true');d.innerHTML=new Array(k+1).join('<span></span>');c.after(d);var u=function(){var w=c.firstElementChild.getBoundingClientRect().width+12,i=Math.min(k-1,Math.round(c.scrollLeft/w));[].forEach.call(d.children,function(p,j){p.classList.toggle('on',j===i);});};c.addEventListener('scroll',u,{passive:true});u();});}var pc=document.querySelector('.parcours');if(pc&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=pc.getBoundingClientRect();if(r.top>innerHeight){pc.classList.add('anim');var po=new IntersectionObserver(function(es){if(es[0].isIntersecting){pc.classList.add('vu');po.disconnect();}},{threshold:.25});po.observe(pc);}}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&window.va){va('event',{name:'Appel téléphone'});va('pageview',{route:'/suivi/appel-telephone/',path:'/suivi/appel-telephone/'});}});var bm=document.querySelector('.barre-mobile');if(bm&&'IntersectionObserver' in window){var gene=new Set();function maj(){bm.classList.toggle('visible',scrollY>320&&gene.size===0);}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?gene.add(e.target):gene.delete(e.target);});maj();});document.querySelectorAll('main form,#devis,.pied,.appel,.h-txt .actions,.boite-appel').forEach(function(el){io.observe(el);});addEventListener('scroll',maj,{passive:true});maj();}})();</script>`;
 
 // Image mise en avant (partage, Google) : illustration locale 1200×630 ou photo Unsplash recadrée.
 function imageUne(cle) {
@@ -227,16 +228,15 @@ const appel = (titre = "Un projet ? On passe le mesurer.") => `<section class="a
 const bandeauPhoto = (items, h1, chapo, cle) => `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille"><div><h1>${h1}</h1><p>${chapo}</p></div><div class="cadre-photo">${photo(cle, { eager: true, ratio: [4, 3], largeurs: [480, 720, 960], sizes: "(max-width: 760px) 100vw, 42vw" })}</div></div></div></section>`;
 const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau"><div class="wrap">${items ? fil(items) : ""}<h1>${h1}</h1>${chapo ? `<p>${chapo}</p>` : ""}${extra}</div></section>`;
 
-function formulaire(source) {
-  const options = [...PRODUITS.map((p) => p.nav), "Plusieurs produits / autre"];
+function formulaire(source, coche = "") {
   const id = (n) => `f-${n}-${source}`;
   return `<form class="form" action="/api/contact" method="POST">
 <input type="hidden" name="origine" value="${source}">
 <div class="sr" aria-hidden="true"><label for="${id("site")}">Ne pas remplir</label><input id="${id("site")}" type="text" name="site_web" tabindex="-1" autocomplete="off"></div>
 <div><label for="${id("nom")}">Nom et prénom</label><input id="${id("nom")}" name="nom" autocomplete="name" required maxlength="120"></div>
 <div><label for="${id("tel")}">Téléphone</label><input id="${id("tel")}" name="telephone" type="tel" autocomplete="tel" required maxlength="30"></div>
-<div><label for="${id("mail")}">E-mail</label><input id="${id("mail")}" name="email" type="email" autocomplete="email" required maxlength="160"></div>
-<div><label for="${id("prod")}">Votre projet concerne</label><select id="${id("prod")}" name="produit">${options.map((o) => `<option>${o}</option>`).join("")}</select></div>
+<div class="plein"><label for="${id("mail")}">E-mail</label><input id="${id("mail")}" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+<fieldset class="plein choix-projet"><legend>Votre projet <i>(plusieurs choix possibles)</i></legend><div class="choix-grille">${PRODUITS.map((p) => `<label class="choix"><input type="checkbox" name="produit" value="${p.nav}"${coche === p.slug ? " checked" : ""}><span class="choix-tuile">${dessins[p.slug].replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')}${p.nav}</span></label>`).join("")}<label class="choix"><input type="checkbox" name="produit" value="Autre"><span class="choix-tuile"><svg class="dessin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="60" r="6"/><circle cx="60" cy="60" r="6"/><circle cx="86" cy="60" r="6"/></svg>Autre</span></label></div></fieldset>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
 <p class="note">ESCOM HABITAT traite vos données pour répondre à votre demande. Vos droits : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
@@ -269,11 +269,18 @@ fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync("public", OUT, { recursive: true });
 const articles = lireArticles();
 const plan = [];
+const ICO_ETAPES = [
+  '<path d="M3 17 17 3l4 4L7 21z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/>',
+  '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+  '<path d="M3 21V10l6 4V10l6 4V6h6v15z"/><path d="M7 18h2M12 18h2M17 18h2"/>',
+  '<path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+];
+const etapeIc = (i) => `<span class="etape-ic" aria-hidden="true">${ico(ICO_ETAPES[i])}<b>${i + 1}</b></span>`;
 const parcours = `<ol class="parcours">
-<li><h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p></li>
-<li><h3>Devis de fourniture et pose</h3><p>Chaque menuiserie détaillée : cotes, matériau, vitrage, performances.</p></li>
-<li><h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p></li>
-<li><h3>Pose avec décennale</h3><p>On organise la pose avec notre poseur partenaire, assuré en garantie décennale.</p></li>
+<li>${etapeIc(0)}<h3>Visite et prise de cotes</h3><p>On vient chez vous, on vous conseille et on relève chaque ouverture au millimètre.</p></li>
+<li>${etapeIc(1)}<h3>Devis de fourniture et pose</h3><p>Chaque menuiserie détaillée : cotes, matériau, vitrage, performances.</p></li>
+<li>${etapeIc(2)}<h3>Fabrication et livraison</h3><p>Dernier contrôle des cotes, fabrication sur mesure, livraison calée avec le poseur.</p></li>
+<li>${etapeIc(3)}<h3>Pose avec décennale</h3><p>On organise la pose avec notre poseur partenaire, assuré en garantie décennale.</p></li>
 </ol>`;
 
 // ===== Accueil =====
@@ -290,7 +297,7 @@ const parcours = `<ol class="parcours">
   ];
   const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
-<section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" sizes="100vw"><img class="h-img" src="/assets/img/baie-coulissante-aluminium-jardin-1920.webp" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.webp 640w, /assets/img/baie-coulissante-aluminium-jardin-960.webp 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.webp 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.webp 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.webp 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.webp 3840w" sizes="100vw" width="3840" height="2161" alt="Grande baie vitrée coulissante en aluminium noir ouverte sur une terrasse et un jardin, maison contemporaine équipée de fenêtres à profils fins" fetchpriority="high" decoding="async"></picture>
+<section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" sizes="100vw"><img class="h-img" src="/assets/img/baie-coulissante-aluminium-jardin-1920.webp" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.webp 640w, /assets/img/baie-coulissante-aluminium-jardin-800.webp 800w, /assets/img/baie-coulissante-aluminium-jardin-960.webp 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.webp 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.webp 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.webp 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.webp 3840w" sizes="100vw" width="3840" height="2161" alt="Grande baie vitrée coulissante en aluminium noir ouverte sur une terrasse et un jardin, maison contemporaine équipée de fenêtres à profils fins" fetchpriority="high" decoding="async"></picture>
 <div class="wrap h-txt"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
 <h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
 <p class="chapo">Fenêtres, baies vitrées, volets, BSO, portes, portails et moustiquaires. On relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte, et on organise la pose.</p>
@@ -298,8 +305,13 @@ const parcours = `<ol class="parcours">
 <ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div>
 </section>
 
-<section class="sec"><div class="wrap"><div class="tete"><h2>Comment ça se passe</h2><p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p></div>
-${parcours}</div></section>
+<section class="sec methode"><div class="wrap m-grille"><div class="m-intro">
+<span class="sur-titre">Notre méthode</span>
+<p class="carte-antoine"><img src="/assets/img/equipe/antoine-escolle-176.webp" width="88" height="88" alt="Antoine Escolle, Horizon Fenêtre" loading="lazy" decoding="async"><span><strong>Antoine</strong>, votre interlocuteur du premier rendez-vous à la fin du chantier.</span></p>
+<h2>Comment ça se passe</h2>
+<p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p>
+<ul class="coches"><li>Visite et prise de cotes gratuites</li><li>Menuiseries fabriquées sur mesure</li><li>Pose par un installateur partenaire assuré en décennale</li></ul>
+</div>${parcours}</div></section>
 
 <section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
@@ -328,13 +340,14 @@ ${parcours}</div></section>
 <section class="sec ciel"><div class="wrap zone"><div><h2>Où nous intervenons</h2><p>Basés à Rillieux-la-Pape, nous venons prendre les cotes dans Lyon et toute la métropole, dans la Côtière et la Dombes côté Ain, et dans le Val de Saône. Votre commune n'apparaît pas ? Appelez-nous.</p><p><a href="tel:${TEL_LIEN}">${TEL}</a></p></div>
 <ul class="communes">${COMMUNES.map((c) => `<li>${c}</li>`).join("")}</ul></div></section>
 
-<section class="sec"><div class="wrap"><div class="tete"><h2>Conseils et guides</h2><p>Les réponses aux questions qu'on nous pose le plus souvent en visite.</p></div><div class="billets">${derniers}</div>
+<section class="sec"><div class="wrap"><div class="tete"><h2>Conseils et guides</h2><p>Les réponses aux questions qu'on nous pose le plus souvent en visite.</p></div><div class="billets car">${derniers}</div>
 <p style="margin-top:2rem"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
 
 <section class="sec ciel"><div class="wrap"><div class="tete"><h2>Questions fréquentes</h2></div>${faqHtml(faq)}</div></section>
 
-<section class="sec" id="devis"><div class="wrap"><div class="devis"><div><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes.</p><p>Vous préférez téléphoner ?<br><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a></p></div>${formulaire("accueil")}</div></div></section>`;
-  ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/baie-coulissante-aluminium-jardin.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Horizon Fenêtre, menuiseries sur mesure à Lyon : fenêtres, baies vitrées, volets, BSO, portes, portails. Visite gratuite, pose par installateur partenaire.", body,
+<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes chez vous.</p>
+<p class="d-direct"><span>Vous préférez appeler ?</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail">ou par e-mail : <a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire("accueil")}</div></section>`;
+  ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/baie-coulissante-aluminium-jardin.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Horizon Fenêtre, menuiseries sur mesure à Lyon : fenêtres, baies vitrées, volets, BSO, portes, portails. Visite gratuite, pose par installateur partenaire.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
   plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });
 }
