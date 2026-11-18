@@ -76,10 +76,10 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(233,246,251,.97) 0%,rgba(233,246,251,.94) 36%,rgba(233,246,251,.8) 48%,rgba(233,246,251,0) 68%)}
 .h-txt{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:4rem}
 .h-txt>*{max-width:36rem}
-.hero-photo h1{font-size:clamp(2.5rem,1.2rem + 4.2vw,4.8rem);letter-spacing:-.045em;line-height:.98;margin-bottom:1.4rem}
-.hero-photo h1 span{display:block}
-.hero-photo h1 .fin{font-weight:300}
-.hero-photo h1 .fort{font-weight:750;color:var(--ardoise)}
+.hero-photo .slogan{font-size:clamp(2.5rem,1.2rem + 4.2vw,4.8rem);letter-spacing:-.045em;line-height:.98;margin-bottom:1.4rem}
+.hero-photo .slogan span{display:block}
+.hero-photo .slogan .fin{font-weight:300}
+.hero-photo .slogan .fort{font-weight:750;color:var(--ardoise)}
 .hero-photo .chapo{font-size:1.1rem;color:var(--encre);font-weight:500;margin-bottom:1.8rem;max-width:32rem;text-shadow:0 0 18px rgba(233,246,251,.9)}
 .trio{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
 .trio li{background:rgba(255,255,255,.82);border-radius:var(--r);padding:.8rem .9rem;font-size:.86rem;font-weight:560;color:var(--ardoise-f);line-height:1.35;display:flex;gap:.55rem;align-items:flex-start}
@@ -97,7 +97,7 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .hero-photo::before{display:none}
   .h-txt{order:2;padding-top:1.4rem;padding-bottom:1.6rem}
   .hero-photo .kicker{font-size:.8rem;margin-bottom:.9rem}
-  .hero-photo h1{margin-bottom:.9rem}
+  .hero-photo .slogan{margin-bottom:.9rem}
   .hero-photo .chapo{font-size:.98rem;margin-bottom:1.2rem}
   .trio{grid-template-columns:1fr;gap:.4rem;margin-top:1.2rem}
   .trio li{padding:.55rem .8rem}
@@ -438,8 +438,8 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
   .h-txt{background:var(--ardoise-f);color:#fff;text-align:center;padding:1.7rem 16px 2rem}
   .h-txt>*{margin-left:auto;margin-right:auto}
   .hero-photo .kicker{display:none}
-  .hero-photo h1{color:#fff}
-  .hero-photo h1 .fort{color:#bfe3f0}
+  .hero-photo .slogan{color:#fff}
+  .hero-photo .slogan .fort{color:#bfe3f0}
   .hero-photo .chapo{color:#d6e3e8;text-shadow:none}
   .hero-photo .actions{justify-content:center}
   .hero-photo .btn-p{width:100%;background:var(--ciel);color:var(--ardoise-f)}
@@ -535,3 +535,14 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .pros-bande h2{font-size:clamp(1.4rem,1rem + 1.4vw,2rem);margin-bottom:.4rem}
 .pros-bande p{margin:0;color:var(--texte-2);max-width:40rem}
 @media (max-width:700px){.pros-bande{text-align:center;justify-content:center}.pros-bande .btn{width:100%}}
+
+/* Slogan (18/11/2026) : le H1 devient la petite ligne au-dessus, lue par Google */
+h1.kicker{letter-spacing:0;line-height:1.35}
+.hero-photo .slogan{color:var(--ardoise-f);margin-top:0}
+.hero-photo .slogan span{display:block}
+.pied-slogan{font-weight:650;color:#fff;margin:.2rem 0 .8rem}
+@media (max-width:700px){
+  .hero-photo .kicker{display:inline-block;background:rgba(255,255,255,.12);color:#d6e3e8;margin-bottom:1rem}
+  .hero-photo .slogan{font-size:clamp(2.1rem,9vw,2.6rem);color:#fff}
+  .hero-photo h1.kicker{font-size:.74rem;padding:.35rem .8rem}
+}

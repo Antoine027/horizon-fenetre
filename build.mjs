@@ -185,6 +185,7 @@ ${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/",
 }
 const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <div><a class="marque" href="/"><img src="/assets/img/icon-light-46.webp" srcset="/assets/img/icon-light-46.webp 1x, /assets/img/icon-light-92.webp 2x" width="46" height="35" alt="" loading="lazy"><span><i>Horizon</i><b>Fenêtre</b></span></a>
+<p class="pied-slogan">Bien mesuré, bien fermé, bien chez soi.</p>
 <p>Menuiseries sur mesure : conseil, prise de cotes et fourniture. Pose sur demande.<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p>
 <p><a href="tel:${TEL_LIEN}">${TEL}</a><br><a href="mailto:${MAIL}">${MAIL}</a></p></div>
 <details class="pied-groupe" open><summary><h2>Nos produits</h2></summary><ul>${PRODUITS.map((p) => `<li><a href="/${p.slug}/">${p.nav}</a></li>`).join("")}</ul></details>
@@ -296,8 +297,8 @@ const parcours = `<ol class="parcours">
   const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
 <section class="hero-photo"><picture><source type="image/avif" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" sizes="100vw"><img class="h-img" src="/assets/img/baie-coulissante-aluminium-jardin-1920.webp" srcset="/assets/img/baie-coulissante-aluminium-jardin-640.webp 640w, /assets/img/baie-coulissante-aluminium-jardin-800.webp 800w, /assets/img/baie-coulissante-aluminium-jardin-960.webp 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.webp 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.webp 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.webp 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.webp 3840w" sizes="100vw" width="3840" height="2161" alt="Grande baie vitrée coulissante en aluminium noir ouverte sur une terrasse et un jardin, maison contemporaine équipée de fenêtres à profils fins" fetchpriority="high" decoding="async"></picture>
-<div class="wrap h-txt"><span class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</span>
-<h1><span class="fin">Vos menuiseries</span> <span class="fort">sur mesure</span></h1>
+<div class="wrap h-txt"><h1 class="kicker">Menuiseries sur mesure à Lyon et Rillieux-la-Pape</h1>
+<p class="slogan"><span class="fin">Bien mesuré,</span> <span class="fin">bien fermé,</span> <span class="fort">bien chez soi.</span></p>
 <p class="chapo">Fenêtres, baies vitrées, volets, BSO, portes, portails et moustiquaires. On relève les cotes chez vous, chaque menuiserie est fabriquée à la dimension exacte, et on organise la pose.</p>
 <div class="actions"><a class="btn btn-p" href="/contact/">Demander une visite gratuite</a><a class="btn btn-s" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div>
 <ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div>
