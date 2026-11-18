@@ -223,7 +223,6 @@ function page({ url, title, description, body, schemas = [], noindex = false, og
 const fil = (items) => `<nav class="fil" aria-label="Fil d'Ariane"><ol>${items.map((it, i) => (i < items.length - 1 ? `<li><a href="${it.url}">${it.t}</a></li>` : `<li aria-current="page">${it.t}</li>`)).join("")}</ol></nav>`;
 const filLd = (items) => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.t, item: SITE + it.url })) });
 const faqHtml = (faq) => `<div class="faq">${faq.map(([q, r]) => `<details><summary>${q}</summary><div><p>${r}</p></div></details>`).join("")}</div>`;
-const faqLd = (faq) => ({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([q, r]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: r } })) });
 const appel = (titre = "Un projet ? On passe le mesurer.") => `<section class="appel"><div class="wrap"><div class="boite-appel"><div><h2>${titre}</h2><p>Visite, prise de cotes et devis gratuits, à Lyon et alentours.</p></div><div class="actions" style="align-items:center"><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div></div></div></section>`;
 const bandeauPhoto = (items, h1, chapo, cle) => `<section class="bandeau"><div class="wrap">${fil(items)}<div class="grille"><div><h1>${h1}</h1><p>${chapo}</p></div><div class="cadre-photo">${photo(cle, { eager: true, ratio: [4, 3], largeurs: [480, 720, 960], sizes: "(max-width: 760px) 100vw, 42vw" })}</div></div></div></section>`;
 const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau"><div class="wrap">${items ? fil(items) : ""}<h1>${h1}</h1>${chapo ? `<p>${chapo}</p>` : ""}${extra}</div></section>`;
@@ -293,7 +292,6 @@ const parcours = `<ol class="parcours">
     ["Qui pose les menuiseries ?", "Horizon Fenêtre vend la fourniture. La pose est réalisée par notre installateur partenaire, qui vous remet son propre devis et sa propre facture. Vous restez libre de faire poser par l'artisan de votre choix."],
     ["Quel taux de TVA s'applique ?", "La fourniture vendue par Horizon Fenêtre est facturée avec une TVA à 20 %. Le taux appliqué à la pose figure sur le devis de l'installateur : il dépend de son intervention et de votre logement."],
     ["Dans quel secteur intervenez-vous ?", "À Lyon et dans toute la métropole, dans le sud de l'Ain (Côtière, Dombes) et le Val de Saône. Pour un projet plus éloigné, appelez-nous."],
-    ["Vendez-vous aux professionnels ?", "Oui. Artisans, syndics, bailleurs, architectes et commerces : chiffrage sur plans ou après visite, livraison sur chantier."],
   ];
   const derniers = articles.slice(0, 3).map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("");
   const body = `
@@ -309,11 +307,9 @@ const parcours = `<ol class="parcours">
 <span class="sur-titre">Notre méthode</span>
 <p class="carte-antoine"><img src="/assets/img/equipe/antoine-escolle-176.webp" width="88" height="88" alt="Antoine Escolle, Horizon Fenêtre" loading="lazy" decoding="async"><span><strong>Antoine</strong>, votre interlocuteur du premier rendez-vous à la fin du chantier.</span></p>
 <h2>Comment ça se passe</h2>
-<p>On vous conseille, on mesure, on fournit et on organise la pose : un seul interlocuteur du premier rendez-vous à la fin du chantier.</p>
-<ul class="coches"><li>Visite et prise de cotes gratuites</li><li>Menuiseries fabriquées sur mesure</li><li>Pose par un installateur partenaire assuré en décennale</li></ul>
 </div>${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Neuf familles de menuiseries, toutes fabriquées sur mesure.</p></div>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Dix familles de menuiseries, toutes fabriquées sur mesure.</p></div>
 <div class="bento">${bento}</div>
 </div></section>
 
@@ -328,17 +324,9 @@ const parcours = `<ol class="parcours">
 <div class="mat-cartes"><article class="mat-carte"><h3>PVC</h3><dl><div><dt>On le choisit pour</dt><dd>Isoler au meilleur prix, sans entretien</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Blanc, plaxés unis et effet bois</dd></div><div><dt>Budget</dt><dd>Le plus accessible</dd></div></dl></article><article class="mat-carte"><h3>Aluminium</h3><dl><div><dt>On le choisit pour</dt><dd>Des profils fins et de grandes baies</dd></div><div><dt>Isolation</dt><dd>Bonne à très bonne, avec rupture de pont thermique</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Quasi toutes les teintes RAL</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article><article class="mat-carte"><h3>Bois</h3><dl><div><dt>On le choisit pour</dt><dd>La matière, le cachet, les secteurs protégés</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Lasure ou peinture régulière</dd></div><div><dt>Couleurs</dt><dd>Lasures, peintures, essences</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article></div>
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
-<section class="sec" style="padding-top:0"><div class="wrap duo">
-<div><span class="vignette">${photo("salon", { ratio: [16, 9], largeurs: [480, 800, 1200], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Particuliers</h2><p>Maison ou appartement, une seule fenêtre ou toute la façade : on vous conseille sans pousser à la gamme la plus chère.</p>
-<ul><li>Visite et prise de cotes gratuites</li><li>Devis de fourniture détaillé, performances à l'appui</li><li>Pose organisée par nos soins</li><li>Aide pour la déclaration préalable en mairie</li></ul>
-<a class="btn btn-p" href="/contact/">Demander une visite</a></div>
-<div><span class="vignette">${photo("immeuble", { ratio: [16, 9], largeurs: [480, 800, 1200], sizes: "(max-width: 820px) 100vw, 50vw" })}</span><h2>Professionnels</h2><p>Artisans, syndics, bailleurs, architectes, maîtres d'œuvre et commerces.</p>
-<ul><li>Chiffrage rapide sur plans ou après visite</li><li>Fourniture sur mesure livrée sur chantier</li><li>Pose possible sur demande</li><li>Un interlocuteur unique pour la fourniture</li></ul>
-<a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div>
-</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="pros-bande"><div><h2>Vous êtes professionnel ?</h2><p>Artisans, syndics, bailleurs, architectes : chiffrage sur plans ou après visite, fourniture sur mesure livrée sur chantier.</p></div><a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div></div></section>
 
-<section class="sec ciel"><div class="wrap zone"><div><h2>Où nous intervenons</h2><p>Basés à Rillieux-la-Pape, nous venons prendre les cotes dans Lyon et toute la métropole, dans la Côtière et la Dombes côté Ain, et dans le Val de Saône. Votre commune n'apparaît pas ? Appelez-nous.</p><p><a href="tel:${TEL_LIEN}">${TEL}</a></p></div>
-<ul class="communes">${COMMUNES.map((c) => `<li>${c}</li>`).join("")}</ul></div></section>
+
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Conseils et guides</h2><p>Les réponses aux questions qu'on nous pose le plus souvent en visite.</p></div><div class="billets car">${derniers}</div>
 <p style="margin-top:2rem"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
@@ -348,7 +336,7 @@ const parcours = `<ol class="parcours">
 <section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>Demandez votre visite gratuite</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes chez vous.</p>
 <p class="d-direct"><span>Vous préférez appeler ?</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail">ou par e-mail : <a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire("accueil")}</div></section>`;
   ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/baie-coulissante-aluminium-jardin.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Horizon Fenêtre, menuiseries sur mesure à Lyon : fenêtres, baies vitrées, volets, BSO, portes, portails. Visite gratuite, pose par installateur partenaire.", body,
-    schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }, faqLd(faq)] }));
+    schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }] }));
   plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });
 }
 
@@ -367,7 +355,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/">${dessins[v.slug]}${v.nav}</a>`).join("")}</div></div></section>${appel()}`;
   ecrire(url, page({ url, une: p.photo, title: p.title, description: p.description, body, schemas: [
     { "@context": "https://schema.org", "@type": "Service", name: p.h1, image: imageUne(p.photo).src, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
-    filLd(items), faqLd(p.faq)] }));
+    filLd(items)] }));
   plan.push({ url, groupe: "Nos produits", titre: p.nav });
 }
 
@@ -403,7 +391,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
   const body = `${bandeauPhoto(items, pros.h1, pros.chapo, "immeuble")}
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;
-  ecrire(url, page({ url, une: "pPaliere", title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items), faqLd(faq)] }));
+  ecrire(url, page({ url, une: "pPaliere", title: pros.title, description: pros.description, body, schemas: [{ "@context": "https://schema.org", "@type": "Service", name: pros.h1, audience: { "@type": "BusinessAudience" }, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url }, filLd(items)] }));
   plan.push({ url, groupe: "Horizon Fenêtre", titre: "Professionnels" });
 }
 
