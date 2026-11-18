@@ -17,5 +17,10 @@ Site statique de Horizon Fenêtre (marque d'ESCOM HABITAT, Rillieux-la-Pape). G�
 - Plan de publication : `docs/plan-editorial.md`.
 - Style : français naturel, phrases courtes, ton d'artisan qui explique, pas de formules creuses ni de bourrage de mots-clés.
 
+## Publication (consigne d'Antoine du 18/11/2026)
+- Par défaut, ne rien publier : ne jamais pousser sur `main` (ni sur une autre branche, qui créerait un aperçu Vercel) sans un « publie » explicite d'Antoine.
+- Travailler sur une branche locale et lui montrer des aperçus.
+- À chaque réponse, lui reproposer de publier et lui dire combien de modifications attendent la publication (`git log origin/main..HEAD --oneline`).
+
 ## Vérifier avant de pousser
 `node build.mjs` doit afficher « OK : … pages indexables », sans erreur. Le fichier `src/dates.json` se met à jour tout seul : le committer avec l'article.

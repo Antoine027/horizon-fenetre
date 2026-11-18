@@ -193,7 +193,7 @@ faq: [
 {
 slug: "porte-blindee-lyon",
 photo: "pBlindee",
-galerie: [["blindee10","Diamant 10 : A2P BP1, fermeture 5 points, ici en finition gris anthracite."],["blindee20","Diamant 20 : A2P BP2, 7 ou 9 points de fermeture, ici laquée vert olive."],["opaline","Opaline : la porte sécurisée d'appartement, coupe-feu certifiée."],["blindeeDv","Diamant double vantaux tiercé : pour les grandes entrées des immeubles anciens."],["blindee20b","Diamant 20 en décor bois clair, avec un bâti de la même teinte."],["blindeePene","Les pênes rotatifs anti-sciage verrouillent tous les points en un seul tour de clé."]],
+galerie: [["blindee10","Diamant 10 : A2P BP1, fermeture 5 points, ici en finition gris anthracite."],["blindee20","Diamant 20 : A2P BP2, 7 ou 9 points de fermeture, ici laquée vert olive."],["opaline","Opaline : la porte sécurisée d'appartement, coupe-feu certifiée."],["blindeeDv","Diamant double vantaux tiercé : pour remplacer une porte double existante."],["blindee20b","Diamant 20 en décor bois clair, avec un bâti de la même teinte."],["blindeePene","Les pênes rotatifs anti-sciage verrouillent tous les points en un seul tour de clé."]],
 nav: "Portes blindées",
 court: "Portes palières blindées A2P pour appartement.",
 title: "Porte blindée et porte palière à Lyon | Horizon Fenêtre",
@@ -228,7 +228,7 @@ contenu: `
 <tr><th scope="row">Coupe-feu</th><td>EI1 15 ou EI2 30</td><td>Option EI2 30</td><td>Option EI2 30</td></tr>
 </tbody></table></div>
 <p><strong>Opaline</strong> convient à une porte d'appartement ou de communication (entre un garage et la maison, par exemple) quand on cherche une bonne protection à budget maîtrisé. <strong>Diamant 10</strong> est la porte blindée certifiée la plus accessible. <strong>Diamant 20</strong> va plus loin, avec davantage de points de fermeture et une structure en acier de 2 mm.</p>
-<p><strong>Diamant double vantaux tiercé</strong> : pour les larges entrées des immeubles anciens, fréquentes dans le 2e, le 6e ou à la Croix-Rousse. Un grand vantail sert au passage, le petit s'ouvre pour les meubles. Elle est certifiée A2P BP1, avec 6 ou 7 points de fermeture, une structure en acier de 2 mm et des pênes haut et bas sur chaque vantail.</p>
+<p><strong>Diamant double vantaux tiercé</strong> : pour remplacer une porte double existante. Un grand vantail sert au passage, le petit s'ouvre pour les meubles. Elle est certifiée A2P BP1, avec 6 ou 7 points de fermeture, une structure en acier de 2 mm et des pênes haut et bas sur chaque vantail.</p>
 <p>Toutes sont livrées avec des clés brevetées et une carte de propriété numérotée : un double ne peut être fait que sur présentation de cette carte. Picard Serrures les garantit 10 ans, selon ses conditions de garantie.</p>
 
 <h2>Pourquoi un bloc-porte complet plutôt qu'un simple blindage</h2>
