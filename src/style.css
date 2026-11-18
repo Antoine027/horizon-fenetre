@@ -552,8 +552,11 @@ h1.kicker{letter-spacing:0;line-height:1.35}
   .hero-photo picture{position:absolute;top:0;left:0;right:0;height:64svh;margin:0}
   .hero-photo .h-img{height:100%;min-height:0}
   .h-txt{position:relative;margin-top:calc(64svh - 13rem);padding-top:8rem;background:linear-gradient(to bottom,rgba(41,56,63,0) 0,rgba(41,56,63,.45) 4rem,rgba(41,56,63,.85) 8rem,var(--ardoise-f) 11.5rem)}
-  .chapo-liste{display:none}
+  .chapo-desk,.hero-photo h1.kicker{display:none}
+  .chapo-mob{display:inline}
   .hero-photo h1.kicker{background:none;padding:0;color:#d6e3e8;font-size:.78rem;margin-bottom:.7rem;text-shadow:0 1px 8px rgba(0,0,0,.35)}
   .hero-photo .slogan{text-shadow:0 2px 18px rgba(0,0,0,.25)}
   .trio svg{background:#fff;color:var(--ardoise-f)}
 }
+.chapo-mob{display:none}
+@media (max-width:700px){.chapo-mob{display:inline}.chapo-desk{display:none}}
