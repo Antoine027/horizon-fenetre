@@ -244,7 +244,6 @@ function formulaire(source, coche = "") {
 <div class="sr" aria-hidden="true"><label for="${id("site")}">Ne pas remplir</label><input id="${id("site")}" type="text" name="site_web" tabindex="-1" autocomplete="off"></div>
 <div><label for="${id("nom")}">Nom et prénom</label><input id="${id("nom")}" name="nom" autocomplete="name" required maxlength="120"></div>
 <div><label for="${id("tel")}">Téléphone</label><input id="${id("tel")}" name="telephone" type="tel" autocomplete="tel" required maxlength="30"></div>
-<div class="plein"><label for="${id("mail")}">E-mail</label><input id="${id("mail")}" name="email" type="email" autocomplete="email" required maxlength="160"></div>
 <fieldset class="plein choix-projet"><legend>Votre projet <i>(plusieurs choix possibles)</i></legend><div class="choix-grille">${PRODUITS.map((p) => `<label class="choix"><input type="checkbox" name="produit" value="${p.nav}"${coche === p.slug ? " checked" : ""}><span class="choix-tuile">${dessins[p.slug].replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')}${p.nav}</span></label>`).join("")}<label class="choix"><input type="checkbox" name="produit" value="Autre"><span class="choix-tuile"><svg class="dessin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="60" r="6"/><circle cx="60" cy="60" r="6"/><circle cx="86" cy="60" r="6"/></svg>Autre</span></label></div></fieldset>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
@@ -490,7 +489,7 @@ const MAJ_CONFIDENTIALITE = "2026-10-12"; // à modifier quand la politique chan
   const curl = "/confidentialite/"; const citems = [{ url: "/", t: "Accueil" }, { url: curl, t: "Politique de confidentialité" }];
   const cbody = `${bandeauSimple(citems, "Politique de confidentialité", "Comment Horizon Fenêtre traite vos données personnelles, conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.")}<div class="wrap corps"><article class="prose">
 <h2>Responsable du traitement</h2><p>ESCOM HABITAT, SARL, nom commercial Horizon Fenêtre, ${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}. SIRET 106 406 465 00018. Contact pour toute question sur vos données : <a href="mailto:${MAIL}">${MAIL}</a>.</p>
-<h2>Données collectées</h2><p>Uniquement celles que vous saisissez dans le formulaire de contact : nom et prénom, téléphone, e-mail, produit concerné et description du projet. Nous ne collectons aucune donnée sensible et vous demandons de ne pas en indiquer dans le message.</p>
+<h2>Données collectées</h2><p>Uniquement celles que vous saisissez dans le formulaire de contact : nom et prénom, téléphone, produit concerné et description du projet. Nous ne collectons aucune donnée sensible et vous demandons de ne pas en indiquer dans le message.</p>
 <h2>Finalités et bases légales</h2>
 <ul>
 <li><strong>Répondre à votre demande, organiser la visite et établir un devis de fourniture</strong> : mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>

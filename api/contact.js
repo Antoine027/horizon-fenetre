@@ -5,7 +5,7 @@
 // CONTACT_TO (destinataire, par défaut contact@horizonfenetre.com), CONTACT_FROM (expéditeur vérifié dans Brevo).
 
 const CHAMPS = { nom: 120, telephone: 30, email: 160, produit: 400, message: 3000, origine: 20 };
-const OBLIGATOIRES = ["nom", "telephone", "email"];
+const OBLIGATOIRES = ["nom", "telephone"];
 
 const aller = (res, chemin) => { res.statusCode = 303; res.setHeader("Location", chemin); res.setHeader("Cache-Control", "no-store"); res.end(); };
 const propre = (v, max) => String(Array.isArray(v) ? v.join(", ") : v ?? "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, max);
@@ -30,7 +30,8 @@ export default async function handler(req, res) {
   if (propre(corps.site_web, 200)) return aller(res, "/merci/");
 
   const d = Object.fromEntries(Object.entries(CHAMPS).map(([k, max]) => [k, propre(corps[k], max)]));
-  if (OBLIGATOIRES.some((k) => !d[k]) || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) return aller(res, "/erreur-envoi/");
+  const mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email || "");
+  if (OBLIGATOIRES.some((k) => !d[k]) || (d.email && !mailOk)) return aller(res, "/erreur-envoi/");
 
   const cle = process.env.BREVO_API_KEY;
   if (!cle) { console.error("contact: BREVO_API_KEY absente"); return aller(res, "/erreur-envoi/"); }
@@ -38,7 +39,7 @@ export default async function handler(req, res) {
   const de = process.env.CONTACT_FROM || "contact@horizonfenetre.com";
 
   const lignes = [
-    ["Nom", d.nom], ["Téléphone", d.telephone], ["E-mail", d.email], ["Produit", d.produit],
+    ["Nom", d.nom], ["Téléphone", d.telephone], ...(d.email ? [["E-mail", d.email]] : []), ["Produit", d.produit],
     ["Formulaire", d.origine], ["Message", d.message || "(aucun)"],
   ];
   const texte = lignes.map(([k, v]) => `${k} : ${v}`).join("\n");
@@ -51,7 +52,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         sender: { name: "Site Horizon Fenêtre", email: de },
         to: [{ email: vers }],
-        replyTo: { email: d.email, name: d.nom },
+        ...(mailOk ? { replyTo: { email: d.email, name: d.nom } } : {}),
         subject: `Demande de devis : ${d.produit || "projet"} – ${d.nom}`,
         textContent: texte,
         htmlContent,
