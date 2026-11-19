@@ -56,6 +56,9 @@ export const VOLETS = [
     ["battant-lames-fenetre", "Volet battant aluminium gris ouvert contre la façade, à côté d'une fenêtre", false],
     ["battant-lames-porte", "Volet battant aluminium gris à un vantail à côté d'une porte vitrée", false],
   ]],
+  ["barres-echarpe", "Barres et écharpe", [
+    ["barres-echarpe-bleu", "Volets battants aluminium bleus à barres et écharpe sur une maison avec terrasse", false],
+  ]],
   ["orientables", "Lames orientables", [
     ["orientables-vert-ferme", "Volets battants vert d'eau fermés, lames orientables entrouvertes sur le jardin", false],
     ["orientables-vert-ouvert", "Volets battants vert d'eau à lames orientables, vus depuis l'intérieur", false],
