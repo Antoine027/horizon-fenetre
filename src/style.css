@@ -630,36 +630,21 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .gm-t img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .gm-t a:hover img{transform:scale(1.05)}
 @media (max-width:700px){
-  .gm-grille{grid-template-columns:1fr 1fr;gap:8px}
+  .gm-grille{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:78%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:-16px;margin-right:-16px;padding:0 16px .3rem;scroll-padding:0 16px;scrollbar-width:none}
+  .gm-grille::-webkit-scrollbar{display:none}
+  .gm-t{scroll-snap-align:start;aspect-ratio:4/5}
   .gm-filtres{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:0 16px .2rem;scrollbar-width:none}
   .gm-f{flex:none}
 }
 
-/* Visionneuse plein écran (toutes les galeries) */
-.visio-on{overflow:hidden}
-.visio{border:0;padding:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:#0b1013;color:#fff;overflow:hidden}
-.visio[open]{animation:v-ouv .25s ease}
-.visio::backdrop{background:transparent}
-@keyframes v-ouv{from{opacity:0}to{opacity:1}}
-.v-scene{position:absolute;inset:0 0 70px;display:grid;place-items:center;padding:56px 72px 0}
-.v-img{max-width:calc(100vw - 150px);max-height:calc(100dvh - 140px);width:auto;height:auto;object-fit:contain;border-radius:10px;opacity:0;transform:translateX(var(--dx,0)) scale(.98);transition:opacity .3s ease,transform .35s ease;user-select:none;-webkit-user-drag:none}
-.v-img.v-in{opacity:1;transform:none}
-.v-leg{position:absolute;left:0;right:0;bottom:0;height:70px;margin:0;padding:0 72px;display:flex;align-items:center;justify-content:center;gap:1rem;font-size:.93rem;color:#d6e3e8;text-align:center}
-.v-num{flex:none;font-size:.8rem;font-weight:700;background:rgba(255,255,255,.12);border-radius:999px;padding:.2rem .6rem}
-.visio button{position:absolute;border:0;cursor:pointer;background:rgba(255,255,255,.12);color:#fff;width:50px;height:50px;border-radius:50%;font-size:2rem;line-height:1;display:grid;place-items:center;transition:background .2s}
-.visio button:hover{background:rgba(255,255,255,.26)}
-.v-x{top:14px;right:14px}
-.v-prec{left:14px;top:calc(50% - 60px)}
-.v-suiv{right:14px;top:calc(50% - 60px)}
 .galerie .ph{transition:transform .5s ease}
 .galerie figure{overflow:hidden}
 .galerie figure:hover .ph{transform:scale(1.03)}
-@media (max-width:700px){
-  .v-scene{padding:60px 0 0}
-  .v-img{border-radius:0;max-width:100vw;max-height:calc(100dvh - 210px)}
-  .v-leg{padding:0 16px;height:auto;min-height:70px;bottom:70px;font-size:.85rem}
-  .v-scene{inset:0 0 140px}
-  .v-prec,.v-suiv{top:auto;bottom:12px}
-  .v-prec{left:calc(50% - 62px)}.v-suiv{right:calc(50% - 62px)}
+
+/* Barre d'appel mobile compacte : bouton rond + pastille, calée à droite pour libérer la lecture */
+@media (max-width:760px){
+  .barre-mobile{left:auto;right:12px;grid-template-columns:46px auto;gap:6px}
+  .barre-mobile a{min-height:46px;font-size:.92rem}
+  .barre-mobile a:first-child{width:46px;padding:0}
+  .barre-mobile a+a{padding:0 1.2rem}
 }
-@media (prefers-reduced-motion:reduce){.v-img,.visio[open]{transition:none;animation:none}}

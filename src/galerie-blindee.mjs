@@ -84,6 +84,9 @@ export const VOLETS = [
 export const PORTAILS = [
   ["pleins", "Pleins", [
     ["plein-anthracite-bois", "Portail battant plein aluminium anthracite à lames horizontales, avec une lame décor bois clair", false],
+    ["plein-bleu-decoupes", "Portail battant plein aluminium bleu canard orné de découpes décoratives horizontales", false],
+    ["plein-anthracite-carres-beiges", "Portail battant plein aluminium anthracite à panneaux décalés avec deux inserts beige", false],
+    ["plein-gris-panneaux", "Portail battant plein aluminium gris clair à panneaux appareillés comme des pierres, cadre gris foncé", false],
     ["plein-vert-pale", "Portail battant plein aluminium vert pâle à lames verticales devant une maison", false],
     ["plein-gris-diagonales", "Portail battant plein aluminium gris à lames en diagonale entre deux murs blancs", false],
     ["plein-anthracite-lames", "Portail battant plein aluminium gris anthracite à lames verticales et traverse centrale", false],
@@ -124,20 +127,14 @@ export function galerieModeles({ modeles, dir: D, titre, intro, tous }) {
 
 // Filtres de la galerie par modèle + visionneuse plein écran commune à toutes les galeries du site.
 export const JS_GALERIE = `<script>(function(){
-var g=document.querySelector('.gm');if(g){var fs=g.querySelectorAll('.gm-f'),gt=[].slice.call(g.querySelectorAll('.gm-t'));fs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.filtre;fs.forEach(function(x){x.setAttribute('aria-pressed',x===b);});gt.forEach(function(t){t.hidden=f!=='tous'&&t.dataset.modele!==f;});});});}
+var g=document.querySelector('.gm');if(g){var fs=g.querySelectorAll('.gm-f'),gt=[].slice.call(g.querySelectorAll('.gm-t'));fs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.filtre;fs.forEach(function(x){x.setAttribute('aria-pressed',x===b);});gt.forEach(function(t){t.hidden=f!=='tous'&&t.dataset.modele!==f;});var gg=g.querySelector('.gm-grille');if(gg)gg.scrollLeft=0;});});}
 var els=[].slice.call(document.querySelectorAll('.gm-t a,.galerie figure'));if(!els.length)return;
-var d=document.createElement('dialog');d.className='visio';d.setAttribute('aria-label','Photo en plein écran');
-d.innerHTML='<div class="v-scene"><img class="v-img" alt=""></div><p class="v-leg"><span class="v-txt"></span><span class="v-num"></span></p><button type="button" class="v-x" aria-label="Fermer">&times;</button><button type="button" class="v-b v-prec" aria-label="Photo précédente">&#8249;</button><button type="button" class="v-b v-suiv" aria-label="Photo suivante">&#8250;</button>';
-document.body.appendChild(d);if(!d.showModal)return;
-var im=d.querySelector('.v-img'),tx=d.querySelector('.v-txt'),nu=d.querySelector('.v-num'),i=0,sens=0;
-function grand(el){if(el.tagName==='A')return el.href;var p=el.querySelector('img'),s=(p.getAttribute('srcset')||'').split(',').pop().trim().split(' ')[0];return s||p.src;}
-function leg(el){var c=el.querySelector('figcaption');return c?c.textContent:el.querySelector('img').alt;}
+var PSW='/assets/js/photoswipe-5.4.4',mod=null;
+function css(){return new Promise(function(r){if(document.getElementById('psw-css'))return r();var l=document.createElement('link');l.id='psw-css';l.rel='stylesheet';l.href=PSW+'.css';l.onload=r;l.onerror=r;document.head.appendChild(l);});}
 function vis(){return els.filter(function(e){var t=e.closest('.gm-t');return !(t&&t.hidden);});}
-function aff(k,dir){var v=vis(),n=v.length;i=(k+n)%n;var el=v[i],src=grand(el);im.classList.remove('v-in');im.style.setProperty('--dx',(dir||0)*40+'px');var nv=new Image();nv.onload=nv.onerror=function(){im.src=src;im.alt=el.querySelector('img').alt;tx.textContent=leg(el);nu.textContent=(i+1)+' / '+n;requestAnimationFrame(function(){im.classList.add('v-in');});[1,-1].forEach(function(s){var p=new Image();p.src=grand(v[(i+s+n)%n]);});};nv.src=src;}
-els.forEach(function(el){var t=el.tagName==='A'?el:el.querySelector('img');t.style.cursor='zoom-in';t.addEventListener('click',function(e){e.preventDefault();aff(vis().indexOf(el),0);d.showModal();document.documentElement.classList.add('visio-on');});});
-d.addEventListener('close',function(){document.documentElement.classList.remove('visio-on');im.classList.remove('v-in');});
-d.querySelector('.v-x').onclick=function(){d.close();};d.querySelector('.v-prec').onclick=function(){aff(i-1,-1);};d.querySelector('.v-suiv').onclick=function(){aff(i+1,1);};
-d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('v-scene'))d.close();});
-d.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')aff(i-1,-1);if(e.key==='ArrowRight')aff(i+1,1);});
-var x0=null;d.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});d.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)dx<0?aff(i+1,1):aff(i-1,-1);x0=null;});
+function donnee(el){var p=el.querySelector('img'),ss=(p.getAttribute('srcset')||'').split(',').map(function(x){return x.trim().split(' ');}).filter(function(x){return x[0];});var big=ss.reduce(function(m,x){return parseInt(x[1])>parseInt(m[1])?x:m;},ss[0]||[p.src,'1600w']);var w=parseInt(big[1])||1600,nw=p.naturalWidth||+p.getAttribute('width')||3,nh=p.naturalHeight||+p.getAttribute('height')||2;var c=el.querySelector('figcaption');return{src:big[0],srcset:p.getAttribute('srcset')||undefined,width:w,height:Math.round(w*nh/nw),alt:p.alt,msrc:p.currentSrc||p.src,element:el,legende:c?c.textContent:p.alt};}
+function plein(){return matchMedia('(max-width:760px),(pointer:coarse) and (max-height:500px)').matches;}
+function ouvre(el){var L=vis(),data=L.map(donnee);var go=function(){var ps=new mod.default({dataSource:data,index:L.indexOf(el),bgOpacity:1,showHideAnimationType:'zoom',padding:{top:0,bottom:0,left:0,right:0},wheelToZoom:true,closeTitle:'Fermer',zoomTitle:'Zoom',arrowPrevTitle:'Photo précédente',arrowNextTitle:'Photo suivante',errorMsg:'Photo indisponible',indexIndicatorSep:' / ',getThumbBoundsFn:function(n){var t=data[n].element.querySelector('img').getBoundingClientRect();return{x:t.left,y:t.top,w:t.width};}});ps.on('uiRegister',function(){ps.ui.registerElement({name:'legende',order:9,isButton:false,appendTo:'root',html:'',onInit:function(e,p){e.className='pswp-legende';p.on('change',function(){e.textContent=p.currSlide.data.legende||'';});}});});ps.on('destroy',function(){if(document.fullscreenElement)document.exitFullscreen().catch(function(){});});if(plein()&&document.documentElement.requestFullscreen)document.documentElement.requestFullscreen({navigationUI:'hide'}).catch(function(){});ps.init();};
+if(mod)return go();Promise.all([import(PSW+'.esm.min.js'),css()]).then(function(r){mod=r[0];go();}).catch(function(){location.href=data[L.indexOf(el)].src;});}
+els.forEach(function(el){var t=el.tagName==='A'?el:el.querySelector('img');t.style.cursor='zoom-in';t.addEventListener('click',function(e){e.preventDefault();ouvre(el);});});
 })();</script>`;

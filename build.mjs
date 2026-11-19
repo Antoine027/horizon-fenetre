@@ -200,7 +200,7 @@ const pied = () => `<footer class="pied"><div class="wrap"><div class="cols">
 <details class="pied-groupe" open><summary><h2>Horizon Fenêtre</h2></summary><ul><li><a href="/professionnels/">Professionnels</a></li><li><a href="/blog/">Conseils et guides</a></li><li><a href="/contact/">Contact et devis</a></li><li><a href="/partenaires/">Partenaires</a></li><li><a href="/plan-du-site/">Plan du site</a></li><li><a href="/mentions-legales/">Mentions légales</a></li><li><a href="/confidentialite/">Confidentialité</a></li></ul></details>
 <details class="pied-groupe" open><summary><h2>Guides populaires</h2></summary><ul><li><a href="/blog/fenetre-pvc-aluminium-ou-bois/">PVC, alu ou bois ?</a></li><li><a href="/blog/aides-changement-fenetres-2026/">Aides 2026</a></li><li><a href="/blog/prix-fenetre-sur-mesure/">Prix d'une fenêtre</a></li><li><a href="/blog/declaration-prealable-changer-fenetres/">Déclaration préalable</a></li></ul></details>
 </div><div class="bas"><span>© ${new Date().getFullYear()} Horizon Fenêtre, une marque d'ESCOM HABITAT SARL</span><span>Ce site ne dépose aucun cookie</span></div></div></footer>
-<div class="barre-mobile"><a href="tel:${TEL_LIEN}">${icoTel}Appeler</a><a href="/contact/">Devis gratuit</a></div>`;
+<div class="barre-mobile"><a href="tel:${TEL_LIEN}" aria-label="Appeler le ${TEL}">${icoTel}</a><a href="/contact/">Devis gratuit</a></div>`;
 
 // Mesure d'audience Vercel (sans cookie) : chemins des scripts fournis par Vercel, modifiables ici si le tableau de bord en indique d'autres.
 const SCRIPT_ANALYTICS = "/_vercel/insights/script.js";
