@@ -64,6 +64,7 @@ export const VOLETS = [
     ["cintres-anthracite", "Volets battants aluminium anthracite cintrés, épousant l'arc de fenêtres cintrées", false],
   ]],
   ["persiennes", "Persiennés", [
+    ["persiennes-bleu-terrasse", "Volets battants aluminium persiennés bleu marine sur les portes-fenêtres d'une maison de plain-pied", false],
     ["persiennes-tiers-brun-facade", "Façade de maison ancienne aux volets battants bruns persiennés au tiers supérieur et pleins aux deux tiers", false],
     ["persiennes-brun", "Volets battants aluminium persiennés brun foncé autour d'une fenêtre à petits bois", false],
   ]],
