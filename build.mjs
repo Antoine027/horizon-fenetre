@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-import { galerieModeles, JS_GALERIE } from "./src/galerie-blindee.mjs";
+import { galerieModeles, GALERIES, JS_GALERIE } from "./src/galerie-blindee.mjs";
 const ORDRE = ["fenetres", "baies-vitrees", "moustiquaires", "volets", "brise-soleil-orientables", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "portes-d-entree", "porte-blindee-lyon", "portes-interieures"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 const FAMILLES = [
@@ -357,12 +357,12 @@ for (const p of produits) {
   const voisins = PRODUITS.filter((x) => x.slug !== p.slug).slice(0, 3);
   const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [480, 800, 1200, 1600], sizes: "(max-width: 760px) 100vw, 50vw" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
   const contenu = mailler(p.contenu, url, 6).replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${galerie}`);
-  const contenuG = contenu.replace("<!--galerie-modeles-->", galerieModeles());
+  const contenuG = GALERIES[p.slug] ? contenu.replace("<!--galerie-modeles-->", galerieModeles(GALERIES[p.slug])) : contenu;
   const body = `${bandeauPhoto(items, p.h1, p.chapo, p.photo)}
 <div class="wrap corps"><article class="prose">${contenuG}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Visite et devis gratuits</h2><p>On vient prendre les cotes chez vous et on vous remet un devis de fourniture détaillé.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Demander un devis</a></div>
 ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
-<section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/">${dessins[v.slug]}${v.nav}</a>`).join("")}</div></div></section>${appel()}${contenuG !== contenu ? JS_GALERIE : ""}`;
+<section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/">${dessins[v.slug]}${v.nav}</a>`).join("")}</div></div></section>${appel()}${contenuG !== contenu || galerie ? JS_GALERIE : ""}`;
   ecrire(url, page({ url, une: p.photo, title: p.title, description: p.description, body, schemas: [
     { "@context": "https://schema.org", "@type": "Service", name: p.h1, image: imageUne(p.photo).src, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
     filLd(items)] }));

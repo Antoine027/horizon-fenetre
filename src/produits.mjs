@@ -70,7 +70,7 @@ faq: [
 {
 slug: "volets",
 photo: "pVolet",
-galerie: [["pBattants","Volets battants à persiennes : le dessin traditionnel, en aluminium sans entretien."],["voletRoulant","Volet roulant à lames : protection solaire, intimité et sécurité."],["voletBattant","Volets battants : le dessin d'origine respecté sur une façade de village."]],
+galerie: [],
 nav: "Volets",
 court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
 title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
@@ -79,6 +79,7 @@ h1: "Volets roulants et volets battants sur mesure",
 chapo: "Motoriser des volets existants, ajouter un volet roulant sans toucher à la façade ou remplacer des battants fatigués : on vous conseille ce qui tient dans le temps.",
 contenu: `
 <p class="lead">Un volet sert à trois choses : protéger du soleil, protéger des regards et ralentir les cambrioleurs. Selon ce qui compte le plus chez vous, on ne conseillera pas le même modèle.</p>
+<!--galerie-modeles-->
 
 <h2>Les volets roulants</h2>
 <h3>Trois façons de les intégrer</h3>
