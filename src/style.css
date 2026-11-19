@@ -580,7 +580,7 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 }
 
 /* Accueil : produits rangés par familles */
-.familles{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.familles{display:grid;grid-template-columns:2fr 3fr;gap:18px}
 .famille{background:#fff;border:1px solid var(--ciel-2);border-radius:28px;padding:clamp(1.1rem,2vw,1.6rem);box-shadow:0 24px 50px -38px rgba(51,69,77,.45)}
 .famille.large{grid-column:1/-1}
 .f-tete{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.2rem 1.5rem;margin:0 .2rem 1rem}

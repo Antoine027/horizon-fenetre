@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-de-garage", "portes-interieures", "portail-aluminium-lyon", "cloture-aluminium-lyon", "moustiquaires"];
+const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-interieures", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "moustiquaires"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 
 const SITE = "https://www.horizonfenetre.com";
@@ -291,9 +291,9 @@ const parcours = `<ol class="parcours">
   const VIGNETTES = {};
   const FAMILLES = [
     ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large"],
-    ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volets", "brise-soleil-orientables"], ""],
-    ["Portails et clôtures", "Fermer et habiller votre terrain.", ["portail-aluminium-lyon", "cloture-aluminium-lyon"], ""],
-    ["Portes", "Chaque accès de la maison, du palier au garage.", ["portes-d-entree", "porte-blindee-lyon", "portes-de-garage", "portes-interieures"], "large"],
+    ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volets", "brise-soleil-orientables"], "deux"],
+    ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois"],
+    ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large"],
   ];
   const bento = FAMILLES.map(([t, d, slugs, cl]) => `<div class="famille ${cl}"><div class="f-tete"><h3>${t}</h3><p>${d}</p></div><div class="f-cartes" style="--n:${slugs.length}">${slugs.map((sl) => PRODUITS.find((x) => x.slug === sl)).filter(Boolean).map((p) => `<a href="/${p.slug}/" class="carte-p">${photo(VIGNETTES[p.slug] || p.photo, { ratio: [4, 3], largeurs: [400, 640], sizes: "(max-width: 700px) 75vw, (max-width: 1100px) 33vw, 22vw" })}<span class="cp-txt"><b>${p.nav}${I.fleche}</b><small>${p.court}</small></span></a>`).join("")}</div></div>`).join("");
   const faq = [
