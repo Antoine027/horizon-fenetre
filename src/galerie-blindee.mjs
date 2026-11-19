@@ -50,6 +50,7 @@ export const MODELES = [
 
 export const VOLETS = [
   ["battant-lames", "Battants à lames", [
+    ["battant-lames-cuivre-facade", "Maison avec terrasse équipée de volets battants aluminium couleur cuivre à lames horizontales", false],
     ["battant-lames-bleu-maison", "Maison de maître en brique et colombages équipée de volets battants aluminium bleus", false],
     ["battant-lames-facade", "Façade de maison dont les trois fenêtres sont équipées de volets battants aluminium gris", false],
     ["battant-lames-porte-fenetre", "Volets battants aluminium gris à lames horizontales ouverts autour d'une porte-fenêtre", false],
