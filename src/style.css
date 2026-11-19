@@ -679,3 +679,28 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .euros b{color:var(--ciel-2);font-weight:800}
 .j-txt{font-size:.92rem;line-height:1.35;color:var(--encre)}
 @media (max-width:900px){.mat3{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px .4rem;scrollbar-width:none}.mat3::-webkit-scrollbar{display:none}.m3{scroll-snap-align:start}}
+
+/* Espaces : sections moins hautes, en-têtes de section plus proches de leur contenu */
+.sec{padding:clamp(3rem,6vw,4.75rem) 0}
+.tete{margin-bottom:clamp(1.6rem,3.5vw,2.4rem)}
+.tete h2{margin-bottom:.55rem}
+.tete p{margin:0}
+.methode{padding:clamp(3rem,5vw,4.25rem) 0}
+/* FAQ de l'accueil : titre à gauche, questions à droite */
+.btn-o2{background:#fff;color:var(--ardoise-f);border:1.5px solid var(--ciel-2);margin-top:1.4rem}
+.btn-o2:hover{border-color:var(--brume)}
+@media (min-width:901px){.faq-grille{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3rem;align-items:start}.faq-grille .tete{margin:0;position:sticky;top:110px}.faq-grille .faq{max-width:none}}
+
+/* Formulaire compact sur téléphone : nom et téléphone côte à côte, choix en 2 colonnes horizontales */
+@media (max-width:640px){
+  .form{grid-template-columns:1fr 1fr;gap:.8rem .7rem;padding:1.1rem 1rem 1.2rem;border-radius:22px}
+  .form .plein,.form fieldset{grid-column:1/-1}
+  .form label{font-size:.88rem}
+  .form input,.form textarea{min-height:46px;padding:.65rem .8rem}
+  .form textarea{min-height:92px}
+  .choix-grille{grid-template-columns:1fr 1fr;gap:.4rem}
+  .choix-tuile{flex-direction:row;justify-content:flex-start;min-height:42px;padding:.35rem .6rem;gap:.5rem;font-size:.8rem;text-align:left;line-height:1.2}
+  .choix-tuile .dessin{width:22px;height:22px;flex:none;stroke-width:6}
+  .form .note{font-size:.75rem;line-height:1.45}
+}
+.faq-grille .faq details{background:#fff}
