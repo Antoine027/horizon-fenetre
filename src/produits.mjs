@@ -193,7 +193,7 @@ faq: [
 {
 slug: "porte-blindee-lyon",
 photo: "pBlindee",
-galerie: [["blindee10","Diamant 10 : A2P BP1, fermeture 5 points, ici en finition gris anthracite."],["blindee20","Diamant 20 : A2P BP2, 7 ou 9 points de fermeture, ici laquée vert olive."],["opaline","Opaline : la porte sécurisée d'appartement, coupe-feu certifiée."],["blindeeDv","Diamant double vantaux tiercé : pour remplacer une porte double existante."],["blindee20b","Diamant 20 en décor bois clair, avec un bâti de la même teinte."],["blindeePene","Les pênes rotatifs anti-sciage verrouillent tous les points en un seul tour de clé."]],
+galerie: [],
 nav: "Portes blindées",
 court: "Portes palières blindées A2P pour appartement.",
 title: "Porte blindée et porte palière à Lyon | Horizon Fenêtre",
@@ -203,6 +203,7 @@ motcle: "porte blindée Lyon",
 chapo: "Votre porte d'appartement ne vous rassure plus ? On vient prendre les cotes, on vous aide à choisir le bon niveau de sécurité et on organise la pose.",
 contenu: `
 <p class="lead">Une porte blindée certifiée retarde une effraction de plusieurs minutes, et un cambrioleur pressé passe son chemin. Elle coupe aussi le bruit de la cage d'escalier et les courants d'air froid du palier.</p>
+<!--galerie-modeles-->
 
 <h2>Porte blindée ou porte palière : quelle différence ?</h2>
 <p>La porte palière, c'est la porte qui donne sur le palier de l'immeuble. La porte blindée, c'est une porte renforcée contre l'effraction. À Lyon, les deux se rejoignent presque toujours : quand on remplace une porte palière, on la remplace par une porte blindée.</p>

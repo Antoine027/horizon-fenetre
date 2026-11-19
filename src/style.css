@@ -612,3 +612,35 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .deroule .mm-fam li{display:block}
 .mm-t{display:block;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--texte-2);padding:.4rem .6rem .5rem}
 @media (max-width:1100px){.mm-t{padding:.9rem .6rem .2rem}.mm-fam:first-child .mm-t{padding-top:.4rem}}
+
+/* Galerie filtrable par modèle (page Porte blindée) */
+.gm{margin:2.4rem 0}
+.gm h2{margin-top:0}
+.gm-filtres{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.2rem}
+.gm-f{font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--ciel-2);background:#fff;color:var(--ardoise-f);border-radius:999px;padding:.55rem 1rem;min-height:44px;display:inline-flex;align-items:center;gap:.45rem;transition:.2s}
+.gm-f span{font-size:.75rem;font-weight:700;background:var(--ciel);border-radius:999px;padding:.1rem .45rem;color:var(--texte-2)}
+.gm-f:hover{border-color:var(--brume)}
+.gm-f[aria-pressed="true"]{background:var(--ardoise);border-color:var(--ardoise);color:#fff}
+.gm-f[aria-pressed="true"] span{background:rgba(255,255,255,.2);color:#fff}
+.gm-grille{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:10px}
+.gm-t{margin:0;padding:0;aspect-ratio:1}
+.gm-t.gm-l{grid-column:span 2;aspect-ratio:auto}
+.gm-t[hidden]{display:none}
+.gm-t a{display:block;height:100%;border-radius:16px;overflow:hidden;background:var(--ciel)}
+.gm-t img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gm-t a:hover img{transform:scale(1.05)}
+.gm-visio{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible}
+.gm-visio::backdrop{background:rgba(15,22,26,.88)}
+.gm-visio img{display:block;max-width:100%;max-height:82vh;border-radius:14px;margin:0 auto}
+.gm-leg{color:#e3edf1;text-align:center;font-size:.92rem;margin:.7rem 0 0}
+.gm-visio button{position:fixed;border:0;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.8rem;line-height:1;display:grid;place-items:center}
+.gm-visio button:hover{background:rgba(255,255,255,.28)}
+.gm-x{top:16px;right:16px}
+.gm-prec{left:16px;top:50%;transform:translateY(-50%)}
+.gm-suiv{right:16px;top:50%;transform:translateY(-50%)}
+@media (max-width:700px){
+  .gm-grille{grid-template-columns:1fr 1fr;gap:8px}
+  .gm-filtres{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:0 16px .2rem;scrollbar-width:none}
+  .gm-f{flex:none}
+  .gm-prec,.gm-suiv{top:auto;bottom:16px;transform:none}
+}
