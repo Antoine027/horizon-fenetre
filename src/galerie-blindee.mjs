@@ -63,6 +63,9 @@ export const VOLETS = [
   ["cintres", "Cintrés", [
     ["cintres-anthracite", "Volets battants aluminium anthracite cintrés, épousant l'arc de fenêtres cintrées", false],
   ]],
+  ["persiennes", "Persiennés", [
+    ["persiennes-brun", "Volets battants aluminium persiennés brun foncé autour d'une fenêtre à petits bois", false],
+  ]],
   ["orientables", "Lames orientables", [
     ["orientables-vert-ferme", "Volets battants vert d'eau fermés, lames orientables entrouvertes sur le jardin", false],
     ["orientables-vert-ouvert", "Volets battants vert d'eau à lames orientables, vus depuis l'intérieur", false],
