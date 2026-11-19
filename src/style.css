@@ -615,7 +615,7 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .gm-f span{font-size:.75rem;font-weight:700;background:var(--ciel);border-radius:999px;padding:.1rem .45rem;color:var(--ardoise-f)}
 .gm-f:hover{border-color:var(--brume)}
 .gm-f[aria-pressed="true"]{background:var(--ardoise);border-color:var(--ardoise);color:#fff}
-.gm-f[aria-pressed="true"] span{background:rgba(255,255,255,.2);color:#fff}
+.gm-f[aria-pressed="true"] span{background:#fff;color:var(--ardoise-f)}
 .gm-grille{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:10px}
 .gm-t{margin:0;padding:0;aspect-ratio:1}
 .gm-t.gm-l{grid-column:span 2;aspect-ratio:auto}
