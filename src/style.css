@@ -655,3 +655,27 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .cp-txt{flex:1}
 @media (max-width:700px){.f-tete{min-height:0}}
 .famille.large{grid-column:auto}
+
+/* Comparatif PVC / aluminium / bois en 3 cartes à jauges */
+.mat3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.m3{background:#fff;border:1px solid var(--ciel-2);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 50px -40px rgba(51,69,77,.5)}
+.m3-tete{padding:1.4rem 1.5rem 1.2rem;color:#fff}
+.m3-pvc .m3-tete{background:linear-gradient(135deg,#5b7079,#3c4c53)}
+.m3-alu .m3-tete{background:linear-gradient(135deg,#7f939b,#55686f)}
+.m3-bois .m3-tete{background:linear-gradient(135deg,#9a7553,#6e5038)}
+.m3-tete h3{margin:0 0 .35rem;font-size:1.6rem;color:#fff}
+.m3-tete p{margin:0;font-size:.95rem;line-height:1.45;color:rgba(255,255,255,.92)}
+.m3-tete p span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:.15rem}
+.m3 dl{margin:0;padding:.6rem 1.5rem 1.3rem;flex:1}
+.m3 dl>div{padding:.75rem 0;border-bottom:1px solid var(--ciel-2)}
+.m3 dl>div:last-child{border-bottom:0}
+.m3 dt{font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--texte-2);margin-bottom:.35rem}
+.m3 dd{margin:0;display:flex;align-items:center;gap:.7rem}
+.jauge{display:inline-flex;gap:4px;flex:none}
+.jauge i{width:22px;height:8px;border-radius:99px;background:var(--ciel-2)}
+.jauge i.on{background:var(--ardoise)}
+.m3-bois .jauge i.on{background:#8a6546}
+.euros{flex:none;font-weight:800;letter-spacing:.05em;color:var(--ardoise-f);min-width:2.6rem}
+.euros b{color:var(--ciel-2);font-weight:800}
+.j-txt{font-size:.92rem;line-height:1.35;color:var(--encre)}
+@media (max-width:900px){.mat3{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px .4rem;scrollbar-width:none}.mat3::-webkit-scrollbar{display:none}.m3{scroll-snap-align:start}}

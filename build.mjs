@@ -325,14 +325,16 @@ const parcours = `<ol class="parcours">
 </div></section>
 
 <section class="sec" style="padding-bottom:2.5rem"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
-<div class="carte" style="padding:0"><div class="tab-scroll"><table class="mat"><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">PVC</th><th scope="col">Aluminium</th><th scope="col">Bois</th></tr></thead><tbody>
-<tr><th scope="row">On le choisit pour</th><td data-label="PVC">Isoler au meilleur prix, sans entretien</td><td data-label="Aluminium">Des profils fins et de grandes baies</td><td data-label="Bois">La matière, le cachet, les secteurs protégés</td></tr>
-<tr><th scope="row">Isolation</th><td data-label="PVC">Très bonne</td><td data-label="Aluminium">Bonne à très bonne, avec rupture de pont thermique</td><td data-label="Bois">Très bonne</td></tr>
-<tr><th scope="row">Entretien</th><td data-label="PVC">Un coup d'éponge</td><td data-label="Aluminium">Un coup d'éponge</td><td data-label="Bois">Lasure ou peinture régulière</td></tr>
-<tr><th scope="row">Couleurs</th><td data-label="PVC">Blanc, plaxés unis et effet bois</td><td data-label="Aluminium">Quasi toutes les teintes RAL</td><td data-label="Bois">Lasures, peintures, essences</td></tr>
-<tr><th scope="row">Budget</th><td data-label="PVC">Le plus accessible</td><td data-label="Aluminium">Plus élevé</td><td data-label="Bois">Plus élevé</td></tr>
-</tbody></table></div></div>
-<div class="mat-cartes"><article class="mat-carte"><h3>PVC</h3><dl><div><dt>On le choisit pour</dt><dd>Isoler au meilleur prix, sans entretien</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Blanc, plaxés unis et effet bois</dd></div><div><dt>Budget</dt><dd>Le plus accessible</dd></div></dl></article><article class="mat-carte"><h3>Aluminium</h3><dl><div><dt>On le choisit pour</dt><dd>Des profils fins et de grandes baies</dd></div><div><dt>Isolation</dt><dd>Bonne à très bonne, avec rupture de pont thermique</dd></div><div><dt>Entretien</dt><dd>Un coup d'éponge</dd></div><div><dt>Couleurs</dt><dd>Quasi toutes les teintes RAL</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article><article class="mat-carte"><h3>Bois</h3><dl><div><dt>On le choisit pour</dt><dd>La matière, le cachet, les secteurs protégés</dd></div><div><dt>Isolation</dt><dd>Très bonne</dd></div><div><dt>Entretien</dt><dd>Lasure ou peinture régulière</dd></div><div><dt>Couleurs</dt><dd>Lasures, peintures, essences</dd></div><div><dt>Budget</dt><dd>Plus élevé</dd></div></dl></article></div>
+${(() => {
+  const jauge = (n, txt) => `<span class="jauge" aria-hidden="true">${[1, 2, 3].map((i) => `<i${i <= n ? ' class="on"' : ""}></i>`).join("")}</span><span class="j-txt">${txt}</span>`;
+  const M = [
+    ["PVC", "pvc", "Isoler au meilleur prix, sans entretien", [[3, "Très bonne"], [3, "Un coup d'éponge"], [2, "Blanc, plaxés unis et effet bois"], [1, "Le plus accessible"]]],
+    ["Aluminium", "alu", "Des profils fins et de grandes baies", [[2, "Bonne à très bonne, avec rupture de pont thermique"], [3, "Un coup d'éponge"], [3, "Quasi toutes les teintes RAL"], [2, "Plus élevé"]]],
+    ["Bois", "bois", "La matière, le cachet, les secteurs protégés", [[3, "Très bonne"], [1, "Lasure ou peinture régulière"], [3, "Lasures, peintures, essences"], [2, "Plus élevé"]]],
+  ];
+  const crit = ["Isolation", "Facilité d'entretien", "Choix de couleurs", "Budget"];
+  return `<div class="mat3">${M.map(([nom, cl, pour, v]) => `<article class="m3 m3-${cl}"><div class="m3-tete"><h3>${nom}</h3><p><span>Idéal pour</span> ${pour}</p></div><dl>${v.map(([n, t], i) => `<div><dt>${crit[i]}</dt><dd>${i === 3 ? `<span class="euros" aria-hidden="true">${"€".repeat(n)}<b>${"€".repeat(3 - n)}</b></span><span class="j-txt">${t}</span>` : jauge(n, t)}</dd></div>`).join("")}</dl></article>`).join("")}</div>`;
+})()}
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
 <section class="sec" style="padding-top:0;padding-bottom:0"><div class="wrap"><div class="pros-bande"><div><h2>Vous êtes professionnel ?</h2><p>Artisans, syndics, bailleurs, architectes : chiffrage sur plans ou après visite, fourniture sur mesure livrée sur chantier.</p></div><a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div></div></section>
