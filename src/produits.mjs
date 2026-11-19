@@ -119,7 +119,7 @@ faq: [
 {
 slug: "portes-de-garage",
 photo: "pGarage",
-galerie: [["garageNoir","Panneaux lisses et teinte sombre : la porte prolonge la façade."]],
+galerie: [],
 nav: "Portes de garage",
 court: "Sectionnelles plafond et latérales, motorisées ou manuelles.",
 title: "Porte de garage sectionnelle et latérale sur mesure | Lyon",
@@ -128,6 +128,7 @@ h1: "Portes de garage sectionnelles et latérales sur mesure",
 chapo: "Une porte de garage qu'on ouvre tous les jours doit être silencieuse, isolée et adaptée à votre garage, pas l'inverse. On vient mesurer avant de proposer un modèle.",
 contenu: `
 <p class="lead">Avant de choisir le modèle, on regarde trois choses : la place disponible sous le plafond, la place sur les côtés et l'usage que vous faites du garage. C'est ce qui décide entre une sectionnelle plafond et une latérale.</p>
+<!--galerie-modeles-->
 
 <h2>La porte sectionnelle plafond</h2>
 <p>Les panneaux remontent verticalement puis glissent sous le plafond. Rien ne dépasse vers l'extérieur, donc vous pouvez garer la voiture juste devant la porte. Les panneaux en acier double paroi injectés de mousse isolent bien, ce qui compte quand le garage communique avec la maison ou sert d'atelier.</p>

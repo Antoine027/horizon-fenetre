@@ -95,7 +95,18 @@ export const PORTAILS = [
   ]],
 ];
 
+export const GARAGES = [
+  ["sectionnelles", "Sectionnelles", [
+    ["sectionnelle-anthracite", "Porte de garage sectionnelle anthracite à rainures horizontales sur une maison contemporaine blanche", false],
+    ["sectionnelle-portillon-blanche", "Porte de garage blanche avec portillon intégré ouvert pour passer à pied", false],
+  ]],
+  ["laterales", "Latérales", [
+    ["laterale-noire", "Porte de garage latérale noire à panneaux verticaux, à côté d'une porte de service assortie", false],
+  ]],
+];
+
 export const GALERIES = {
+  "portes-de-garage": { modeles: GARAGES, dir: "/assets/img/produits/garages-g/", titre: "Nos portes de garage en images", intro: "Choisissez un type de porte. Touchez une photo pour l'agrandir.", tous: "Toutes les portes" },
   "portail-aluminium-lyon": { modeles: PORTAILS, dir: "/assets/img/produits/portails-g/", titre: "Nos portails en images", intro: "Choisissez un style de portail. Touchez une photo pour l'agrandir.", tous: "Tous les portails" },
   "porte-blindee-lyon": { modeles: MODELES, dir: "/assets/img/produits/blindee/", titre: "Nos portes en images", intro: "Choisissez un modèle pour voir ses finitions. Touchez une photo pour l'agrandir.", tous: "Tous les modèles" },
   volets: { modeles: VOLETS, dir: "/assets/img/produits/volets-g/", titre: "Nos volets battants en images", intro: "Choisissez un type de volet. Touchez une photo pour l'agrandir.", tous: "Tous les volets" },
