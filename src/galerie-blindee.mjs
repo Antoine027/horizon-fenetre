@@ -81,7 +81,22 @@ export const VOLETS = [
   ]],
 ];
 
+export const PORTAILS = [
+  ["pleins", "Pleins", [
+    ["plein-anthracite-bois", "Portail battant plein aluminium anthracite à lames horizontales, avec une lame décor bois clair", false],
+    ["plein-vert-pale", "Portail battant plein aluminium vert pâle à lames verticales devant une maison", false],
+    ["plein-gris-diagonales", "Portail battant plein aluminium gris à lames en diagonale entre deux murs blancs", false],
+    ["plein-anthracite-lames", "Portail battant plein aluminium gris anthracite à lames verticales et traverse centrale", false],
+    ["plein-vert-pointes", "Portail battant plein aluminium vert sapin, festonné et surmonté de pointes décoratives dorées", false],
+  ]],
+  ["ajoures", "Ajourés", [
+    ["ajoure-beige", "Portail battant aluminium beige gris, ajouré en partie haute et plein en partie basse", false],
+    ["ajoure-brun", "Portail battant aluminium brun, barreaux ajourés en haut et soubassement plein, devant un jardin", false],
+  ]],
+];
+
 export const GALERIES = {
+  "portail-aluminium-lyon": { modeles: PORTAILS, dir: "/assets/img/produits/portails-g/", titre: "Nos portails en images", intro: "Choisissez un style de portail. Touchez une photo pour l'agrandir.", tous: "Tous les portails" },
   "porte-blindee-lyon": { modeles: MODELES, dir: "/assets/img/produits/blindee/", titre: "Nos portes en images", intro: "Choisissez un modèle pour voir ses finitions. Touchez une photo pour l'agrandir.", tous: "Tous les modèles" },
   volets: { modeles: VOLETS, dir: "/assets/img/produits/volets-g/", titre: "Nos volets battants en images", intro: "Choisissez un type de volet. Touchez une photo pour l'agrandir.", tous: "Tous les volets" },
 };

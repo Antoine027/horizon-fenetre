@@ -256,7 +256,7 @@ faq: [
 },
 {
 slug: "portail-aluminium-lyon",
-photo: "pPortail",
+photo: "pPortailAlu",
 galerie: [],
 nav: "Portails",
 court: "Battants, coulissants ou autoportants, avec portillon assorti.",
@@ -267,6 +267,7 @@ motcle: "portail aluminium Lyon",
 chapo: "Un portail se choisit autant pour la pente de l'allée et la place disponible que pour son dessin. On commence par là, chez vous.",
 contenu: `
 <p class="lead">Nous proposons des portails aluminium d'un fabricant français. Chaque portail est fabriqué et laqué en usine, aux cotes relevées chez vous, avec le portillon et la clôture assortis si vous le souhaitez.</p>
+<!--galerie-modeles-->
 
 <h2>Battant, coulissant ou autoportant ?</h2>
 <ul>
