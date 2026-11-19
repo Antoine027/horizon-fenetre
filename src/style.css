@@ -286,15 +286,6 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 @media (max-width:520px){.pied .cols{grid-template-columns:1fr}}
 
 /* barre d'action mobile */
-.barre-mobile{display:none}
-@media (max-width:760px){
-  .barre-mobile{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom, 0px));z-index:30;transform:translateY(calc(100% + 40px));transition:transform .3s ease}
-  .barre-mobile.visible{transform:none}
-  .barre-mobile a{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;border-radius:999px;font-weight:700;text-decoration:none;background:#fff;color:var(--ardoise-f);box-shadow:0 10px 30px -10px rgba(31,47,54,.45)}
-  .barre-mobile a+a{background:var(--ardoise);color:#fff}
-  .barre-mobile svg{width:18px;height:18px}
-  body{padding-bottom:76px}
-}
 .centre{text-align:center}
 .nav .btn{padding:.7rem 1.35rem;color:#fff;min-height:50px}
 .nav .btn:hover{color:var(--encre)}
@@ -635,13 +626,6 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .galerie figure{overflow:hidden}
 .galerie figure:hover .ph{transform:scale(1.03)}
 
-/* Barre d'appel mobile compacte : bouton rond + pastille, calée à droite pour libérer la lecture */
-@media (max-width:760px){
-  .barre-mobile{left:auto;right:12px;grid-template-columns:46px auto;gap:6px}
-  .barre-mobile a{min-height:46px;font-size:.92rem}
-  .barre-mobile a:first-child{width:46px;padding:0}
-  .barre-mobile a+a{padding:0 1.2rem}
-}
 
 /* Grand écran : contenu plus large comme sur Instant Terrasse, textes à largeur de lecture */
 @media (min-width:1500px){
@@ -661,3 +645,13 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .gm-plus-btn{display:block;margin:1.2rem auto 0;font:inherit;font-weight:650;font-size:.95rem;cursor:pointer;background:#fff;color:var(--ardoise-f);border:1.5px solid var(--ciel-2);border-radius:999px;padding:.75rem 1.6rem;min-height:46px}
 .gm-plus-btn:hover{border-color:var(--brume)}
 .gm-plus-btn[hidden]{display:none}
+
+/* Familles : en-têtes de même hauteur, cartes alignées et étirées jusqu'en bas */
+.famille{display:flex;flex-direction:column}
+.f-tete{display:block;min-height:4.2rem}
+.f-tete h3{margin-bottom:.25rem}
+.f-cartes{flex:1;align-items:stretch}
+.carte-p{height:100%}
+.cp-txt{flex:1}
+@media (max-width:700px){.f-tete{min-height:0}}
+.famille.large{grid-column:auto}
