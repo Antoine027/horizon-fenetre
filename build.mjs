@@ -240,6 +240,16 @@ const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau
 
 const blocDevis = (source, coche = "", titre = "Demandez votre visite gratuite") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes chez vous.</p>
 <p class="d-direct"><span>Vous préférez appeler ?</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail">ou par e-mail : <a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire(source, coche)}</div></section>`;
+// Cases du formulaire : produits regroupés par besoin.
+const TUILES = [
+  ["Fenêtres et baies vitrées", "fenetres", ["fenetres", "baies-vitrees"]],
+  ["Volets et BSO", "volet-roulant-lyon", ["volet-roulant-lyon", "volet-battant-lyon", "brise-soleil-orientables", "volets"]],
+  ["Portes d'entrée et blindées", "portes-d-entree", ["portes-d-entree", "porte-blindee-lyon"]],
+  ["Portes de garage", "portes-de-garage", ["portes-de-garage"]],
+  ["Portails et clôtures", "portail-aluminium-lyon", ["portail-aluminium-lyon", "cloture-aluminium-lyon"]],
+  ["Portes intérieures", "portes-interieures", ["portes-interieures"]],
+  ["Moustiquaires", "moustiquaires", ["moustiquaires"]],
+];
 function formulaire(source, coche = "") {
   const id = (n) => `f-${n}-${source}`;
   return `<form class="form" action="/api/contact" method="POST">
@@ -247,7 +257,7 @@ function formulaire(source, coche = "") {
 <div class="sr" aria-hidden="true"><label for="${id("site")}">Ne pas remplir</label><input id="${id("site")}" type="text" name="site_web" tabindex="-1" autocomplete="off"></div>
 <div><label for="${id("nom")}">Nom et prénom</label><input id="${id("nom")}" name="nom" autocomplete="name" required maxlength="120"></div>
 <div><label for="${id("tel")}">Téléphone</label><input id="${id("tel")}" name="telephone" type="tel" autocomplete="tel" required maxlength="30"></div>
-<fieldset class="plein choix-projet"><legend>Votre projet <i>(plusieurs choix possibles)</i></legend><div class="choix-grille">${PRODUITS.map((p) => `<label class="choix"><input type="checkbox" name="produit" value="${p.nav}"${coche === p.slug ? " checked" : ""}><span class="choix-tuile">${dessins[p.slug].replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')}${p.nav}</span></label>`).join("")}<label class="choix"><input type="checkbox" name="produit" value="Autre"><span class="choix-tuile"><svg class="dessin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="60" r="6"/><circle cx="60" cy="60" r="6"/><circle cx="86" cy="60" r="6"/></svg>Autre</span></label></div></fieldset>
+<fieldset class="plein choix-projet"><legend>Votre projet <i>(plusieurs choix possibles)</i></legend><div class="choix-grille">${TUILES.map(([nom, dessin, slugs]) => `<label class="choix"><input type="checkbox" name="produit" value="${nom}"${slugs.includes(coche) ? " checked" : ""}><span class="choix-tuile">${dessins[dessin].replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')}${nom}</span></label>`).join("")}<label class="choix"><input type="checkbox" name="produit" value="Autre"><span class="choix-tuile"><svg class="dessin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="60" r="6"/><circle cx="60" cy="60" r="6"/><circle cx="86" cy="60" r="6"/></svg>Autre</span></label></div></fieldset>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
 <p class="note">ESCOM HABITAT traite vos données pour répondre à votre demande. Vos droits : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
