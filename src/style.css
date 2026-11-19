@@ -404,8 +404,11 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .mm-txt small{font-size:.78rem;font-weight:450;color:var(--texte-2);white-space:normal;margin-top:.15rem}
 .deroule .sous a{display:flex;align-items:center;gap:.8rem}
 @media (min-width:1101px){
-  .deroule .sous{display:grid!important;grid-template-columns:1fr 1fr;gap:.2rem;width:min(660px,calc(100vw - 60px));padding:.7rem}
-  .deroule .sous a{padding:.55rem .7rem}
+  .top .barre{position:relative}
+  .deroule details{position:static}
+  .deroule .sous{display:grid!important;grid-template-columns:1.05fr .95fr 1fr 1fr;align-items:start;gap:.4rem;width:min(1080px,calc(100vw - 40px));left:50%;transform:translateX(-50%);top:calc(100% + 12px);padding:1rem}
+  .mm-fam+.mm-fam{border-left:1px solid var(--ciel-2);padding-left:.4rem}
+  .deroule .sous a{padding:.5rem .6rem}
 }
 @media (max-width:1100px){
   .mm-vig{width:40px;height:40px;border-radius:10px}
@@ -602,3 +605,10 @@ h1.kicker{letter-spacing:0;line-height:1.35}
   .f-cartes{grid-template-columns:none;grid-auto-columns:74%;margin-left:-16px;margin-right:-16px}
   .famille .points{margin-top:.6rem}
 }
+
+/* Menu produits rangé par familles */
+.mm-fam{list-style:none}
+.mm-fam>ul{list-style:none;margin:0;padding:0;display:block}
+.deroule .mm-fam li{display:block}
+.mm-t{display:block;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--texte-2);padding:.4rem .6rem .5rem}
+@media (max-width:1100px){.mm-t{padding:.9rem .6rem .2rem}.mm-fam:first-child .mm-t{padding-top:.4rem}}

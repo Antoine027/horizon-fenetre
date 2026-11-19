@@ -6,8 +6,14 @@ import crypto from "node:crypto";
 import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
-const ORDRE = ["fenetres", "baies-vitrees", "volets", "brise-soleil-orientables", "portes-d-entree", "porte-blindee-lyon", "portes-interieures", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "moustiquaires"];
+const ORDRE = ["fenetres", "baies-vitrees", "moustiquaires", "volets", "brise-soleil-orientables", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "portes-d-entree", "porte-blindee-lyon", "portes-interieures"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
+const FAMILLES = [
+  ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large"],
+  ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volets", "brise-soleil-orientables"], "deux"],
+  ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois"],
+  ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large"],
+];
 
 const SITE = "https://www.horizonfenetre.com";
 const OUT = "dist";
@@ -180,7 +186,7 @@ function entete(url) {
 <a class="marque" href="/"><img src="/assets/img/icon-46.webp" srcset="/assets/img/icon-46.webp 1x, /assets/img/icon-92.webp 2x" width="46" height="35" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <div class="top-ic"><a href="tel:${TEL_LIEN}" aria-label="Appeler le ${TEL}">${icoTel}</a><a href="mailto:${MAIL}" aria-label="Écrire à ${MAIL}">${icoMail}</a><button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span></button></div>
 <nav class="nav" id="nav" aria-label="Navigation principale"><ul>
-<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${PRODUITS.map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}><img class="mm-vig" src="/assets/img/produits/${PHOTOS[p.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span class="mm-txt"><b>${p.nav}</b><small>${p.court}</small></span></a></li>`).join("")}</ul></details></li>
+<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${FAMILLES.map(([t, , slugs]) => `<li class="mm-fam"><span class="mm-t">${t}</span><ul>${slugs.map((sl) => PRODUITS.find((x) => x.slug === sl)).map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}><img class="mm-vig" src="/assets/img/produits/${PHOTOS[p.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span class="mm-txt"><b>${p.nav}</b><small>${p.court}</small></span></a></li>`).join("")}</ul></li>`).join("")}</ul></details></li>
 ${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/", "Contact"]].map(([u, t]) => `<li><a href="${u}"${url.startsWith(u) ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}</ul>
 <a class="btn btn-p" href="/contact/">Demander un devis</a></nav></div></header>`;
 }
@@ -289,12 +295,6 @@ const parcours = `<ol class="parcours">
 {
   const tailles = { fenetres: "c2", "baies-vitrees": "l2", volets: "l2" };
   const VIGNETTES = {};
-  const FAMILLES = [
-    ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large"],
-    ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volets", "brise-soleil-orientables"], "deux"],
-    ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois"],
-    ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large"],
-  ];
   const bento = FAMILLES.map(([t, d, slugs, cl]) => `<div class="famille ${cl}"><div class="f-tete"><h3>${t}</h3><p>${d}</p></div><div class="f-cartes" style="--n:${slugs.length}">${slugs.map((sl) => PRODUITS.find((x) => x.slug === sl)).filter(Boolean).map((p) => `<a href="/${p.slug}/" class="carte-p">${photo(VIGNETTES[p.slug] || p.photo, { ratio: [4, 3], largeurs: [400, 640], sizes: "(max-width: 700px) 75vw, (max-width: 1100px) 33vw, 22vw" })}<span class="cp-txt"><b>${p.nav}${I.fleche}</b><small>${p.court}</small></span></a>`).join("")}</div></div>`).join("");
   const faq = [
     ["La visite et le devis sont-ils gratuits ?", "Oui. On se déplace, on prend les cotes de chaque ouverture et on vous remet un devis détaillé de fourniture, sans engagement."],
