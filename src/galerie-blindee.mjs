@@ -60,6 +60,9 @@ export const VOLETS = [
   ["barres-echarpe", "Barres et écharpe", [
     ["barres-echarpe-bleu", "Volets battants aluminium bleus à barres et écharpe sur une maison avec terrasse", false],
   ]],
+  ["cintres", "Cintrés", [
+    ["cintres-anthracite", "Volets battants aluminium anthracite cintrés, épousant l'arc de fenêtres cintrées", false],
+  ]],
   ["orientables", "Lames orientables", [
     ["orientables-vert-ferme", "Volets battants vert d'eau fermés, lames orientables entrouvertes sur le jardin", false],
     ["orientables-vert-ouvert", "Volets battants vert d'eau à lames orientables, vus depuis l'intérieur", false],
