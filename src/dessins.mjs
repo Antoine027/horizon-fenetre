@@ -7,7 +7,13 @@ export const dessins = {
     `<rect x="22" y="8" width="76" height="104"/><rect x="28" y="14" width="30" height="92"/><rect x="62" y="14" width="30" height="92"/>
      <path d="M33 20 44 31M33 28 39 34M67 20 78 31M67 28 73 34"/><path d="M58 56v10" stroke-width="4"/><path d="M14 112h92"/>`,
     "Dessin d'une fenêtre deux vantaux"),
-  volets: s(
+  "volet-battant-lyon": s(
+    `<rect x="40" y="14" width="40" height="92" rx="2"/><path d="M60 14v92M40 60h40"/>
+     <rect x="10" y="14" width="26" height="92" rx="2"/><rect x="84" y="14" width="26" height="92" rx="2"/>
+     <path d="M15 24h16M15 32h16M15 40h16M15 48h16M15 56h16M15 64h16M15 72h16M15 80h16M15 88h16M15 96h16M89 24h16M89 32h16M89 40h16M89 48h16M89 56h16M89 64h16M89 72h16M89 80h16M89 88h16M89 96h16"/><path d="M4 112h112"/>`,
+    "Volets battants"
+  ),
+  "volet-roulant-lyon": s(
     `<rect x="16" y="8" width="88" height="18" rx="2"/><path d="M22 26v86M98 26v86"/>
      <path d="M22 34h76M22 42h76M22 50h76M22 58h76M22 66h76M22 74h76"/><path d="M22 80h76" stroke-width="3.4"/>
      <path d="M30 86h60v26H30zM60 86v26"/><path d="M10 112h100"/>`,

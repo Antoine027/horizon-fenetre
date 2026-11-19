@@ -72,48 +72,126 @@ slug: "volets",
 photo: "pVolet",
 galerie: [],
 nav: "Volets",
-court: "Roulants motorisés, solaires ou manuels, et battants traditionnels.",
-title: "Volet roulant et battant sur mesure à Lyon | Horizon Fenêtre",
-description: "Volets roulants (filaire, radio, solaire) et volets battants alu, PVC ou bois, sur mesure. Prise de cotes à domicile à Lyon et Rillieux-la-Pape, pose sur demande.",
-h1: "Volets roulants et volets battants sur mesure",
-chapo: "Motoriser des volets existants, ajouter un volet roulant sans toucher à la façade ou remplacer des battants fatigués : on vous conseille ce qui tient dans le temps.",
+court: "Roulants, battants ou BSO : comparer pour bien choisir.",
+title: "Volets sur mesure à Lyon : roulant, battant ou BSO | Horizon Fenêtre",
+description: "Volet roulant, volet battant ou brise-soleil orientable : comparez usage, isolation, sécurité et style. Visite et devis gratuits à Lyon et Rillieux-la-Pape.",
+h1: "Volets sur mesure : roulant, battant ou BSO ?",
+chapo: "Trois familles de protections, trois usages. Ce comparatif vous aide à choisir avant notre visite.",
 contenu: `
 <p class="lead">Un volet sert à trois choses : protéger du soleil, protéger des regards et ralentir les cambrioleurs. Selon ce qui compte le plus chez vous, on ne conseillera pas le même modèle.</p>
-<!--galerie-modeles-->
 
-<h2>Les volets roulants</h2>
-<h3>Trois façons de les intégrer</h3>
-<ul>
-<li><strong>Coffre rénovation extérieur</strong> : le coffre se fixe en façade ou sous le linteau, sans travaux intérieurs. C'est la solution la plus fréquente quand on ajoute un volet roulant sur une fenêtre existante.</li>
-<li><strong>Coffre tunnel</strong> : intégré dans la maçonnerie, invisible. Surtout en construction neuve ou en rénovation lourde.</li>
-<li><strong>Coffre intérieur ou bloc-baie</strong> : le volet arrive avec la fenêtre, pratique quand on change les deux en même temps.</li>
-</ul>
-<h3>Le tablier</h3>
-<p>Les lames <strong>PVC</strong> conviennent aux fenêtres de taille courante et restent économiques. Au-delà d'une certaine largeur, ou sur une baie exposée, on passe à des lames <strong>aluminium à mousse isolante</strong>, plus rigides et plus résistantes aux tentatives d'effraction.</p>
-<h3>Le volet roulant à lames orientables</h3>
-<p>Une fois descendu, ses lames pivotent pour laisser entrer la lumière et l'air, comme un brise-soleil, tout en gardant la protection d'un volet fermé et verrouillé. C'est la solution quand on veut doser la lumière sans renoncer à la sécurité, notamment en rez-de-chaussée, où un <a href="/brise-soleil-orientables/">brise-soleil orientable</a> conduit souvent l'assureur à exiger un vitrage de sécurité.</p>
-<h3>La manœuvre</h3>
-<p>Sangle, manivelle, moteur filaire avec interrupteur, moteur radio avec télécommande ou moteur solaire autonome : chaque option a ses avantages. Le solaire évite de tirer un câble, ce qui le rend très pratique en rénovation. Le filaire reste le plus simple et le plus fiable sur la durée. On a écrit <a href="/blog/volet-roulant-filaire-radio-ou-solaire/">un comparatif complet des motorisations</a> pour vous aider à trancher.</p>
+<h2>Comparer en un coup d'œil</h2>
+<div class="tab-scroll"><table><thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col">Volet roulant</th><th scope="col">Volet battant</th><th scope="col">BSO</th></tr></thead><tbody>
+<tr><th scope="row">Manœuvre</th><td>De l'intérieur, sans ouvrir la fenêtre</td><td>Fenêtre ouverte, sauf motorisation</td><td>De l'intérieur, motorisé</td></tr>
+<tr><th scope="row">Lumière volet fermé</th><td>Avec lames orientables</td><td>Persiennes ou lames orientables</td><td>Réglable lame par lame</td></tr>
+<tr><th scope="row">Sécurité</th><td>Bonne avec lames aluminium et anti-relevage</td><td>Très bonne, panneau épais et verrouillé</td><td>Faible, ce n'est pas un volet</td></tr>
+<tr><th scope="row">Façade</th><td>Coffre visible en rénovation</td><td>Garde le cachet de la maison</td><td>Look contemporain</td></tr>
+<tr><th scope="row">Motorisation</th><td>Filaire, radio ou solaire</td><td>Possible</td><td>De série</td></tr>
+</tbody></table></div>
 
-<h2>Les volets battants</h2>
-<p>Sur une maison de pays, une longère du Beaujolais ou une façade de village de la Dombes, un volet battant garde tout son sens. On les fabrique sur mesure :</p>
-<ul>
-<li><strong>Aluminium</strong> : aucun entretien, une large palette de teintes, de l'aspect bois au gris anthracite.</li>
-<li><strong>PVC</strong> : le choix économique pour des volets pleins à barres et écharpe ou des persiennes simples.</li>
-<li><strong>Bois</strong> : le seul matériau accepté dans certains secteurs protégés, à peindre ou lasurer.</li>
-</ul>
-<p><strong>À lames orientables</strong> : le volet se ferme et se verrouille comme un volet battant classique, et ses lames s'inclinent pour régler la lumière. C'est la version moderne de la persienne, utile quand on veut de l'ombre sans fermer la maison dans le noir.</p>
-<p>Pleins, persiennés, semi-persiennés, à barres et écharpe (le fameux « Z ») ou à cadre : on reprend le dessin d'origine si la mairie ou l'architecte des Bâtiments de France l'impose.</p>
+<h2>Le volet roulant</h2>
+<p>Le plus pratique au quotidien : on le commande de l'intérieur, sans ouvrir la fenêtre, et il se motorise facilement, même sans câble grâce au solaire. En rénovation, un coffre extérieur s'ajoute sans travaux dans la pièce. <a href="/volet-roulant-lyon/">Voir nos volets roulants</a>.</p>
 
-<h2>Remplacer ou motoriser des volets existants</h2>
-<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet roulant manuel en remplaçant l'axe et en ajoutant un moteur. Notre guide <a href="/blog/motoriser-volet-roulant/">motoriser ses volets roulants existants</a> liste ce qu'il faut vérifier.</p>
-<p>Des volets battants usés peuvent être remplacés de deux façons. <strong>Par des volets roulants</strong> en coffre rénovation : plus besoin d'ouvrir la fenêtre, commande à distance possible et prix plus bas, mais une légère perte de lumière due au coffre, une façade qui change, et des gonds à retirer avec une petite reprise d'enduit pour éviter les coulures de rouille. <strong>Par des volets battants neufs</strong> : la façade et le cachet de la maison sont conservés, les gonds réutilisés, aucune perte de lumière, pas d'entretien en PVC ou en aluminium, et une meilleure isolation et sécurité grâce à un panneau plus épais que les lames d'un volet roulant ; ils coûtent plus cher, et peuvent être motorisés. Notre guide <a href="/blog/remplacer-volets-battants/">remplacer ses volets battants</a> compare les deux en détail.</p>
+<h2>Le volet battant</h2>
+<p>Il garde le dessin et le cachet de la façade, ne prend pas de lumière au-dessus de la fenêtre et protège bien grâce à son panneau épais. En aluminium, il ne demande plus aucune peinture. Le volet coulissant en est une variante pour les façades où les vantaux ne peuvent pas se rabattre. <a href="/volet-battant-lyon/">Voir nos volets battants</a>.</p>
+
+<h2>Le brise-soleil orientable</h2>
+<p>Ce n'est pas un volet mais une protection solaire : ses lames s'orientent pour doser la lumière et la chaleur. Idéal sur les grandes baies exposées au sud ou à l'ouest. <a href="/brise-soleil-orientables/">Voir nos BSO</a>.</p>
 `,
 faq: [
+["Volet roulant ou battant : lequel isole le mieux ?", "Les deux limitent les pertes par la fenêtre la nuit. Le volet battant, plus épais, protège un peu mieux du froid et des effractions ; le volet roulant est plus pratique au quotidien."],
 ["Comment avoir de la lumière avec les volets fermés ?", "Avec des volets à lames orientables, roulants ou battants : une fois fermés et verrouillés, leurs lames s'inclinent pour laisser passer la lumière et l'air. On garde la protection d'un volet, ce qu'un brise-soleil orientable n'offre pas."],
+["Peut-on remplacer des volets battants par des volets roulants ?", "Oui, avec des coffres rénovation posés en façade. On retire les gonds et on reprend l'enduit. Notre guide sur le remplacement des volets battants compare les deux solutions."]
+]
+},
+{
+slug: "volet-roulant-lyon",
+photo: "pVolet",
+galerie: [],
+nav: "Volets roulants",
+court: "Motorisés filaire, radio ou solaires, coffre rénovation ou tunnel.",
+title: "Volet roulant sur mesure à Lyon | Horizon Fenêtre",
+description: "Volets roulants sur mesure fabriqués en France : coffre rénovation, tunnel ou monobloc, moteur Somfy filaire, radio ou solaire. Visite et devis gratuits à Lyon.",
+h1: "Volet roulant sur mesure à Lyon",
+motcle: "volet roulant Lyon",
+chapo: "Ajouter un volet roulant sans travaux dans la pièce, motoriser des volets manuels ou tout équiper en solaire : on vient voir vos fenêtres et on vous conseille.",
+contenu: `
+<p class="lead">Nos volets roulants sont fabriqués sur mesure en France, aux cotes relevées chez vous. Coffre, lames, teinte et manœuvre se choisissent fenêtre par fenêtre.</p>
+
+<h2>Le coffre : selon votre maison</h2>
+<ul>
+<li><strong>Coffre rénovation</strong> : en aluminium, à pan coupé ou quart de rond, posé en façade ou sous le linteau. C'est la solution la plus fréquente pour ajouter un volet sur une fenêtre existante, sans aucun travail à l'intérieur.</li>
+<li><strong>Volet traditionnel</strong> : le tablier se loge dans un coffre existant, en bois à l'intérieur ou en maçonnerie. Idéal pour remplacer un vieux volet sans toucher à la façade.</li>
+<li><strong>Coffre tunnel ou demi-linteau</strong> : intégré à la maçonnerie, il disparaît complètement. Surtout en construction neuve ou en rénovation lourde.</li>
+<li><strong>Monobloc</strong> : le coffre arrive avec la fenêtre, pratique quand on change les deux en même temps.</li>
+</ul>
+
+<h2>Le tablier</h2>
+<p>Les lames <strong>aluminium à mousse isolante</strong> couvrent jusqu'à 4 m de large et 9 m² : de quoi équiper une grande baie d'un seul tenant. Les lames <strong>PVC</strong> restent une option économique en rénovation sur les fenêtres courantes. Un système <strong>anti-relevage</strong> bloque le tablier en position basse et empêche de le soulever de l'extérieur.</p>
+<p>Coffre, coulisses et lames existent en 15 teintes, du blanc au gris anthracite en passant par les tons bois, pour s'accorder à vos fenêtres.</p>
+
+<h2>Le volet roulant à lames orientables</h2>
+<p>Une fois descendu, ses lames pivotent pour laisser entrer la lumière et l'air, comme un brise-soleil, tout en gardant la protection d'un volet fermé et verrouillé. C'est la solution quand on veut doser la lumière sans renoncer à la sécurité, notamment en rez-de-chaussée, où un <a href="/brise-soleil-orientables/">brise-soleil orientable</a> conduit souvent l'assureur à exiger un vitrage de sécurité.</p>
+
+<h2>La manœuvre : manuelle, filaire, radio ou solaire</h2>
+<ul>
+<li><strong>Manuelle</strong> : sangle ou manivelle, sans électricité.</li>
+<li><strong>Moteur filaire</strong> : un interrupteur au mur. Le plus simple et le plus fiable sur la durée.</li>
+<li><strong>Moteur radio</strong> : télécommande, horloge ou smartphone, et centralisation de tous les volets.</li>
+<li><strong>Moteur solaire</strong> : aucun câble à tirer, le panneau recharge une batterie. Très pratique en rénovation.</li>
+</ul>
+<p>Les moteurs et les commandes sont de marque <strong>Somfy</strong> : télécommandes, horloges et boîtiers connectés fonctionnent ensemble. Notre <a href="/blog/volet-roulant-filaire-radio-ou-solaire/">comparatif des motorisations</a> vous aide à trancher.</p>
+
+<h2>Motoriser des volets roulants existants</h2>
+<p>Pas besoin de tout changer si les coffres sont en bon état : on peut motoriser un volet manuel en remplaçant l'axe et en ajoutant un moteur. Notre guide <a href="/blog/motoriser-volet-roulant/">motoriser ses volets roulants existants</a> liste ce qu'il faut vérifier.</p>
+<p>Vous hésitez avec un volet battant ? <a href="/volets/">Comparez les types de volets</a>.</p>
+`,
+faq: [
 ["Peut-on poser un volet roulant sans travaux à l'intérieur ?", "Oui, avec un coffre rénovation posé à l'extérieur. Aucune intervention dans la pièce."],
 ["Un volet roulant solaire fonctionne-t-il en hiver ?", "Oui. La batterie est dimensionnée pour plusieurs jours sans soleil. Sur une façade très ombragée, on préférera un moteur filaire."],
-["Peut-on centraliser tous les volets ?", "Avec des moteurs radio, oui : une télécommande multicanal ou une box domotique permet de commander tous les volets ensemble."]
+["Peut-on centraliser tous les volets ?", "Avec des moteurs radio, oui : une télécommande multicanal ou une box domotique permet de commander tous les volets ensemble."],
+["Quelle largeur maximale pour un volet roulant ?", "Avec des lames aluminium, jusqu'à 4 m de large et 9 m² de tablier. Au-delà, on divise la baie en deux volets."]
+]
+},
+{
+slug: "volet-battant-lyon",
+photo: "pBattantAlu",
+galerie: [],
+nav: "Volets battants",
+court: "Aluminium sur mesure : persiennés, à lames, cintrés ou orientables.",
+title: "Volet battant aluminium sur mesure à Lyon | Horizon Fenêtre",
+description: "Volets battants aluminium sur mesure : persiennés, à lames, barres et écharpe, cintrés ou à lames orientables, et volets coulissants. Visite et devis gratuits à Lyon.",
+h1: "Volet battant aluminium sur mesure à Lyon",
+motcle: "volet battant Lyon",
+chapo: "Garder le cachet de votre façade sans plus jamais repeindre : on relève les cotes de chaque fenêtre et on reprend le dessin de vos anciens volets.",
+contenu: `
+<p class="lead">Sur une maison de pays, une longère du Beaujolais ou une façade de village de la Dombes, un volet battant garde tout son sens. En aluminium, il ne demande plus aucun entretien et conserve sa teinte des années.</p>
+<!--galerie-modeles-->
+
+<h2>Les modèles</h2>
+<ul>
+<li><strong>À lames horizontales</strong> : le dessin contemporain, sobre et plein.</li>
+<li><strong>Persiennés</strong> : l'air passe, volets fermés. Entièrement persiennés ou au tiers supérieur, plein en bas, comme sur les maisons anciennes.</li>
+<li><strong>Barres et écharpe</strong> : le fameux « Z », pour une façade traditionnelle.</li>
+<li><strong>Cintrés</strong> : le haut du volet suit l'arc d'une fenêtre cintrée.</li>
+<li><strong>À lames orientables</strong> : le volet se ferme et se verrouille comme un volet classique, et ses lames s'inclinent pour régler la lumière et l'air. C'est la persienne réglable.</li>
+</ul>
+<p>Si la mairie ou l'architecte des Bâtiments de France l'impose, on reprend le dessin d'origine : nombre de lames, cadre, couleur.</p>
+
+<h2>Pourquoi l'aluminium</h2>
+<p>Plus de peinture ni de lasure : la teinte est laquée en usine. Le panneau, plus épais que les lames d'un volet roulant, protège bien du froid et des effractions. Pentures, gonds et arrêts sont assortis au volet. Le PVC reste possible pour des volets simples, et le bois là où il est imposé.</p>
+
+<h2>Le volet coulissant</h2>
+<p>Quand les vantaux ne peuvent pas se rabattre contre le mur (fenêtre trop proche d'un angle, façade étroite, garde-corps), le volet coulisse sur un rail le long de la façade. Mêmes remplissages qu'un volet battant, même verrouillage, et un look très actuel sur les grandes baies.</p>
+
+<h2>Remplacer des volets battants usés</h2>
+<p>Des volets battants neufs gardent la façade et le cachet de la maison, réutilisent souvent les gonds, ne prennent aucune lumière et peuvent être motorisés. Le remplacement par des volets roulants coûte moins cher et se commande de l'intérieur, mais change la façade. Notre guide <a href="/blog/remplacer-volets-battants/">remplacer ses volets battants</a> compare les deux en détail.</p>
+<p>Vous hésitez avec un volet roulant ? <a href="/volets/">Comparez les types de volets</a>.</p>
+`,
+faq: [
+["Peut-on motoriser des volets battants ?", "Oui, avec un moteur à bras articulés fixé sur la façade ou intégré au gond. Les volets s'ouvrent et se ferment depuis l'intérieur, à la télécommande."],
+["Peut-on garder les anciens gonds ?", "Souvent oui, s'ils sont sains et bien scellés. On le vérifie à la visite ; sinon, on prévoit des gonds neufs assortis."],
+["Faut-il une autorisation pour changer ses volets ?", "Si la couleur ou le dessin change, une déclaration préalable en mairie est en principe nécessaire. En secteur protégé, l'avis de l'architecte des Bâtiments de France s'impose."]
 ]
 },
 {

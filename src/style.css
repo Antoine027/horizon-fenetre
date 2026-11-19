@@ -404,10 +404,7 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 .mm-txt small{font-size:.78rem;font-weight:450;color:var(--texte-2);white-space:normal;margin-top:.15rem}
 .deroule .sous a{display:flex;align-items:center;gap:.8rem}
 @media (min-width:1101px){
-  .top .barre{position:relative}
-  .deroule details{position:static}
-  .deroule .sous{display:grid!important;grid-template-columns:1.05fr .95fr 1fr 1fr;align-items:start;gap:.4rem;width:min(1080px,calc(100vw - 40px));left:50%;transform:translateX(-50%);top:calc(100% + 12px);padding:1rem}
-  .mm-fam+.mm-fam{border-left:1px solid var(--ciel-2);padding-left:.4rem}
+  .deroule .sous{width:340px;left:-1rem;padding:.7rem}
   .deroule .sous a{padding:.5rem .6rem}
 }
 @media (max-width:1100px){
@@ -583,7 +580,7 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 }
 
 /* Accueil : produits rangés par familles */
-.familles{display:grid;grid-template-columns:2fr 3fr;gap:18px}
+.familles{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .famille{background:#fff;border:1px solid var(--ciel-2);border-radius:28px;padding:clamp(1.1rem,2vw,1.6rem);box-shadow:0 24px 50px -38px rgba(51,69,77,.45)}
 .famille.large{grid-column:1/-1}
 .f-tete{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.2rem 1.5rem;margin:0 .2rem 1rem}
@@ -607,9 +604,6 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 }
 
 /* Menu produits rangé par familles */
-.mm-fam{list-style:none}
-.mm-fam>ul{list-style:none;margin:0;padding:0;display:block}
-.deroule .mm-fam li{display:block}
 .mm-t{display:block;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--texte-2);padding:.4rem .6rem .5rem}
 @media (max-width:1100px){.mm-t{padding:.9rem .6rem .2rem}.mm-fam:first-child .mm-t{padding-top:.4rem}}
 
@@ -648,3 +642,16 @@ h1.kicker{letter-spacing:0;line-height:1.35}
   .barre-mobile a:first-child{width:46px;padding:0}
   .barre-mobile a+a{padding:0 1.2rem}
 }
+
+/* Grand écran : contenu plus large comme sur Instant Terrasse, textes à largeur de lecture */
+@media (min-width:1500px){
+  :root{--w:1480px}
+  .corps{grid-template-columns:minmax(0,1fr) 360px}
+  .prose{max-width:52rem}
+  .tete h2,.sec>.wrap>h2{font-size:clamp(2rem,1rem + 1.6vw,2.9rem)}
+}
+
+/* Menu : une entrée par famille */
+.deroule .sous .mm-t{list-style:none}
+.mm-plus a{font-size:.88rem!important;font-weight:600;color:var(--ardoise)!important;border-top:1px solid var(--ciel-2);border-radius:0 0 12px 12px!important;margin-top:.3rem;padding-top:.8rem!important}
+@media (min-width:1101px) and (max-width:1320px){.nav ul{gap:1.1rem!important}.nav .btn{padding-left:1.1rem;padding-right:1.1rem}}

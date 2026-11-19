@@ -7,13 +7,13 @@ import { produits, pros } from "./src/produits.mjs";
 import { dessins } from "./src/dessins.mjs";
 import { photo, PHOTOS, CREDITS } from "./src/photos.mjs";
 import { galerieModeles, GALERIES, JS_GALERIE } from "./src/galerie-blindee.mjs";
-const ORDRE = ["fenetres", "baies-vitrees", "moustiquaires", "volets", "brise-soleil-orientables", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "portes-d-entree", "porte-blindee-lyon", "portes-interieures"];
+const ORDRE = ["fenetres", "baies-vitrees", "moustiquaires", "volet-roulant-lyon", "volet-battant-lyon", "brise-soleil-orientables", "portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon", "portes-d-entree", "porte-blindee-lyon", "portes-interieures"];
 const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 const FAMILLES = [
-  ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large"],
-  ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volets", "brise-soleil-orientables"], "deux"],
-  ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois"],
-  ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large"],
+  ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large", "Fenêtres"],
+  ["Volets et protection solaire", "Occulter, protéger, maîtriser la chaleur.", ["volet-roulant-lyon", "volet-battant-lyon", "brise-soleil-orientables"], "trois", "Volets"],
+  ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois", "Accès"],
+  ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large", "Portes"],
 ];
 
 const SITE = "https://www.horizonfenetre.com";
@@ -129,7 +129,9 @@ const CIBLES = [
   { url: "/brise-soleil-orientables/", mots: ["brise-soleil orientables", "brise-soleil orientable", "brise-soleil", "BSO"] },
   { url: "/portes-interieures/", mots: ["portes intérieures", "porte intérieure", "bloc-porte"] },
   { url: "/fenetres/", mots: ["fenêtres sur mesure", "fenêtre sur mesure", "double vitrage", "triple vitrage", "oscillo-battant", "fenêtres"] },
-  { url: "/volets/", mots: ["volets roulants", "volet roulant", "volets battants", "volet battant", "volets"] },
+  { url: "/volet-roulant-lyon/", mots: ["volets roulants", "volet roulant"] },
+  { url: "/volet-battant-lyon/", mots: ["volets battants", "volet battant", "persiennes"] },
+  { url: "/volets/", mots: ["volets"] },
   { url: "/portes-de-garage/", mots: ["portes de garage", "porte de garage", "garage"] },
   { url: "/portes-d-entree/", mots: ["portes d'entrée", "porte d'entrée"] },
   { url: "/portail-aluminium-lyon/", mots: ["portails", "portail", "portillon"] },
@@ -187,7 +189,7 @@ function entete(url) {
 <a class="marque" href="/"><img src="/assets/img/icon-46.webp" srcset="/assets/img/icon-46.webp 1x, /assets/img/icon-92.webp 2x" width="46" height="35" alt="" fetchpriority="high"><span><i>Horizon</i><b>Fenêtre</b></span></a>
 <div class="top-ic"><a href="tel:${TEL_LIEN}" aria-label="Appeler le ${TEL}">${icoTel}</a><a href="mailto:${MAIL}" aria-label="Écrire à ${MAIL}">${icoMail}</a><button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu"><span></span></button></div>
 <nav class="nav" id="nav" aria-label="Navigation principale"><ul>
-<li class="deroule"><details><summary${PRODUITS.some((p) => url === `/${p.slug}/`) ? ' class="actif"' : ""}>Nos produits</summary><ul class="sous">${FAMILLES.map(([t, , slugs]) => `<li class="mm-fam"><span class="mm-t">${t}</span><ul>${slugs.map((sl) => PRODUITS.find((x) => x.slug === sl)).map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}><img class="mm-vig" src="/assets/img/produits/${PHOTOS[p.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span class="mm-txt"><b>${p.nav}</b><small>${p.court}</small></span></a></li>`).join("")}</ul></li>`).join("")}</ul></details></li>
+${FAMILLES.map(([t, , slugs, , court]) => `<li class="deroule"><details><summary${slugs.some((sl) => url === `/${sl}/`) || (court === "Volets" && url === "/volets/") ? ' class="actif"' : ""}>${court}</summary><ul class="sous"><li class="mm-t">${t}</li>${slugs.map((sl) => PRODUITS.find((x) => x.slug === sl)).map((p) => `<li><a href="/${p.slug}/"${url === `/${p.slug}/` ? ' aria-current="page"' : ""}><img class="mm-vig" src="/assets/img/produits/${PHOTOS[p.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span class="mm-txt"><b>${p.nav}</b><small>${p.court}</small></span></a></li>`).join("")}${court === "Volets" ? `<li class="mm-plus"><a href="/volets/">Comparer roulant, battant et BSO</a></li>` : ""}</ul></details></li>`).join("")}
 ${[["/professionnels/", "Professionnels"], ["/blog/", "Conseils"], ["/contact/", "Contact"]].map(([u, t]) => `<li><a href="${u}"${url.startsWith(u) ? ' aria-current="page"' : ""}>${t}</a></li>`).join("")}</ul>
 <a class="btn btn-p" href="/contact/">Demander un devis</a></nav></div></header>`;
 }
@@ -396,7 +398,7 @@ ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<l
 <h3>Les documents dont vous avez besoin</h3>
 <p>Fiches techniques, procès-verbaux de performance, éléments pour les dossiers de déclaration préalable.</p>
 <h2>Nos produits</h2>
-<p>Toute notre gamme est disponible pour les professionnels : <a href="/fenetres/">fenêtres PVC, aluminium et bois</a>, <a href="/baies-vitrees/">baies vitrées</a>, <a href="/volets/">volets roulants et battants</a>, <a href="/brise-soleil-orientables/">brise-soleil orientables</a>, <a href="/portes-de-garage/">portes de garage</a>, <a href="/portes-d-entree/">portes d'entrée</a>, <a href="/portes-interieures/">portes intérieures</a>, <a href="/portail-aluminium-lyon/">portails</a>, <a href="/cloture-aluminium-lyon/">clôtures</a> et <a href="/moustiquaires/">moustiquaires</a>.</p>`, url, 4);
+<p>Toute notre gamme est disponible pour les professionnels : <a href="/fenetres/">fenêtres PVC, aluminium et bois</a>, <a href="/baies-vitrees/">baies vitrées</a>, <a href="/volet-roulant-lyon/">volets roulants</a>, <a href="/volet-battant-lyon/">volets battants</a>, <a href="/brise-soleil-orientables/">brise-soleil orientables</a>, <a href="/portes-de-garage/">portes de garage</a>, <a href="/portes-d-entree/">portes d'entrée</a>, <a href="/portes-interieures/">portes intérieures</a>, <a href="/portail-aluminium-lyon/">portails</a>, <a href="/cloture-aluminium-lyon/">clôtures</a> et <a href="/moustiquaires/">moustiquaires</a>.</p>`, url, 4);
   const body = `${bandeauPhoto(items, pros.h1, pros.chapo, "immeuble")}
 <div class="wrap corps"><article class="prose">${contenu}<h2>Questions fréquentes</h2>${faqHtml(faq)}</article>
 <aside class="cote"><div class="boite fonce"><h2>Un dossier à chiffrer ?</h2><p>Envoyez-nous vos plans ou appelez-nous pour organiser une visite.</p><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><a class="btn btn-p" href="/contact/">Nous écrire</a></div><div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div></aside></div>${appel("Un chantier à chiffrer ? Parlons-en.")}`;

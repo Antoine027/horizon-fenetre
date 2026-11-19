@@ -57,6 +57,7 @@ export const PHOTOS = {
   pInterieure: ["local:porte-interieure-noire", 1672, 941, "Porte intérieure noire à rainures horizontales dans une entrée lumineuse", null],
   pPortail:    ["local:portail-battant", 1672, 941, "Portail battant aluminium anthracite entre deux piliers enduits", null],
   pPortailAlu: ["local:portail-portillon-cloture-anthracite", 1600, 750, "Portail battant, portillon et clôture aluminium anthracite assortis, ajourés avec lames décor bois, devant une maison", null],
+  pBattantAlu: ["local:volets-battants-aluminium-maison", 1600, 1068, "Maison blanche au bord d'une piscine équipée de volets battants aluminium anthracite à lames", null],
   pMoustiq:    ["local:moustiquaire-enroulable-v2", 1672, 941, "Moustiquaire enroulable intégrée à une fenêtre anthracite ouverte sur le jardin", null],
 };
 

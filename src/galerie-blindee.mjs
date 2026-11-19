@@ -112,7 +112,7 @@ export const GALERIES = {
   "portes-de-garage": { modeles: GARAGES, dir: "/assets/img/produits/garages-g/", titre: "Nos portes de garage en images", intro: "Choisissez un type de porte. Touchez une photo pour l'agrandir.", tous: "Toutes les portes" },
   "portail-aluminium-lyon": { modeles: PORTAILS, dir: "/assets/img/produits/portails-g/", titre: "Nos portails en images", intro: "Choisissez un style de portail. Touchez une photo pour l'agrandir.", tous: "Tous les portails" },
   "porte-blindee-lyon": { modeles: MODELES, dir: "/assets/img/produits/blindee/", titre: "Nos portes en images", intro: "Choisissez un modèle pour voir ses finitions. Touchez une photo pour l'agrandir.", tous: "Tous les modèles" },
-  volets: { modeles: VOLETS, dir: "/assets/img/produits/volets-g/", titre: "Nos volets battants en images", intro: "Choisissez un type de volet. Touchez une photo pour l'agrandir.", tous: "Tous les volets" },
+  "volet-battant-lyon": { modeles: VOLETS, dir: "/assets/img/produits/volets-g/", titre: "Nos volets battants en images", intro: "Choisissez un type de volet. Touchez une photo pour l'agrandir.", tous: "Tous les volets" },
 };
 
 export function galerieModeles({ modeles, dir: D, titre, intro, tous }) {
