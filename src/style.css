@@ -105,7 +105,7 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 @media (max-width:760px){.hero-photo .btn-s{display:none}}
 
 /* sections */
-.sec{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.sec{padding:clamp(3.5rem,7vw,5.5rem) 0}
 .sec.ciel{background:var(--ciel)}
 .sec.fonce{background:var(--ardoise-f);color:#fff}
 .sec.fonce h2,.sec.fonce h3{color:#fff}
