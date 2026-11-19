@@ -50,6 +50,9 @@ export const MODELES = [
 
 export const VOLETS = [
   ["battant-lames", "Battants à lames", [
+    ["battant-lames-anthracite-piscine", "Maison blanche au bord d'une piscine, équipée de volets battants aluminium anthracite à lames", false],
+    ["battant-lames-anthracite-porte-fenetre", "Volets battants aluminium anthracite à lames horizontales autour d'une porte-fenêtre à petits bois", false],
+    ["battant-lames-anthracite-maison", "Maison à colombages anthracite avec volets battants aluminium assortis", false],
     ["battant-lames-cuivre-facade", "Maison avec terrasse équipée de volets battants aluminium couleur cuivre à lames horizontales", false],
     ["battant-lames-bleu-maison", "Maison de maître en brique et colombages équipée de volets battants aluminium bleus", false],
     ["battant-lames-facade", "Façade de maison dont les trois fenêtres sont équipées de volets battants aluminium gris", false],
@@ -65,6 +68,7 @@ export const VOLETS = [
   ]],
   ["persiennes", "Persiennés", [
     ["persiennes-bleu-terrasse", "Volets battants aluminium persiennés bleu marine sur les portes-fenêtres d'une maison de plain-pied", false],
+    ["persiennes-tiers-bleu-maison", "Maison des années 50 aux volets battants bleus persiennés au tiers supérieur", false],
     ["persiennes-tiers-brun-facade", "Façade de maison ancienne aux volets battants bruns persiennés au tiers supérieur et pleins aux deux tiers", false],
     ["persiennes-brun", "Volets battants aluminium persiennés brun foncé autour d'une fenêtre à petits bois", false],
   ]],
