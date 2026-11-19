@@ -238,8 +238,8 @@ const titreHero = (h1) => { const m = h1.match(/^(.*?)\s((?:sur mesure|pour |: )
 const bandeauPhoto = (items, h1, chapo, cle) => `<section class="p-hero">${photo(cle, { eager: true, classe: "p-img", ratio: [16, 9], largeurs: [800, 1600], sizes: "100vw" })}<div class="wrap p-txt">${fil(items)}<h1>${titreHero(h1)}</h1><p class="p-chapo">${chapo}</p><div class="actions"><a class="btn btn-p" href="/contact/">Demander un devis gratuit</a><a class="btn btn-o" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div><ul class="trio p-trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div></section>`;
 const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau"><div class="wrap">${items ? fil(items) : ""}<h1>${h1}</h1>${chapo ? `<p>${chapo}</p>` : ""}${extra}</div></section>`;
 
-const blocDevis = (source, coche = "", titre = "Demandez votre visite gratuite") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Décrivez votre projet en quelques lignes. On vous rappelle pour fixer un rendez-vous de prise de cotes chez vous.</p>
-<p class="d-direct"><span>Vous préférez appeler ?</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail">ou par e-mail : <a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire(source, coche)}</div></section>`;
+const blocDevis = (source, coche = "", titre = "Demandez votre visite gratuite") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Quelques lignes suffisent : on vous rappelle pour fixer la prise de cotes.</p>
+<p class="d-direct"><span>Ou appelez-nous :</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail"><a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire(source, coche)}</div></section>`;
 // Cases du formulaire : produits regroupés par besoin.
 const TUILES = [
   ["Fenêtres et baies vitrées", "fenetres", ["fenetres", "baies-vitrees"]],
@@ -334,7 +334,7 @@ const parcours = `<ol class="parcours">
 <div class="familles">${bento}</div>
 </div></section>
 
-<section class="sec" style="padding-bottom:2.5rem"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Il n'y a pas de meilleur matériau dans l'absolu, il y a celui qui convient à votre façade, à votre budget et au temps que vous voulez passer à l'entretenir.</p></div>
+<section class="sec" style="padding-bottom:2.5rem"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Pas de meilleur matériau, seulement celui qui convient à votre façade et à votre budget.</p></div>
 ${(() => {
   const jauge = (n, txt) => `<span class="jauge" aria-hidden="true">${[1, 2, 3].map((i) => `<i${i <= n ? ' class="on"' : ""}></i>`).join("")}</span><span class="j-txt">${txt}</span>`;
   const M = [
@@ -461,9 +461,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
   const url = "/contact/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Contact et devis" }];
   const body = `${bandeauSimple(items, "Demander un devis ou une visite", "Quelques lignes suffisent. On vous rappelle pour fixer un rendez-vous de prise de cotes, chez vous ou sur le chantier.")}
 <div class="wrap corps"><div>${formulaire("contact")}</div>
-<aside class="cote"><div class="boite fonce"><h2>Par téléphone</h2><a class="tel" href="tel:${TEL_LIEN}">${TEL}</a><p>Le moyen le plus rapide pour fixer une visite.</p></div>
-<div class="boite"><h2>Par e-mail</h2><p><a href="mailto:${MAIL}">${MAIL}</a></p></div>
-<div class="boite"><h2>Adresse</h2><p>Horizon Fenêtre, menuiseries sur mesure<br>ESCOM HABITAT<br>${ADRESSE.rue}<br>${ADRESSE.cp} ${ADRESSE.ville}</p></div></aside></div>`;
+<aside class="cote"><div class="coords"><a class="co co-tel" href="tel:${TEL_LIEN}">${icoTel}<span><small>Le plus rapide</small><b>${TEL}</b></span></a><a class="co" href="mailto:${MAIL}">${icoMail}<span><small>E-mail</small><b>${MAIL}</b></span></a><p class="co co-adr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>ESCOM HABITAT</small><b>${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}</b></span></p></div></aside></div>`;
   ecrire(url, page({ url, une: "pPorte", title: "Contact et devis gratuit | Horizon Fenêtre, Rillieux-la-Pape", description: `Horizon Fenêtre, menuiseries sur mesure : demandez une visite et un devis gratuit pour fenêtres, volets, portes ou portail. Appelez le ${TEL}.`, body,
     schemas: [{ "@context": "https://schema.org", "@type": "ContactPage", url: SITE + url, about: ENTREPRISE }, filLd(items)] }));
   plan.push({ url, groupe: "Horizon Fenêtre", titre: "Contact et devis" });

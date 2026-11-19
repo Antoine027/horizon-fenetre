@@ -704,3 +704,28 @@ h1.kicker{letter-spacing:0;line-height:1.35}
   .form .note{font-size:.75rem;line-height:1.45}
 }
 .faq-grille .faq details{background:#fff}
+
+/* Téléphone : bloc devis et en-têtes de section plus compacts */
+@media (max-width:700px){
+  .rappel .d-txt h2{font-size:1.7rem;margin-bottom:.5rem}
+  .rappel .d-txt p{margin:0 0 .9rem;font-size:1rem}
+  .d-direct{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem .8rem;margin:0 0 1.4rem!important}
+  .d-direct>span:first-child{width:auto}
+  .d-tel{padding:.55rem 1.1rem!important;font-size:1.05rem!important}
+  .d-mail{width:100%;font-size:.85rem}
+  .tete h2{margin-bottom:.4rem}
+  .tete p{font-size:1rem}
+}
+
+/* Page contact : coordonnées compactes */
+.coords{display:grid;gap:.6rem}
+.co{display:flex;align-items:center;gap:.9rem;margin:0;padding:.85rem 1rem;border-radius:18px;background:var(--ciel);color:var(--ardoise-f);text-decoration:none}
+.co svg{width:40px;height:40px;flex:none;padding:10px;border-radius:50%;background:#fff;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.co span{display:flex;flex-direction:column;min-width:0}
+.co small{font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--texte-2)}
+.co b{font-size:.98rem;font-weight:650;overflow-wrap:anywhere;line-height:1.35}
+.co-tel{background:var(--ardoise-f);color:#fff}
+.co-tel small{color:#cfdde3}
+.co-tel b{font-size:1.25rem}
+.co-tel svg{color:var(--ardoise-f)}
+a.co:hover{filter:brightness(1.05)}
