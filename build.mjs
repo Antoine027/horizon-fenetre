@@ -550,6 +550,22 @@ if (!process.env.VERCEL) fs.writeFileSync(FICHIER_DATES, JSON.stringify(Object.f
   const x = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   fs.writeFileSync(path.join(OUT, "blog", "rss.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Conseils Horizon Fenêtre</title><link>${SITE}/blog/</link><description>Guides menuiserie : fenêtres, volets, portes, portails.</description><language>fr-FR</language>${items.map((i) => `<item><title>${x(i.titre)}</title><link>${i.url}</link><guid>${i.url}</guid><pubDate>${new Date(i.date_publication + "T08:00:00+02:00").toUTCString()}</pubDate><category>${x(i.rubrique)}</category><description>${x(i.resume)}</description></item>`).join("")}</channel></rss>`);
 }
+// llms.txt : résumé du site pour les moteurs à IA (ChatGPT, Perplexity, aperçus IA).
+fs.writeFileSync(path.join(OUT, "llms.txt"), `# Horizon Fenêtre
+
+> Menuiseries sur mesure à Lyon et Rillieux-la-Pape (marque d'ESCOM HABITAT) : fenêtres, baies vitrées, volets, brise-soleil orientables, portes d'entrée, portes blindées, portes de garage, portails, clôtures, portes intérieures et moustiquaires. Horizon Fenêtre vend la fourniture (TVA 20 %), fait la visite et la prise de cotes ; la pose est réalisée par un installateur partenaire assuré en garantie décennale. Zone : Lyon, métropole, Côtière, Dombes, Val de Saône. Téléphone ${TEL}, ${MAIL}.
+
+## Produits
+${PRODUITS.map((p) => `- [${p.nav}](${SITE}/${p.slug}/) : ${p.court}`).join("\n")}
+- [Choisir ses volets](${SITE}/volets/) : comparatif volet roulant, volet battant et BSO.
+
+## Conseils
+${articles.map((a) => `- [${a.h1}](${SITE}/blog/${a.slug}/)`).join("\n")}
+
+## Contact
+- [Demander une visite et un devis gratuits](${SITE}/contact/)
+- [Professionnels](${SITE}/professionnels/)
+`);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /merci/\nDisallow: /erreur-envoi/\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, "site.webmanifest"), JSON.stringify({ name: "Horizon Fenêtre", short_name: "Horizon Fenêtre", start_url: "/", display: "standalone", background_color: "#e9f6fb", theme_color: "#566f79", icons: [{ src: "/assets/img/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/img/icon-512.png", sizes: "512x512", type: "image/png" }] }));
 console.log(`OK : ${plan.length} pages indexables, ${articles.length} articles.`);

@@ -612,7 +612,7 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .gm h2{margin-top:0}
 .gm-filtres{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.2rem}
 .gm-f{font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;border:1.5px solid var(--ciel-2);background:#fff;color:var(--ardoise-f);border-radius:999px;padding:.55rem 1rem;min-height:44px;display:inline-flex;align-items:center;gap:.45rem;transition:.2s}
-.gm-f span{font-size:.75rem;font-weight:700;background:var(--ciel);border-radius:999px;padding:.1rem .45rem;color:var(--texte-2)}
+.gm-f span{font-size:.75rem;font-weight:700;background:var(--ciel);border-radius:999px;padding:.1rem .45rem;color:var(--ardoise-f)}
 .gm-f:hover{border-color:var(--brume)}
 .gm-f[aria-pressed="true"]{background:var(--ardoise);border-color:var(--ardoise);color:#fff}
 .gm-f[aria-pressed="true"] span{background:rgba(255,255,255,.2);color:#fff}
