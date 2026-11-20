@@ -325,14 +325,14 @@ const parcours = `<ol class="parcours">
 <ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div>
 </section>
 
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Onze familles de menuiseries, toutes fabriquées sur mesure.</p></div>
+<div class="familles">${bento}</div>
+</div></section>
 <section class="sec methode"><div class="wrap"><div class="m-intro"><div><span class="sur-titre">Notre méthode</span>
 <h2>Comment ça se passe</h2></div>
 <p class="carte-antoine"><img src="/assets/img/equipe/antoine-escolle-176.webp" width="88" height="88" alt="Antoine Escolle, Horizon Fenêtre" loading="lazy" decoding="async"><span><strong>Antoine</strong>, votre interlocuteur du premier rendez-vous à la fin du chantier.</span></p>
 </div>${parcours}</div></section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Onze familles de menuiseries, toutes fabriquées sur mesure.</p></div>
-<div class="familles">${bento}</div>
-</div></section>
 
 <section class="sec" style="padding-bottom:2.5rem"><div class="wrap"><div class="tete"><h2>PVC, aluminium ou bois</h2><p>Pas de meilleur matériau, seulement celui qui convient à votre façade et à votre budget.</p></div>
 ${(() => {

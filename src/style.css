@@ -742,3 +742,19 @@ a.co:hover{filter:brightness(1.05)}
   .f-tete{text-align:left}
   .f-cartes{grid-auto-columns:78%;margin-left:-16px;margin-right:-16px;padding:0 16px .4rem}
 }
+
+/* Méthode compacte sur téléphone : étapes en lignes serrées, carte d'Antoine réduite */
+@media (max-width:700px){
+  .methode{padding:2.5rem 0}
+  .methode .m-intro{margin-bottom:1.1rem;gap:.8rem}
+  .methode .sur-titre{margin-bottom:.2rem}
+  .methode .carte-antoine{padding:.6rem .8rem;gap:.8rem;font-size:.92rem;box-shadow:none}
+  .methode .carte-antoine img{width:52px;height:52px}
+  .methode .parcours{gap:.5rem}
+  .methode .parcours li{grid-template-columns:40px 1fr;column-gap:.8rem;padding:.75rem .9rem;box-shadow:none}
+  .methode .parcours li .etape-ic{width:40px;height:40px}
+  .methode .parcours li .etape-ic svg{width:18px;height:18px}
+  .methode .parcours h3{font-size:1rem;margin:0 0 .15rem}
+  .methode .parcours p{font-size:.88rem;line-height:1.4;margin:0}
+}
+@media (max-width:700px){.methode .m-intro,.methode .m-intro>div{text-align:left}.methode .sur-titre{display:block;text-align:left}}
