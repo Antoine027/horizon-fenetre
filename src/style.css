@@ -729,3 +729,16 @@ h1.kicker{letter-spacing:0;line-height:1.35}
 .co-tel b{font-size:1.25rem}
 .co-tel svg{color:var(--ardoise-f)}
 a.co:hover{filter:brightness(1.05)}
+
+/* Familles sans carte englobante : titre sur le fond, cartes produits directement dessous */
+.familles{gap:2.4rem 2rem}
+.famille{background:none;border:0;box-shadow:none;padding:0;border-radius:0}
+.f-tete{margin:0 0 .9rem;min-height:0}
+.carte-p{background:#fff;box-shadow:0 18px 40px -30px rgba(51,69,77,.45)}
+.cp-txt{background:#fff}
+@media (max-width:700px){
+  .familles{gap:2rem}
+  .famille{padding:0;margin:0;border-radius:0}
+  .f-tete{text-align:left}
+  .f-cartes{grid-auto-columns:78%;margin-left:-16px;margin-right:-16px;padding:0 16px .4rem}
+}
