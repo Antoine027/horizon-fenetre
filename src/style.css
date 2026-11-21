@@ -772,3 +772,13 @@ a.co:hover{filter:brightness(1.05)}
   .b-tous{margin-top:1rem;text-align:center}
   section:has(.billets.car){padding-bottom:2.5rem}
 }
+
+/* Menu téléphone : photo pour les familles de produits, icône pour les autres liens */
+.nv-ph,.nv-ic{display:none}
+@media (max-width:1100px){
+  .nav .nv-ph,.nav .nv-ic{display:block;flex:none;width:42px;height:42px;border-radius:12px}
+  .nav .nv-ph{object-fit:cover}
+  .nav .nv-ic{padding:10px;box-sizing:border-box;background:var(--ciel);color:var(--ardoise-f);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .nav .deroule>details>summary,.nav>ul>li>a{display:flex;align-items:center;gap:14px}
+  .nav .nv-nom{flex:1}
+}
