@@ -352,7 +352,7 @@ ${(() => {
 
 
 <section class="sec"><div class="wrap"><div class="tete"><h2>Conseils et guides</h2><p>Les réponses aux questions qu'on nous pose le plus souvent en visite.</p></div><div class="billets car">${derniers}</div>
-<p style="margin-top:2rem"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
+<p class="b-tous"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
 
 <section class="sec ciel"><div class="wrap faq-grille"><div class="tete"><h2>Questions fréquentes</h2><p>Visite, pose, TVA, secteur : les réponses aux questions qu'on nous pose avant chaque devis.</p><a class="btn btn-o2" href="/contact/">Poser une autre question</a></div>${faqHtml(faq)}</div></section>
 
