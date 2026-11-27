@@ -354,7 +354,7 @@ ${(() => {
 <section class="sec"><div class="wrap"><div class="tete"><h2>Conseils et guides</h2><p>Les réponses aux questions qu'on nous pose le plus souvent en visite.</p></div><div class="billets car">${derniers}</div>
 <p class="b-tous"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
 
-<section class="sec ciel"><div class="wrap faq-grille"><div class="tete"><h2>Questions fréquentes</h2><p>Ce qu'on nous demande avant chaque devis.</p><a class="btn btn-o2" href="/contact/">Poser une autre question</a></div>${faqHtml(faq)}</div></section>
+<section class="sec ciel"><div class="wrap faq-grille"><div class="tete"><h2>Questions fréquentes</h2><p>Vos questions avant le devis.</p><a class="btn btn-o2" href="/contact/">Poser une autre question</a></div>${faqHtml(faq)}</div></section>
 
 ${blocDevis("accueil")}`;
   ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/baie-coulissante-aluminium-jardin.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Horizon Fenêtre, menuiseries sur mesure à Lyon : fenêtres, baies vitrées, volets, BSO, portes, portails. Visite gratuite, pose par installateur partenaire.", body,
