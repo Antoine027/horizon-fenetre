@@ -987,3 +987,6 @@ a.co:hover{filter:brightness(1.05)}
 /* En-têtes produits : bloc texte sur toute la largeur du conteneur, même alignement partout */
 .p-txt{width:100%}
 .p-hero h1{max-width:none}
+/* Pages produits : texte sur toute la largeur du conteneur */
+.prose.prose-seule{max-width:none;margin:0}
+.prose-seule p,.prose-seule li,.prose-seule h2,.prose-seule h3,.prose-seule .lead{max-width:none}
