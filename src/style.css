@@ -794,3 +794,22 @@ a.co:hover{filter:brightness(1.05)}
 /* « le confort » en jaune : doré foncé sur fond clair (lisibilité), jaune soleil sur fond sombre */
 
 @media (max-width:760px){.hero-photo .slogan .fort{color:var(--soleil)}}
+
+/* Familles en pleine largeur sur ordinateur : une famille par rangée, cartes plus grandes */
+@media (min-width:901px){
+  .familles{grid-template-columns:1fr;gap:3rem}
+  .f-tete{display:flex;align-items:baseline;justify-content:space-between;gap:.3rem 2rem;flex-wrap:wrap}
+  .f-tete h3{font-size:clamp(1.5rem,1rem + 1vw,2rem)}
+  .f-tete p{font-size:1.02rem}
+  .f-cartes{gap:20px}
+  .carte-p{border-radius:24px}
+  .carte-p .ph{aspect-ratio:16/10}
+  .cp-txt{padding:1.1rem 1.3rem 1.3rem}
+  .cp-txt b{font-size:1.25rem}
+  .cp-txt small{font-size:.95rem}
+}
+
+/* Titres de section centrés (sauf la FAQ en 2 colonnes) */
+.sec .tete{text-align:center;margin-left:auto;margin-right:auto;max-width:52rem}
+.sec .tete h2{margin-left:auto;margin-right:auto}
+.faq-grille .tete{text-align:left;margin-left:0;max-width:none}
