@@ -858,3 +858,12 @@ a.co:hover{filter:brightness(1.05)}
 }
 @media (max-width:640px){.choix-tuile::after{top:5px;right:5px}}
 @media (max-width:640px){.choix-tuile{padding-right:1.5rem}}
+
+/* Téléphone : libellés courts sur une seule ligne dans les cases du formulaire */
+.ct-c{display:none}
+@media (max-width:640px){
+  .ct-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .ct-c{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .choix-tuile{min-height:48px;gap:.5rem;padding-left:.4rem}
+  .choix-tuile .dessin{width:32px;height:32px}
+}
