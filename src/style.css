@@ -984,3 +984,6 @@ a.co:hover{filter:brightness(1.05)}
 .carte-p[href="/cloture-aluminium-lyon/"] .ph,a[href="/cloture-aluminium-lyon/"] img{object-position:85% 70%}
 .form .note{text-align:center}
 @media (min-width:901px){.contact-hero .devis,.rappel .devis{row-gap:1.4rem}.contact-hero .d-direct{margin-top:0}}
+/* En-têtes produits : bloc texte sur toute la largeur du conteneur, même alignement partout */
+.p-txt{width:100%}
+.p-hero h1{max-width:none}
