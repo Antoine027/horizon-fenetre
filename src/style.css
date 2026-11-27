@@ -816,3 +816,4 @@ a.co:hover{filter:brightness(1.05)}
 
 /* Téléphone : titre de la section produits masqué visuellement (gardé pour Google et les lecteurs d'écran) */
 @media (max-width:700px){#produits>.wrap>.tete{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}#produits{padding-top:2rem}}
+@media (max-width:700px){.f-tete h3{font-size:1.65rem;line-height:1.15;margin-bottom:.3rem}.f-tete p{font-size:1.08rem}}
