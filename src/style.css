@@ -813,3 +813,6 @@ a.co:hover{filter:brightness(1.05)}
 .sec .tete{text-align:center;margin-left:auto;margin-right:auto;max-width:52rem}
 .sec .tete h2{margin-left:auto;margin-right:auto}
 .faq-grille .tete{text-align:left;margin-left:0;max-width:none}
+
+/* Téléphone : titre de la section produits masqué visuellement (gardé pour Google et les lecteurs d'écran) */
+@media (max-width:700px){#produits>.wrap>.tete{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}#produits{padding-top:2rem}}
