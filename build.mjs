@@ -239,7 +239,7 @@ const bandeauPhoto = (items, h1, chapo, cle) => `<section class="p-hero">${photo
 const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau"><div class="wrap">${items ? fil(items) : ""}<h1>${h1}</h1>${chapo ? `<p>${chapo}</p>` : ""}${extra}</div></section>`;
 
 const blocDevis = (source, coche = "", titre = "Obtenez un RDV gratuit") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Laissez vos coordonnées, on vous rappelle.</p>
-<p class="d-direct"><span>Ou appelez-nous :</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail"><a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire(source, coche)}</div></section>`;
+</div>${formulaire(source, coche)}<p class="d-direct"><span>Ou appelez-nous :</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail"><a href="mailto:${MAIL}">${MAIL}</a></span></p></div></section>`;
 // Cases du formulaire : produits regroupés par besoin.
 const TUILES = [
   ["Fenêtres et baies vitrées", "fenetres", "Fenêtres, baies", ["fenetres", "baies-vitrees"]],
@@ -347,7 +347,8 @@ ${(() => {
 })()}
 <p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
-<section class="sec" style="padding-top:0;padding-bottom:0"><div class="wrap"><div class="pros-bande"><div><h2>Vous êtes professionnel ?</h2><p>Artisans, syndics, bailleurs, architectes : chiffrage sur plans ou après visite, fourniture sur mesure livrée sur chantier.</p></div><a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div></div></section>
+${blocDevis("accueil")}
+<section class="sec sec-pro"><div class="wrap"><div class="pros-bande"><div><h2>Vous êtes professionnel ?</h2><p>Artisans, syndics, bailleurs, architectes : chiffrage sur plans ou après visite, fourniture sur mesure livrée sur chantier.</p></div><a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div></div></section>
 
 
 
@@ -355,8 +356,7 @@ ${(() => {
 <p class="b-tous"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
 
 <section class="sec ciel"><div class="wrap faq-grille"><div class="tete"><h2>Questions fréquentes</h2><p>Vos questions avant le devis.</p><a class="btn btn-o2" href="/contact/">Poser une autre question</a></div>${faqHtml(faq)}</div></section>
-
-${blocDevis("accueil")}`;
+`;
   ecrire("/", page({ url: "/", une: SITE + "/assets/img/og/baie-coulissante-aluminium-jardin.jpg", preload: '<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/baie-coulissante-aluminium-jardin-640.avif 640w, /assets/img/baie-coulissante-aluminium-jardin-800.avif 800w, /assets/img/baie-coulissante-aluminium-jardin-960.avif 960w, /assets/img/baie-coulissante-aluminium-jardin-1280.avif 1280w, /assets/img/baie-coulissante-aluminium-jardin-1920.avif 1920w, /assets/img/baie-coulissante-aluminium-jardin-2560.avif 2560w, /assets/img/baie-coulissante-aluminium-jardin-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">', title: "Menuisier à Lyon : fenêtres, volets, portes | Horizon Fenêtre", description: "Horizon Fenêtre, menuiseries sur mesure à Lyon : fenêtres, baies vitrées, volets, BSO, portes, portails. Visite gratuite, pose par installateur partenaire.", body,
     schemas: [{ "@context": "https://schema.org", "@graph": [ENTREPRISE, { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "Horizon Fenêtre", inLanguage: "fr-FR", publisher: { "@id": SITE + "/#entreprise" } }] }] }));
   plan.push({ url: "/", groupe: "Horizon Fenêtre", titre: "Accueil" });

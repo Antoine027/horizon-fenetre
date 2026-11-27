@@ -901,3 +901,22 @@ a.co:hover{filter:brightness(1.05)}
   .jauge i{width:18px;height:7px}
 }
 @media (max-width:700px){.m3 dd .euros{min-width:0;line-height:1;font-size:.95rem}}
+.sec-pro{padding:clamp(2rem,4vw,3rem) 0 0}
+/* Correctif : pas de débordement horizontal du formulaire sur téléphone */
+.devis>*{min-width:0}
+.form>*{min-width:0}
+@media (max-width:640px){.form{grid-template-columns:repeat(2,minmax(0,1fr))}.choix-grille{grid-template-columns:repeat(2,minmax(0,1fr))}.choix,.choix-tuile{min-width:0}}
+@media (min-width:641px){.choix-grille{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* Bloc devis : « Ou appelez-nous » sous le formulaire */
+.devis .d-direct{grid-column:2;margin:-.8rem 0 0!important;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1rem;text-align:center}
+.devis .d-mail{width:100%}
+@media (max-width:900px){.devis .d-direct{grid-column:auto;margin:0!important}}
+.pros-bande .btn-p{background:#fff;color:var(--ardoise-f);border:1.5px solid var(--ciel-2)}.pros-bande .btn-p:hover{background:#fff;border-color:var(--brume)}
+@media (max-width:640px){
+  .form{padding-left:.8rem;padding-right:.8rem}
+  .choix-grille{gap:.4rem}
+  .choix-tuile{padding:.35rem .4rem;gap:.45rem;font-size:.78rem}
+  .choix-tuile .dessin{width:30px;height:30px;padding:5px;border-radius:9px}
+  .choix-tuile::after{top:3px;right:3px;width:15px;height:15px;background-size:9px}
+}
+@media (max-width:380px){.choix-tuile{font-size:.72rem;gap:.35rem}.choix-tuile .dessin{width:26px;height:26px;padding:4px}}
