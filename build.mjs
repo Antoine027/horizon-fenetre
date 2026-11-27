@@ -12,8 +12,8 @@ const PRODUITS = ORDRE.map((s) => produits.find((p) => p.slug === s));
 const FAMILLES = [
   ["Fenêtres et baies vitrées", "Faire entrer la lumière, garder la chaleur.", ["fenetres", "baies-vitrees", "moustiquaires"], "large", "Fenêtres"],
   ["Volets et BSO", "Occulter, protéger, maîtriser la chaleur.", ["volet-roulant-lyon", "volet-battant-lyon", "brise-soleil-orientables"], "trois", "Volets"],
-  ["Accès", "Garage, portail et clôture : l'entrée de votre terrain.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois", "Accès"],
-  ["Portes", "De la porte d'entrée à la porte intérieure, en passant par le palier.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large", "Portes"],
+  ["Accès", "Garage, portail, clôture : votre entrée.", ["portes-de-garage", "portail-aluminium-lyon", "cloture-aluminium-lyon"], "trois", "Accès"],
+  ["Portes", "Pour l'entrée, le palier et l'intérieur.", ["portes-d-entree", "porte-blindee-lyon", "portes-interieures"], "large", "Portes"],
 ];
 
 const SITE = "https://www.horizonfenetre.com";
