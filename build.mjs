@@ -459,9 +459,7 @@ ${produitLie ? `<div class="boite"><h2>Le produit</h2><ul><li><a href="/${produi
 // ===== Contact =====
 {
   const url = "/contact/"; const items = [{ url: "/", t: "Accueil" }, { url, t: "Contact et devis" }];
-  const body = `${bandeauSimple(items, "Demander un devis ou une visite", "Quelques lignes suffisent. On vous rappelle pour fixer un rendez-vous de prise de cotes, chez vous ou sur le chantier.")}
-<div class="wrap corps"><div>${formulaire("contact")}</div>
-<aside class="cote"><div class="coords"><a class="co co-tel" href="tel:${TEL_LIEN}">${icoTel}<span><small>Le plus rapide</small><b>${TEL}</b></span></a><a class="co" href="mailto:${MAIL}">${icoMail}<span><small>E-mail</small><b>${MAIL}</b></span></a><p class="co co-adr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>ESCOM HABITAT</small><b>${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}</b></span></p></div></aside></div>`;
+  const body = `<section class="contact-hero"><div class="wrap devis"><div class="d-txt">${fil(items)}<h1>Parlez-nous de votre projet</h1><p>Laissez votre numéro : on vous rappelle pour en parler et fixer la prise de cotes chez vous. Visite et devis gratuits, sans engagement.</p></div>${formulaire("contact")}<div class="d-direct"><span>Vous préférez appeler ?</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail">ou par e-mail : <a href="mailto:${MAIL}">${MAIL}</a></span><span class="d-adr">ESCOM HABITAT, ${ADRESSE.rue}, ${ADRESSE.cp} ${ADRESSE.ville}</span></div></div></section>`;
   ecrire(url, page({ url, une: "pPorte", title: "Contact et devis gratuit | Horizon Fenêtre, Rillieux-la-Pape", description: `Horizon Fenêtre, menuiseries sur mesure : demandez une visite et un devis gratuit pour fenêtres, volets, portes ou portail. Appelez le ${TEL}.`, body,
     schemas: [{ "@context": "https://schema.org", "@type": "ContactPage", url: SITE + url, about: ENTREPRISE }, filLd(items)] }));
   plan.push({ url, groupe: "Horizon Fenêtre", titre: "Contact et devis" });
