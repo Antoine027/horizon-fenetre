@@ -260,7 +260,7 @@ function formulaire(source, coche = "") {
 <fieldset class="plein choix-projet"><legend>Votre projet <i>(plusieurs choix possibles)</i></legend><div class="choix-grille">${TUILES.map(([nom, dessin, court, slugs]) => `<label class="choix"><input type="checkbox" name="produit" value="${nom}"${slugs.includes(coche) ? " checked" : ""}><span class="choix-tuile">${dessins[dessin].replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')}<span class="ct-l">${nom}</span><span class="ct-c" aria-hidden="true">${court}</span></span></label>`).join("")}<label class="choix"><input type="checkbox" name="produit" value="Autre"><span class="choix-tuile"><svg class="dessin" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="60" r="6"/><circle cx="60" cy="60" r="6"/><circle cx="86" cy="60" r="6"/></svg><span class="ct-l">Autre</span><span class="ct-c" aria-hidden="true">Autre</span></span></label></div></fieldset>
 <div class="plein"><label for="${id("msg")}">Décrivez votre projet</label><textarea id="${id("msg")}" name="message" maxlength="3000" placeholder="Commune, nombre de menuiseries, dimensions approximatives, matériau souhaité, pose ou fourniture seule…"></textarea></div>
 <div class="plein"><button class="btn btn-p" type="submit">Envoyer ma demande</button>
-<p class="note">ESCOM HABITAT traite vos données pour répondre à votre demande. Vos droits : <a href="/confidentialite/">politique de confidentialité</a>.</p></div>
+<p class="note">Vos données servent à vous répondre. <a href="/confidentialite/">Confidentialité</a></p></div>
 </form>`;
 }
 
