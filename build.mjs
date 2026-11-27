@@ -238,7 +238,7 @@ const titreHero = (h1) => { const m = h1.match(/^(.*?)\s((?:sur mesure|pour |: )
 const bandeauPhoto = (items, h1, chapo, cle) => `<section class="p-hero">${photo(cle, { eager: true, classe: "p-img", ratio: [16, 9], largeurs: [800, 1600], sizes: "100vw" })}<div class="wrap p-txt">${fil(items)}<h1>${titreHero(h1)}</h1><p class="p-chapo">${chapo}</p><div class="actions"><a class="btn btn-p" href="/contact/">Demander un devis gratuit</a><a class="btn btn-o" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a></div><ul class="trio p-trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div></section>`;
 const bandeauSimple = (items, h1, chapo, extra = "") => `<section class="bandeau"><div class="wrap">${items ? fil(items) : ""}<h1>${h1}</h1>${chapo ? `<p>${chapo}</p>` : ""}${extra}</div></section>`;
 
-const blocDevis = (source, coche = "", titre = "Demandez votre visite gratuite") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Quelques lignes suffisent : on vous rappelle pour fixer la prise de cotes.</p>
+const blocDevis = (source, coche = "", titre = "Obtenez un RDV gratuit") => `<section class="sec rappel" id="devis"><div class="wrap devis"><div class="d-txt"><h2>${titre}</h2><p>Laissez vos coordonnées, on vous rappelle.</p>
 <p class="d-direct"><span>Ou appelez-nous :</span><a class="d-tel" href="tel:${TEL_LIEN}">${icoTel}${TEL}</a><span class="d-mail"><a href="mailto:${MAIL}">${MAIL}</a></span></p></div>${formulaire(source, coche)}</div></section>`;
 // Cases du formulaire : produits regroupés par besoin.
 const TUILES = [
