@@ -782,3 +782,12 @@ a.co:hover{filter:brightness(1.05)}
   .nav .deroule>details>summary,.nav>ul>li>a{display:flex;align-items:center;gap:14px}
   .nav .nv-nom{flex:1}
 }
+
+/* Accent jaune soleil (logo) : bouton principal, trait sous le slogan, pastilles d'étapes, point actif */
+:root{--soleil-f:#cfa33a}
+.btn-p,.hero-photo .btn-p,.p-hero .btn-p,.appel .btn-p,.boite.fonce .btn-p,.form button[type=submit],.nav .btn{background:var(--soleil);color:var(--encre);border-color:var(--soleil)}
+.btn-p:hover,.hero-photo .btn-p:hover,.p-hero .btn-p:hover,.appel .btn-p:hover,.boite.fonce .btn-p:hover,.form button[type=submit]:hover,.nav .btn:hover{background:var(--soleil-f);color:var(--encre)}
+.slogan .fort{background:linear-gradient(var(--soleil),var(--soleil)) 0 92%/100% .12em no-repeat;padding-bottom:.06em}
+.etape-ic b{background:var(--soleil);color:var(--encre)}
+.points span.on{background:var(--soleil-f)}
+.slogan .fort{width:fit-content}@media (max-width:760px){.hero-photo .slogan .fort{margin-left:auto;margin-right:auto}}
