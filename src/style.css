@@ -335,11 +335,6 @@ main p a:hover,.prose li a:hover{color:var(--ardoise);text-decoration-color:var(
 
 
 /* Étapes : apparition une à une, de gauche à droite (opacité et translation seulement : aucun décalage de mise en page) */
-.parcours.anim li{opacity:0;transform:translateX(-24px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
-.parcours.anim.vu li{opacity:1;transform:none}
-.parcours.anim.vu li:nth-child(2){transition-delay:.18s}
-.parcours.anim.vu li:nth-child(3){transition-delay:.36s}
-.parcours.anim.vu li:nth-child(4){transition-delay:.54s}
 
 /* Cartes marques (page Partenaires), dans le style d'escomhabitat.com */
 .marques{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
