@@ -345,7 +345,7 @@ ${(() => {
   const crit = ["Isolation", "Facilité d'entretien", "Choix de couleurs", "Budget"];
   return `<div class="mat3">${M.map(([nom, cl, pour, v]) => `<article class="m3 m3-${cl}"><div class="m3-tete"><h3>${nom}</h3><p><span>Idéal pour</span> ${pour}</p></div><dl>${v.map(([n, t], i) => `<div><dt>${crit[i]}</dt><dd>${i === 3 ? `<span class="euros" aria-hidden="true">${"€".repeat(n)}<b>${"€".repeat(3 - n)}</b></span><span class="j-txt">${t}</span>` : jauge(n, t)}</dd></div>`).join("")}</dl></article>`).join("")}</div>`;
 })()}
-<p style="margin-top:1.2rem;color:var(--texte-2)">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
+<p style="margin-top:1.2rem;color:var(--texte-2);text-align:center">Le comparatif complet est dans notre guide <a href="/blog/fenetre-pvc-aluminium-ou-bois/">fenêtre PVC, aluminium ou bois</a>.</p></div></section>
 
 ${blocDevis("accueil")}
 <section class="sec sec-pro"><div class="wrap"><div class="pros-bande"><div><h2>Vous êtes professionnel ?</h2><p>Artisans, syndics, bailleurs, architectes : chiffrage sur plans ou après visite, fourniture sur mesure livrée sur chantier.</p></div><a class="btn btn-p" href="/professionnels/">Voir l'offre pros</a></div></div></section>
@@ -366,7 +366,10 @@ ${blocDevis("accueil")}
 for (const p of produits) {
   const url = `/${p.slug}/`;
   const items = [{ url: "/", t: "Accueil" }, { url, t: p.nav }];
-  const lies = articles.filter((a) => a.md.includes(`](/${p.slug}/)`)).slice(0, 4);
+  const RUB = { fenetres: "Fenêtres", "baies-vitrees": "Baies vitrées", volets: "Volets", "volet-roulant-lyon": "Volets", "volet-battant-lyon": "Volets", "brise-soleil-orientables": "Volets", "portes-d-entree": "Portes d'entrée", "porte-blindee-lyon": "Portes d'entrée", "portes-de-garage": "Portes de garage", "portail-aluminium-lyon": "Portails et clôtures", "cloture-aluminium-lyon": "Portails et clôtures", moustiquaires: "Moustiquaires" };
+  const lies0 = articles.filter((a) => a.md.includes(`](/${p.slug}/)`));
+  const memeRub = articles.filter((a) => a.rubrique === RUB[p.slug] && !lies0.includes(a));
+  const lies = [...lies0, ...memeRub, ...articles.filter((a) => !lies0.includes(a) && !memeRub.includes(a))].slice(0, 3);
   const voisins = PRODUITS.filter((x) => x.slug !== p.slug).slice(0, 3);
   const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [480, 800, 1200, 1600], sizes: "(max-width: 760px) 100vw, 50vw" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
   const contenu = mailler(p.contenu, url, 6);
@@ -374,9 +377,9 @@ for (const p of produits) {
   const galLarge = GALERIES[p.slug] ? galerieModeles(GALERIES[p.slug]) : galerie;
   const secGal = galLarge ? `<section class="sec-gal"><div class="wrap">${galLarge}</div></section>` : "";
   const body = `${bandeauPhoto(items, p.h1, p.chapo, p.photo)}
-${secGal}<div class="wrap corps"><article class="prose">${contenuG}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
-<aside class="cote">
-${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
+${secGal}<div class="wrap"><article class="prose prose-seule">${contenuG}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p></article></div>
+<section class="sec sec-guides"><div class="wrap"><div class="tete"><h2>Nos guides</h2><p>Pour aller plus loin avant votre projet.</p></div><div class="billets car">${lies.map((a) => `<a class="billet" href="/blog/${a.slug}/">${vignette(a)}<span class="rub">${a.rubrique}<em>${a.lecture} min de lecture</em></span><h3>${a.h1}</h3><p>${a.resume}</p><span class="meta">Lire le guide</span></a>`).join("")}</div><p class="b-tous"><a class="btn btn-s" href="/blog/">Tous les guides</a></p></div></section>
+<section class="sec sec-faqp"><div class="wrap"><div class="prose prose-seule"><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</div></div></section>
 <section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/"><img class="v-ph" src="/assets/img/produits/${PHOTOS[v.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>${v.nav}</b><small>${v.court}</small></span></a>`).join("")}</div></div></section>${blocDevis(p.slug, p.slug, `Demandez votre devis : ${p.nav.toLowerCase()}`)}${galLarge ? JS_GALERIE : ""}`;
   ecrire(url, page({ url, une: p.photo, title: p.title, description: p.description, body, schemas: [
     { "@context": "https://schema.org", "@type": "Service", name: p.h1, image: imageUne(p.photo).src, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },

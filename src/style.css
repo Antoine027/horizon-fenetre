@@ -974,3 +974,10 @@ a.co:hover{filter:brightness(1.05)}
 .sec-gal .galerie{margin:0}
 @media (max-width:1100px){.sec-gal .gm-grille{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:700px){.sec-gal .gm-grille{grid-template-columns:none}}
+
+/* Pages produits : texte en largeur de lecture (sans colonne), section « Nos guides » au-dessus de la FAQ */
+.prose-seule{max-width:48rem;margin:0 auto;padding:clamp(2.5rem,5vw,3.5rem) 0 0}
+.sec-guides{padding:clamp(2.5rem,5vw,3.5rem) 0}
+.sec-faqp{padding:0 0 clamp(2.5rem,5vw,3.5rem)}
+.sec-faqp .prose-seule{padding-top:0}
+.b-tous{text-align:center}
