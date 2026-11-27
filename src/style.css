@@ -867,3 +867,7 @@ a.co:hover{filter:brightness(1.05)}
   .choix-tuile{min-height:48px;gap:.5rem;padding-left:.4rem}
   .choix-tuile .dessin{width:32px;height:32px}
 }
+/* Ordinateur aussi : libellés courts sur une seule ligne */
+.ct-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ct-c{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+@media (min-width:641px){.choix-tuile{min-height:92px}}
