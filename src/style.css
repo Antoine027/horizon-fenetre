@@ -830,3 +830,31 @@ a.co:hover{filter:brightness(1.05)}
   .methode .parcours h3{font-size:1.15rem;margin:.55rem 0 .2rem}
   .methode .parcours p{font-size:.95rem}
 }
+
+/* Cases du formulaire : tuiles blanches, pictogramme dans une pastille, coche jaune quand sélectionné */
+.choix-grille{gap:.6rem}
+.choix-tuile{position:relative;flex-direction:row;justify-content:flex-start;gap:.75rem;min-height:64px;padding:.6rem 2rem .6rem .65rem;background:#fff;border:1.5px solid var(--ciel-2);border-radius:16px;font-size:.88rem;font-weight:650;text-align:left;line-height:1.25;transition:border-color .2s,box-shadow .2s,transform .15s}
+.choix-tuile .dessin{flex:none;width:44px;height:44px;padding:8px;border-radius:12px;background:var(--ciel);stroke-width:5;transition:background .2s}
+.choix-tuile::after{content:"";position:absolute;top:50%;right:.7rem;width:18px;height:18px;margin-top:-9px;border-radius:50%;border:1.5px solid var(--ciel-2);background:#fff;transition:.2s}
+.choix-tuile:hover{border-color:var(--brume);transform:translateY(-1px);box-shadow:0 10px 22px -16px rgba(51,69,77,.5)}
+.choix input:checked+.choix-tuile{border-color:var(--soleil);box-shadow:0 0 0 1px var(--soleil),0 10px 22px -16px rgba(51,69,77,.5);background:#fff}
+.choix input:checked+.choix-tuile .dessin{background:#fbf1cf}
+.choix input:checked+.choix-tuile::after{border-color:var(--soleil);background:var(--soleil) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f2f36' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+@media (max-width:640px){
+  .choix-grille{grid-template-columns:1fr 1fr;gap:.45rem}
+  .choix-tuile{min-height:52px;padding:.4rem 1.7rem .4rem .45rem;gap:.55rem;font-size:.8rem;border-radius:14px}
+  .choix-tuile .dessin{width:34px;height:34px;padding:6px;border-radius:10px;stroke-width:6}
+  .choix-tuile::after{right:.5rem;width:16px;height:16px;margin-top:-8px}
+}
+/* Coche en pastille sur le coin, seulement quand c'est sélectionné : plus de place pour le texte */
+.choix-tuile{padding-right:.7rem}
+.choix-tuile::after{top:-7px;right:-7px;margin:0;width:20px;height:20px;border:0;background:transparent;opacity:0;transform:scale(.6)}
+.choix input:checked+.choix-tuile::after{opacity:1;transform:none;box-shadow:0 2px 6px rgba(51,69,77,.25)}
+@media (max-width:640px){.choix-tuile{padding-right:.5rem}.choix-tuile::after{top:-6px;right:-6px;width:18px;height:18px;margin:0}}
+/* Ordinateur : tuiles verticales (pictogramme au-dessus) ; coche à l'intérieur du coin */
+.choix-tuile::after{top:6px;right:6px}
+@media (min-width:641px){
+  .choix-tuile{flex-direction:column;justify-content:center;text-align:center;gap:.5rem;min-height:104px;padding:.8rem .5rem .7rem;font-size:.84rem}
+}
+@media (max-width:640px){.choix-tuile::after{top:5px;right:5px}}
+@media (max-width:640px){.choix-tuile{padding-right:1.5rem}}
