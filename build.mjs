@@ -325,7 +325,7 @@ const parcours = `<ol class="parcours">
 <ul class="trio"><li>${I.regle}Visite et prise de cotes gratuites</li><li>${I.usine}Fabrication sur mesure</li><li>${I.outil}Pose organisée par nos soins</li></ul></div>
 </section>
 
-<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Onze familles de menuiseries, toutes fabriquées sur mesure.</p></div>
+<section class="sec ciel" id="produits"><div class="wrap"><div class="tete"><h2>Tout ce qui ouvre et ferme une maison</h2><p>Toutes vos menuiseries, fabriquées sur mesure.</p></div>
 <div class="familles">${bento}</div>
 </div></section>
 <section class="sec methode"><div class="wrap"><div class="m-intro"><div><span class="sur-titre">Notre méthode</span>
