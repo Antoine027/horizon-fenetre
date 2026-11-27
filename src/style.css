@@ -2,7 +2,7 @@
 @font-face{font-family:"Montserrat";src:url(/assets/fonts/montserrat.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
 :root{
   --ciel:#e9f6fb;--ciel-2:#d6ecf4;--ardoise:#566f79;--ardoise-f:#33454d;--brume:#829ca6;
-  --encre:#1f2f36;--texte-2:#4a5f68;--blanc:#fff;--soleil:#e0b84f;
+  --encre:#1f2f36;--texte-2:#4a5f68;--blanc:#fff;--soleil:#e8c440;
   --r:16px;--r-l:28px;--w:1200px;
   --ombre:0 24px 60px -24px rgba(51,69,77,.35);
   --font:"Montserrat","Montserrat Repli",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -784,10 +784,13 @@ a.co:hover{filter:brightness(1.05)}
 }
 
 /* Accent jaune soleil (logo) : bouton principal, trait sous le slogan, pastilles d'étapes, point actif */
-:root{--soleil-f:#cfa33a}
+:root{--soleil-f:#d6af2a}
 .btn-p,.hero-photo .btn-p,.p-hero .btn-p,.appel .btn-p,.boite.fonce .btn-p,.form button[type=submit],.nav .btn{background:var(--soleil);color:var(--encre);border-color:var(--soleil)}
 .btn-p:hover,.hero-photo .btn-p:hover,.p-hero .btn-p:hover,.appel .btn-p:hover,.boite.fonce .btn-p:hover,.form button[type=submit]:hover,.nav .btn:hover{background:var(--soleil-f);color:var(--encre)}
-.slogan .fort{background:linear-gradient(var(--soleil),var(--soleil)) 0 92%/100% .12em no-repeat;padding-bottom:.06em}
 .etape-ic b{background:var(--soleil);color:var(--encre)}
 .points span.on{background:var(--soleil-f)}
-.slogan .fort{width:fit-content}@media (max-width:760px){.hero-photo .slogan .fort{margin-left:auto;margin-right:auto}}
+
+
+/* « le confort » en jaune : doré foncé sur fond clair (lisibilité), jaune soleil sur fond sombre */
+.hero-photo .slogan .fort{color:#a8841a}
+@media (max-width:760px){.hero-photo .slogan .fort{color:var(--soleil)}}
