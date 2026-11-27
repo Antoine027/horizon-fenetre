@@ -817,3 +817,16 @@ a.co:hover{filter:brightness(1.05)}
 /* Téléphone : titre de la section produits masqué visuellement (gardé pour Google et les lecteurs d'écran) */
 @media (max-width:700px){#produits>.wrap>.tete{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}#produits{padding-top:2rem}}
 @media (max-width:700px){.f-tete h3{font-size:1.65rem;line-height:1.15;margin-bottom:.3rem}.f-tete p{font-size:1.08rem}}
+
+/* Téléphone : étapes en frise verticale (sans cartes), comme Instant Terrasse */
+@media (max-width:700px){
+  .methode .parcours{gap:0}
+  .methode .parcours li{grid-template-columns:52px 1fr;column-gap:1rem;padding:0 0 1.5rem;background:none;border:0;border-radius:0;box-shadow:none;position:relative}
+  .methode .parcours li:last-child{padding-bottom:0}
+  .methode .parcours li:not(:last-child)::before{content:"";display:block;position:absolute;left:25px;top:52px;bottom:0;width:2px;height:auto;margin:0;border-radius:0;background:var(--soleil);opacity:.5}
+  .methode .parcours li .etape-ic{width:52px;height:52px;border:2px solid var(--soleil);background:#fff;color:var(--ardoise)}
+  .methode .parcours li .etape-ic svg{width:21px;height:21px}
+  .methode .parcours li .etape-ic b{background:var(--ardoise-f);color:#fff;top:-6px;right:-6px}
+  .methode .parcours h3{font-size:1.15rem;margin:.55rem 0 .2rem}
+  .methode .parcours p{font-size:.95rem}
+}
