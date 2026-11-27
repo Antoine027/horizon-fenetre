@@ -792,5 +792,5 @@ a.co:hover{filter:brightness(1.05)}
 
 
 /* « le confort » en jaune : doré foncé sur fond clair (lisibilité), jaune soleil sur fond sombre */
-.hero-photo .slogan .fort{color:#a8841a}
+
 @media (max-width:760px){.hero-photo .slogan .fort{color:var(--soleil)}}
