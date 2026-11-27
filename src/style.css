@@ -884,3 +884,20 @@ a.co:hover{filter:brightness(1.05)}
   .faq-grille .faq details{padding-left:1rem;padding-right:1rem}
 }
 @media (max-width:380px){.faq summary{font-size:.86rem}.faq-grille .faq details{padding-left:.85rem;padding-right:.85rem}}
+
+/* Comparatif matériaux sur téléphone : cartes compactes (critère et jauge sur la même ligne) */
+@media (max-width:700px){
+  .mat3{align-items:start}
+  .m3-tete{padding:1rem 1.1rem .9rem}
+  .m3-tete h3{font-size:1.35rem;margin-bottom:.2rem}
+  .m3-tete p{font-size:.88rem}
+  .m3-tete p span{display:inline;margin:0 .3rem 0 0}
+  .m3 dl{padding:.3rem 1.1rem .7rem}
+  .m3 dl>div{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:.6rem;padding:.55rem 0}
+  .m3 dt{margin:0;font-size:.72rem}
+  .m3 dd{display:contents}
+  .m3 dd .jauge,.m3 dd .euros{grid-column:2;grid-row:1;justify-self:end}
+  .m3 dd .j-txt{grid-column:1/-1;grid-row:2;font-size:.82rem;color:var(--texte-2);margin-top:.15rem}
+  .jauge i{width:18px;height:7px}
+}
+@media (max-width:700px){.m3 dd .euros{min-width:0;line-height:1;font-size:.95rem}}
