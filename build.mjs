@@ -369,13 +369,15 @@ for (const p of produits) {
   const lies = articles.filter((a) => a.md.includes(`](/${p.slug}/)`)).slice(0, 4);
   const voisins = PRODUITS.filter((x) => x.slug !== p.slug).slice(0, 3);
   const galerie = (p.galerie || []).length ? `<div class="galerie">${p.galerie.map(([k, c]) => `<figure>${photo(k, { ratio: [3, 2], largeurs: [480, 800, 1200, 1600], sizes: "(max-width: 760px) 100vw, 50vw" })}<figcaption>${c}</figcaption></figure>`).join("")}</div>` : "";
-  const contenu = mailler(p.contenu, url, 6).replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${galerie}`);
-  const contenuG = GALERIES[p.slug] ? contenu.replace("<!--galerie-modeles-->", galerieModeles(GALERIES[p.slug])) : contenu;
+  const contenu = mailler(p.contenu, url, 6);
+  const contenuG = contenu.replace("<!--galerie-modeles-->", "");
+  const galLarge = GALERIES[p.slug] ? galerieModeles(GALERIES[p.slug]) : galerie;
+  const secGal = galLarge ? `<section class="sec-gal"><div class="wrap">${galLarge}</div></section>` : "";
   const body = `${bandeauPhoto(items, p.h1, p.chapo, p.photo)}
-<div class="wrap corps"><article class="prose">${contenuG}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
+${secGal}<div class="wrap corps"><article class="prose">${contenuG}<h2>Fourniture et pose : comment ça marche</h2><p>Horizon Fenêtre vient relever les cotes et vous fournit la menuiserie sur mesure, facturée avec une TVA à 20 %. Pour la pose, on organise l'intervention de notre poseur partenaire à partir de nos cotes (devis de pose séparé). Vous pouvez aussi la confier à l'artisan de votre choix.</p><h2>Questions fréquentes</h2>${faqHtml(p.faq)}</article>
 <aside class="cote">
 ${lies.length ? `<div class="boite"><h2>Nos guides</h2><ul>${lies.map((a) => `<li><a href="/blog/${a.slug}/">${a.h1}</a></li>`).join("")}</ul></div>` : ""}</aside></div>
-<section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/"><img class="v-ph" src="/assets/img/produits/${PHOTOS[v.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>${v.nav}</b><small>${v.court}</small></span></a>`).join("")}</div></div></section>${blocDevis(p.slug, p.slug, `Demandez votre devis : ${p.nav.toLowerCase()}`)}${contenuG !== contenu || galerie ? JS_GALERIE : ""}`;
+<section class="sec ciel" style="padding-top:3rem;padding-bottom:3rem"><div class="wrap"><h2 style="font-size:1.5rem">Nos autres produits</h2><div class="voisins">${voisins.map((v) => `<a href="/${v.slug}/"><img class="v-ph" src="/assets/img/produits/${PHOTOS[v.photo][0].slice(6)}-vig.webp" width="64" height="64" alt="" loading="lazy" decoding="async"><span><b>${v.nav}</b><small>${v.court}</small></span></a>`).join("")}</div></div></section>${blocDevis(p.slug, p.slug, `Demandez votre devis : ${p.nav.toLowerCase()}`)}${galLarge ? JS_GALERIE : ""}`;
   ecrire(url, page({ url, une: p.photo, title: p.title, description: p.description, body, schemas: [
     { "@context": "https://schema.org", "@type": "Service", name: p.h1, image: imageUne(p.photo).src, serviceType: `Fourniture de ${p.nav.toLowerCase()} sur mesure`, description: p.description, provider: ENTREPRISE, areaServed: ENTREPRISE.areaServed, url: SITE + url },
     filLd(items)] }));

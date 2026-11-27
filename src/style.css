@@ -966,3 +966,11 @@ a.co:hover{filter:brightness(1.05)}
   .pied p a{min-height:36px}
   .pied .bas{margin-top:1.2rem;padding-top:.9rem;gap:.4rem;justify-content:center;text-align:center}
 }
+
+/* Galeries des pages produits en pleine largeur, entre l'en-tête et le texte */
+.sec-gal{padding:clamp(2.5rem,5vw,3.5rem) 0 0}
+.sec-gal .gm{margin:0}
+.sec-gal .gm-grille{grid-template-columns:repeat(6,1fr);gap:12px}
+.sec-gal .galerie{margin:0}
+@media (max-width:1100px){.sec-gal .gm-grille{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:700px){.sec-gal .gm-grille{grid-template-columns:none}}
