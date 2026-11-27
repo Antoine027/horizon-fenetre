@@ -335,7 +335,7 @@ faq: [
 },
 {
 slug: "portail-aluminium-lyon",
-photo: "pPortailAlu",
+photo: "pPortail",
 galerie: [],
 nav: "Portails",
 court: "Battants, coulissants ou autoportants, avec portillon assorti.",
@@ -403,7 +403,7 @@ faq: [
 },
 {
 slug: "cloture-aluminium-lyon",
-photo: "pPortail",
+photo: "pCloture",
 galerie: [],
 nav: "Clôtures",
 court: "Clôtures et brise-vue aluminium, assortis au portail.",
